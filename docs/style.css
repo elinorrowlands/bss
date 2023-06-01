@@ -18,7 +18,7 @@ h1 {
         opacity:0.4;
     }
     100%{
-        opacity:0.6;
+        opacity:0.8;
     }
 }
 
@@ -48,11 +48,29 @@ h1 {
     transform:scale(3);
     margin:none;
     z-index: -1;
-    animation:opacity 20s ease-in-out infinite alternate;
+    /* animation:opacity 20s ease-in-out infinite alternate;
     animation:scale 60s ease-in-out infinite alternate;
-    
+     */
+}
+
+footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:30vh;
+    width:100%;
+    background-color:darkblue;
+    margin:none;
 }
 
 /* path{
     animation:scale 60s ease-in-out infinite alternate;
 } */
+
+.footerText{
+    font-size: 20px;
+    color: lightgray;
+    text-align: center;
+    margin-top: 5vh;
+    padding: 2em;
+}
