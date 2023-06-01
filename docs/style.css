@@ -53,24 +53,46 @@ h1 {
      */
 }
 
+.footer__text {
+    font-size: 2rem;
+    color: lightgray;
+    text-align: left;
+    margin-top: 2em;
+    margin-left:100px;
+    vertical-align:middle;
+    margin-top: 2em;
+    margin-left:100px;
+    /* padding: 2em; */
+    /* margin:20em; */
+}
+
+.footer__logos {
+    font-size: 2rem;
+    color: lightgray;
+    text-align: left;
+
+    vertical-align:middle;
+    /* padding: 2em; */
+    /* margin:20em; */
+}
+
+
+
 footer {
     position:fixed;
     bottom:0;
     left:0;
-    height:30vh;
+    height:200px;
     width:100%;
     background-color:darkblue;
     margin:none;
+    
 }
+
+
+
+
 
 /* path{
     animation:scale 60s ease-in-out infinite alternate;
 } */
-
-.footerText{
-    font-size: 20px;
-    color: lightgray;
-    text-align: center;
-    margin-top: 5vh;
-    padding: 2em;
-}
