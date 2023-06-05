@@ -3,7 +3,8 @@ import fs from 'fs';
 
 let pugFiles = [
     'index', 
-    'qr'
+    'qr',
+    'elements/index'
 ];
 
 let pugSourceFolder = './src/pug';
