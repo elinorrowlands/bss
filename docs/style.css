@@ -1,3 +1,7 @@
+html, body {
+  overscroll-behavior-y:none;
+}
+
 body{
     @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap');
     background-color:darkblue;
@@ -5,7 +9,20 @@ body{
     font-weight: 100;
     font-size: 80px;
     color: lightgray;
+    /* overflow:hidden; */
+    display: flex;
+    margin:0;
+    flex-direction:column;
+    min-height:100vh;
+}
+main{
+    /* min-height:100vh; */
+    flex-grow: 1;
     overflow:hidden;
+}
+
+path{
+    transition: all 1s ease-in-out;
 }
 
 h1 {
@@ -38,7 +55,8 @@ h1 {
 
 #water{
     opacity:0.6;
-    position: absolute;
+    position: fixed;
+    display:block;
     top: 0;
     left: 0;
     right:0;
@@ -47,6 +65,11 @@ h1 {
     height: 100vh;
     transform-origin: center center;
     transform:scale(3);
+    @media screen and (max-width: 700px) {
+        transform:scale(6);
+    }
+        
+    }
     margin:none;
     z-index: -1;
     /* animation:opacity 20s ease-in-out infinite alternate;
@@ -68,13 +91,15 @@ h1 {
 }
 
 .footer__logos {
+    height:100%;
     font-size: 2rem;
     color: lightgray;
-    text-align: right;
+    /* text-align: right; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
 
-    vertical-align:middle;
-    /* padding: 2em; */
-    /* margin:20em; */
 }
 path{
     /* opacity:0.5; */
@@ -88,18 +113,50 @@ path:hover{
 
 
 footer {
-    position:fixed;
+    position:relative;
+    /* position:relative; */
     bottom:0;
     left:0;
-    height:200px;
+    height:250px;
     width:100%;
     background-color:darkblue;
     margin:none;
-    
+    /* @media screen and (max-width: 700px) {
+        transform:scale(6);
+    } */
+}
+
+.logo{
+    /* width:30%; */
+    /* height:auto; */
+    /* padding:10px;
+    @media screen and (max-width: 800px) {
+        padding:none;
+    } */
+}
+
+#logo__canal{
+    height:80px;
+    @media screen and (max-width: 600px) {
+        height:50px;
+    }
+}
+#logo__ace{
+    height:90px;
+    @media screen and (max-width: 600px) {
+        height:60px;
+    }
 }
 
 
-
+/* @media screen and (max-width: 600px) {
+    #logo__canal{
+        height:50px;
+    }
+    #logo__ace{
+        height:60px;
+    }
+} */
 
 
 /* path{
