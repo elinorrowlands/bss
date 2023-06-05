@@ -1,16 +1,4 @@
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Biodivergent Sites and Sounds</title>
-    <link rel="stylesheet" href="style.css"/><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1>QR Code test page</h1>
-    <main style="display:flex;justify-content:center;align-items:center;flex-direction:column;"><svg id="QR__home" viewBox="0, 0, 512, 512" id="qr" class="qr__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512">
+<svg id="QR__home" viewBox="0, 0, 512, 512" id="qr" class="qr__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512">
 <style>
     rect{
         transition:all 10s;
@@ -580,6 +568,3 @@ window.setInterval(()=>{
     }, 1000)
     
 </script>
-    </main>
-  </body>
-</html>
