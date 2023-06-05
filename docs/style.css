@@ -2,8 +2,9 @@ html, body {
   overscroll-behavior-y:none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
+
 body{
-    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap');
     background-color:darkblue;
     font-family: Nunito;
     font-weight: 100;
@@ -125,6 +126,7 @@ h1 {
     /* position:absolute; */
     /* height:100%; */
     width:90vw;
+    max-width:800px;
     height:40vw;
     top:0;
     left:0;
