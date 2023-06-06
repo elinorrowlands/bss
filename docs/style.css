@@ -74,9 +74,9 @@ h1 {
     
     margin:none;
     z-index: -1;
-    /* animation:opacity 20s ease-in-out infinite alternate;
+    animation:opacity 20s ease-in-out infinite alternate;
     animation:scale 60s ease-in-out infinite alternate;
-     */
+    
 }
 
 .icon{
