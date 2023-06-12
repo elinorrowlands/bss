@@ -262,9 +262,10 @@ footer {
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    align-items:center;
+    /* align-items:center; */
     /* margin:0px!important; */
     padding: 1em;
+    flex-wrap:nowrap;
 }
 
 .button{
