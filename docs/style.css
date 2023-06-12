@@ -310,7 +310,8 @@ footer {
     max-width:80vw;
     max-height:80vw;
     background-image:url("bg1.svg");
-    /* fill the background */
+    background-image:url("element_ripples.svg");
+    background-image:url("element_painting.svg");
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
@@ -318,6 +319,8 @@ footer {
 }
 
 .main__qr{
-    display:flex;justify-content:center;align-items:center;flex-direction:column;
-    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
 }
