@@ -307,20 +307,34 @@ footer {
 }
 
 .qr__svg{
-    max-width:80vw;
-    max-height:80vw;
+    display:block;
+    height:300px;
+    width:300px;
+    max-width:40vh;
+    max-height:40vh;
     background-image:url("bg1.svg");
-    background-image:url("element_ripples.svg");
-    background-image:url("element_painting.svg");
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
     border: 2px solid #fff;
+    padding:1em;
 }
+
+.qr__svg.elements__ripples{
+    background-image:url("element_ripples.svg");
+}
+
+.qr__svg.elements__painting{
+    background-image:url("element_painting.svg");
+}
+
+
 
 .main__qr{
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
     flex-direction:column;
+    margin:2em;
+    
 }

@@ -17,7 +17,13 @@ html(lang="en")
            
         main.main__qr()
             include svg/qr1.svg
+            include svg/qr1.svg
+            include svg/qr1.svg
         script.
+            document.querySelectorAll('.qr__svg').forEach((x,i)=>{
+                if(i==1)x.classList.add('elements__ripples');
+                if(i==2)x.classList.add('elements__painting');
+            })
             window.setInterval(()=>{
                 document.querySelectorAll('.QR__home__main rect').forEach((x,i)=>{
                     <!-- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) -->
@@ -36,3 +42,8 @@ html(lang="en")
                 })
                 }, 1000)
                 
+            // 
+            //- Math.round()
+            //- [[75, 75], [87, 75], [100, 75]]
+            // [[75, 87], [87, 87], [100, 87]]
+            // [[75, 100], [87, 100], [100, 100]]
