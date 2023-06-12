@@ -254,23 +254,51 @@ footer {
 }
 
 
-/* @media screen and (max-width: 600px) {
-    #logo__canal{
-        height:50px;
-    }
-    #logo__ace{
-        height:60px;
-    }
-} */
-
-
-/* path{
-    animation:scale 60s ease-in-out infinite alternate;
-} */
-
 #holder{
     max-height:10vh;
     top:0;
     margin:0px!important;
     font-size:2rem;
+}
+
+.bar{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    margin:0px!important;
+}
+
+.button{
+    
+    background: transparent;
+    display: block;
+    text-rendering: optimizeLegibility;
+    line-height: 1em;
+    font-family: "Nunito";
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-weight: 500;
+    font-style: normal;
+    list-style: none;
+    text-align: center;
+    padding-top: 1em;
+    padding-right: 1.24em;
+    padding-bottom: 1em;
+    padding-left: 1.44em;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
+    width: 10em;
+    
+}   
+
+.button:hover{
+    background-color: #fff;
+    color:darkblue;
+    border-color: transparent;
+    cursor: pointer;
 }
