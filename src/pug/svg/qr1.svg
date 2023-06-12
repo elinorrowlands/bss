@@ -10,7 +10,7 @@
         stroke-width:2px;
     }
 </style>
-  <rect rx="10px" x="0" y="0" width="512" height="512" style="fill:none;shape-rendering:crispEdges;"></rect>
+  <!-- <rect rx="10px" x="0" y="0" width="512" height="512" style="fill:none;shape-rendering:crispEdges;"></rect> -->
   <g class="QR__home__main">
     <rect x="49.951219512195124" y="49.951219512195124" width="12.487804878048781" height="12.487804878048781" ></rect>
     <rect x="62.4390243902439" y="49.951219512195124" width="12.487804878048781" height="12.487804878048781" ></rect>

@@ -45,6 +45,8 @@ path{
 h1 {
     margin:100px;
     font-size:4rem;
+    background-color:navy;
+    padding:1em;
     /* font-weight:100; */
 }
 
@@ -264,15 +266,16 @@ footer {
 .bar{
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items:center;
-    margin:0px!important;
+    /* margin:0px!important; */
+    padding: 1em;
 }
 
 .button{
     
     background: transparent;
-    display: block;
+    display: inline-block;
     text-rendering: optimizeLegibility;
     line-height: 1em;
     font-family: "Nunito";
@@ -301,4 +304,9 @@ footer {
     color:darkblue;
     border-color: transparent;
     cursor: pointer;
+}
+
+.qr__svg{
+    max-width:80vw;
+    max-height:80vw;
 }
