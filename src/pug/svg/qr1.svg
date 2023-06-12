@@ -1,10 +1,16 @@
-<svg id="QR__home" viewBox="0, 0, 512, 512" id="qr" class="qr__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512">
+<svg id="QR__home" viewBox="0, 0, 512, 512" class="qr__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512">
 <style>
     rect{
-        transition:all 10s;
-        fill:#navy;
+        transition:all 5s;
+        fill:black;
         shape-rendering:crispEdges;
         border-radius:10%;
+        stroke:black;
+        stroke-width:2px;
+    }
+    
+    .anchor{
+        fill:white;
         stroke:white;
         stroke-width:2px;
     }

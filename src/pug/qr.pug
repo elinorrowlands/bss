@@ -12,14 +12,15 @@ html(lang="en")
                 //- width:100px;
             }
     body
-        include svg/title.svg
+        //- include svg/title.svg
         h1 QR code tests
-       
+        
         .bar
             //- button.button TEST
             //- button.button TEST2
+
            
-        main.main__qr()
+        main.bar(style="background-color:navy;")
             include svg/qr1.svg
             include svg/qr1.svg
             include svg/qr1.svg
@@ -38,8 +39,9 @@ html(lang="en")
                 if(i==1)x.classList.add('elements__ripples');
                 if(i==2)x.classList.add('elements__painting');
             })
-            window.setInterval(()=>{
-                document.querySelectorAll('.QR__home__main rect:not(.anchor)').forEach((x,i)=>{
+            document.querySelectorAll('.QR__home__main').forEach((qr, i)=>{
+                window.setInterval(()=>{
+                qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
                     <!-- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) -->
                     <!-- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`) -->
                     let number = Math.sin(i)*255;
@@ -52,9 +54,11 @@ html(lang="en")
                     x.style.fill=`rgba(${number},255,255,255)`;
                     x.style.opacity = Math.abs(Math.cos(i))+0.5;
                     x.style.stroke = 'black';
-                    x.style.strokeWidth = '2px';
+                    //- x.style.strokeWidth = '2px';
                 })
-                }, 1000)
+                }, (i * 1000) + 1000)
+            })
+            
                 
             // 
             //- Math.round()

@@ -304,17 +304,24 @@ footer {
 
 .qr__svg{
     border-radius:10px;
-    display:block;
-    height:300px;
-    width:300px;
-    max-width:40vh;
-    max-height:40vh;
+    display:inline-block;
+    /* display:inline; */
+    height:400px;
+    width:200px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    /* max-width:40vh;
+    max-height:80vh; */
     background-image:url("bg1.svg");
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
     border: 2px solid #fff;
     padding:1em;
+    transition: transform 0.1s ease-in-out;
+}
+
+.qr__svg:active{
+    transform:translate(0px,3px);
 }
 
 .qr__svg.elements__ripples{
@@ -324,8 +331,6 @@ footer {
 .qr__svg.elements__painting{
     background-image:url("element_painting.svg");
 }
-
-
 
 .main__qr{
     display:flex;
