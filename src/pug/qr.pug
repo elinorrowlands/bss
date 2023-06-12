@@ -10,8 +10,10 @@ html(lang="en")
 
     body
         h1 QR Code test page
+        img(src="bg1.svg", alt="background")
         .bar
             button.button TEST
             button.button TEST2
-        main(style="display:flex;justify-content:center;align-items:center;flex-direction:column;")
+           
+        main.main__qr()
             include svg/qr1.svg

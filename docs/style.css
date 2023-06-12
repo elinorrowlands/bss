@@ -310,3 +310,7 @@ footer {
     max-width:80vw;
     max-height:80vw;
 }
+
+.main__qr{
+    display:flex;justify-content:center;align-items:center;flex-direction:column;
+}
