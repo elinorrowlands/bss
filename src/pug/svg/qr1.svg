@@ -2,7 +2,7 @@
 <style>
     rect{
         transition:all 10s;
-        fill:#ffffff;
+        fill:#navy;
         <!-- fill:#111F34; -->
         shape-rendering:crispEdges;
         border-radius:10%;
@@ -560,10 +560,17 @@ window.setInterval(()=>{
     document.querySelectorAll('.QR__home__main rect').forEach((x,i)=>{
         <!-- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) -->
         <!-- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`) -->
-        x.style.fill=`rgba(${Math.sin(i)*255},255,255,255)`;
+        let number = Math.sin(i)*255;
+        if (number < 0) {
+            number = 0;
+        }
+        if (number >200){
+            number = 200;
+        }
+        x.style.fill=`rgba(${number},255,255,255)`;
         x.style.opacity = Math.abs(Math.cos(i))+0.5;
         x.style.stroke = 'black';
-        x.style.strokeWidth = '2px';
+        x.style.strokeWidth = '3px';
     })
     }, 1000)
     

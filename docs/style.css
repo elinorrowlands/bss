@@ -309,8 +309,15 @@ footer {
 .qr__svg{
     max-width:80vw;
     max-height:80vw;
+    background-image:url("bg1.svg");
+    /* fill the background */
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    border: 2px solid #fff;
 }
 
 .main__qr{
     display:flex;justify-content:center;align-items:center;flex-direction:column;
+    
 }
