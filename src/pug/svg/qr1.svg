@@ -3,7 +3,6 @@
     rect{
         transition:all 10s;
         fill:#navy;
-        <!-- fill:#111F34; -->
         shape-rendering:crispEdges;
         border-radius:10%;
         stroke:white;
@@ -12,6 +11,8 @@
 </style>
   <!-- <rect rx="10px" x="0" y="0" width="512" height="512" style="fill:none;shape-rendering:crispEdges;"></rect> -->
   <g class="QR__home__main">
+    <!-- <rect x="50" y="50" width="412.5" height="412.5" ></rect> -->
+    
     <rect x="49.951219512195124" y="49.951219512195124" width="12.487804878048781" height="12.487804878048781" ></rect>
     <rect x="62.4390243902439" y="49.951219512195124" width="12.487804878048781" height="12.487804878048781" ></rect>
     <rect x="74.92682926829269" y="49.951219512195124" width="12.487804878048781" height="12.487804878048781" ></rect>
@@ -553,5 +554,8 @@
     <rect x="362.1463414634146" y="449.5609756097561" width="12.487804878048781" height="12.487804878048781" ></rect>
     <rect x="387.1219512195122" y="449.5609756097561" width="12.487804878048781" height="12.487804878048781" ></rect>
     <rect x="424.5853658536585" y="449.5609756097561" width="12.487804878048781" height="12.487804878048781" ></rect>
+    <rect class="anchor" x="75" y="75" width="37.5" height="37.5" ></rect>
+    <rect class="anchor" x="400" y="75" width="37.5" height="37.5" ></rect>
+    <rect class="anchor" x="75" y="400" width="37.5" height="37.5" ></rect>
   </g>
 </svg>

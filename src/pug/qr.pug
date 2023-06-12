@@ -9,7 +9,7 @@ html(lang="en")
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet">
 
     body
-        h1 QR Code test page
+        h1 QR code tests
        
         .bar
             button.button TEST
@@ -19,13 +19,23 @@ html(lang="en")
             include svg/qr1.svg
             include svg/qr1.svg
             include svg/qr1.svg
+        footer
+            p(aria-label="project partners").footer__logos
+                a(href="https://canalrivertrust.org.uk/")
+                    img#logo__canal.logo(src='logos/canal-and-river-trust-logo-nostrap.svg' alt="Canal & River Trust")
+                a(href="https://www.artscouncil.org.uk/") 
+                    img#logo__ace.logo(src='logos/lottery_Logo_White.png' alt="Arts Council England Lottery Funded")
+                a(href="https://www.colesgallery.co.uk/")
+                    img#logo__coles.logo(src='logos/coles.png' alt="Cole's Gallery")
+                a(href="https://www.creativehealthcamden.com/")
+                    img#logo__chc.logo(src='logos/chc.png' alt="Creative Health Camden")
         script.
             document.querySelectorAll('.qr__svg').forEach((x,i)=>{
                 if(i==1)x.classList.add('elements__ripples');
                 if(i==2)x.classList.add('elements__painting');
             })
             window.setInterval(()=>{
-                document.querySelectorAll('.QR__home__main rect').forEach((x,i)=>{
+                document.querySelectorAll('.QR__home__main rect:not(.anchor)').forEach((x,i)=>{
                     <!-- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) -->
                     <!-- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`) -->
                     let number = Math.sin(i)*255;

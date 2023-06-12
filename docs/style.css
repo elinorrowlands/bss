@@ -16,7 +16,8 @@ body{
     flex-direction:column;
     min-height:100vh;
 }
-main{
+
+main.splash{
     /* min-height:100vh; */
     flex-grow: 1;
     overflow:hidden;
@@ -273,7 +274,7 @@ footer {
 }
 
 .button{
-    
+    border-radius:10px;
     background: transparent;
     display: inline-block;
     text-rendering: optimizeLegibility;
@@ -307,6 +308,7 @@ footer {
 }
 
 .qr__svg{
+    border-radius:10px;
     display:block;
     height:300px;
     width:300px;
@@ -336,5 +338,5 @@ footer {
     align-items:center;
     flex-direction:column;
     margin:2em;
-    
+    flex-grow: 1;
 }
