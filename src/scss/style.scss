@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
+
+@import "logo.scss";
+
 html, body {
     overscroll-behavior-y:none;
   }
   
-  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
   
   body{
       background-color:darkblue;
@@ -209,46 +212,12 @@ html, body {
       left:0;
       /* height:250px; */
       width:100%;
+      max-height: 170px;
       background-color:darkblue;
       margin:none;
-      /* @media screen and (max-width: 700px) {
-          transform:scale(6);
-      } */
   }
   
-  .logo{
-      /* width:30%; */
-      /* height:auto; */
-      /* padding:10px;
-      @media screen and (max-width: 800px) {
-          padding:none;
-      } */
-  }
-  
-  #logo__canal{
-      height:80px;
-      @media screen and (max-width: 600px) {
-          height:50px;
-      }
-  }
-  #logo__coles{
-      height:75px;
-      @media screen and (max-width: 600px) {
-          height:45px;
-      }
-  }
-  #logo__chc{
-      height:80px;
-      @media screen and (max-width: 600px) {
-          height:50px;
-      }
-  }
-  #logo__ace{
-      height:90px;
-      @media screen and (max-width: 600px) {
-          height:60px;
-      }
-  }
+
   
   
   #holder{

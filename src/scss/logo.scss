@@ -1,0 +1,33 @@
+.logo{
+    /* width:30%; */
+    /* height:auto; */
+    /* padding:10px;
+    @media screen and (max-width: 800px) {
+        padding:none;
+    } */
+}
+
+#logo__canal{
+    height:80px;
+    @media screen and (max-width: 600px) {
+        height:50px;
+    }
+}
+#logo__coles{
+    height:75px;
+    @media screen and (max-width: 600px) {
+        height:45px;
+    }
+}
+#logo__chc{
+    height:80px;
+    @media screen and (max-width: 600px) {
+        height:50px;
+    }
+}
+#logo__ace{
+    height:90px;
+    @media screen and (max-width: 600px) {
+        height:60px;
+    }
+}

@@ -13,27 +13,17 @@ html(lang="en")
             }
     body
         //- include svg/title.svg
-        h1 QR code tests
-        
-        .bar
-            //- button.button TEST
-            //- button.button TEST2
-
-           
-        main.bar(style="background-color:navy;")
-            include svg/qr1.svg
-            include svg/qr1.svg
-            include svg/qr1.svg
+        main(style="min-height:300px;")
+            .splash.bar(style="background-color:navy;")
+                h1 QR code tests
+            
+                include svg/qr1.svg
+                include svg/qr1.svg
+                include svg/qr1.svg
+                //- button.button TEST
+                //- button.button TEST2
         footer
-            p(aria-label="project partners").footer__logos
-                a(href="https://canalrivertrust.org.uk/")
-                    img#logo__canal.logo(src='logos/canal-and-river-trust-logo-nostrap.svg' alt="Canal & River Trust")
-                a(href="https://www.artscouncil.org.uk/") 
-                    img#logo__ace.logo(src='logos/lottery_Logo_White.png' alt="Arts Council England Lottery Funded")
-                a(href="https://www.colesgallery.co.uk/")
-                    img#logo__coles.logo(src='logos/coles.png' alt="Cole's Gallery")
-                a(href="https://www.creativehealthcamden.com/")
-                    img#logo__chc.logo(src='logos/chc.png' alt="Creative Health Camden")
+            include footer  
         script.
             document.querySelectorAll('.qr__svg').forEach((x,i)=>{
                 if(i==1)x.classList.add('elements__ripples');
