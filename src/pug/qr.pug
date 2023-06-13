@@ -13,9 +13,10 @@ html(lang="en")
             }
     body
         //- include svg/title.svg
-        main.splash(style="min-height:300px; width:100%; margin:none;")
+        main.splash.qr__container(style="min-height:300px; width:100%; margin:none;")
             //- h1 QR code tests
-            .bar(style="background-color:#004080; width:100%; margin:none;")
+            .bar(style="width:100%; margin:none; background-color:rgba(0,64,128,0.8);")
+                //- background-color:#004080;
                 include svg/qr1.svg
                 include svg/qr1.svg
                 include svg/qr1.svg
@@ -34,13 +35,13 @@ html(lang="en")
                 }
                 if(i==1){
                     x.addEventListener('click',(e)=>{
-                        window.location.href = 'elements/1';
+                        window.location.href = 'elements/ripples';
                     })
                     x.classList.add('elements__ripples')
                 }
                 if(i==2){
                     x.addEventListener('click',(e)=>{
-                        window.location.href = 'elements/2';
+                        window.location.href = 'elements/painting';
                     })
                     x.classList.add('elements__painting')
                 }

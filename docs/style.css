@@ -44,6 +44,13 @@
   }
 }
 
+.qr__container {
+  background-image: url("bg1.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .qr__svg {
   border-radius: 10px;
   display: inline-block;
