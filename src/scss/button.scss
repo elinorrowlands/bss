@@ -3,9 +3,9 @@
     background: transparent;
     display: inline-block;
     text-rendering: optimizeLegibility;
-    line-height: 1em;
     font-family: "Nunito";
     font-size: 18px;
+    line-height: 1em;
     text-transform: uppercase;
     letter-spacing: .2em;
     font-weight: 500;
@@ -22,7 +22,6 @@
     border: 2px solid #fff;
     transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
     width: 10em;
-    
 }   
 
 .button:hover{

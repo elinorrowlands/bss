@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
 .logo {
-  /* width:30%; */
-  /* height:auto; */
-  /* padding:10px;
-  @media screen and (max-width: 800px) {
-      padding:none;
-  } */
+  padding: 10px;
+}
+@media screen and (max-width: 800px) {
+  .logo {
+    padding: none;
+  }
 }
 
 #logo__canal {
@@ -61,6 +61,7 @@
   background-position: center;
   border: 2px solid darkblue;
   padding: 1em;
+  margin: none;
   transition: transform 0.1s ease-in-out;
 }
 
@@ -111,7 +112,6 @@
     transform: scale(8);
   }
 }
-@keyframes hue {}
 .icon {
   width: 100px;
   height: 100px;
