@@ -52,6 +52,7 @@
   width: 15vw;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   min-width: 150px;
+  min-height: 200px;
   /* max-width:40vh;
   max-height:80vh; */
   background-image: url("bg1.svg");
@@ -65,6 +66,7 @@
 
 .qr__svg:active {
   transform: translate(0px, 3px);
+  pointer: cursor;
 }
 
 .qr__svg.elements__ripples {

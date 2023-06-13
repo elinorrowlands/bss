@@ -13,26 +13,43 @@ html(lang="en")
             }
     body
         //- include svg/title.svg
-        main.splash(style="min-height:300px;")
-            h1 QR code tests
-                .bar(style="background-color:navy;")
-                    include svg/qr1.svg
-                    include svg/qr1.svg
-                    include svg/qr1.svg
-                    //- button.button TEST
-                    //- button.button TEST2
+        main.splash(style="min-height:300px; width:100%; margin:none;")
+            //- h1 QR code tests
+            .bar(style="background-color:#004080; width:100%; margin:none;")
+                include svg/qr1.svg
+                include svg/qr1.svg
+                include svg/qr1.svg
+                //- button.button TEST
+                //- button.button TEST2
         footer
             include footer  
         script.
+            // temporary for testing
             document.querySelectorAll('.qr__svg').forEach((x,i)=>{
-                if(i==1)x.classList.add('elements__ripples');
-                if(i==2)x.classList.add('elements__painting');
+                if(i==0){
+                    x.addEventListener('click',(e)=>{
+                        window.location.href = 'index.html';
+                    })
+                    //- x.classList.add('elements__ripples')
+                }
+                if(i==1){
+                    x.addEventListener('click',(e)=>{
+                        window.location.href = 'elements/1';
+                    })
+                    x.classList.add('elements__ripples')
+                }
+                if(i==2){
+                    x.addEventListener('click',(e)=>{
+                        window.location.href = 'elements/2';
+                    })
+                    x.classList.add('elements__painting')
+                }
             })
             document.querySelectorAll('.QR__home__main').forEach((qr, i)=>{
                 window.setInterval(()=>{
                 qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
-                    <!-- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) -->
-                    <!-- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`) -->
+                    x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) 
+                    x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`)
                     let number = Math.sin(i)*255;
                     if (number < 0) {
                         number = 0;
