@@ -13,15 +13,14 @@ html(lang="en")
             }
     body
         //- include svg/title.svg
-        main(style="min-height:300px;")
-            .splash.bar(style="background-color:navy;")
-                h1 QR code tests
-            
-                include svg/qr1.svg
-                include svg/qr1.svg
-                include svg/qr1.svg
-                //- button.button TEST
-                //- button.button TEST2
+        main.splash(style="min-height:300px;")
+            h1 QR code tests
+                .bar(style="background-color:navy;")
+                    include svg/qr1.svg
+                    include svg/qr1.svg
+                    include svg/qr1.svg
+                    //- button.button TEST
+                    //- button.button TEST2
         footer
             include footer  
         script.

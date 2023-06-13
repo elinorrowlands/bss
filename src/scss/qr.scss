@@ -1,0 +1,31 @@
+.qr__svg{
+    border-radius:10px;
+    display:inline-block;
+    /* display:inline; */
+    height:25vh;
+    width:15vw;
+    // width:200px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    min-width: 150px;
+    /* max-width:40vh;
+    max-height:80vh; */
+    background-image:url("bg1.svg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    border: 2px solid darkblue;
+    padding:1em;
+    transition: transform 0.1s ease-in-out;
+}
+
+.qr__svg:active{
+    transform:translate(0px,3px);
+}
+
+.qr__svg.elements__ripples{
+    background-image:url("element_ripples.svg");
+}
+
+.qr__svg.elements__painting{
+    background-image:url("element_painting.svg");
+}
