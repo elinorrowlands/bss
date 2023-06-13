@@ -31,3 +31,13 @@
 .qr__svg.elements__painting{
     background-image:url("element_painting.svg");
 }
+
+.main__qr{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-direction:column;
+    margin:2em;
+    flex-grow: 1;
+    background-color:navy;
+}
