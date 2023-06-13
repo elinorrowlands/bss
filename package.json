@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "node compile && sass src/scss/style.scss docs/style.css",
+    "build": "node compile && sass src/scss/_style.scss docs/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
