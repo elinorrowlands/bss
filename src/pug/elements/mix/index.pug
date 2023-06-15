@@ -2,7 +2,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title BSS: Elements
+        title BSS: mix
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         link(rel='stylesheet', href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
@@ -24,8 +24,12 @@ html(lang="en")
     script.
         let mix = {
             channels:[new Tone.Channel(), new Tone.Channel()],
-            meters:[new Tone.Meter(), new Tone.Meter()]
+            meters:[new Tone.Meter(), new Tone.Meter()],
+            filter: new Tone.Filter(600, "lowpass"),
+            reverb: new Tone.Reverb(2).toDestination()
         }
+        mix.filter.connect(mix.reverb);
+        // the channels could fade to the filter/reverb according to mutes, so reverb is only used for the channels not currently going to the stereo out
         let sounds = [
             new Tone.Player("canal_II_ch_1.mp3"),
             new Tone.Player("canal_II_ch_2.mp3")
@@ -33,7 +37,8 @@ html(lang="en")
         sounds.forEach((sound,i) => {
             sound.connect(mix.channels[i]);
             sound.connect(mix.meters[i]);
-            mix.channels[i].pan.value = 1 - i * 2;
+            sound.connect(mix.filter);
+            mix.channels[i].pan.value = 0.5 - i;
             mix.channels[i].toDestination();
         })
         
@@ -47,7 +52,7 @@ html(lang="en")
             mute.addEventListener("change", () => {
                 if(mute.checked){
                     
-                    mix.channels[i].volume.rampTo(0, 1)
+                    mix.channels[i].volume.rampTo(0, 0.5)
                 }else{
                     
                     mix.channels[i].volume.rampTo(-Infinity, 1)
