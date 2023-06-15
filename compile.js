@@ -5,7 +5,8 @@ let pugFiles = [
     'index', 
     'qr',
     'elements/index',
-    'elements/mix/index'
+    'elements/mix/index',
+    'elements/mix/crossfade'
 ];
 
 let pugSourceFolder = './src/pug';
