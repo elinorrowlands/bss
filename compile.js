@@ -4,7 +4,8 @@ import fs from 'fs';
 let pugFiles = [
     'index', 
     'qr',
-    'elements/index'
+    'elements/index',
+    'elements/mix/index'
 ];
 
 let pugSourceFolder = './src/pug';
