@@ -18,13 +18,18 @@
   <body>
     <main class="main__qr">
       <div class="bar">
+        <label for="ch1">1</label>
+        <input class="mute" id="ch1" type="checkbox" checked="checked"/>
         <button class="button" id="start">Start</button>
+        <input class="mute" id="ch2" type="checkbox" checked="checked"/>
+        <label for="ch2">2</label>
       </div>
     </main>
   </body>
   <script>
     let mix = {
-        channels:[new Tone.Channel(), new Tone.Channel()]
+        channels:[new Tone.Channel(), new Tone.Channel()],
+        meters:[new Tone.Meter(), new Tone.Meter()]
     }
     let sounds = [
         new Tone.Player("canal_II_ch_1.mp3"),
@@ -32,6 +37,7 @@
     ]
     sounds.forEach((sound,i) => {
         sound.connect(mix.channels[i]);
+        sound.connect(mix.meters[i]);
         mix.channels[i].pan.value = 1 - i * 2;
         mix.channels[i].toDestination();
     })
@@ -40,6 +46,17 @@
     start.addEventListener("click", () => {
         sounds.forEach(sound => {
             sound.start()
+        })
+    })
+    document.querySelectorAll('.mute').forEach((mute,i) => {
+        mute.addEventListener("change", () => {
+            if(mute.checked){
+                
+                mix.channels[i].volume.rampTo(0, 1)
+            }else{
+                
+                mix.channels[i].volume.rampTo(-Infinity, 1)
+            }
         })
     })
   </script>

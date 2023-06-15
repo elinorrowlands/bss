@@ -15,11 +15,16 @@ html(lang="en")
     body
         main.main__qr
             .bar
+                label(for="ch1") 1
+                input#ch1.mute(type="checkbox" checked)
                 button.button#start Start
+                input#ch2.mute(type="checkbox" checked)
+                label(for="ch2") 2
 
     script.
         let mix = {
-            channels:[new Tone.Channel(), new Tone.Channel()]
+            channels:[new Tone.Channel(), new Tone.Channel()],
+            meters:[new Tone.Meter(), new Tone.Meter()]
         }
         let sounds = [
             new Tone.Player("canal_II_ch_1.mp3"),
@@ -27,6 +32,7 @@ html(lang="en")
         ]
         sounds.forEach((sound,i) => {
             sound.connect(mix.channels[i]);
+            sound.connect(mix.meters[i]);
             mix.channels[i].pan.value = 1 - i * 2;
             mix.channels[i].toDestination();
         })
@@ -35,5 +41,16 @@ html(lang="en")
         start.addEventListener("click", () => {
             sounds.forEach(sound => {
                 sound.start()
+            })
+        })
+        document.querySelectorAll('.mute').forEach((mute,i) => {
+            mute.addEventListener("change", () => {
+                if(mute.checked){
+                    
+                    mix.channels[i].volume.rampTo(0, 1)
+                }else{
+                    
+                    mix.channels[i].volume.rampTo(-Infinity, 1)
+                }
             })
         })
