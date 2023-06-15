@@ -12,21 +12,27 @@ html(lang="en")
             button{
                 font-size: 2rem;
             }
+            .mute{
+                width:2rem;
+                height:2rem;
+                margin:2rem;
+            }
     body
         main.main__qr
             .bar
-                label(for="ch1") 1
+                label(for="ch1") Focus on sound 1
                 input#ch1.mute(type="checkbox" checked)
                 button.button#start Start
                 input#ch2.mute(type="checkbox" checked)
-                label(for="ch2") 2
+                label(for="ch2") Focus on sound 2
 
     script.
         let mix = {
             channels:[new Tone.Channel(), new Tone.Channel()],
             meters:[new Tone.Meter(), new Tone.Meter()],
-            filter: new Tone.Filter(600, "lowpass"),
-            reverb: new Tone.Reverb(2).toDestination()
+            filter: new Tone.Filter(200, "lowpass"),
+            reverb: new Tone.Reverb(2).toDestination(),
+            active:[true, true]
         }
         mix.filter.connect(mix.reverb);
         // the channels could fade to the filter/reverb according to mutes, so reverb is only used for the channels not currently going to the stereo out
@@ -51,11 +57,26 @@ html(lang="en")
         document.querySelectorAll('.mute').forEach((mute,i) => {
             mute.addEventListener("change", () => {
                 if(mute.checked){
-                    
+                    mix.active[i] = true;
                     mix.channels[i].volume.rampTo(0, 0.5)
                 }else{
-                    
-                    mix.channels[i].volume.rampTo(-Infinity, 1)
+                    mix.active[i] = false;
+                    mix.channels[i].volume.rampTo(-Infinity, 0.5)
                 }
+                console.log(mix.active)
+                processAllChannels()
             })
         })
+        
+        function processAllChannels(){
+            let reverbLevel = 0;
+            document.querySelectorAll('.mute').forEach((mute,i)=>{
+                console.log('active',mix.active[i])
+                reverbLevel += mix.active[i] ? 0 : 1;
+            })
+            console.log(reverbLevel)
+            let filterFrequency = 200 + (400 * reverbLevel);
+            mix.filter.frequency.rampTo(filterFrequency, 0.5);
+            console.log(filterFrequency)
+            reverbLevel = Tone.gainToDb(reverbLevel);
+        }
