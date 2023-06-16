@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>Ripple interaction demo</title>
+  <title>Painting interaction demo</title>
   <link href="https://fonts.googleapis.com/css2?family=Rakkas&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
@@ -19,7 +19,6 @@
       background-position:center;
       height:100vh;
       width:100vw;
-	  margin:none;
     }
     
     canvas#overlay {
@@ -31,6 +30,7 @@
       z-index:100;
       touch-action:none;
       pointer-events:none;
+      cursor:pointer;
       overflow:hidden;
       user-select:none;
        -webkit-user-select: none; /* Safari */
@@ -44,10 +44,11 @@
       bottom:0;
       left:0;
       right:0;
-      //- margin:auto;
+      
       display:block;
       height:100vh;
       width:100vw;
+      cursor:pointer;
       transform:scale(3) translate(0,800);
     }
     
@@ -1110,15 +1111,12 @@
             y.classList.add('visual');
             y.id = `note_${i-1}_hc_${j}`;
             y.style.opacity=0;
-            
           })
-          
         })
   
       } else {
         e.style.opacity=0;
       }
-  
     })
     
     const echo = new Tone.FeedbackDelay('4n',0.5).toDestination();
@@ -1148,7 +1146,7 @@
         start: function(element, e, obj){
             Tone.start();
             console.log('start',element.id, document.querySelector(`#${element.id.split('_hc')[0]}`))
-           console.log(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
+            console.log(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
             let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
             newElement.style.transition = 'all 0.1s ease';
             newElement.style.opacity = 0.3;
@@ -1158,7 +1156,7 @@
         enter: function(element, e, obj){
             
             let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
-            newElement.style.transition = 'all 0.5s ease';
+            newElement.style.transition = 'all 0.1s ease';
             newElement.style.opacity = 0.3;
             synth.triggerAttack(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency());
         },
@@ -1200,7 +1198,14 @@
   window.setInterval(()=>{
     count++;
       level = Tone.dbToGain(meter.getValue());
-      document.body.style.filter = `hue-rotate(${level*10000}deg)`;
+      let hue = Math.floor(level*6000);
+      if(hue > 100){
+        hue = 100;
+      }
+      if(hue < -100){
+        hue = -100;
+      }
+      document.body.style.filter = `hue-rotate(${hue}deg)`;
       document.querySelectorAll(`[id^='note_']`).forEach((e,i)=>{
       
       })
