@@ -1192,6 +1192,8 @@
             synth._voices.forEach((voice,i)=>{
               voice.detune.rampTo((i%2 == 0 ? obj.distance.x : obj.distance.y),1)
               })
+            
+            // document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
             newElement.parentElement.style.transform = `rotate(${level * obj.distance.y * 10}deg)`;
         }
     })
