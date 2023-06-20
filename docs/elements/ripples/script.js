@@ -7,19 +7,19 @@ let started = false;
 let moused = false;
 let bgAnimation;
 let count = 0;
-
 window.addEventListener("load", () => {
-    window.rippleScene = new RipplesScene({
-        viscosity: 7.5,
-        speed: 5,
-        size: 1.25,
-
-        displacementStrength: 1.5,
-        lightIntensity: 5,
-        shadowIntensity: 2.5,
-    });  
-
-    rippleScene.gui.hide();
+    if(!window.rippleScene){
+        window.rippleScene = new RipplesScene({
+            viscosity: 7.5,
+            speed: 5,
+            size: 1.25,
+            displacementStrength: 1.5,
+            lightIntensity: 5,
+            shadowIntensity: 2.5,
+        });  
+        rippleScene.gui.hide();    
+    }
+    
 });
 
 window.addEventListener("keydown", (e) => {
@@ -82,44 +82,3 @@ function opacities(value){
         x.style.opacity = value ? 0.7 : 1;
     })
 }
-
-// window.addEventListener('pointerdown', (e) => {
-//     Tone.start();
-    
-//     sounds.loop.loop = true;
-//     if(!started){
-//         sounds.loop.start();    
-//         started = true;
-//     }
-
-//     sounds.filter.frequency.rampTo(Math.abs(e.clientY - (window.innerHeight / 2)*3) + 100, 1);
-    
-//     moused = true;  
-//     opacities(true);
-
-// });
-
-// window.addEventListener('pointerup',(e) => {
-//     ramps([
-//         [sounds.filter.frequency, 200, 1],
-//         [sounds.hpf.frequency, 1000, 1]
-//     ]);
-
-//     moused=false;
-//     opacities(false);
-// });
-
-// window.addEventListener('pointermove', (e) =>{
-//     mouseX = e.clientX / window.innerWidth * 360;
-//     if(moused){
-//         ramps([
-//             [sounds.hpf.frequency, e.clientY + 0.1, 1],
-//             [sounds.echo.feedback, (e.clientX / window.innerWidth)*0.95, 1]
-//         ])
-//     } else {
-//         ramps([
-//             [sounds.echo.feedback, 0, 10]
-//         ])
-//     }
-// })
-
