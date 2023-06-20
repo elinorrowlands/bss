@@ -34,8 +34,25 @@ html(lang="en")
                 height:100vh;
                 width:100vw;
             }
+            .waveform{
+                position:absolute;
+                height:100%;
+                top:0;
+                bottom:0;
+                left:0;
+                right:0;
+                margin:auto;
+            }
+            .waveform#left{
+                right:auto;
+            }
+            .waveform#right{
+                left:auto;
+            }
     body
         main.main__qr
+            include L.svg 
+            include R.svg
             .bar
                 button.button#start START
             .bar(style="width:100%;")
