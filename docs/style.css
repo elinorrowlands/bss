@@ -202,6 +202,39 @@ footer {
   margin: none;
 }
 
+.button {
+  border-radius: 10px;
+  background: transparent;
+  display: inline-block;
+  text-rendering: optimizeLegibility;
+  font-family: "Nunito";
+  font-size: 18px;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-style: normal;
+  list-style: none;
+  text-align: center;
+  padding-top: 1em;
+  padding-right: 1.24em;
+  padding-bottom: 1em;
+  padding-left: 1.44em;
+  text-decoration: none;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
+  width: 10em;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: darkblue;
+  border-color: transparent;
+  cursor: pointer;
+}
+
 html, body {
   overscroll-behavior-y: none;
 }

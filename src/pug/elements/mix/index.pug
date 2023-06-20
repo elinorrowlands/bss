@@ -4,7 +4,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title BSS: mix
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
-        link(rel='stylesheet', href='../../style.css')
+        link(rel='stylesheet' href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
@@ -17,11 +17,28 @@ html(lang="en")
                 height:2rem;
                 margin:2rem;
             }
+            #crossFader{
+                width:80%;
+            }
+             body {
+                background-color:navy;
+                transition: filter 1s;
+                overflow:hidden;
+                touch-action:none;
+                user-select:none;
+                -webkit-user-select: none; /* Safari */
+                background-image:url("../../bg1.svg");
+                background-size:cover;
+                background-repeat:no-repeat;
+                background-position:center;
+                height:100vh;
+                width:100vw;
+            }
     body
         main.main__qr
             .bar
-                button.button#start Start
-            .bar
+                button.button#start START
+            .bar(style="width:100%;")
                 input#crossFader(type="range" min="0" max="1" step="0.01" value="0.5")
 
     script.
@@ -51,10 +68,13 @@ html(lang="en")
             mix.channels[i].connect(i === 0 ? mix.crossFader.a : mix.crossFader.b);
         })
         
-        let start = document.querySelector("#start")
+        let start = document.querySelector("#start");
+        let playFlag = false;
         start.addEventListener("click", () => {
+            playFlag = !playFlag;
+            start.innerHTML = playFlag ? "STOP" : "START";
             sounds.forEach(sound => {
-                sound.start()
+                sound[playFlag ? 'start' : 'stop']()
             })
         })
       
