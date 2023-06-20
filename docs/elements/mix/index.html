@@ -63,8 +63,8 @@
     mix.crossFader.toDestination();
     // the channels could fade to the filter/reverb according to mutes, so reverb is only used for the channels not currently going to the stereo out
     let sounds = [
-        new Tone.Player("canal_II_ch_1.mp3"),
-        new Tone.Player("canal_II_ch_2.mp3")
+        new Tone.Player("canal_II_test_L.mp3"),
+        new Tone.Player("canal_II_test_R.mp3")
     ]
     sounds.forEach((sound,i) => {
         sound.connect(mix.channels[i]);
