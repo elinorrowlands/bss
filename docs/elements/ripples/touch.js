@@ -51,6 +51,9 @@ const Pickup = (e) =>{
         synth.triggerAttack(id);
     } else if (type == 'end' || type == 'leave'){
         synth.triggerRelease(id);
+        document.body.style.filter = `hue-rotate(0deg)`;
+    } else if(type == 'move'){
+        document.body.style.filter = `hue-rotate(${element.x}deg)`;
     }
     
     target.style.opacity = preset.opacity[type];
