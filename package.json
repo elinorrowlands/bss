@@ -25,7 +25,9 @@
     "@matthewscharles/cm-toolbox": "^1.1.22",
     "pug": "^3.0.2",
     "sass": "^1.62.1",
+    "sync-cc": "^1.0.1",
     "webpack": "^5.85.0",
     "webpack-cli": "^5.1.1"
-  }
+  },
+  "dependencies": {}
 }
