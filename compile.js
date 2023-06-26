@@ -4,9 +4,13 @@ import fs from 'fs';
 let pugFiles = [
     'index', 
     'qr',
+    
     'elements/index',
+
     'elements/mix/index',
-    'elements/mix/checkboxes'
+    'elements/mix/checkboxes',
+
+    'elements/text/index'
 ];
 
 let pugSourceFolder = './src/pug';

@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "node compile && sass src/scss/_style.scss docs/style.css",
+    "build": "webpack ./src/main.js -o ./docs && node compile && sass src/scss/_style.scss docs/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/magical-women/bss#readme",
   "devDependencies": {
+    "@matthewscharles/cm-toolbox": "^1.1.22",
     "pug": "^3.0.2",
     "sass": "^1.62.1",
     "webpack": "^5.85.0",
