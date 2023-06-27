@@ -73,6 +73,8 @@ const Pickup = (e) =>{
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
         element.style.left = x+'px';
         element.style.top = y+'px';
+        document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
+        document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
     }
     
     target.style.opacity = preset.opacity[type];
