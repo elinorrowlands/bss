@@ -7,13 +7,15 @@ console.log(captionObject);
 let justText = captionObject.map(text => text.content[0]);
 captionObject.forEach((text,i) => {
     let textElement = document.createElement('div');
+    let colourValue = ((12+i)*10)+(Math.random()*(255-((12+i)*10)));
     Object.assign(textElement.style,{
         position: 'absolute',
         top: i==0? '45%': (5+Math.random()*80)+'%',
         left: i==0? '45%':(5+Math.random()*70)+'%',
         fontSize: i==0? '50px': (20+Math.random()*30)+'px',
         userSelect: 'none',
-        cursor:'pointer'
+        cursor:'pointer',
+        color:`rgba(${colourValue},${colourValue},${colourValue},1)`
     })
     textElement.id = `text_${i}`;
     textElement.innerHTML = text.content[0];
@@ -54,6 +56,7 @@ const Pickup = (e) =>{
     
     // let id = getNoteFromId(element.id);
     if(type == 'start' || type == 'enter'){
+        element.classList.add('active');
         document.body.style.filter = `hue-rotate(${element.style.left}deg)`;
         player.start(Tone.now(), text.startS, text.endS-text.startS);
         element.style.left = x+'px';
@@ -61,7 +64,7 @@ const Pickup = (e) =>{
         console.log(element.style.top, element.style.left)
         // synth.triggerAttack(id);
     } else if (type == 'end' || type == 'leave'){
-        
+        element.classList.remove('active');
         document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
         document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
         // synth.triggerRelease(id);
