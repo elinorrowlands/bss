@@ -10,12 +10,13 @@ captionObject.forEach(text => {
     Object.assign(textElement.style,{
         position: 'absolute',
         top: (5+Math.random()*80)+'%',
-        left: (5+Math.random()*80)+'%',
-        fontSize: (10+Math.random()*30)+'px',
+        left: (5+Math.random()*70)+'%',
+        fontSize: (20+Math.random()*30)+'px',
         userSelect: 'none',
         cursor:'pointer'
     })
     textElement.innerHTML = text.content[0];
+    textElement.classList.add('text');
     textElement.addEventListener('click', () => {
         player.start(Tone.now(), text.startS, text.endS-text.startS);
     })
