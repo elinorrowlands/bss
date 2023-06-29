@@ -4,6 +4,8 @@ const filter = new Tone.Filter(200, 'lowpass').toDestination();
 const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
 const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
 const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
+player.buffer.onload = ()=>{console.log('loaded player')};
+backdrop.buffer.onload = ()=>{console.log('loaded backdrop')};
 
 backdrop.loop = true;
 backdrop.volume.value = '-12';
@@ -21,13 +23,13 @@ captionObject.forEach((text,i) => {
     let colourValue = ((12+i)*10)+(Math.random()*(255-((12+i)*10)));
     Object.assign(textElement.style,{
         position: 'absolute',
-        top: i==0? '45%': (5+Math.random()*80)+'%',
-        left: i==0? '45%':(5+Math.random()*70)+'%',
-        fontSize: i==0? '50px': (20+Math.random()*30)+'px',
+        top: i==0 ? '45%': (5+Math.random()*80)+'%',
+        left: i==0 ? '45%':(5+Math.random()*70)+'%',
+        fontSize: i==0 ? '50px': (20+Math.random()*30)+'px',
         userSelect: 'none',
         cursor:'pointer',
         color:`rgba(${colourValue},${colourValue},${colourValue},1)`,
-        opacity: i==0? 1:0.1
+        opacity: i==0 ? 1:0.1
     })
     textElement.id = `text_${i}`;
     textElement.innerHTML = text.content[0];
@@ -47,8 +49,7 @@ const Pickup = (e) =>{
     }
     
     let { element, type, x, y } = e.detail;
-    console.log(e.detail)
-    //todo: debounce
+    
     let target = element;
     
     let text = captionObject[element.id.split('_')[1]];
