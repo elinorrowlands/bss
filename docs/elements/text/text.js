@@ -1,3 +1,5 @@
+// todo: fix issue with loading time
+
 const filter = new Tone.Filter(200, 'lowpass').toDestination();
 const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
 const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
@@ -11,7 +13,6 @@ const newCaption = ["00:00:06.420,00:00:08.160\nwhere is the water's edge?", '00
 
 let captionObject = syncCC.splitCaptions(newCaption);
 let playFlag = false;
-// console.log(captionObject);
 
 // let justText = captionObject.map(text => text.content[0]);
 
@@ -31,9 +32,7 @@ captionObject.forEach((text,i) => {
     textElement.id = `text_${i}`;
     textElement.innerHTML = text.content[0];
     textElement.classList.add('text');
-    textElement.addEventListener('click', () => {
-        // player.start(Tone.now(), text.startS, text.endS-text.startS);
-    })
+
     captionObject.element = textElement;
     document.body.appendChild(textElement);
 });
@@ -59,6 +58,7 @@ const Pickup = (e) =>{
             backdrop.start();
             playFlag = true;
         }
+
         filter.frequency.rampTo((y)+80, 0.5);
         element.classList.add('active');
         document.body.style.filter = `hue-rotate(${element.style.left}deg)`;
