@@ -19,3 +19,17 @@ html(lang="en")
                 
         footer
             include footer
+
+        script.
+
+            let animationCount = 0;
+
+            const animation = ()=>{
+                let scale = animationCount % 2 == 0 ? 4 : 6;
+                document.querySelector('#water').style.transform = `scale(${scale})`;
+                animationCount++;
+            }
+            document.body.addEventListener('load',()=>{
+                animation();
+                window.setInterval(animation, 60000);
+            })

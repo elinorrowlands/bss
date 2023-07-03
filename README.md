@@ -1,9 +1,15 @@
-# bss
-Biodivergent Sites and Sounds
+# Biodivergent Sites and Sounds
 
 ## todo
 - reduce motion option
 - colour changes
+
+## elements
+- bridge
+- painting
+- ripples
+- text
+- mix
 
 
 ## credits
