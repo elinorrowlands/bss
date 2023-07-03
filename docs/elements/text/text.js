@@ -21,6 +21,7 @@ let playFlag = false;
 captionObject.forEach((text,i) => {
     let textElement = document.createElement('div');
     let colourValue = ((12+i)*10)+(Math.random()*(255-((12+i)*10)));
+
     Object.assign(textElement.style,{
         position: 'absolute',
         top: i==0 ? '45%': (5+Math.random()*80)+'%',
@@ -30,7 +31,8 @@ captionObject.forEach((text,i) => {
         cursor:'pointer',
         color:`rgba(${colourValue},${colourValue},${colourValue},1)`,
         opacity: i==0 ? 1:0.1
-    })
+    });
+    
     textElement.id = `text_${i}`;
     textElement.innerHTML = text.content[0];
     textElement.classList.add('text');

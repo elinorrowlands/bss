@@ -235,7 +235,8 @@ footer {
   cursor: pointer;
 }
 
-html, body {
+html,
+body {
   overscroll-behavior-y: none;
 }
 
@@ -243,9 +244,7 @@ body {
   background-color: darkblue;
   font-family: Nunito;
   font-weight: 100;
-  /* font-size: 80px; */
   color: lightgray;
-  /* overflow:hidden; */
   display: flex;
   margin: 0;
   flex-direction: column;
@@ -278,11 +277,9 @@ path {
 }
 
 h1 {
-  /* margin:100px; */
   font-size: 4rem;
   background-color: navy;
   padding: 1em;
-  /* font-weight:100; */
 }
 
 #water {

@@ -11,21 +11,24 @@ html(lang="en")
             #main__title{
                 //- width:100px;
             }
+            .qr__container{
+                width:100%; 
+                margin:none; 
+                //- background-color:#004080;
+                background-color:rgba(0,64,128,0.8);
+            }
     body
-        //- include svg/title.svg
         main.splash.qr__container(style="min-height:300px; width:100%; margin:none;")
             //- h1 QR code tests
-            .bar(style="width:100%; margin:none; background-color:rgba(0,64,128,0.8);")
-                //- background-color:#004080;
+            .bar.qr__container                
                 include svg/qr1.svg
                 include svg/qr1.svg
                 include svg/qr1.svg
-                //- button.button TEST
-                //- button.button TEST2
+                
         footer
             include footer  
         script.
-            // temporary for testing
+            // temporary code for testing
             document.querySelectorAll('.qr__svg').forEach((x,i)=>{
                 if(i==0){
                     x.addEventListener('click',(e)=>{
@@ -46,29 +49,33 @@ html(lang="en")
                     x.classList.add('elements__painting')
                 }
             })
+
             document.querySelectorAll('.QR__home__main').forEach((qr, i)=>{
                 window.setInterval(()=>{
                 qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
-                    x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) 
-                    x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`)
+                    x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
+                    x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
+                    
                     let number = Math.sin(i)*255;
+
                     if (number < 0) {
                         number = 0;
                     }
+
                     if (number >200){
                         number = 200;
                     }
-                    x.style.fill=`rgba(${number},255,255,255)`;
+
+                    x.style.fill=`rgba(${number},255,255,1)`;
                     x.style.opacity = Math.abs(Math.cos(i))+0.5;
                     x.style.stroke = 'black';
                     //- x.style.strokeWidth = '2px';
                 })
                 }, (i * 1000) + 1000)
             })
-            
-                
+              
             // 
-            //- Math.round()
-            //- [[75, 75], [87, 75], [100, 75]]
+            // Rectangles to keep
+            // [[75, 75], [87, 75], [100, 75]]
             // [[75, 87], [87, 87], [100, 87]]
             // [[75, 100], [87, 100], [100, 100]]

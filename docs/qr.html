@@ -12,12 +12,18 @@
       #main__title{
           //- width:100px;
       }
+      .qr__container{
+          width:100%; 
+          margin:none; 
+          //- background-color:#004080;
+          background-color:rgba(0,64,128,0.8);
+      }
     </style>
   </head>
   <body>
     <main class="splash qr__container" style="min-height:300px; width:100%; margin:none;">
-      <div class="bar" style="width:100%; margin:none; background-color:rgba(0,64,128,0.8);">
-        <svg id="QR__home" viewBox="0, 0, 512, 512" class="qr__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512">
+      <div class="bar qr__container">
+                       <svg id="QR__home" viewBox="0, 0, 512, 512" class="qr__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512">
 <style>
     rect{
         transition:all 5s;
@@ -1722,7 +1728,7 @@
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
     </footer>
     <script>
-      // temporary for testing
+      // temporary code for testing
       document.querySelectorAll('.qr__svg').forEach((x,i)=>{
           if(i==0){
               x.addEventListener('click',(e)=>{
@@ -1743,30 +1749,34 @@
               x.classList.add('elements__painting')
           }
       })
+      
       document.querySelectorAll('.QR__home__main').forEach((qr, i)=>{
           window.setInterval(()=>{
           qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
-              x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`) 
-              x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`)
+              x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
+              x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
+              
               let number = Math.sin(i)*255;
+      
               if (number < 0) {
                   number = 0;
               }
+      
               if (number >200){
                   number = 200;
               }
-              x.style.fill=`rgba(${number},255,255,255)`;
+      
+              x.style.fill=`rgba(${number},255,255,1)`;
               x.style.opacity = Math.abs(Math.cos(i))+0.5;
               x.style.stroke = 'black';
               //- x.style.strokeWidth = '2px';
           })
           }, (i * 1000) + 1000)
       })
-      
-          
+        
       // 
-      //- Math.round()
-      //- [[75, 75], [87, 75], [100, 75]]
+      // Rectangles to keep
+      // [[75, 75], [87, 75], [100, 75]]
       // [[75, 87], [87, 87], [100, 87]]
       // [[75, 100], [87, 100], [100, 100]]
     </script>
