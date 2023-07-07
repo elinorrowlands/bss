@@ -1,27 +1,21 @@
 // todo: fix issue with loading time
 
+function ready(){
+    console.log('ready');
+}
+
+Tone.loaded().then(ready);
+
 const filter = new Tone.Filter(200, 'lowpass').toDestination();
 const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
 const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
 const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
 const loadCount = 0;
 
-function ready(){
-    console.log('ready');
-}
 
-player.buffer.onload = ()=>{
-    loadCount++;
-    if(loadCount == 2){
-        ready();
-    }
-};
-backdrop.buffer.onload = ()=>{
-    loadCount++;
-    if(loadCount == 2){
-        ready();
-    }
-};
+
+console.log(player.buffer.loaded, backdrop.buffer.loaded)
+
 
 backdrop.loop = true;
 backdrop.volume.value = '-12';
