@@ -2,7 +2,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title BSS: mix
+        title BSS: text
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         link(rel='stylesheet', href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
@@ -14,11 +14,13 @@ html(lang="en")
             button{
                 font-size: 2rem;
             }
+            
             .mute{
                 width:2rem;
                 height:2rem;
                 margin:2rem;
             }
+
             .text{
                 border-radius:10px;
                 font-weight:bold;
@@ -28,10 +30,12 @@ html(lang="en")
                 transition:all 1s, left 35.5s ease-in-out, top 34.5s ease-in-out, opacity 0.5s ease-in-out;
                 mix-blend-mode:soft-light;
             }
+
             .text.active{
                 opacity:1;
                 letter-spacing:0.2px;
             }
+            
             body {
                 background-color:navy;
                 transition: filter 1s;

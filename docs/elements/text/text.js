@@ -12,10 +12,7 @@ const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
 const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
 const loadCount = 0;
 
-
-
-console.log(player.buffer.loaded, backdrop.buffer.loaded)
-
+console.log('testing load time', player.buffer.loaded, backdrop.buffer.loaded)
 
 backdrop.loop = true;
 backdrop.volume.value = '-12';
