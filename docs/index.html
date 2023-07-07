@@ -4639,6 +4639,9 @@
           document.querySelector('#water').style.transform = `scale(${scale})`;
           animationCount++;
       }
+      
+      animation();
+      
       document.body.addEventListener('load',()=>{
           animation();
           window.setInterval(animation, 60000);

@@ -21,7 +21,6 @@ html(lang="en")
             include footer
 
         script.
-
             let animationCount = 1;
 
             const animation = ()=>{
@@ -29,7 +28,12 @@ html(lang="en")
                 document.querySelector('#water').style.transform = `scale(${scale})`;
                 animationCount++;
             }
+
+            animation();
+            
             document.body.addEventListener('load',()=>{
                 animation();
                 window.setInterval(animation, 60000);
             })
+
+            
