@@ -52,7 +52,27 @@
           width:100vw;
           filter: hue-rotate(0deg);
       }
+      
+      .loading{
+          position:absolute;
+          top:0;
+          left:0;
+          width:100vw;
+          height:100vh;
+          background-color:navy;
+          color:white;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          //- font-size:2rem;
+          font-weight:bold;
+          text-align:center;
+          opacity:1;
+          transition:opacity 1s;
+      }
     </style>
   </head>
-  <body></body>
+  <body>
+    <h1 class="loading">Loading ...</h1>
+  </body>
 </html>
