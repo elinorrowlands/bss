@@ -51,7 +51,6 @@
       }
       
       window.addEventListener('load',()=>{
-          console.log('loaded')
           Object.entries(elements).forEach(([key, value],i) => {
               elements[key].url = baseURL + value.folder;
               elements[key].qr = generateQR(elements[key].url, key);
@@ -60,12 +59,13 @@
               elements[key].qr.addEventListener('click', (e)=>{
                   window.location.href = elements[key].url;
               })
+              elements[key].qr.querySelector('rect').remove();
               document.querySelector('.qr__container').appendChild(elements[key].qr);
           })
          
       
-          document.querySelectorAll('.QR__home__main').forEach((qr, i)=>{
-              window.setInterval(()=>{
+          document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
+              
               qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
                   x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
                   x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
@@ -85,7 +85,7 @@
                   x.style.stroke = 'black';
                   //- x.style.strokeWidth = '2px';
               })
-              }, (i * 1000) + 1000)
+             
           })
           
           // 
