@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/magical-women/bss#readme",
   "devDependencies": {
-    "@matthewscharles/cm-toolbox": "^1.1.28",
+    "@matthewscharles/cm-toolbox": "^1.1.30",
     "@matthewscharles/multitouch-mapper": "^1.0.1",
     "pug": "^3.0.2",
     "qrcode-svg": "^1.1.0",
