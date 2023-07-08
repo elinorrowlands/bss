@@ -9,7 +9,7 @@ const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
 const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
 const loadCount = 0;
 
-Tone.loaded().then(ready);
+Tone.loaded().then(start);
 
 backdrop.loop = true;
 backdrop.volume.value = '-12';
@@ -22,14 +22,14 @@ let playFlag = false;
 
 // let justText = captionObject.map(text => text.content[0]);
 
-function ready(){
-    console.log('running...');
+function start(){
+
+    // todo: add load status message for screen readers
     document.querySelectorAll('.loading').forEach(element => {
         element.style.opacity = 0;
         setTimeout(() => {
             element.style.display = 'none';
-        }
-        , 1000);
+        }, 1000);
     });
 
     captionObject.forEach((text,i) => {
