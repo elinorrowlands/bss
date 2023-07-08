@@ -56,29 +56,13 @@
               elements[key].url = baseURL + value.folder;
               elements[key].qr = generateQR(elements[key].url, key);
               elements[key].qr.classList.add('qr__svg');
+              elements[key].qr.classList.add(`elements__${key}`);
+              elements[key].qr.addEventListener('click', (e)=>{
+                  window.location.href = elements[key].url;
+              })
               document.querySelector('.qr__container').appendChild(elements[key].qr);
           })
-          // temporary code for testing
-          document.querySelectorAll('.qr__svg').forEach((x,i)=>{
-              if(i==0){
-                  x.addEventListener('click',(e)=>{
-                      window.location.href = 'index.html';
-                  })
-                  //- x.classList.add('elements__ripples')
-              }
-              if(i==1){
-                  x.addEventListener('click',(e)=>{
-                      window.location.href = 'elements/ripples';
-                  })
-                  x.classList.add('elements__ripples')
-              }
-              if(i==2){
-                  x.addEventListener('click',(e)=>{
-                      window.location.href = 'elements/painting';
-                  })
-                  x.classList.add('elements__painting')
-              }
-          })
+         
       
           document.querySelectorAll('.QR__home__main').forEach((qr, i)=>{
               window.setInterval(()=>{

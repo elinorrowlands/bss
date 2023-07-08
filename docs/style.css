@@ -85,6 +85,14 @@
   background-image: url("element_painting.svg");
 }
 
+.qr__svg.elements__mix {
+  background-image: url("element_mix.svg");
+}
+
+.qr__svg.elements__text {
+  background-image: url("element_text.svg");
+}
+
 .main__qr {
   display: flex;
   justify-content: space-around;
