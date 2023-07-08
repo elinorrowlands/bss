@@ -93,8 +93,23 @@
         <input id="crossFader" type="range" min="0" max="1" step="0.01" value="0.5"/>
       </div>
     </main>
+    <h1 class="loading">Loading...</h1>
   </body>
   <script>
+    function loaded(){
+            // todo: add load status message for screen readers
+            document.querySelectorAll('.loading').forEach(element => {
+                element.style.opacity = 0;
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 1000);
+            });
+    }
+    
+    function start(){
+        loaded();
+    }
+    
     let mix = {
         channels:[new Tone.Channel(), new Tone.Channel()],
         meters:[new Tone.Meter(), new Tone.Meter()],
@@ -105,14 +120,19 @@
         crossFader: new Tone.CrossFade(0.5)
         
     }
+    
     mix.reverbChannel.connect(mix.filter);
     mix.filter.connect(mix.reverb);
     mix.crossFader.toDestination();
+    
     // the channels could fade to the filter/reverb according to mutes, so reverb is only used for the channels not currently going to the stereo out
     let sounds = [
         new Tone.Player("canal_II_test_L.mp3"),
         new Tone.Player("canal_II_test_R.mp3")
     ]
+    
+    Tone.loaded().then(start);
+    
     sounds.forEach((sound,i) => {
         sound.connect(mix.channels[i]);
         sound.connect(mix.meters[i]);
@@ -121,10 +141,10 @@
         mix.channels[i].connect(i === 0 ? mix.crossFader.a : mix.crossFader.b);
     })
     
-    let start = document.querySelector("#start");
+    let startButton = document.querySelector("#start");
     let playFlag = false;
     
-    start.addEventListener("click", () => {
+    startButton.addEventListener("click", () => {
         playFlag = !playFlag;
         start.innerHTML = playFlag ? "STOP" : "START";
         sounds.forEach(sound => {

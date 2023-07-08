@@ -342,4 +342,21 @@ path:hover {
   flex-wrap: wrap;
 }
 
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: navy;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 /*# sourceMappingURL=style.css.map */

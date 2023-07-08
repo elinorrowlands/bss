@@ -1,8 +1,3 @@
-// todo: fix issue with loading time
-
-
-
-
 const filter = new Tone.Filter(200, 'lowpass').toDestination();
 const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
 const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
@@ -22,16 +17,20 @@ let playFlag = false;
 
 // let justText = captionObject.map(text => text.content[0]);
 
+function loaded(){
+        // todo: add load status message for screen readers
+        document.querySelectorAll('.loading').forEach(element => {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 1000);
+        });
+}
+
+
 function start(){
 
-    // todo: add load status message for screen readers
-    document.querySelectorAll('.loading').forEach(element => {
-        element.style.opacity = 0;
-        setTimeout(() => {
-            element.style.display = 'none';
-        }, 1000);
-    });
-
+    loaded();
     captionObject.forEach((text,i) => {
         let textElement = document.createElement('div');
         let colourValue = ((12+i)*10)+(Math.random()*(255-((12+i)*10)));
