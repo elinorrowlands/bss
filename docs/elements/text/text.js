@@ -2,8 +2,15 @@ const filter = new Tone.Filter(200, 'lowpass').toDestination();
 const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
 const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
 const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
-const loadCount = 0;
 
+let loadBlinkCount = 0;
+const loadBlink = () => {
+    document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;
+    document.querySelectorAll('.loading')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
+    document.querySelectorAll('.loadMsg')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
+    loadBlinkCount++;
+}
+setInterval(loadBlink, 5000);
 Tone.loaded().then(start);
 
 backdrop.loop = true;
@@ -17,9 +24,12 @@ let playFlag = false;
 
 // let justText = captionObject.map(text => text.content[0]);
 
+
+
 function loaded(){
         // todo: add load status message for screen readers
         document.querySelectorAll('.loading').forEach(element => {
+            clearInterval(loadBlink);
             element.style.opacity = 0;
             setTimeout(() => {
                 element.style.display = 'none';
