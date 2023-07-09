@@ -3,12 +3,12 @@
 Project led by artist Elinor Rowlands in partnership with Canal and River Trust London South East, funded by Arts 
 Council England. Other partners include Camden Creative Health and Cole's Gallery Leeds. 
 
-This is a repository for the code used in the project, various experiments, and the website is hosted via GitHub Pages.
+The interactive website is hosted on GitHub pages from this repository, and we are using this to upload experiments and generally document our process.
 
 ## Links
-[Interactive pages](https://elinorrowlands.github.io/bss/)
-[Project website](https://www.elinorrowlands.com/biodivergent-sites-and-sounds)
-
+- [Interactive pages](https://elinorrowlands.github.io/bss/)
+- [Project website](https://www.elinorrowlands.com/biodivergent-sites-and-sounds)
+- [BSS on researchcatalog.net](https://www.researchcatalogue.net/view/1934405/1934406)
 
 ## Elements
 - bridge
