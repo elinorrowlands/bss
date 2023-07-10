@@ -10,6 +10,8 @@ let pugFiles = [
     'elements/mix/index',
     'elements/mix/checkboxes',
 
+    'elements/bridge/index',
+
     'elements/text/index'
 ];
 

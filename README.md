@@ -11,11 +11,11 @@ The interactive website is hosted on GitHub pages from this repository, and we a
 - [BSS on researchcatalog.net](https://www.researchcatalogue.net/view/1934405/1934406)
 
 ## Elements
-- bridge
-- painting
-- ripples
-- text
-- mix
+- [bridge](https://elinorrowlands.github.io/bss/bridge)
+- [painting](https://elinorrowlands.github.io/bss/painting)
+- [ripples](https://elinorrowlands.github.io/bss/ripples)
+- [text](https://elinorrowlands.github.io/bss/text)
+- [mix](https://elinorrowlands.github.io/bss/mix/)
 
 ## Options
 - [ ] colour
