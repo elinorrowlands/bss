@@ -5,7 +5,7 @@ html, body {
 body {
   margin: 0;
   font-size: 18px;
-  font-family: 'Rakkas', Verdana, sans-serif;
+  /* font-family: 'Rakkas', Verdana, sans-serif; */
   /* background: #ffffff; */
   line-height: 1.4;
 }
