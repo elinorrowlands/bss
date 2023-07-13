@@ -1148,7 +1148,6 @@
     const echo = new Tone.FeedbackDelay('4n',0.5).toDestination();
     const synth = new Tone.PolySynth({
       options:{
-       
         oscillator:{
           type:'sine'
         },
@@ -1159,16 +1158,16 @@
           release:2.1
         },
         volume:-40
-  
       }
     }).connect(echo);
   
     synth.toDestination();
+
     const meter = new Tone.Meter();
     synth.connect(meter);
     let level = 0;
+
 	let loadBlinkCount = 0;
-	
 	const loadBlink = () => {
 		document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;
 		document.querySelectorAll('.loading')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
@@ -1190,6 +1189,7 @@
 	Tone.loaded().then(()=>{
 		start();
 	});
+	
 	function start(){
 		loaded();
 		multitouchMapper.setAction('.visual',{
@@ -1235,8 +1235,7 @@
 				newElement.style.transition = 'all 4s ease';
 				newElement.style.opacity = 0;
 				synth._voices.forEach((voice,i)=>{
-				voice.detune.rampTo((i%2 == 0 ? obj.distance.x : obj.distance.y),1)
-	
+					voice.detune.rampTo((i%2 == 0 ? obj.distance.x : obj.distance.y),1)
 				})
 				
 				document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
