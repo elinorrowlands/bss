@@ -4,8 +4,8 @@ html(lang="en")
         title Biodivergent Sites and Sounds: map
         style.
             #map{
-                width:80%;
-                height:80%;
+                width:100%;
+                height:100%;
                 position:absolute;
                 top:0;
                 left:0;
@@ -14,5 +14,20 @@ html(lang="en")
                 right:0;
                 margin:auto;
             }
+             body {
+                background-color:navy;
+                transition: filter 1s;
+                overflow:hidden;
+                touch-action:none;
+                user-select:none;
+                -webkit-user-select: none; /* Safari */
+                background-image:url("element_painting.svg");
+                background-size:cover;
+                background-repeat:no-repeat;
+                background-position:center;
+                height:100vh;
+                width:100vw;
+            }
     body 
-        include map/map.html
+        main
+            include map/map.html

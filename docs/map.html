@@ -11,8 +11,8 @@
     <title>Biodivergent Sites and Sounds: map</title>
     <style>
       #map{
-          width:80%;
-          height:80%;
+          width:100%;
+          height:100%;
           position:absolute;
           top:0;
           left:0;
@@ -21,14 +21,28 @@
           right:0;
           margin:auto;
       }
+       body {
+          background-color:navy;
+          transition: filter 1s;
+          overflow:hidden;
+          touch-action:none;
+          user-select:none;
+          -webkit-user-select: none; /* Safari */
+          background-image:url("element_painting.svg");
+          background-size:cover;
+          background-repeat:no-repeat;
+          background-position:center;
+          height:100vh;
+          width:100vw;
+      }
     </style>
   </head>
-  <body>
-     <svg id="map" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="9.02765 113.625 1191.3474 648.3181" width="1191.3474" height="648.3181">
+  <body> 
+    <main><svg id="map" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="9.02765 113.625 1191.3474 648.3181" width="1191.3474" height="648.3181">
   <defs/>
   <style>
     #land{
-      opacity:0.5;
+      opacity:0.2;
     }
     #water_halo{
       opacity:0.5;
@@ -11674,5 +11688,6 @@
   </g>
 </svg>
 
+    </main>
   </body>
 </html>
