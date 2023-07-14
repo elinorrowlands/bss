@@ -4,6 +4,7 @@ import fs from 'fs';
 let pugFiles = [
     'index', 
     'qr',
+    'map',
     'elements/index',
     'elements/mix/index',
     'elements/mix/checkboxes',
