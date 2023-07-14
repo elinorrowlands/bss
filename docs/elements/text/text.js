@@ -3,6 +3,10 @@ const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
 const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
 const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
 
+/**
+ * Loading screen to break out
+ */
+
 let loadBlinkCount = 0;
 const loadBlink = () => {
     document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;

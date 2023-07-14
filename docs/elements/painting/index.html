@@ -1167,6 +1167,9 @@
     synth.connect(meter);
     let level = 0;
 
+	/**
+	 * Loading code to break out
+	*/
 	let loadBlinkCount = 0;
 	const loadBlink = () => {
 		document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;
@@ -1176,6 +1179,7 @@
 	}
 
 	setInterval(loadBlink, 5000);
+
 	function loaded(){
         // todo: add load status message for screen readers
         document.querySelectorAll('.loading').forEach(element => {
