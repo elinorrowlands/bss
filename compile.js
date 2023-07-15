@@ -5,6 +5,7 @@ let pugFiles = [
     'index', 
     'qr',
     'map',
+    'map2',
     'elements/index',
     'elements/mix/index',
     'elements/mix/checkboxes',
