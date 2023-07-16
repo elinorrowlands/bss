@@ -19,7 +19,7 @@
         <mask id="mask_vertical">
             <rect x="0" y="0" width="1600" height="789" fill="url(#fade_vertical)"/>
         </mask>
-        <filter id="MyFilter">
+        <filter id="raised">
             <feBlend mode="multiply" in2="BackgroundImage" in="SourceGraphic"/>
             <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
             <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
@@ -48,9 +48,9 @@
     #land{
       opacity:0.4;
     }
-    <!-- #water_halo{
-      opacity:0.1;
-    } -->
+    #water_halo{
+      opacity:1;
+    }
     .visual{
         opacity:0.1;
     }
@@ -15412,7 +15412,7 @@
         <circle id="circle_1" class="circle_interact" cx="500" cy="360" r="60" fill="cyan" opacity="0" />
       </g>
       <g id="circles">
-        <circle filter="url(#MyFilter)" id="circle_0_halo" class="circle_halo" stroke="white" data-id="circle_0" cx="160" cy="480" r="80" fill="white" opacity="0.5" />
+        <circle filter="url(#raised)" id="circle_0_halo" class="circle_halo" stroke="white" data-id="circle_0" cx="160" cy="480" r="80" fill="white" opacity="0.5" />
         <circle filter="url(#Darken)" id="circle_1_halo" class="circle_halo" stroke="white" data-id="circle_1" cx="500" cy="360" r="80" fill="white" opacity="0.5" />
       </g>
 
