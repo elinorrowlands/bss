@@ -27,7 +27,7 @@ html(lang="en")
                 background-position:center;
                 height:100vh;
                 width:100vw;
-                filter: hue-rotate(180deg);
+                //- filter: hue-rotate(180deg);
             }
     script.
         
@@ -36,11 +36,11 @@ html(lang="en")
             touch.setAction('.visual',{
                 start:function(element,e,obj){
                     console.log('start')
-                    element.style.opacity=0.1;
+                    element.style.opacity=0.2;
                 },
                 enter:function(element,e,obj){
                     console.log('enter')
-                    element.style.opacity=0.1;
+                    element.style.opacity=0.2;
                 },
                 move:function(element,e,obj){
                     let {x,y} = obj.relative;
@@ -49,27 +49,27 @@ html(lang="en")
                 },
                 end:function(element,e,obj){
                     console.log('end')
-                    element.style.opacity=1;
+                    element.style.opacity=0.1;
                 },
                 leave:function(element,e,obj){
                     console.log('leave')
-                    element.style.opacity=1;
+                    element.style.opacity=0.1;
                 }
             })
 
             touch.setAction('.circle_interact',{
                 start:function(element,e,obj){
                     let {id} = element;
-                    let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                    //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
                     
                 },
                 enter:function(element,e,obj){
                     let {id} = element;
-                    let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                    //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
                 },
                 move:function(element,e,obj){
                     let {id} = element;
-                    let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                    //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
                     let {x,y} = obj.relative;
                     let {max_x, max_y} = obj.relative.range;
                     console.log('move', x, y)
