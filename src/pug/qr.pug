@@ -83,12 +83,11 @@ html(lang="en")
                     })
 
                     qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
-                        // keep some clear "anchoring" rectangles -- these need to be placed precisely
                         //- x.style.fill=`rgba(255,255,255,1)`;
                         x.style.strokeWidth = '3px';
                         x.style.stroke='black';
                         console.log(x);
-                        //- x.style.display='none';
+                        x.style.display='none';
                     })
                 })
                 

@@ -86,20 +86,14 @@
               })
       
               qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
-                  // keep some clear "anchoring" rectangles -- these need to be placed precisely
                   //- x.style.fill=`rgba(255,255,255,1)`;
                   x.style.strokeWidth = '3px';
                   x.style.stroke='black';
                   console.log(x);
-                  //- x.style.display='none';
+                  x.style.display='none';
               })
           })
           
-          // 
-          // Rectangles to keep -- but these don't seem to match the SVGs I am generating from the library
-          // [[75, 75], [87, 75], [100, 75]]
-          // [[75, 87], [87, 87], [100, 87]]
-          // [[75, 100], [87, 100], [100, 100]]
       })
     </script>
   </body>
