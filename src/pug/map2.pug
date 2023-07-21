@@ -29,8 +29,29 @@ html(lang="en")
                 width:100vw;
                 //- filter: hue-rotate(180deg);
             }
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
     script.
-        
+        const markers = {
+            appearance:{
+                inner:{
+                    fill:'cyan',
+                }
+                
+                outer:{
+
+                },
+                halo:{
+                    
+                }
+            }
+            elements:{
+                circle_0: {
+                    cx:    160,
+                    cy:    500,
+                }, 
+            }
+           
+        }
         window.addEventListener('load',()=>{
             
             touch.setAction('.visual',{
