@@ -52,26 +52,28 @@ html(lang="en")
 
         let gui = new dat.GUI();
         console.log(gui)
-        let f2 = gui.addFolder('elements');
+        let positionFolder = gui.addFolder('positions');
+        let f2 = positionFolder.addFolder('element 1');
         let parameters = {
             marker_0_cx:       f2.add(markers.elements.circle_0, 'cx', 0, 1000),
             marker_0_cy:       f2.add(markers.elements.circle_0, 'cy', 0, 1000),
-            marker_1_cx:       f2.add(markers.elements.circle_1, 'cx', 0, 1000),
-            marker_1_cy:       f2.add(markers.elements.circle_1, 'cy', 0, 1000),
         }
  
-        parameters.marker_0_cx.onChange((value)=>{
-            document.querySelectorAll('#circle_0,#circle_0_centre,#circle_0_centre2,#circle_0_halo').forEach((circle)=>{
-                console.log(circle)
-                circle.setAttribute('cx', value);
+        let numberOfCircles = 1;
+        for(let i=0; i<numberOfCircles;i++){
+            parameters[`marker_${i}_cx`].onChange((value)=>{
+                document.querySelectorAll(`#circle_${i},#circle_${i}_centre,#circle_${i}_centre2, #circle_${i}_halo`).forEach((circle)=>{
+                    circle.setAttribute('cx', value);
+                })
             })
-        })
-        parameters.marker_0_cy.onChange((value)=>{
-            document.querySelectorAll('#circle_0,#circle_0_centre,#circle_0_centre2,#circle_0_halo').forEach((circle)=>{
-                console.log(circle)
-                circle.setAttribute('cy', value);
+            parameters[`marker_${i}_cy`].onChange((value)=>{
+                document.querySelectorAll(`#circle_${i},#circle_${i}_centre,#circle_${i}_centre2, #circle_${i}_halo`).forEach((circle)=>{
+                    circle.setAttribute('cy', value);
+                })
             })
-        })
+        }
+
+        
         f2.open();
 
         window.addEventListener('load',()=>{
