@@ -15470,7 +15470,7 @@
       <g id="circles_centres">
         
         <circle filter="url(#Multiply)" id="circle_0_centre2" cx="160" cy="480" r="20" fill="#FFEA00" opacity="0.8" />
-        <circle filter="url(#Multiply)" id="circle_0_centre" cx="500" cy="360" r="60" stroke="white" fill="goldenrod" opacity="0.6 " />
+        <circle filter="url(#Multiply)" id="circle_1_centre" cx="500" cy="360" r="60" stroke="white" fill="goldenrod" opacity="0.6 " />
       </g>
     
 </svg>
@@ -15484,18 +15484,6 @@
   </body>
   <script>
     const markers = {
-        appearance:{
-            inner:{
-                fill:'yellow',
-            },
-            
-            outer:{
-                fill:'yellow'
-            },
-            halo:{
-                fill:'white'
-            }
-        },
         elements:{
             circle_0: {
                 cx:    160,
@@ -15511,16 +15499,26 @@
     
     let gui = new dat.GUI();
     console.log(gui)
-    let f1 = gui.addFolder('appearance');
     let f2 = gui.addFolder('elements');
-    //- f1.addColor(markers.appearance.inner, 'fill');
-    //- f1.addColor(markers.appearance.outer, 'fill');
-    //- f1.addColor(markers.appearance.halo, 'fill');
-    f2.add(markers.elements.circle_0, 'cx', 0, 1000);
-    f2.add(markers.elements.circle_0, 'cy', 0, 1000);
-    f2.add(markers.elements.circle_1, 'cx', 0, 1000);
-    f2.add(markers.elements.circle_1, 'cy', 0, 1000);
-    f1.open();
+    let parameters = {
+        marker_0_cx:       f2.add(markers.elements.circle_0, 'cx', 0, 1000),
+        marker_0_cy:       f2.add(markers.elements.circle_0, 'cy', 0, 1000),
+        marker_1_cx:       f2.add(markers.elements.circle_1, 'cx', 0, 1000),
+        marker_1_cy:       f2.add(markers.elements.circle_1, 'cy', 0, 1000),
+    }
+    
+    parameters.marker_0_cx.onChange((value)=>{
+        document.querySelectorAll('#circle_0,#circle_0_centre,#circle_0_centre2,#circle_0_halo').forEach((circle)=>{
+            console.log(circle)
+            circle.setAttribute('cx', value);
+        })
+    })
+    parameters.marker_0_cy.onChange((value)=>{
+        document.querySelectorAll('#circle_0,#circle_0_centre,#circle_0_centre2,#circle_0_halo').forEach((circle)=>{
+            console.log(circle)
+            circle.setAttribute('cy', value);
+        })
+    })
     f2.open();
     
     window.addEventListener('load',()=>{
