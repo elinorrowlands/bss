@@ -38,61 +38,7 @@
       }
     </style>
   </head>
-  <script>
-    window.addEventListener('load',()=>{
-        
-        touch.setAction('.visual',{
-            start:function(element,e,obj){
-                console.log('start')
-                element.style.opacity=0.2;
-            },
-            enter:function(element,e,obj){
-                console.log('enter')
-                element.style.opacity=0.2;
-            },
-            move:function(element,e,obj){
-                let {x,y} = obj.relative;
-                let {max_x, max_y} = obj.relative.range;
-                console.log('move', x, y)
-            },
-            end:function(element,e,obj){
-                console.log('end')
-                element.style.opacity=0.1;
-            },
-            leave:function(element,e,obj){
-                console.log('leave')
-                element.style.opacity=0.1;
-            }
-        })
-    
-        touch.setAction('.circle_interact',{
-            start:function(element,e,obj){
-                let {id} = element;
-                //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-                
-            },
-            enter:function(element,e,obj){
-                let {id} = element;
-                //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-            },
-            move:function(element,e,obj){
-                let {id} = element;
-                //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-                let {x,y} = obj.relative;
-                let {max_x, max_y} = obj.relative.range;
-                console.log('move', x, y)
-            },
-            end:function(element,e,obj){
-                let {id} = element;
-                let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-            },
-            leave:function(element,e,obj){
-                let {id} = element;
-                let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-            }
-        })
-    })
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
   <body> 
     <main></main>
     <div id="backdrop"></div><svg id="map" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,1600,789" style="enable-background:new 0 0 1600 789;" version="1.1">
@@ -15536,4 +15482,99 @@
     })
 </script>
   </body>
+  <script>
+    const markers = {
+        appearance:{
+            inner:{
+                fill:'yellow',
+            },
+            
+            outer:{
+                fill:'yellow'
+            },
+            halo:{
+                fill:'white'
+            }
+        },
+        elements:{
+            circle_0: {
+                cx:    160,
+                cy:    400,
+            }, 
+            circle_1: {
+                cx:    500,
+                cy:    360,
+            }, 
+        }
+       
+    }
+    
+    let gui = new dat.GUI();
+    console.log(gui)
+    let f1 = gui.addFolder('appearance');
+    let f2 = gui.addFolder('elements');
+    f1.addColor(markers.appearance.inner, 'fill');
+    f1.addColor(markers.appearance.outer, 'fill');
+    f1.addColor(markers.appearance.halo, 'fill');
+    f2.add(markers.elements.circle_0, 'cx', 0, 1000);
+    f2.add(markers.elements.circle_0, 'cy', 0, 1000);
+    f2.add(markers.elements.circle_1, 'cx', 0, 1000);
+    f2.add(markers.elements.circle_1, 'cy', 0, 1000);
+    f1.open();
+    f2.open();
+    
+    window.addEventListener('load',()=>{
+        
+        touch.setAction('.visual',{
+            start:function(element,e,obj){
+                console.log('start')
+                element.style.opacity=0.2;
+            },
+            enter:function(element,e,obj){
+                console.log('enter')
+                element.style.opacity=0.2;
+            },
+            move:function(element,e,obj){
+                let {x,y} = obj.relative;
+                let {max_x, max_y} = obj.relative.range;
+                console.log('move', x, y)
+            },
+            end:function(element,e,obj){
+                console.log('end')
+                element.style.opacity=0.1;
+            },
+            leave:function(element,e,obj){
+                console.log('leave')
+                element.style.opacity=0.1;
+            }
+        })
+    
+        touch.setAction('.circle_interact',{
+            start:function(element,e,obj){
+                let {id} = element;
+                //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                
+            },
+            enter:function(element,e,obj){
+                let {id} = element;
+                //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+            },
+            move:function(element,e,obj){
+                let {id} = element;
+                //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                let {x,y} = obj.relative;
+                let {max_x, max_y} = obj.relative.range;
+                console.log('move', x, y)
+            },
+            end:function(element,e,obj){
+                let {id} = element;
+                let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+            },
+            leave:function(element,e,obj){
+                let {id} = element;
+                let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+            }
+        })
+    })
+  </script>
 </html>

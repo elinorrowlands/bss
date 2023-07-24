@@ -30,12 +30,17 @@ html(lang="en")
                 //- filter: hue-rotate(180deg);
             }
     script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
+    
+    body 
+        main
+        #backdrop
+        include map/map2.html
     script.
         const markers = {
             appearance:{
                 inner:{
                     fill:'yellow',
-                }
+                },
                 
                 outer:{
                     fill:'yellow'
@@ -43,7 +48,7 @@ html(lang="en")
                 halo:{
                     fill:'white'
                 }
-            }
+            },
             elements:{
                 circle_0: {
                     cx:    160,
@@ -56,6 +61,21 @@ html(lang="en")
             }
            
         }
+
+        let gui = new dat.GUI();
+        console.log(gui)
+        let f1 = gui.addFolder('appearance');
+        let f2 = gui.addFolder('elements');
+        f1.addColor(markers.appearance.inner, 'fill');
+        f1.addColor(markers.appearance.outer, 'fill');
+        f1.addColor(markers.appearance.halo, 'fill');
+        f2.add(markers.elements.circle_0, 'cx', 0, 1000);
+        f2.add(markers.elements.circle_0, 'cy', 0, 1000);
+        f2.add(markers.elements.circle_1, 'cx', 0, 1000);
+        f2.add(markers.elements.circle_1, 'cy', 0, 1000);
+        f1.open();
+        f2.open();
+
         window.addEventListener('load',()=>{
             
             touch.setAction('.visual',{
@@ -109,7 +129,3 @@ html(lang="en")
                 }
             })
         })
-    body 
-        main
-        #backdrop
-        include map/map2.html
