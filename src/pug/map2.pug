@@ -58,7 +58,26 @@ html(lang="en")
             marker_0_cx:       f2.add(markers.elements.circle_0, 'cx', 0, 1000),
             marker_0_cy:       f2.add(markers.elements.circle_0, 'cy', 0, 1000),
         }
- 
+    
+        gui.add({get:getLS}, 'get')
+        gui.add({save:setLS}, 'save');
+
+        function setLS(){
+            localStorage.setItem('markers', JSON.stringify(markers));
+        }
+
+        function getLS(){
+            let markers = JSON.parse(localStorage.getItem('markers'));
+            if(markers){
+                Object.entries(markers.elements).forEach(([key, value],i) => {
+                    document.querySelectorAll(`#circle_${i},#circle_${i}_centre,#circle_${i}_centre2, #circle_${i}_halo`).forEach((circle)=>{
+                        circle.setAttribute('cx', value.cx);
+                        circle.setAttribute('cy', value.cy);
+                    })
+                })
+            }
+        }
+
         let numberOfCircles = 1;
         for(let i=0; i<numberOfCircles;i++){
             parameters[`marker_${i}_cx`].onChange((value)=>{
