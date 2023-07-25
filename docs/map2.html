@@ -15484,29 +15484,12 @@
   <script>
      // localstorage || markers
      const markers = JSON.parse(localStorage.getItem('markers')) || {
-         elements:{
-             circle_0: {
-                 cx:    160,
-                 cy:    400,
-             }, 
-             circle_1: {
-                 cx:    500,
-                 cy:    360,
-             },
-             circle_2: {
-                 cx:    500,
-                 cy:    360,
-             },  
-             circle_3: {
-                 cx:    500,
-                 cy:    360,
-             },  
-             circle_4: {
-                 cx:    500,
-                 cy:    360,
-             },  
-         }
-        
+         elements: { 
+             "circle_0": { "cx": 119.71634076955372, "cy": 484.0905827769419 }, 
+             "circle_1": { "cx": 317.2495086860942, "cy": 572.643804075891 }, 
+             "circle_2": { "cx": 618.3049498527275, "cy": 558.4834872089119 }, 
+             "circle_3": { "cx": 838.6911389349964, "cy": 440.7490527601186 }, 
+             "circle_4": { "cx": 1187.6359383152555, "cy": 458.8620426753175 } }
      }
     
      let gui = new dat.GUI();
@@ -15647,6 +15630,8 @@
          })
     
          getLS();
+         const params = new URLSearchParams(location.search);
+         if(!params.has('edit'))gui.hide();
      })
   </script>
 </html>
