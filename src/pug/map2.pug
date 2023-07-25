@@ -51,12 +51,41 @@ html(lang="en")
         }
 
         let gui = new dat.GUI();
-        console.log(gui)
+        let circleObject = {
+            main:document.querySelector('#circle_0'),
+            centre:document.querySelector('#circle_0_centre'),
+            centre2:document.querySelector('#circle_0_centre2'),
+            halo:document.querySelector('#circle_0_halo'),
+        }
+
+        class CircleMarker{
+            constructor(cx = 100, cy = 100, index = 0){
+                this.cx = cx;
+                this.cy = cy;
+                this.elements = {
+                    main:circleObject.main.cloneNode(),
+                    centre:circleObject.centre.cloneNode(),
+                    centre2:circleObject.centre2.cloneNode(),
+                    halo:circleObject.halo.cloneNode()
+                }
+                Object.values(this.elements).forEach((element)=>{
+                    element.setAttribute('cx', cx);
+                    element.setAttribute('cy', cy);
+                    element.id = element.id.replace('0',index)
+                })
+                document.querySelector('#circles').appendChild(this.elements.halo);
+                document.querySelector('#circles_interact').appendChild(this.elements.main);
+                document.querySelector('#circles_centres_outer').appendChild(this.elements.centre);
+                document.querySelector('#circles_centres').appendChild(this.elements.centre2);
+            }
+        }
+
+    
         let positionFolder = gui.addFolder('positions');
-        let f2 = positionFolder.addFolder('element 1');
+        let element1 = positionFolder.addFolder('element 1');
         let parameters = {
-            marker_0_cx:       f2.add(markers.elements.circle_0, 'cx', 0, 1000),
-            marker_0_cy:       f2.add(markers.elements.circle_0, 'cy', 0, 1000),
+            marker_0_cx:       element1.add(markers.elements.circle_0, 'cx', 0, 1000),
+            marker_0_cy:       element1.add(markers.elements.circle_0, 'cy', 0, 1000),
         }
     
         gui.add({get:getLS}, 'get')
@@ -92,8 +121,7 @@ html(lang="en")
             })
         }
 
-        
-        f2.open();
+        element1.open();
 
         window.addEventListener('load',()=>{
             
