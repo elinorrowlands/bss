@@ -9,34 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <script src="./main.js" defer="defer"></script>
     <title>Biodivergent Sites and Sounds: map</title>
-    <style>
-      #map{
-          width:100%;
-          height:100%;
-          position:absolute;
-          top:0;
-          left:0;
-          z-index:0;
-          bottom:0;
-          right:0;
-          margin:auto;
-      }
-       #backdrop {
-          background-color:navy;
-          transition: filter 1s;
-          overflow:hidden;
-          touch-action:none;
-          user-select:none;
-          -webkit-user-select: none; /* Safari */
-          background-image:url("element_painting.svg");
-          background-size:cover;
-          background-repeat:no-repeat;
-          background-position:center;
-          height:100vh;
-          width:100vw;
-          //- filter: hue-rotate(180deg);
-      }
-    </style>
   </head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
   <body> 
@@ -15489,7 +15461,7 @@
   </body>
   <script>
     function checkLoaded(name) {
-        var interval = 100;
+        const interval = 100;
         window.setTimeout(function() {
             if (window[name]) {
                 window[name]();
@@ -15498,7 +15470,6 @@
             }
         }, interval);
     }
-    
     checkLoaded('mapLoad')
   </script>
 </html>
