@@ -36,7 +36,6 @@ html(lang="en")
         #backdrop
         include map/map2.html
     script.
-        // localstorage || markers
         const markers = JSON.parse(localStorage.getItem('markers')) || {
             elements: { 
                 "circle_0": { "cx": 119.71634076955372, "cy": 484.0905827769419 }, 
@@ -70,6 +69,7 @@ html(lang="en")
                     element.setAttribute('cx', cx);
                     element.setAttribute('cy', cy);
                     element.id = element.id.replace('0',index)
+                    element.dataset.id = element.dataset.id.replace('0',index)
                 })
 
                 document.querySelector('#circles').appendChild(this.elements.halo);
@@ -86,8 +86,8 @@ html(lang="en")
  
 
         let parameters = {
-            marker_0_cx:       elementFolders[0].add(markers.elements.circle_0, 'cx', 0, 1600),
-            marker_0_cy:       elementFolders[0].add(markers.elements.circle_0, 'cy', 0, 789),
+            marker_0_cx: elementFolders[0].add(markers.elements.circle_0, 'cx', 0, 1600),
+            marker_0_cy: elementFolders[0].add(markers.elements.circle_0, 'cy', 0, 789),
         }
     
        for(let i=0; i<4; i++){
@@ -156,30 +156,37 @@ html(lang="en")
                 }
             })
 
+            function startInteraction(element, e, obj){
+                let {id} = element;
+                let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                halo.classList.add('active');
+            }
+            function endInteraction(element, e, obj){
+                let {id} = element;
+                let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                halo.classList.remove('active');
+            }
+
             touch.setAction('.circle_interact',{
                 start:function(element,e,obj){
-                    let {id} = element;
-                    //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                   startInteraction(element, e, obj);
                     
                 },
                 enter:function(element,e,obj){
                     let {id} = element;
-                    //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                    startInteraction(element, e, obj);
                 },
                 move:function(element,e,obj){
                     let {id} = element;
-                    //- let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
                     let {x,y} = obj.relative;
                     let {max_x, max_y} = obj.relative.range;
                     console.log('move', x, y)
                 },
                 end:function(element,e,obj){
-                    let {id} = element;
-                    let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                    endInteraction(element, e, obj);
                 },
                 leave:function(element,e,obj){
-                    let {id} = element;
-                    let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
+                    endInteraction(element, e, obj);
                 }
             })
 
