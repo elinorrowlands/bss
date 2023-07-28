@@ -20,6 +20,15 @@ let circleObject = {
     halo:document.querySelector('#circle_0_halo'),
 }
 
+/**
+ * @class CircleMarker
+ * @description Duplicate SVG elements to create interactive circles
+ * @param {Number} cx - x coordinate of circle
+ * @param {Number} cy - y coordinate of circle
+ * @param {Number} index - index of circle
+ * 
+ */
+
 class CircleMarker{
     constructor(cx = 100, cy = 100, index = 0){
         this.cx = cx;
@@ -129,12 +138,14 @@ function mapLoad(){
             let {id} = element;
             let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
             halo.classList.add('active');
+            // document.querySelector('#backdrop').classList.add('interacting');
         }
     
         function endInteraction(element, e, obj){
             let {id} = element;
             let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
             halo.classList.remove('active');
+            // document.querySelector('#backdrop').classList.remove('interacting');
         }
     
         touch.setAction('.circle_interact',{

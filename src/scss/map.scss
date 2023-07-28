@@ -8,8 +8,9 @@
     bottom:0;
     right:0;
     margin:auto;
+    user-select: none; 
 }
-    #backdrop {
+#backdrop {
     background-color:navy;
     transition: filter 1s;
     overflow:hidden;
@@ -22,5 +23,9 @@
     background-position:center;
     height:100vh;
     width:100vw;
+    filter:brightness(80%) grayscale(0%) hue-rotate(0deg);
     //- filter: hue-rotate(180deg);
+}
+#backdrop.interacting {
+    filter:brightness(80%) grayscale(100%) hue-rotate(0deg);
 }
