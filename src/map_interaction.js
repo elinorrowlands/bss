@@ -110,14 +110,16 @@ function mapLoad(){
         gui.add({get:getLS}, 'get')
         gui.add({save:setLS}, 'save');
 
+        touch.depth=2;
+
         touch.setAction('.visual',{
             start:function(element,e,obj){
                 // console.log('start')
-                element.style.opacity=0.2;
+                // element.style.opacity=0.2;
             },
             enter:function(element,e,obj){
                 // console.log('enter')
-                element.style.opacity=0.2;
+                // element.style.opacity=0.2;
             },
             move:function(element,e,obj){
                 let {x,y} = obj.relative;
@@ -126,11 +128,11 @@ function mapLoad(){
             },
             end:function(element,e,obj){
                 // console.log('end')
-                element.style.opacity=0.1;
+                // element.style.opacity=0.1;
             },
             leave:function(element,e,obj){
                 // console.log('leave')
-                element.style.opacity=0.1;
+                // element.style.opacity=0.1;
             }
         })
     
