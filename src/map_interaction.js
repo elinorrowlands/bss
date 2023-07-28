@@ -56,9 +56,9 @@ class CircleMarker{
     }
 }
 
-let circleMarkers = [circleObject]
+let circleMarkers = [circleObject];
 let positionFolder = gui.addFolder('positions');
-let elementFolders = [positionFolder.addFolder('element 1')]
+let elementFolders = [positionFolder.addFolder('element 1')];
 
 
 let parameters = {
@@ -112,24 +112,24 @@ function mapLoad(){
 
         touch.setAction('.visual',{
             start:function(element,e,obj){
-                console.log('start')
+                // console.log('start')
                 element.style.opacity=0.2;
             },
             enter:function(element,e,obj){
-                console.log('enter')
+                // console.log('enter')
                 element.style.opacity=0.2;
             },
             move:function(element,e,obj){
                 let {x,y} = obj.relative;
                 let {max_x, max_y} = obj.relative.range;
-                console.log('move', x, y)
+                // console.log('move', x, y)
             },
             end:function(element,e,obj){
-                console.log('end')
+                // console.log('end')
                 element.style.opacity=0.1;
             },
             leave:function(element,e,obj){
-                console.log('leave')
+                // console.log('leave')
                 element.style.opacity=0.1;
             }
         })
