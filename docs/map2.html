@@ -9,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <script src="./main.js" defer="defer"></script>
     <title>Biodivergent Sites and Sounds: map</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
   </head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
   <body> 
     <main></main>
     <div id="backdrop"></div><svg id="map" class="map__layer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,1600,789" style="enable-background:new 0 0 1600 789;" version="1.1">
@@ -15476,7 +15477,7 @@
 </script>
     <canvas id="overlay"></canvas>
   </body>
-  <script>
+  <script type="module">
     function checkLoaded(name) {
         const interval = 100;
         window.setTimeout(function() {
@@ -15489,5 +15490,6 @@
     }
     
     checkLoaded('mapLoad')
+    Tone.start();
   </script>
 </html>

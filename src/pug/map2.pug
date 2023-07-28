@@ -2,14 +2,15 @@ html(lang="en")
     head
         include head
         title Biodivergent Sites and Sounds: map
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
     
     body 
         main
         #backdrop
         include map/map2.html
         canvas#overlay
-    script.
+    script(type="module").
         function checkLoaded(name) {
             const interval = 100;
             window.setTimeout(function() {
@@ -22,4 +23,4 @@ html(lang="en")
         }
         
         checkLoaded('mapLoad')
-        
+        Tone.start();
