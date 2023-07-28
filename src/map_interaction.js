@@ -7,6 +7,10 @@ const markers = JSON.parse(localStorage.getItem('markers')) || {
         "circle_4": { "cx": 1187.6359383152555, "cy": 458.8620426753175 } }
 }
 
+if(!localStorage.getItem('markers')){
+    localStorage.setItem('markers', JSON.stringify(markers));
+}
+
 let gui = new dat.GUI();
 
 let circleObject = {

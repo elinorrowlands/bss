@@ -28,8 +28,6 @@ let playFlag = false;
 
 // let justText = captionObject.map(text => text.content[0]);
 
-
-
 function loaded(){
         // todo: add load status message for screen readers
         document.querySelectorAll('.loading').forEach(element => {
