@@ -137,14 +137,19 @@ function mapLoad(){
         function startInteraction(element, e, obj){
             let {id} = element;
             let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-            halo.classList.add('active');
+            // halo.classList.add('active');
+            
+            halo.style.transition='opacity 0.1s'
+            halo.style.opacity = 0.2;
             // document.querySelector('#backdrop').classList.add('interacting');
         }
     
         function endInteraction(element, e, obj){
             let {id} = element;
             let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
-            halo.classList.remove('active');
+            // halo.classList.remove('active');
+            halo.style.transition='opacity 0.5s'
+            halo.style.opacity=0.5;
             // document.querySelector('#backdrop').classList.remove('interacting');
         }
     
