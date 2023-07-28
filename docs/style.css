@@ -269,7 +269,7 @@ footer {
   background-position: center;
   height: 100vh;
   width: 100vw;
-  filter: brightness(80%) grayscale(0%) hue-rotate(0deg);
+  filter: brightness(70%) grayscale(0%) hue-rotate(0deg);
 }
 
 #backdrop.interacting {
