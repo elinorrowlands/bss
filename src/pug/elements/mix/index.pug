@@ -146,7 +146,11 @@ html(lang="en")
         document.querySelector('#crossFader').addEventListener("input", (e) => {
             let value = parseFloat(e.target.value);
             console.log(value)
-            
+            let percentage = value * 100;
+            //- document.querySelector('main').style.background = `linear-gradient(90deg,  rgba(249,212,35,0.5) ${50-(percentage/2)}%, rgba(32,42,68,0.4) ${50+(percentage/2)}%)`;
+            let leftValue = 50-(percentage/2);
+            let rightValue = 50+(percentage/2);
+            document.querySelector('main').style.background = `linear-gradient(90deg,  rgba(249,212,35,0.5) ${leftValue}%, rgba(32,42,68,0.4) ${rightValue}%)`;
             mix.crossFader.fade.rampTo(value, 0.1, Tone.now())
             mix.channels.forEach((channel,i) => {
                 let balance = 0.5*(i-value);
