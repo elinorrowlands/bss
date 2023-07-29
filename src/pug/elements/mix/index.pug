@@ -4,7 +4,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title BSS: mix
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
-        script(src="../../main.js" defer)
+        //- script(src="../../main.js" defer)
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         link(rel='stylesheet' href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
@@ -21,7 +21,7 @@ html(lang="en")
             .bar(style="width:100%;")
                 input#crossFader(type="range" min="0" max="1" step="0.01" value="0.5")
         include ../../loading
-    script.
+    script(type="module").
         function loaded(){
                 // todo: add load status message for screen readers
                 document.querySelectorAll('.loading').forEach(element => {
@@ -81,11 +81,10 @@ html(lang="en")
         document.querySelector('#crossFader').addEventListener("input", (e) => {
             let value = parseFloat(e.target.value);
             console.log(value)
-            let percentage = value * 100;
-            //- document.querySelector('main').style.background = `linear-gradient(90deg,  rgba(249,212,35,0.5) ${50-(percentage/2)}%, rgba(32,42,68,0.4) ${50+(percentage/2)}%)`;
-            let leftValue = 50-(percentage/2);
-            let rightValue = 50+(percentage/2);
-            document.querySelector('main').style.background = `linear-gradient(90deg,  rgba(249,212,35,0.5) ${leftValue}%, rgba(32,42,68,0.4) ${rightValue}%)`;
+            let percentage = value * 50;
+            let leftValue = (percentage/2);
+            let rightValue = 100-(percentage/2);
+            document.querySelector('main').style.background = `linear-gradient(90deg, rgba(249,212,35,0.5) ${leftValue}%, rgba(32,42,68,0.4) ${rightValue}%)`;
             mix.crossFader.fade.rampTo(value, 0.1, Tone.now())
             mix.channels.forEach((channel,i) => {
                 let balance = 0.5*(i-value);
