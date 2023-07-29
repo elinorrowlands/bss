@@ -13,6 +13,7 @@
     <link href="./style_mix.css" rel="stylesheet"/>
   </head>
   <body>
+    <div class="body__background" aria-hidden="true"></div>
     <main class="main__qr">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243.34 1374" class="waveform" id="left" style="filter:hue-rotate(-90deg)">
     <defs>  
@@ -79,7 +80,6 @@
     mix.filter.connect(mix.reverb);
     mix.crossFader.toDestination();
     
-    // the channels could fade to the filter/reverb according to mutes, so reverb is only used for the channels not currently going to the stereo out
     let sounds = [
         new Tone.Player("channels_L.mp3"),
         new Tone.Player("channels_R.mp3")
@@ -100,7 +100,7 @@
     
     startButton.addEventListener("click", () => {
         playFlag = !playFlag;
-        start.innerHTML = playFlag ? "STOP" : "START";
+        startButton.innerHTML = playFlag ? "STOP" : "START";
         sounds.forEach(sound => {
             sound[playFlag ? 'start' : 'stop']()
         })
@@ -116,9 +116,10 @@
         mix.crossFader.fade.rampTo(value, 0.1, Tone.now())
         mix.channels.forEach((channel,i) => {
             let balance = 0.5*(i-value);
-            console.log(i, value, balance)
+            //- console.log(i, value, balance)
             channel.pan.rampTo(balance, 0.1, Tone.now())
         })
+        document.querySelector('.body__background').style.filter=`hue-rotate(${180+(value*180)}deg)`;
     })
   </script>
 </html>

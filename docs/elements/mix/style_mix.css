@@ -12,6 +12,10 @@ button{
     width:80%;
 }
 
+#start{
+    font-size:2rem;
+}
+
 body {
     background-color:navy;
     transition: filter 1s;
@@ -25,6 +29,29 @@ body {
     background-position:center;
     height:100vh;
     width:100vw;
+}
+
+.body__background {
+    background-color:navy;
+    transition: filter 1s;
+    overflow:hidden;
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select: none; /* Safari */
+    background-image:url("../../bg1.svg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:100vh;
+    width:100vw;
+    position:absolute;
+    display:block;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:-1;
+    opacity:0.8;
 }
 
 .waveform{
