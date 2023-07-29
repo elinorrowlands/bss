@@ -11,7 +11,7 @@ if(!localStorage.getItem('markers')){
     localStorage.setItem('markers', JSON.stringify(markers));
 }
 
-let gui = new dat.GUI();
+window.gui = typeof dat != 'undefined' ? new dat.GUI() : {add:()=>{}, addFolder:()=>{}, open:()=>{}, close:()=>{}, hide:()=>{}, show:()=>{}};
 
 let circleObject = {
     main:document.querySelector('#circle_0'),

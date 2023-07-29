@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BSS: mix</title>
+    <script src="../../main.js" defer="defer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
     <link rel="stylesheet" href="../../style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -57,6 +58,24 @@
       .waveform#right{
           left:auto;
           right:2em;
+      }
+      
+      .main__background{
+          
+          position:relative;
+          height:100%;
+          width:100%;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          background: linear-gradient(90deg, #F9D423 0%, rgba(32,42,68,0.4) 100%);
+          display:block;
+          opacity:0.8;
+      }
+      
+      .main__qr{
+          background: linear-gradient(90deg, rgba(249,212,35,0.5) 0%, rgba(32,42,68,0.4) 100%);
       }
     </style>
   </head>
@@ -129,8 +148,8 @@
     
     // the channels could fade to the filter/reverb according to mutes, so reverb is only used for the channels not currently going to the stereo out
     let sounds = [
-        new Tone.Player("canal_II_test_L.mp3"),
-        new Tone.Player("canal_II_test_R.mp3")
+        new Tone.Player("channels_L.mp3"),
+        new Tone.Player("channels_R.mp3")
     ]
     
     Tone.loaded().then(start);
@@ -157,6 +176,7 @@
     document.querySelector('#crossFader').addEventListener("input", (e) => {
         let value = parseFloat(e.target.value);
         console.log(value)
+        
         mix.crossFader.fade.rampTo(value, 0.1, Tone.now())
         mix.channels.forEach((channel,i) => {
             let balance = 0.5*(i-value);
