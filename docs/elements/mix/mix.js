@@ -46,11 +46,29 @@ let playFlag = false;
 
 startButton.addEventListener("click", () => {
     playFlag = !playFlag;
+    setMeters(playFlag);
     startButton.innerHTML = playFlag ? "STOP" : "START";
     sounds.forEach(sound => {
         sound[playFlag ? 'start' : 'stop']()
     })
 })
+
+let meterInterval = function(){
+    mix.meters.forEach((meter,i) => {
+        let level = Tone.dbToGain(meter.getValue());
+        // console.log(level*100)
+        // document.querySelector(`#circle_${i}`).style.width = `${Math.floor(level*100)}%`;
+        document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*400)}%`;
+    })
+}
+
+function setMeters(state){
+    if(state){
+        setInterval(meterInterval, 100);
+    } else {
+        clearInterval(meterInterval);
+    }
+}
 
 document.querySelector('#crossFader').addEventListener("input", (e) => {
     let value = parseFloat(e.target.value);

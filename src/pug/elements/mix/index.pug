@@ -13,6 +13,20 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
     body
         .body__background(aria-hidden="true")
+        svg#meter_0.meter(viewbox='0,0,100,100' aria-hidden="true") 
+            style.
+                circle{
+                    transition:all 0.5s ease-in-out;
+                }
+                
+            circle#circle_0(cx="50" cy="50" r="40" fill="black")
+            
+        svg#meter_1.meter(viewbox='0,0,100,100' aria-hidden="true")
+            style.
+                circle{
+                    transition:all 0.5s ease-in-out;
+                }
+            circle#circle_1(cx="50" cy="50" r="40" fill="black" )
         main.main__qr
             include L.svg 
             include R.svg
