@@ -53,18 +53,20 @@ startButton.addEventListener("click", () => {
     })
 })
 
-let meterInterval = function(){
+let meterUpdate = function(){
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
         // console.log(level*100)
         // document.querySelector(`#circle_${i}`).style.width = `${Math.floor(level*100)}%`;
-        document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*400)}%`;
+        document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*1000)}%`;
     })
 }
 
+let meterInterval;
+
 function setMeters(state){
     if(state){
-        setInterval(meterInterval, 100);
+        meterInterval = setInterval(meterUpdate, 100);
     } else {
         clearInterval(meterInterval);
     }

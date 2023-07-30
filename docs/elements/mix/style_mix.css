@@ -98,7 +98,7 @@ body {
     border-radius:10px;
 }
 
-meter{
+.meter{
     width:100px;
     height:100px;
     height:2rem;
@@ -106,16 +106,16 @@ meter{
     transition:all 1s;
     position:absolute;
     z-index:-1;
-    top:calc(100vh - 100px);
+    top:calc(50vh - 50px);
     display:block;
     border-radius:50%;
 }
 
 #meter_0{
     /* background-color:rgba(249,212,35,0.5); */
-    left:0;
+    left:-50px;
 }
 #meter_1{
     /* background-color:rgba(249,212,35,0.5); */
-    right:0;
+    right:-50px;
 }
