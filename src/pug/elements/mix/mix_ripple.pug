@@ -1,0 +1,31 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title BSS: mix
+        link(href="./style_mix.css" rel="stylesheet")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
+        script(src='https://www.curtainsjs.com/build/curtains.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        //- script(src="../../main.js" defer)
+        link(rel='stylesheet' href='../../style.css')
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
+    body
+        .body__background(aria-hidden="true")
+        main.main__qr
+            include L.svg 
+            include R.svg
+            .bar
+                button.button#start START
+            .bar(style="width:100%;")
+                input#crossFader(type="range" min="0" max="1" step="0.01" value="0.5")
+        include ../../loading
+    script(type="module" src="./mix.js")
+    script(src='../../main.js' defer)
+    script(src='../ripples/script.js' type='module' defer)
+    script(src='../ripples/interact.js' defer)
+    script(src='../ripples/touch.js' defer)
+        

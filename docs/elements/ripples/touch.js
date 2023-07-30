@@ -12,6 +12,10 @@
     delta 
  */
 
+// currently adapting for other pages
+
+if(!window.multitouchMapper) multitouchMapper = window.touch;
+
 multitouchMapper.setAction('.visual')
 
 function getNoteFromId(id){
