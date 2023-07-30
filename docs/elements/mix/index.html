@@ -4,13 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BSS: mix</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <link href="./style_mix.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
     <link rel="stylesheet" href="../../style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
-    <link href="./style_mix.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="body__background" aria-hidden="true"></div>
@@ -52,13 +52,13 @@
   </body>
   <script type="module">
     function loaded(){
-            // todo: add load status message for screen readers
-            document.querySelectorAll('.loading').forEach(element => {
-                element.style.opacity = 0;
-                setTimeout(() => {
-                    element.style.display = 'none';
-                }, 1000);
-            });
+        // todo: add load status message for screen readers
+        document.querySelectorAll('.loading').forEach(element => {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 1000);
+        });
     }
     
     function start(){
@@ -116,10 +116,10 @@
         mix.crossFader.fade.rampTo(value, 0.1, Tone.now())
         mix.channels.forEach((channel,i) => {
             let balance = 0.5*(i-value);
-            //- console.log(i, value, balance)
             channel.pan.rampTo(balance, 0.1, Tone.now())
         })
-        document.querySelector('.body__background').style.filter=`hue-rotate(${180+(value*180)}deg)`;
+        document.querySelector('.body__background').style.filter = `hue-rotate(${Math.floor(180+(value*120))}deg)`;
+        
     })
   </script>
 </html>

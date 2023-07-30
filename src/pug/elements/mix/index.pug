@@ -3,14 +3,14 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title BSS: mix
+        link(href="./style_mix.css" rel="stylesheet")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
         //- script(src="../../main.js" defer)
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         link(rel='stylesheet' href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
-        link(href="./style_mix.css" rel="stylesheet")
     body
         .body__background(aria-hidden="true")
         main.main__qr
@@ -23,13 +23,13 @@ html(lang="en")
         include ../../loading
     script(type="module").
         function loaded(){
-                // todo: add load status message for screen readers
-                document.querySelectorAll('.loading').forEach(element => {
-                    element.style.opacity = 0;
-                    setTimeout(() => {
-                        element.style.display = 'none';
-                    }, 1000);
-                });
+            // todo: add load status message for screen readers
+            document.querySelectorAll('.loading').forEach(element => {
+                element.style.opacity = 0;
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 1000);
+            });
         }
 
         function start(){
@@ -43,8 +43,7 @@ html(lang="en")
             reverb: new Tone.Reverb(2).toDestination(),
             reverbChannel: new Tone.Channel(),
             active:[true, true],
-            crossFader: new Tone.CrossFade(0.5)
-            
+            crossFader: new Tone.CrossFade(0.5)     
         }
 
         mix.reverbChannel.connect(mix.filter);
@@ -79,16 +78,18 @@ html(lang="en")
       
         document.querySelector('#crossFader').addEventListener("input", (e) => {
             let value = parseFloat(e.target.value);
-            console.log(value)
+            //- console.log(value)
             let percentage = value * 50;
             let leftValue = (percentage/2);
             let rightValue = 100-(percentage/2);
             document.querySelector('main').style.background = `linear-gradient(90deg, rgba(249,212,35,0.5) ${leftValue}%, rgba(32,42,68,0.4) ${rightValue}%)`;
-            mix.crossFader.fade.rampTo(value, 0.1, Tone.now())
+            mix.crossFader.fade.rampTo(value, 0.1, Tone.now());
+
             mix.channels.forEach((channel,i) => {
                 let balance = 0.5*(i-value);
-                //- console.log(i, value, balance)
                 channel.pan.rampTo(balance, 0.1, Tone.now())
             })
-            document.querySelector('.body__background').style.filter=`hue-rotate(${180+(value*180)}deg)`;
+            
+            document.querySelector('.body__background').style.filter = `hue-rotate(${Math.floor(180+(value*120))}deg)`;
+            
         })
