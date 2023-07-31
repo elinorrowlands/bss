@@ -1,7 +1,7 @@
 function setInteractions(){
     // set multitouch actions
 
-    multitouchMapper.setAction('.interact')
+    touch.setAction('.interact')
 
     const interactions = {
         bridge: (e)=>{

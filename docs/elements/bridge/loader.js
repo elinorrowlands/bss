@@ -55,7 +55,7 @@ function interpolateStates(value){
 }
 
 const loader = ()=>{
-    multitouchMapper.depth=4;
+    touch.depth=4;
 
     faders = {
         echo: document.querySelector('#effect__echo'),
@@ -162,5 +162,4 @@ const loader = ()=>{
 
     document.querySelector('#states__interpolate').dispatchEvent(new Event('input'));
 
-    
 }
