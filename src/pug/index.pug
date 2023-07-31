@@ -7,17 +7,10 @@ html(lang="en")
             let animationCount = 1;
 
             const animation = ()=>{
-                let waterscale = animationCount % 2 == 0 ? 6 : 7;
-                document.querySelector('#water').style.transform = `scale(${waterscale})`;
+                let waterscale = animationCount % 2 == 0 ? 1.1 : 1.2;
+                document.querySelectorAll('#water #layer0').forEach(x=>x.style.transform = `scale(${waterscale})`);
                 animationCount++;
-            }
-
-            animation();
-            
-            document.body.addEventListener('load',()=>{
-                animation();
-                window.setInterval(animation, 60000);
-            })
+            }            
     body
         //- banner 
         main.splash
@@ -28,7 +21,9 @@ html(lang="en")
                     img.icon.icon__info(src='icons/noun-information-150178-FFFFFF.svg' title="Information")  
         footer
             include footer
-
+    script.
+        animation();
+        window.setInterval(animation, 60000);
        
 
             

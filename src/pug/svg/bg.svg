@@ -9,7 +9,7 @@
             transition: all 1s ease-in-out;
         }
     </style>
-    <g id="layer0" >
+    <g id="layer0" style="transform-origin: center center; transition: transform 60000s;">
     <!-- filter="url('#wash')" -->
         <!-- <filter id="wash">
         <feFlood
