@@ -7,8 +7,8 @@ html(lang="en")
             let animationCount = 1;
 
             const animation = ()=>{
-                let scale = animationCount % 2 == 0 ? 4 : 6;
-                document.querySelector('#water').style.transform = `scale(${scale})`;
+                let waterscale = animationCount % 2 == 0 ? 6 : 7;
+                document.querySelector('#water').style.transform = `scale(${waterscale})`;
                 animationCount++;
             }
 
