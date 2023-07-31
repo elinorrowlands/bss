@@ -9,6 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <script src="./main.js" defer="defer"></script>
     <title>Biodivergent Sites and Sounds</title>
+    <script>
+      let animationCount = 1;
+      
+      const animation = ()=>{
+          let scale = animationCount % 2 == 0 ? 4 : 6;
+          document.querySelector('#water').style.transform = `scale(${scale})`;
+          animationCount++;
+      }
+      
+      animation();
+      
+      document.body.addEventListener('load',()=>{
+          animation();
+          window.setInterval(animation, 60000);
+      })
+    </script>
   </head>
   <body>
     <main class="splash">
@@ -4631,21 +4647,5 @@
     <footer>
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
     </footer>
-    <script>
-      let animationCount = 1;
-      
-      const animation = ()=>{
-          let scale = animationCount % 2 == 0 ? 4 : 6;
-          document.querySelector('#water').style.transform = `scale(${scale})`;
-          animationCount++;
-      }
-      
-      animation();
-      
-      document.body.addEventListener('load',()=>{
-          animation();
-          window.setInterval(animation, 60000);
-      })
-    </script>
   </body>
 </html>
