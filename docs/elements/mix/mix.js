@@ -29,7 +29,7 @@ mix.crossFader.toDestination();
 let sounds = [
     new Tone.Player("channels_L.mp3"),
     new Tone.Player("channels_R.mp3")
-]
+];
 
 Tone.loaded().then(start);
 
@@ -39,7 +39,7 @@ sounds.forEach((sound,i) => {
     sound.connect(mix.reverbChannel);
     mix.channels[i].pan.value = 0.5 - i;
     mix.channels[i].connect(i === 0 ? mix.crossFader.a : mix.crossFader.b);
-})
+});
 
 let startButton = document.querySelector("#start");
 let playFlag = false;
@@ -56,8 +56,6 @@ startButton.addEventListener("click", () => {
 let meterUpdate = function(){
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
-        // console.log(level*100)
-        // document.querySelector(`#circle_${i}`).style.width = `${Math.floor(level*100)}%`;
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*1000)}%`;
     })
 }
@@ -74,7 +72,6 @@ function setMeters(state){
 
 document.querySelector('#crossFader').addEventListener("input", (e) => {
     let value = parseFloat(e.target.value);
-    
     let percentage = value * 50;
     let leftValue = (percentage/2);
     let rightValue = 100-(percentage/2);
