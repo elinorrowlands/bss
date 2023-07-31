@@ -8,4 +8,5 @@ window.syncCC = new SyncCC();
 window.generateQR = generateQR;
 window.srtToSbv = srtToSbv;
 window.touch = new MultitouchMapper();
-window.mapLoad = mapLoad;
+
+
