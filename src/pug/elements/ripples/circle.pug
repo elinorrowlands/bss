@@ -61,4 +61,96 @@ body
   script(src='./interact.js' defer)
   script(src='./touch.js' defer)
   script.
+    const container = 'body';
+    let moused = false;
+    const sounds = {
+        loop: new Tone.Player("nesting.mp3"),
+        meter: new Tone.Meter(),
+        filter: new Tone.Filter(200, "lowpass"),
+        hpf: new Tone.Filter(400, "highpass"),
+        echo: new Tone.FeedbackDelay("2n", 0.5).toMaster(),
+        echoMeter: new Tone.Meter()
+    }
+
+    sounds.echo.wet.value = 1;
+    sounds.loop.connect(sounds.filter);
+    sounds.filter.toMaster();
+    sounds.filter.connect(sounds.hpf);
+    sounds.hpf.connect(sounds.echo);
+    sounds.echo.connect(sounds.echoMeter);
+    sounds.filter.connect(sounds.meter);
+    const interactions = {
+        enable:     function(e){
+            console.log('click', e.clientX, e.clientY)
+            //- $(container).ripples("drop", e.clientX, e.clientY, 20, 30)
+            //- $(container).ripples('set', 'interactive', true)
+            //- e.preventDefault();
+        },
+        disable:    function(e){
+            console.log('click', e.clientX, e.clientY)
+            //- $(container).ripples("drop", e.clientX, e.clientY, 20, 30)
+            //- $(container).ripples('set', 'interactive', false)
+            //- e.preventDefault();
+        }
+    }
+    let events = {
+        enable: ['mousedown', 'touchstart', 'touchmove'],
+        disable: ['mouseup', 'touchend']
+    }
+
+    Object.keys(events).forEach( event => {
+        events[event].forEach( e => {
+            document.querySelector(container).addEventListener(e, interactions[event])
+        })
+    })
+
+    
+
+    function setBGAnimation(){
+        let i = 0, count = 0;
+        setInterval( () => {
+            i = i === 0 ? 1 : 0;
+            count++;
+            
+            if(moused){
+                let hue = Math.floor(count/3);
+                document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`
+            } else {
+                document.body.style.filter = `hue-rotate(0deg)`
+                console.log(`hue-rotate(0deg)`)
+            }
+            
+            $('#waterCircle').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel()))
+            $('#waterCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getLevel())*4})`);
+            $('#echoCircle').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*6})`);
+            $('#echoCircle2').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*10})`);
+ 
+        }, 30)
+    }
+
+    setBGAnimation();
+    //- $(container).ripples('drop', window.clientWidth/2, window.clientHeight/2, 20, 30);
+    let started = false;
+    
+
+    window.addEventListener('mousedown', (e) => {
+    Tone.start();
+        sounds.loop.loop = true;
+        if(!started){
+            sounds.loop.start();    
+            started = true;
+        }
+     sounds.filter.frequency.rampTo(1000, 1);
+        moused = true;   
+    });
+
+    window.addEventListener('mouseup',(e) => {
+        sounds.filter.frequency.rampTo(200, 1);
+        moused=false;
+    });
+
+    Tone.start();
+
+    
+    
     let loadScript = loadingIndicator.init();
