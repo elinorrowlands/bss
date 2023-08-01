@@ -66,7 +66,6 @@
   <script src="./touch.js" defer></script>
   <script>
     const container = 'body';
-    let moused = false;
     const sounds = {
         loop: new Tone.Player("nesting.mp3"),
         meter: new Tone.Meter(),
@@ -75,6 +74,7 @@
         echo: new Tone.FeedbackDelay("2n", 0.5).toMaster(),
         echoMeter: new Tone.Meter()
     }
+    let moused = false;
     
     sounds.echo.wet.value = 1;
     sounds.loop.connect(sounds.filter);
@@ -83,32 +83,6 @@
     sounds.hpf.connect(sounds.echo);
     sounds.echo.connect(sounds.echoMeter);
     sounds.filter.connect(sounds.meter);
-    const interactions = {
-        enable:     function(e){
-            console.log('click', e.clientX, e.clientY)
-            //- $(container).ripples("drop", e.clientX, e.clientY, 20, 30)
-            //- $(container).ripples('set', 'interactive', true)
-            //- e.preventDefault();
-        },
-        disable:    function(e){
-            console.log('click', e.clientX, e.clientY)
-            //- $(container).ripples("drop", e.clientX, e.clientY, 20, 30)
-            //- $(container).ripples('set', 'interactive', false)
-            //- e.preventDefault();
-        }
-    }
-    let events = {
-        enable: ['mousedown', 'touchstart', 'touchmove'],
-        disable: ['mouseup', 'touchend']
-    }
-    
-    Object.keys(events).forEach( event => {
-        events[event].forEach( e => {
-            document.querySelector(container).addEventListener(e, interactions[event])
-        })
-    })
-    
-    
     
     function setBGAnimation(){
         let i = 0, count = 0;
@@ -121,7 +95,6 @@
                 document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`
             } else {
                 document.body.style.filter = `hue-rotate(0deg)`
-                console.log(`hue-rotate(0deg)`)
             }
             
             $('#waterCircle').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel()))
@@ -133,9 +106,8 @@
     }
     
     setBGAnimation();
-    //- $(container).ripples('drop', window.clientWidth/2, window.clientHeight/2, 20, 30);
-    let started = false;
     
+    let started = false;
     
     window.addEventListener('mousedown', (e) => {
     Tone.start();
@@ -154,8 +126,6 @@
     });
     
     Tone.start();
-    
-    
     
     let loadScript = loadingIndicator.init();
   </script>
