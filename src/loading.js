@@ -11,9 +11,11 @@ let loadingIndicator = {
     },
     init(interval = 5000){
         this.createLoadingIndicator();
-        setInterval(this.blink, interval);
+        window.loadBlink = setInterval(this.blink, interval);
+        Tone.loaded().then(loaded)
     },
     blink(){
+        let loadBlinkCount = this.blinkCount;
         document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;
         document.querySelectorAll('.loading')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
         document.querySelectorAll('.loadMsg')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
