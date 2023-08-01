@@ -7,9 +7,9 @@ This is the class that renders the whole scene (tiles texture and title) and app
 export default class RipplesScene {
 
     constructor({
-        viscosity = 5,
-        speed = 3.5,
-        size = 1,
+        viscosity = 2.7,
+        speed = 1.6,
+        size = 0.5,
 
         displacementStrength = 4,
         lightIntensity = 5,
@@ -41,41 +41,50 @@ export default class RipplesScene {
         this.guiShowTexture = this.sceneGui.add(this.guiParams, 'showTexture', true);
         this.guiTitleColor = this.sceneGui.addColor(this.guiParams, 'titleColor');
 
-        this.guiDisplacement.onChange((value) => {
-            if(this.scenePlane) {
-                this.scenePlane.uniforms.displacementStrength.value = value;
-            }
-        });
+        let parameters = ['displacement', 'lights', 'shadows', 'blurRipples', 'showTexture', 'titleColor'];
 
-        this.guiLights.onChange((value) => {
-            if(this.scenePlane) {
-                this.scenePlane.uniforms.lightIntensity.value = value;
-            }
+        parameters.forEach((parameter) => {
+            this.sceneGui.__controllers.forEach((controller) => {
+                controller.onChange((value) => {
+                    this.guiParams[parameter] = value;
+                });
+            });
         });
+        // this.guiDisplacement.onChange((value) => {
+        //     if(this.scenePlane) {
+        //         this.scenePlane.uniforms.displacementStrength.value = value;
+        //     }
+        // });
 
-        this.guiShadows.onChange((value) => {
-            if(this.scenePlane) {
-                this.scenePlane.uniforms.shadowIntensity.value = value;
-            }
-        });
+        // this.guiLights.onChange((value) => {
+        //     if(this.scenePlane) {
+        //         this.scenePlane.uniforms.lightIntensity.value = value;
+        //     }
+        // });
 
-        this.guiBlurRipples.onChange((value) => {
-            if(this.scenePlane) {
-                this.scenePlane.uniforms.blurRipples.value = value ? 1 : 0;
-            }
-        });
+        // this.guiShadows.onChange((value) => {
+        //     if(this.scenePlane) {
+        //         this.scenePlane.uniforms.shadowIntensity.value = value;
+        //     }
+        // });
 
-        this.guiShowTexture.onChange((value) => {
-            if(this.scenePlane) {
-                this.scenePlane.uniforms.showTexture.value = value ? 1 : 0;
-            }
-        });
+        // this.guiBlurRipples.onChange((value) => {
+        //     if(this.scenePlane) {
+        //         this.scenePlane.uniforms.blurRipples.value = value ? 1 : 0;
+        //     }
+        // });
 
-        this.guiTitleColor.onChange((value) => {
-            if(this.scenePlane) {
-                this.scenePlane.uniforms.titleColor.value = value;
-            }
-        });
+        // this.guiShowTexture.onChange((value) => {
+        //     if(this.scenePlane) {
+        //         this.scenePlane.uniforms.showTexture.value = value ? 1 : 0;
+        //     }
+        // });
+
+        // this.guiTitleColor.onChange((value) => {
+        //     if(this.scenePlane) {
+        //         this.scenePlane.uniforms.titleColor.value = value;
+        //     }
+        // });
     }
 
     init() {

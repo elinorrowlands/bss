@@ -10,9 +10,9 @@ let count = 0;
 window.addEventListener("load", () => {
     if(!window.rippleScene){
         window.rippleScene = new RipplesScene({
-            viscosity: 7.5,
-            speed: 5,
-            size: 1.25,
+            viscosity: 2.7,
+            speed: 1.6,
+            size: 0.5,
             displacementStrength: 1.5,
             lightIntensity: 5,
             shadowIntensity: 2.5,
