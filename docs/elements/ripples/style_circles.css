@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('reflection1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    touch-action: none;
+    filter:hue-rotate(180deg);
+    transition:filter 1s ease;
+    transform-origin: center center;
+    overflow:hidden;
+}
+
+#backdrop{
+    margin: 0;
+    padding: 0;
+    background: url('reflection1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-color:red;
+    touch-action: none;
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    z-index:-1;
+    opacity:0.5;
+    transform: scale(1.1);
+}
+
+circle{
+    transition:all 0.5s ease;
+    transform-origin: center center;
+}
+
+#waterCircle{
+    transform:scale(0);
+}
+#echoCircle{
+    transform:scale(0);
+}
+#echoCircle2{
+    transform:scale(0);
+    transition: all 1s ease;
+}
+
+canvas {
+    display: block;
+}

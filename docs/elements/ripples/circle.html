@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>BSS: Ripples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rakkas&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style_circles.css">
+  <style>
+    body{
+        overflow:hidden;
+        transition:all 1s ease;
+        height:100vh;
+        width:100vw;
+    }
+    
+    canvas{
+      user-select:none;
+    }
+    
+    #painting,#centeredCircle{
+      user-select:none;
+      width:100%; 
+      position:absolute;
+      margin:0;
+      display:block;
+      //- transform:scale(2);
+      
+      transform-origin:center;
+      
+      @media (max-width: 600px) {
+       width:100%; 
+       height:100%;
+      
+        top:0;
+        transform-origin:center;
+      }
+    
+      
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div id="canvas"></div>
+  <div id="content">
+    <div id="water-ripples">
+      <div id="water-ripples-title">
+        <h1 style="user-select:none;pointer-events:none;"></h1>
+      </div>
+      <svg id="centeredCircle" width="100%" height="100%" viewBox="0 0 100 100">
+        <circle id="waterCircle" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" style="opacity:0.4;"></circle>
+        <circle id="echoCircle" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" style="opacity:0.4;"></circle>
+        <circle id="echoCircle2" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" style="opacity:0.4;"></circle>
+      </svg><img src="water_frame_0.png" alt="water" crossorigin="" data-sampler="planeTexture">
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js"></script>
+  <script src="../../main.js"></script>
+  <script src="./script.js" type="module" defer></script>
+  <script src="./interact.js" defer></script>
+  <script src="./touch.js" defer></script>
+  <script>let loadScript = loadingIndicator.init();</script>
+</body>
