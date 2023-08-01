@@ -1,6 +1,4 @@
 function setInteractions(){
-    // set multitouch actions
-
     touch.setAction('.interact')
 
     const interactions = {

@@ -1,12 +1,12 @@
-// create html element (assign style in css)
-// set timeout 
-
 let loadingIndicator = {
     blinkCount: 0,
     createLoadingIndicator(){
         let loading = document.createElement('div');
         loading.classList.add('loading');
-        loading.innerHTML = 'Loading...';
+        let loadH1 = document.createElement('h1');
+        loadH1.classList.add('loadMsg');
+        loadH1.innerHTML = 'Loading...';
+        loading.appendChild(loadH1);
         document.body.appendChild(loading);
     },
     init(interval = 5000){
