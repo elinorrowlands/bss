@@ -7,19 +7,19 @@ let started = false;
 let moused = false;
 let bgAnimation;
 let count = 0;
+var paintingFlag = false;
 window.addEventListener("load", () => {
     if(!window.rippleScene){
         window.rippleScene = new RipplesScene({
-            viscosity: 2.7,
-            speed: 1.6,
-            size: 0.5,
+            viscosity: 10,
+            speed: 8,
+            size: 0.75,
             displacementStrength: 1.5,
             lightIntensity: 5,
             shadowIntensity: 2.5,
         });  
         rippleScene.gui.hide();    
     }
-    
 });
 
 window.addEventListener("keydown", (e) => {
@@ -45,10 +45,10 @@ function setBGAnimation(){
         let level = Tone.dbToGain(sounds.meter.getLevel())
         let echoGain = Tone.dbToGain(sounds.echoMeter.getLevel())*2;
 
-        if(moused){
-            // $('#note_0').css('transform', `scale(${1 + level*2})`);
-            // $('#note_2').css('transform', `scale(${1 + level*2.1})`);
-            // $('#note_1').css('transform', `scale(${1 + level*(moused?5:1)})`);
+        if(moused&&paintingFlag){
+            $('#note_0').css('transform', `scale(${1 + level*2})`);
+            $('#note_2').css('transform', `scale(${1 + level*2.1})`);
+            $('#note_1').css('transform', `scale(${1 + level*(moused?5:1)})`);
         }
         
         
