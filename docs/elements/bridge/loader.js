@@ -39,13 +39,13 @@ function interpolateStates(value){
         })
     }
     
-    let hsl = hslToArray(interpolateColour(value, states[1], states[2]));
+    // let hsl = hslToArray(interpolateColour(value, states[1], states[2]));
 
-    if(true){
-        document.querySelector('#colour-picker').value = HSLToHex(...hsl);
-    }
+    // if(true){
+    //     document.querySelector('#colour-picker').value = HSLToHex(...hsl);
+    // }
 
-    document.body.style.backgroundColor = document.querySelector('#colour-picker').value;
+    // document.body.style.backgroundColor = document.querySelector('#colour-picker').value;
 
     echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
     
