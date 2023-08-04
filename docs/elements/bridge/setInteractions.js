@@ -5,9 +5,12 @@ function setInteractions(){
         bridge: (e)=>{
             
             const {type, relative, rect, element} = e.detail;
-            const {x, y} = relative;
+            // const {x, y} = relative;
+            const {x, y} = e.detail;
             
             var value = Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
+            // var value = Math.sin(cm.constrain((x/window.InnerWidth), 0, 1)*3.14);
+            console.log(value)
             switch(type){
                 case 'start':
                     // document.body.classList.add('liminal');
@@ -26,7 +29,8 @@ function setInteractions(){
                 case 'move':
                     // document.body.classList.remove('liminal');
                     // document.querySelector('.interact').classList.remove('liminal');
-                    document.querySelector('#backdrop').style.filter=`hue-rotate(${cm.constrain((x/rect.original.width)*360, 0, 360)}deg)`;
+                    document.querySelector('#backdrop').style.filter=`hue-rotate(${Math.floor(cm.constrain((x/rect.original.width)*50, 0, 360))}deg)`;
+                    console.log(Math.floor(cm.constrain((x/rect.original.width)*50, 0, 360)))
                     
                     interpolateStates(value);
                     element.style.opacity = 0.1 + (value * 0.7);
@@ -36,7 +40,7 @@ function setInteractions(){
                     // document.querySelector('.interact').classList.add('liminal');
                     interpolateStates(0.92);
                     element.style.opacity = 0.1;
-                    document.querySelectorAll('#backdrop').forEach(x=>xstyle.filter=`hue-rotate(0deg)`);
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(0deg)`);
                     break;
                 case 'end':
                     // document.body.classList.add('liminal');
