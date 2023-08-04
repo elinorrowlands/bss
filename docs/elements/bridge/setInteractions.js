@@ -53,7 +53,10 @@ function setInteractions(){
         },
         cover:(e)=>{
             e.detail.element.style.opacity = 0;
+            
             if(player.state != 'started'){
+                console.log('cover')
+                Tone.start()
                 player.start();
             }
         },
