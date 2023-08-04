@@ -38,14 +38,14 @@
     </style>
     <!-- mask="url(#mask_vertical)" -->
     <!-- mask="url(#mask_horizontal)" -->
-    <g id="Canvas_1"  stroke-opacity="1" fill="none" stroke="none" stroke-dasharray="none" fill-opacity="1">
-      <g id="maskGroup" >
+    <g id="Canvas_1" mask="url(#mask_vertical)"  stroke-opacity="1" fill="none" stroke="none" stroke-dasharray="none" fill-opacity="1">
+      <g id="maskGroup" mask="url(#mask_horizontal)">
       <g id="Canvas_1_Layer_1">
 
       
         <g id="Group_2">
       
-          <g id="Graphic_82">
+          <g id="Graphic_82" style="display:none;">
             <path d="M 40.5 486.23904 C 193.8175 486.23904 347.3665 486.35304 500.6845 486.35304 C 500.6845 384.69704 500.7545 282.89504 500.7545 181.23904 C 347.4375 181.23904 193.8885 181.125 40.57048 181.125 C 40.57048 282.78104 40.5 384.58304 40.5 486.23904 Z M 494.5025 468.26404 L 492.6275 469.23904 C 484.5705 469.23904 473.9125 469.11204 464.6305 469.11204 C 418.3305 466.99504 372.7565 466.32104 329.6855 462.12604 C 331.4145 457.77404 330.3595 455.45204 327.9035 454.38004 C 325.4475 453.30904 321.5225 453.47504 317.6175 454.11204 C 302.5605 454.11204 286.5305 454.11204 272.6275 454.11204 C 269.5495 454.11204 264.2685 454.11204 262.6275 454.11204 C 260.5595 454.11204 256.1905 454.11204 255.6275 454.11204 C 253.8815 454.11204 249.8455 454.11204 249.6275 454.11204 C 248.1915 454.11204 244.5165 454.36604 244.6275 454.36604 C 241.2055 454.36604 235.6315 454.11104 233.6275 454.11104 C 231.2275 454.11104 226.5455 454.11104 225.6275 454.11104 C 223.8815 454.11104 219.8455 454.11204 219.6275 454.11204 C 200.8615 454.11204 181.2665 454.11204 163.6275 454.11204 C 155.0295 454.11204 145.0035 454.11304 137.6439 454.11304 C 131.4062 452.43804 120.8684 453.53204 114.6304 453.11204 C 106.5389 453.29104 99.2103 451.17304 91.6128 452.11204 C 83.8935 452.95204 78.2056 450.12504 71.618 451.11204 C 66.4658 451.11204 59.4197 451.11404 55.6036 451.11404 C 51.7996 452.68804 50.40113 451.59704 49.82963 449.61204 C 49.25813 447.62804 49.66488 444.88304 49.75481 443.24604 C 54.2486 380.46704 82.1803 343.27804 79.7549 271.23474 C 79.7549 264.92814 79.755 255.80744 79.755 248.23904 C 79.755 236.57094 79.755 223.71844 79.755 213.23904 C 80.3756 205.26174 78.5907 193.54344 80.7262 188.3198 C 217.2085 188.49077 354.1785 188.0913 489.5705 189.35292 C 490.8995 208.80734 490.2865 230.78584 490.5005 250.24044 C 490.1625 284.56204 491.0305 321.29804 489.5005 353.23304 C 487.7175 393.52104 492.6185 424.81104 493.5005 461.25004 C 494.3625 460.84704 494.5585 462.04004 494.5655 463.61804 C 494.5735 465.19604 494.3945 467.17104 494.5025 468.26404 Z" fill="#feffff"/>
           </g>
           <g id="Graphic_81">
@@ -286,7 +286,7 @@
             <path d="M 273.5905 212.36114 L 274.7555 212.23904 C 273.5065 210.34744 277.1425 206.62924 274.6645 205.11714 L 271.5005 206.23904 C 270.8345 207.82264 272.0925 211.45964 273.5905 212.36114 Z" fill="#7c838b"/>
           </g>
         </g>
-        <g id="Group_83" style="display:none;">
+        <g id="Group_83">
 
           <g id="Graphic_258">
             <path d="M 24.92502 574.7175 L 29.665765 574.7175 C 29.5023 569.9794 27.148746 570.10724 24.886705 571.122 Z" fill="#4a5947"/>
@@ -816,7 +816,7 @@
         
         </g>
       </g>
-      <image href="photo_elinor.png" style="opacity:0.4;" id="photo" x="24.75" y="50.625" width="524.57996" height="524.25" fill="#fff"/>
+      <!-- <image href="photo_elinor.png" style="opacity:0.4;" id="photo" x="24.75" y="50.625" width="524.57996" height="524.25" fill="#fff"/> -->
       
     </g>
    
@@ -852,11 +852,51 @@
   <g >
     <!-- rect matches new viewbox -->
     
-     <rect  x="24.75" y="50.625" width="524.57996" height="524.25" fill="#fff"/>
+     
    </g>
    <g >
     
-     <rect id="white_light" class="interact cover" x="24.75" y="50.625" width="524.57996" height="524.25" fill="#fff"/>
+     <rect  x="24.75" y="50.625" width="524.57996" height="524.25" fill="#000"/>
+   </g>
+  </g>
+  </g>
+  </svg>
+
+  <svg id="white_light" class="interact cover" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="24.75 50.625 524.57996 524.25" style="position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;transform:scale(0.8); transform-origin:center center;">
+    <defs>
+      <linearGradient id="fade_horizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0.05" stop-color="black"></stop>
+          <stop offset="0.4" stop-color="white"></stop>
+          <stop offset="0.6" stop-color="white"></stop>
+          <stop offset="0.95" stop-color="black"></stop>
+      </linearGradient>
+      <linearGradient id="fade_vertical" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0.05" stop-color="black"></stop>
+          <stop offset="0.4" stop-color="white"></stop>
+          <stop offset="0.6" stop-color="white"></stop>
+          <stop offset="0.95" stop-color="black"></stop>
+      </linearGradient>
+      <mask id="mask_horizontal">
+            
+        <rect x="24.75" y="50.625" width="524.57996" height="524.25" fill="url(#fade_horizontal)"/>
+
+    </mask>
+    <mask id="mask_vertical">
+        
+        <rect x="24.75" y="50.625" width="524.57996" height="524.25" fill="url(#fade_vertical)"/>
+    </mask>
+  </defs>
+  <g mask="url(#mask_vertical)">
+    <g mask="url(#mask_horizontal)">
+  
+  <g >
+    <!-- rect matches new viewbox -->
+    
+     
+   </g>
+   <g >
+    
+     <rect x="24.75" y="50.625" width="524.57996" height="524.25" fill="#fff"/>
    </g>
   </g>
   </g>
