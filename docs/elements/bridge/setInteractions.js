@@ -5,12 +5,12 @@ function setInteractions(){
         bridge: (e)=>{
             
             const {type, relative, rect, element} = e.detail;
-            // const {x, y} = relative;
-            const {x, y} = e.detail;
+            const {x, y} = relative;
+            // const {x, y} = e.detail;
             
             var value = Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
-            // var value = Math.sin(cm.constrain((x/window.InnerWidth), 0, 1)*3.14);
-            console.log(value)
+            // var value = 1 -Math.sin(cm.constrain((x/window.InnerWidth), 0, 1)*3.14);
+            // console.log(value)
             switch(type){
                 case 'start':
                     // document.body.classList.add('liminal');
@@ -40,14 +40,14 @@ function setInteractions(){
                     // document.querySelector('.interact').classList.add('liminal');
                     interpolateStates(0.92);
                     element.style.opacity = 0.1;
-                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(0deg)`);
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
                     break;
                 case 'end':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     interpolateStates(0.92);
                     element.style.opacity = 0.1;
-                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(0deg)`);
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
                     break;
             }
         },

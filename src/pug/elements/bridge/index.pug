@@ -11,6 +11,13 @@ head
             transition: background-color 0.1s;
             touch-action:none;
             overflow:hidden;
+            user-select:none;
+            -webkit-user-select: none; /* Safari */
+        }
+
+        svg{
+            user-select:none;
+            -webkit-user-select: none; /* Safari */
         }
 
         .liminal { 
@@ -94,7 +101,7 @@ body(onload="loader()")
             //- g#mask__test 
                 //- rect(x='0' y='0' width='30' height='20' fill='white')
                 //- rect#cover__img--mask__rect(x='0' y='0' width='100' height='100' fill='black')
-        include bridge_svg.html
+        include bridge_simplified.html
 script(src='conversions.js')
 script(src='setInteractions.js')
 script(src='loader.js')
