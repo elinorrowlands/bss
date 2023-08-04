@@ -7,7 +7,7 @@ function setInteractions(){
             const {type, relative, rect, element} = e.detail;
             const {x, y} = relative;
             
-            var value = 1 - Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
+            var value = Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
             switch(type){
                 case 'start':
                     // document.body.classList.add('liminal');
@@ -55,7 +55,7 @@ function setInteractions(){
         },
         path:(e)=>{
             const {type, relative, rect, element} = e.detail;
-            element.style.opacity = type == 'start' || type == 'move' || type == 'enter' ? 1 : 0.8;
+            element.style.opacity = (type == 'start' || type == 'move' || type == 'enter') ? 1 : 0.8;
             // switch(type){
             //     case 'start':
             //         element.style.opacity=0.1;
