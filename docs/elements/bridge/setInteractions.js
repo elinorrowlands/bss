@@ -29,8 +29,8 @@ function setInteractions(){
                 case 'move':
                     // document.body.classList.remove('liminal');
                     // document.querySelector('.interact').classList.remove('liminal');
-                    document.querySelector('#backdrop').style.filter=`hue-rotate(${Math.floor(cm.constrain((x/rect.original.width)*50, 0, 360))}deg)`;
-                    console.log(Math.floor(cm.constrain((x/rect.original.width)*50, 0, 360)))
+                    document.querySelector('#backdrop').style.filter=`hue-rotate(${Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360))}deg)`;
+                    console.log(Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360)))
                     
                     interpolateStates(value);
                     element.style.opacity = 0.1 + (value * 0.7);
