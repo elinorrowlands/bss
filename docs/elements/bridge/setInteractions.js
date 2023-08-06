@@ -19,6 +19,7 @@ function setInteractions(){
                     
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
+                    // element.style.strokeWidth = 10;
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'enter':
@@ -26,6 +27,7 @@ function setInteractions(){
                     // document.querySelector('.interact').classList.add('liminal');
                     
                     interpolateStates(value);
+                    // element.style.strokeWidth = 10;
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
@@ -36,6 +38,7 @@ function setInteractions(){
                     console.log(Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360)))
                     
                     interpolateStates(value);
+                    // element.style.strokeWidth = 0;
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
 
                     photo.style.opacity = (0.1 + (value * 0.7));
@@ -43,7 +46,9 @@ function setInteractions(){
                 case 'leave':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
-                    interpolateStates(0.92);
+                    
+                    // interpolateStates(0.92);
+                    interpolateStates(1);
                     element.style.opacity = 0;
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
                     photo.style.opacity=1;
@@ -51,7 +56,8 @@ function setInteractions(){
                 case 'end':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
-                    interpolateStates(0.92);
+                    // interpolateStates(0.92);
+                    interpolateStates(1);
                     element.style.opacity = 0;
                     photo.style.opacity=1;
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
@@ -70,6 +76,8 @@ function setInteractions(){
         path:(e)=>{
             const {type, relative, rect, element} = e.detail;
             element.style.opacity = (type == 'start' || type == 'move' || type == 'enter') ? 1 : 0.8;
+            element.style.stroke=(type == 'start' || type == 'move' || type == 'enter') ? '#fff' : '#000';
+            element.style.strokeWidth =(type == 'start' || type == 'move' || type == 'enter') ? 1 : 0;
             // switch(type){
             //     case 'start':
             //         element.style.opacity=0.1;
