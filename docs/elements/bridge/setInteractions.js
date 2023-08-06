@@ -11,6 +11,7 @@ function setInteractions(){
             var value = 1 - Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
             // var value = 1 -Math.sin(cm.constrain((x/window.InnerWidth), 0, 1)*3.14);
             console.log('value',value)
+            let photo = document.querySelector('#photo');
             switch(type){
                 case 'start':
                     // document.body.classList.add('liminal');
@@ -18,6 +19,7 @@ function setInteractions(){
                     
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
+                    photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'enter':
                     // document.body.classList.add('liminal');
@@ -25,6 +27,7 @@ function setInteractions(){
                     
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
+                    photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'move':
                     // document.body.classList.remove('liminal');
@@ -34,6 +37,8 @@ function setInteractions(){
                     
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
+
+                    photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'leave':
                     // document.body.classList.add('liminal');
@@ -41,12 +46,14 @@ function setInteractions(){
                     interpolateStates(0.92);
                     element.style.opacity = 0;
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
+                    photo.style.opacity=1;
                     break;
                 case 'end':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     interpolateStates(0.92);
                     element.style.opacity = 0;
+                    photo.style.opacity=1;
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
                     break;
             }
