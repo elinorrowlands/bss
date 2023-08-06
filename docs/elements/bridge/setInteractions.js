@@ -19,26 +19,28 @@ function setInteractions(){
                     
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
-                    // element.style.strokeWidth = 10;
+                    element.style.strokeWidth = 10;
                     photo.style.opacity = (0.1 + (value * 0.7));
+                    document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
                     break;
                 case 'enter':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
-                    
+                    document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
                     interpolateStates(value);
-                    // element.style.strokeWidth = 10;
+                    element.style.strokeWidth = 10;
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'move':
                     // document.body.classList.remove('liminal');
                     // document.querySelector('.interact').classList.remove('liminal');
-                    document.querySelector('#backdrop').style.filter=`hue-rotate(${Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360))}deg)`;
+                    document.querySelector('#backdrop').style.filter=`hue-rotate(${8250 + Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360))}deg)`;
+                    document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
                     console.log(Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360)))
                     
                     interpolateStates(value);
-                    // element.style.strokeWidth = 0;
+                    element.style.strokeWidth = 10;
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
 
                     photo.style.opacity = (0.1 + (value * 0.7));
@@ -50,17 +52,21 @@ function setInteractions(){
                     // interpolateStates(0.92);
                     interpolateStates(1);
                     element.style.opacity = 0;
-                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
+                    element.style.strokeWidth = 0;
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(8250deg)`);
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.opacity=1);
                     photo.style.opacity=1;
                     break;
                 case 'end':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     // interpolateStates(0.92);
+                    element.style.strokeWidth=0;
                     interpolateStates(1);
                     element.style.opacity = 0;
                     photo.style.opacity=1;
-                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(8250deg)`);
+                    document.querySelectorAll('#backdrop').forEach(x=>x.style.opacity=1);
                     break;
             }
         },
