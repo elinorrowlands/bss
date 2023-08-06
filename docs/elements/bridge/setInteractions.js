@@ -68,7 +68,7 @@ function setInteractions(){
             e.detail.element.style.opacity = 0;
             
             if(player.state != 'started'){
-                console.log('cover')
+                // console.log('cover')
                 Tone.start()
                 player.start();
             }
@@ -78,23 +78,6 @@ function setInteractions(){
             element.style.opacity = (type == 'start' || type == 'move' || type == 'enter') ? 1 : 0.8;
             element.style.stroke=(type == 'start' || type == 'move' || type == 'enter') ? '#fff' : '#000';
             element.style.strokeWidth =(type == 'start' || type == 'move' || type == 'enter') ? 1 : 0;
-            // switch(type){
-            //     case 'start':
-            //         element.style.opacity=0.1;
-            //         break;
-            //     case 'enter':
-            //         element.style.opacity=0.1;
-            //         break;
-            //     case 'move':
-            //         element.style.opacity=0;
-            //         break;
-            //     case 'leave':
-            //         element.style.opacity=1;
-            //         break;
-            //     case 'end':
-            //         element.style.opacity=1;
-            //         break;
-            // }
         }
     }
 

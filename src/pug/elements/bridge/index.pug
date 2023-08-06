@@ -37,6 +37,9 @@ head
         #backdrop{
             opacity:0.6;
         }
+        #path{
+            transition:all 0.5s ease;
+        }
 
     
 body(onload="loader()")
@@ -93,14 +96,7 @@ body(onload="loader()")
                         transition:opacity 2s, fill 3s;
                         
                     }
-            //- g#bridge__group(style='opacity:1;')
-            //-     rect#bridge__rect.interact.bridge(x='25' y='25' width='50' height='50' fill='url(#gradient)')
-            //- g#cover__group(style='opacity:1;')
-            //-     rect#cover__rect.interact.cover(x='0' y='0' width='100' height='100' fill='navy')
-            //-     image#cover__img.interact.cover(href="photo_elinor.png" mask="url(#cover__img--mask)" alt="photo" style="opacity:1; border:1px; transform-origin:center; transform:translate(25px, 25px);" x='0' y='0' width='50')
-            //- g#mask__test 
-                //- rect(x='0' y='0' width='30' height='20' fill='white')
-                //- rect#cover__img--mask__rect(x='0' y='0' width='100' height='100' fill='black')
+            
         include bridge_simplified.html
 script(src='conversions.js')
 script(src='setInteractions.js')
