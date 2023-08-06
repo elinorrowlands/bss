@@ -76,9 +76,9 @@ const loader = ()=>{
             "comb__time": "0.15",
             "comb__feedback": "0.83",
             "colour": [
-                236,
-                100,
-                49
+                0,
+                0,
+                0
             ]
         },
         "2": {
