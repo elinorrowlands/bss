@@ -8,23 +8,23 @@ function setInteractions(){
             const {x, y} = relative;
             // const {x, y} = e.detail;
             
-            var value = Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
+            var value = 1 - Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
             // var value = 1 -Math.sin(cm.constrain((x/window.InnerWidth), 0, 1)*3.14);
-            // console.log(value)
+            console.log('value',value)
             switch(type){
                 case 'start':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     
                     interpolateStates(value);
-                    element.style.opacity = 0.1 + (value * 0.7);
+                    element.style.opacity = 1 - (0.1 + (value * 0.7));
                     break;
                 case 'enter':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     
                     interpolateStates(value);
-                    element.style.opacity = 0.1 + (value * 0.7);
+                    element.style.opacity = 1 - (0.1 + (value * 0.7));
                     break;
                 case 'move':
                     // document.body.classList.remove('liminal');
@@ -33,20 +33,20 @@ function setInteractions(){
                     console.log(Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360)))
                     
                     interpolateStates(value);
-                    element.style.opacity = 0.1 + (value * 0.7);
+                    element.style.opacity = 1 - (0.1 + (value * 0.7));
                     break;
                 case 'leave':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     interpolateStates(0.92);
-                    element.style.opacity = 0.1;
+                    element.style.opacity = 0;
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
                     break;
                 case 'end':
                     // document.body.classList.add('liminal');
                     // document.querySelector('.interact').classList.add('liminal');
                     interpolateStates(0.92);
-                    element.style.opacity = 0.1;
+                    element.style.opacity = 0;
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.filter=`hue-rotate(50deg)`);
                     break;
             }
