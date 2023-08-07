@@ -126,3 +126,9 @@ canvas#overlay {
     user-select:none;
      -webkit-user-select: none; /* Safari */
   }
+
+  .nav__back{
+    position:absolute;
+    top:0;
+    left:0;
+  }

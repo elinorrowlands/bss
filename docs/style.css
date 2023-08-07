@@ -416,4 +416,10 @@ canvas#overlay {
   -webkit-user-select: none; /* Safari */
 }
 
+.nav__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
