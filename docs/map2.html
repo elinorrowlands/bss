@@ -15478,7 +15478,7 @@
 </script>
     <canvas id="overlay"></canvas>
   </body>
-  <script type="module">
+  <script>
     function checkLoaded(name) {
         const interval = 100;
         window.setTimeout(function() {
@@ -15489,7 +15489,8 @@
             }
         }, interval);
     }
-    
+  </script>
+  <script type="module">
     checkLoaded('mapLoad')
     Tone.start();
   </script>
