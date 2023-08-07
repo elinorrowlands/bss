@@ -18,5 +18,17 @@
       <h1 class="loadMsg">Loading...</h1>
     </div>
   </body>
-  <script>addBackButton();</script>
+  <script>
+    function checkLoaded(name) {
+        const interval = 100;
+        window.setTimeout(function() {
+            if (window[name]) {
+                window[name]();
+            } else {
+                checkLoaded(name);
+            }
+        }, interval);
+    }
+  </script>
+  <script>checkLoaded('addBackButton');</script>
 </html>
