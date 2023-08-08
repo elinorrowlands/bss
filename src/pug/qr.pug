@@ -14,18 +14,19 @@ html(lang="en")
             }
 
             .qr__container{
-                width:100%; 
-                margin:none; 
+                width:90%;
+                height:90%; 
+                margin:20px; 
+                margin-top:100px;
                 //- background-color:#004080;
                 background-color:rgba(0,64,128,0.8);
             }
     body
-        main.splash.qr__container(style="min-height:300px; width:100%; margin:none;")
-            //- h1 QR code tests
+        main.splash.qr__container(style="min-height:300px;")
             .bar.qr__container                
-                
         footer
             include footer  
+        include checkLoaded
         script.
             let baseURL = 'https://elinorrowlands.github.io/bss/'
             let elements = {
@@ -35,6 +36,10 @@ html(lang="en")
                     },
                 'painting': {
                     folder: 'elements/painting',
+                    qr:null
+                },
+                'bridge': {
+                    folder: 'elements/bridge',
                     qr:null
                 },
                 'mix': {
@@ -58,7 +63,7 @@ html(lang="en")
                         window.location.href = elements[key].url;
                     })
                     elements[key].qr.querySelector('rect').remove();
-                    document.querySelector('.qr__container').appendChild(elements[key].qr);
+                    document.querySelector('.bar.qr__container').appendChild(elements[key].qr);
                 })
 
                 document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
@@ -92,4 +97,5 @@ html(lang="en")
                 })
                 
             })
+            checkLoaded('addBackButton')
             

@@ -15,20 +15,34 @@
       }
       
       .qr__container{
-          width:100%; 
-          margin:none; 
+          width:90%;
+          height:90%; 
+          margin:20px; 
+          margin-top:100px;
           //- background-color:#004080;
           background-color:rgba(0,64,128,0.8);
       }
     </style>
   </head>
   <body>
-    <main class="splash qr__container" style="min-height:300px; width:100%; margin:none;">
+    <main class="splash qr__container" style="min-height:300px;">
       <div class="bar qr__container">               </div>
     </main>
     <footer>
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
     </footer>
+    <script>
+      function checkLoaded(name) {
+          const interval = 100;
+          window.setTimeout(function() {
+              if (window[name]) {
+                  window[name]();
+              } else {
+                  checkLoaded(name);
+              }
+          }, interval);
+      }
+    </script>
     <script>
       let baseURL = 'https://elinorrowlands.github.io/bss/'
       let elements = {
@@ -38,6 +52,10 @@
               },
           'painting': {
               folder: 'elements/painting',
+              qr:null
+          },
+          'bridge': {
+              folder: 'elements/bridge',
               qr:null
           },
           'mix': {
@@ -61,7 +79,7 @@
                   window.location.href = elements[key].url;
               })
               elements[key].qr.querySelector('rect').remove();
-              document.querySelector('.qr__container').appendChild(elements[key].qr);
+              document.querySelector('.bar.qr__container').appendChild(elements[key].qr);
           })
       
           document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
@@ -95,6 +113,7 @@
           })
           
       })
+      checkLoaded('addBackButton')
     </script>
   </body>
 </html>
