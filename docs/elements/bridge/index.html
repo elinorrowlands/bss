@@ -1011,6 +1011,18 @@
   </svg>
   </div>
 </body>
+<script>
+  function checkLoaded(name) {
+      const interval = 100;
+      window.setTimeout(function() {
+          if (window[name]) {
+              window[name]();
+          } else {
+              checkLoaded(name);
+          }
+      }, interval);
+  }
+</script>
 <script src="conversions.js"></script>
 <script src="setInteractions.js"></script>
 <script src="loader.js"></script>
@@ -1021,4 +1033,5 @@
       x.classList.add('path')
       x.id=`water${i}`
   })
+  checkLoaded('addBackButton')
 </script>
