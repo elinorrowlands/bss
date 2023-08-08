@@ -36,9 +36,11 @@ circle{
 #waterCircle{
     transform:scale(0);
 }
+
 #echoCircle{
     transform:scale(0);
 }
+
 #echoCircle2{
     transform:scale(0);
     transition: all 1s ease;
