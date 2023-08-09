@@ -26,7 +26,6 @@ body {
 }
 
 main.splash {
-    /* min-height:100vh; */
     flex-grow: 1;
     overflow: hidden;
     display: grid;
@@ -63,10 +62,6 @@ path {
     transition: opacity 1s ease-in-out;
 }
 
-path:hover {
-    /* animation:scale 10s ease-in-out infinite alternate; */
-    /* opacity:0.9; */
-}
 
 #holder {
     max-height: 10vh;
@@ -121,7 +116,6 @@ canvas#overlay {
     z-index:100;
     touch-action:none;
     pointer-events:none;
-    // cursor:pointer;
     overflow:hidden;
     user-select:none;
      -webkit-user-select: none; /* Safari */

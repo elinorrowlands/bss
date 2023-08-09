@@ -319,7 +319,6 @@ body {
 }
 
 main.splash {
-  /* min-height:100vh; */
   flex-grow: 1;
   overflow: hidden;
   display: grid;
@@ -352,11 +351,6 @@ h1 {
 path {
   /* opacity:0.5; */
   transition: opacity 1s ease-in-out;
-}
-
-path:hover {
-  /* animation:scale 10s ease-in-out infinite alternate; */
-  /* opacity:0.9; */
 }
 
 #holder {
