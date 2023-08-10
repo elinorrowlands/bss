@@ -88,8 +88,16 @@
   background-image: url("element_mix.svg");
 }
 
+.qr__svg.elements__bridge {
+  background-image: url("element_bridge.svg");
+}
+
 .qr__svg.elements__text {
   background-image: url("element_text.svg");
+}
+
+.qr__svg.elements__circle {
+  background-image: url("element_circle.svg");
 }
 
 .main__qr {
