@@ -5,12 +5,15 @@ html(lang="en")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
         script(src="./map/main.js" defer)
+        
     body 
         main
         #backdrop
         include map/map2.html
         canvas#overlay
+
     include checkLoaded
+
     script(type="module").
         checkLoaded('mapLoad')
         checkLoaded('addBackButton')

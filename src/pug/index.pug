@@ -23,3 +23,10 @@ html(lang="en")
     script.
         animation();
         window.setInterval(animation, 60000);
+        let infoIcon = document.querySelector('.icon__info');
+        let rect = infoIcon.getBoundingClientRect();
+        let footer = document.querySelector('footer');
+        let footerRect = footer.getBoundingClientRect();
+        if(rect.bottom > footerRect.top){
+            infoIcon.style.transform = `translateY(${-100}px)`;
+        }
