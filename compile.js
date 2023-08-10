@@ -4,6 +4,7 @@ import fs from 'fs';
 let pugFiles = [
     'index', 
     'qr',
+    'qr2',
     'map',
     'map2',
 

@@ -1,0 +1,130 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Biodivergent Sites and Sounds: QR codes</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
+    <script src="./main.js" defer="defer"></script>
+    <style>
+      .qr__container{
+          width:90%;
+          height:90%; 
+          left:0;
+          right:0;
+          position:relative;
+          margin:auto;
+          margin-top:100px;
+          //- background-color:#004080;
+          background-color:rgba(0,64,128,0.8);
+      }
+      
+      main{
+          left:0px;
+          right:0px;
+          margin:auto;
+          display:block;
+      }
+      
+      .qr__svg{
+          min-height:300px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="splash qr__container" style="min-height:300px;">
+      <div class="bar qr__container">               </div>
+    </main>
+    <footer>
+      <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
+    </footer>
+    <script>
+      function checkLoaded(name) {
+          const interval = 100;
+          window.setTimeout(function() {
+              if (window[name]) {
+                  window[name]();
+              } else {
+                  checkLoaded(name);
+              }
+          }, interval);
+      }
+    </script>
+    <script>
+      let baseURL = 'https://elinorrowlands.github.io/bss/'
+      let elements = {
+          'ripples': {
+              folder: 'elements/ripples',
+              qr:null
+              },
+          'painting': {
+              folder: 'elements/painting',
+              qr:null
+          },
+          'bridge': {
+              folder: 'elements/bridge',
+              qr:null
+          },
+          'mix': {
+              folder: 'elements/mix',
+              qr:null
+          },
+          'text': {
+              folder: 'elements/text',
+              qr:null
+          }
+      }
+      
+      window.addEventListener('load',()=>{
+      
+          Object.entries(elements).forEach(([key, value],i) => {
+              elements[key].url = baseURL + value.folder;
+              elements[key].qr = generateQR(elements[key].url, key);
+              elements[key].qr.classList.add('qr__svg');
+              elements[key].qr.classList.add(`elements__${key}`);
+              elements[key].qr.addEventListener('click', (e)=>{
+                  window.location.href = elements[key].url;
+              })
+              elements[key].qr.querySelector('rect').remove();
+              document.querySelector('.bar.qr__container').appendChild(elements[key].qr);
+          })
+      
+          document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
+              qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
+                  x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
+                  x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
+                  
+                  let number = Math.sin(i)*255;
+      
+                  if (number < 0) {
+                      number = 0;
+                  }
+      
+                  if (number >200){
+                      number = 200;
+                  }
+      
+                  x.style.fill=`rgba(${number},255,255,1)`;
+                  x.style.opacity = Math.abs(Math.cos(i))+0.5;
+                  x.style.stroke = 'black';
+                  //- x.style.strokeWidth = '2px';
+              })
+      
+              qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
+                  //- x.style.fill=`rgba(255,255,255,1)`;
+                  x.style.strokeWidth = '3px';
+                  x.style.stroke='black';
+                  console.log(x);
+                  x.style.display='none';
+              })
+          })
+          
+      })
+      
+      checkLoaded('addBackButton');
+    </script>
+  </body>
+</html>
