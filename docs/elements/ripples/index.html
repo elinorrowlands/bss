@@ -95,7 +95,20 @@
   <script src="./interact.js" defer></script>
   <script src="./touch.js" defer></script>
   <script>
+    function checkLoaded(name) {
+        const interval = 100;
+        window.setTimeout(function() {
+            if (window[name]) {
+                window[name]();
+            } else {
+                checkLoaded(name);
+            }
+        }, interval);
+    }
+  </script>
+  <script>
     let loadScript = loadingIndicator.init();
     var paintingFlag = true;
+    checkLoaded('addBackButton');
   </script>
 </body>

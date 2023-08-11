@@ -56,6 +56,8 @@ body
   script(src='./script.js' type='module' defer)
   script(src='./interact.js' defer)
   script(src='./touch.js' defer)
+  include ../../checkLoaded
   script.
     let loadScript = loadingIndicator.init();
     var paintingFlag = true;
+    checkLoaded('addBackButton');

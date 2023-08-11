@@ -426,6 +426,7 @@ canvas#overlay {
   margin: auto;
   display: block;
   width: auto;
+  z-index: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
