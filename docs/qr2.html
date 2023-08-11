@@ -33,9 +33,7 @@
   </head>
   <body>
     <main class="splash qr__container" style="min-height:300px;">
-      <div class="bar qr__container">
-        <div class="qr__number">1                </div>
-      </div>
+      <div class="bar qr__container"></div>
     </main>
     <footer>
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
@@ -86,14 +84,23 @@
           Object.entries(elements).forEach(([key, value],i) => {
               elements[key].card = document.createElement('div');
               elements[key].card.classList.add('qr__card');
+      
+              elements[key].number = document.createElement('div');
+              elements[key].number.classList.add('qr__number');
+              elements[key].number.innerHTML = i+1;
+      
               elements[key].url = baseURL + value.folder;
               elements[key].qr = generateQR(elements[key].url, key);
               elements[key].qr.classList.add('qr__svg');
+              elements[key].card.classList.add(`elements__${key}`);
               elements[key].qr.classList.add(`elements__${key}`);
               elements[key].qr.addEventListener('click', (e)=>{
                   window.location.href = elements[key].url;
               })
+      
               elements[key].qr.querySelector('rect').remove();
+      
+              elements[key].card.appendChild(elements[key].number);
               elements[key].card.appendChild(elements[key].qr);
               document.querySelector('.bar.qr__container').appendChild(elements[key].card);
           })

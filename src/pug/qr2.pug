@@ -9,7 +9,6 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
         script(src="./main.js" defer)
         style.
-
             .qr__container{
                 display:inline-flex;
                 margin:auto;
@@ -32,7 +31,6 @@ html(lang="en")
     body
         main.splash.qr__container(style="min-height:300px;")
             .bar.qr__container
-                .qr__number 1                
         footer
             include footer  
         include checkLoaded
@@ -70,14 +68,23 @@ html(lang="en")
                 Object.entries(elements).forEach(([key, value],i) => {
                     elements[key].card = document.createElement('div');
                     elements[key].card.classList.add('qr__card');
+
+                    elements[key].number = document.createElement('div');
+                    elements[key].number.classList.add('qr__number');
+                    elements[key].number.innerHTML = i+1;
+
                     elements[key].url = baseURL + value.folder;
                     elements[key].qr = generateQR(elements[key].url, key);
                     elements[key].qr.classList.add('qr__svg');
+                    elements[key].card.classList.add(`elements__${key}`);
                     elements[key].qr.classList.add(`elements__${key}`);
                     elements[key].qr.addEventListener('click', (e)=>{
                         window.location.href = elements[key].url;
                     })
+
                     elements[key].qr.querySelector('rect').remove();
+
+                    elements[key].card.appendChild(elements[key].number);
                     elements[key].card.appendChild(elements[key].qr);
                     document.querySelector('.bar.qr__container').appendChild(elements[key].card);
                 })

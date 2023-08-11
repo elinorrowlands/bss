@@ -69,7 +69,8 @@
 
 .qr__card {
   border-radius: 10px;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   height: 200px;
   width: 150px;
@@ -87,12 +88,11 @@
 
 .qr__svg {
   border-radius: 10px;
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  /* max-width:40vh;
-  max-height:80vh; */
+  display: block;
+  height: 140px;
+  width: 140px;
   margin: none;
+  padding: none;
   transition: all 0.1s ease-in-out;
 }
 
