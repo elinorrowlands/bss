@@ -1,3 +1,6 @@
+const linked = true;
+const links = ['bridge','ripples','circle','text','mix','heart'];
+
 const markers = JSON.parse(localStorage.getItem('markers')) || {
     elements: { 
         "circle_0": { "cx": 119.71634076955372, "cy": 484.0905827769419 }, 
@@ -144,6 +147,9 @@ function mapLoad(){
             halo.style.transition='opacity 0.1s'
             halo.style.opacity = 0.2;
             // document.querySelector('#backdrop').classList.add('interacting');
+            if(linked){
+               window.location.href = `elements/${links[id.replace('circle_','')]}/?from=map`;
+            }
         }
     
         function endInteraction(element, e, obj){
