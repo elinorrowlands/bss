@@ -11,11 +11,6 @@ html(lang="en")
         style.
 
             .qr__container{
-                //- width:90%;
-                //- height:90%; 
-                //- left:0;
-                //- right:0;
-                //- position:auto;
                 display:inline-flex;
                 margin:auto;
                 //- margin-top:100px;
@@ -36,7 +31,8 @@ html(lang="en")
             }
     body
         main.splash.qr__container(style="min-height:300px;")
-            .bar.qr__container                
+            .bar.qr__container
+                .qr__number 1                
         footer
             include footer  
         include checkLoaded
@@ -101,7 +97,7 @@ html(lang="en")
                         x.style.fill=`rgba(${number},255,255,1)`;
                         x.style.opacity = Math.abs(Math.cos(i))+0.5;
                         x.style.stroke = 'black';
-                        //- x.style.strokeWidth = '2px';
+
                     })
 
                     qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
