@@ -67,14 +67,12 @@
   background-position: center;
 }
 
-.qr__svg {
+.qr__card {
   border-radius: 10px;
   display: inline-block;
-  height: 25vh;
-  width: 15vw;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  min-width: 150px;
-  min-height: 200px;
+  height: 200px;
+  width: 150px;
   /* max-width:40vh;
   max-height:80vh; */
   background-image: url("bg1.svg");
@@ -87,32 +85,43 @@
   transition: all 0.1s ease-in-out;
 }
 
+.qr__svg {
+  border-radius: 10px;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  /* max-width:40vh;
+  max-height:80vh; */
+  margin: none;
+  transition: all 0.1s ease-in-out;
+}
+
 .qr__svg:active {
   transform: translate(0px, 3px);
   cursor: pointer;
 }
 
-.qr__svg.elements__ripples {
+.qr__card.elements__ripples {
   background-image: url("svg/element_ripples.svg");
 }
 
-.qr__svg.elements__painting {
+.qr__card.elements__painting {
   background-image: url("svg/element_painting.svg");
 }
 
-.qr__svg.elements__mix {
+.qr__card.elements__mix {
   background-image: url("svg/element_mix.svg");
 }
 
-.qr__svg.elements__bridge {
+.qr__card.elements__bridge {
   background-image: url("svg/element_bridge.svg");
 }
 
-.qr__svg.elements__text {
+.qr__card.elements__text {
   background-image: url("svg/element_text.svg");
 }
 
-.qr__svg.elements__circle {
+.qr__card.elements__circle {
   background-image: url("svg/element_circle.svg");
 }
 

@@ -68,6 +68,8 @@ html(lang="en")
             window.addEventListener('load',()=>{
 
                 Object.entries(elements).forEach(([key, value],i) => {
+                    elements[key].card = document.createElement('div');
+                    elements[key].card.classList.add('qr__card');
                     elements[key].url = baseURL + value.folder;
                     elements[key].qr = generateQR(elements[key].url, key);
                     elements[key].qr.classList.add('qr__svg');
@@ -76,7 +78,8 @@ html(lang="en")
                         window.location.href = elements[key].url;
                     })
                     elements[key].qr.querySelector('rect').remove();
-                    document.querySelector('.bar.qr__container').appendChild(elements[key].qr);
+                    elements[key].card.appendChild(elements[key].qr);
+                    document.querySelector('.bar.qr__container').appendChild(elements[key].card);
                 })
 
                 document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
