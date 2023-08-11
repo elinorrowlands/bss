@@ -32,30 +32,30 @@ html(lang="en")
         script.
             let baseURL = 'https://elinorrowlands.github.io/bss/'
             let elements = {
+                'bridge': {
+                    folder: 'elements/bridge',
+                    qr:null
+                },
+                'circle': {
+                    folder: 'elements/circle',
+                    qr:null
+                },
                 'ripples': {
                     folder: 'elements/ripples',
                     qr:null
                     },
-                'painting': {
-                    folder: 'elements/painting',
-                    qr:null
-                },
-                'bridge': {
-                    folder: 'elements/bridge',
+                'text': {
+                    folder: 'elements/text',
                     qr:null
                 },
                 'mix': {
                     folder: 'elements/mix',
                     qr:null
                 },
-                'text': {
-                    folder: 'elements/text',
+                'painting': {
+                    folder: 'elements/painting',
                     qr:null
                 },
-                'circle': {
-                    folder: 'elements/circle',
-                    qr:null
-                }
             }
 
             window.addEventListener('load',()=>{
@@ -77,7 +77,8 @@ html(lang="en")
 
                     elements[key].text = document.createElement('div');
                     elements[key].text.classList.add('qr__text');
-                    elements[key].text.innerHTML = key;
+                    // rename folder later once final naming confirmed
+                    elements[key].text.innerHTML = key.replace('painting','heart');
 
                     elements[key].qr = generateQR(elements[key].url, key);
                     elements[key].qr.classList.add('qr__svg');

@@ -1030,6 +1030,6 @@
 <path d="M555,2L556,2L556,0C554.564,0 550.889,0.222167 551,0.222167L551,1L552,1L555,2Z" fill="#93BD8E"/>
 </g>
 <g>
-    <rect x="0" y="0" width="565" height="768" style="opacity:0.4;" fill="black"></rect>
+    <rect x="0" y="0" width="565" height="480" style="opacity:0.4;" fill="black"></rect>
 </g>
 </svg>
