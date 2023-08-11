@@ -13,7 +13,6 @@
       .qr__container{
           display:inline-flex;
           margin:auto;
-          //- margin-top:100px;
           background-color:rgba(0,64,128,0.8);
       }
       
@@ -23,12 +22,8 @@
           margin:auto;
           margin-top:100px;
           padding-top:100px;
-          //- display:block;
       }
       
-      .qr__svg{
-          min-height:300px;
-      }
     </style>
   </head>
   <body>
@@ -84,15 +79,16 @@
           Object.entries(elements).forEach(([key, value],i) => {
               elements[key].card = document.createElement('div');
               elements[key].card.classList.add('qr__card');
+              elements[key].card.classList.add(`elements__${key}`);
       
               elements[key].number = document.createElement('div');
               elements[key].number.classList.add('qr__number');
               elements[key].number.innerHTML = i+1;
       
               elements[key].url = baseURL + value.folder;
+      
               elements[key].qr = generateQR(elements[key].url, key);
               elements[key].qr.classList.add('qr__svg');
-              elements[key].card.classList.add(`elements__${key}`);
               elements[key].qr.classList.add(`elements__${key}`);
               elements[key].qr.addEventListener('click', (e)=>{
                   window.location.href = elements[key].url;
@@ -107,8 +103,8 @@
       
           document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
               qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
-                  x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
-                  x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
+                  //- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
+                  //- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
                   
                   let number = Math.sin(i)*255;
       
@@ -120,7 +116,7 @@
                       number = 200;
                   }
       
-                  //- x.style.fill=`rgba(${number},255,255,1)`;
+                  x.style.fill=`rgba(${number},255,255,1)`;
                   //- x.style.opacity = Math.abs(Math.cos(i))+0.5;
                   x.style.stroke = 'black';
       
