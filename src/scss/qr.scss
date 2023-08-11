@@ -1,3 +1,5 @@
+// todo: add high contrast version
+
 .qr__number{
     font-size:40px;
     background-color:#9EC1CF;
@@ -16,6 +18,12 @@
     align-self:center;
 }
 
+.qr__number.high-contrast{
+    color:black;
+    background-color:white;
+    mix-blend-mode:normal;
+}
+
 .qr__container{
     background-image:url("bg1.svg");
     background-size:cover;
@@ -32,7 +40,7 @@
     
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     height:250px;
-    width:150px;
+    width:130px;
     background-image:url("bg1.svg");
     background-size:cover;
     background-repeat:no-repeat;
