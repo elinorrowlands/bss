@@ -70,6 +70,8 @@ function setMeters(state){
     }
 }
 
+
+
 document.querySelector('#crossFader').addEventListener("input", (e) => {
     let value = parseFloat(e.target.value);
     let percentage = value * 50;
