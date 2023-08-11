@@ -19,7 +19,9 @@ if(!window.multitouchMapper) multitouchMapper = window.touch;
 multitouchMapper.setAction('.visual')
 
 function getNoteFromId(id){
-    return Tone.Frequency(1*(parseFloat(id.split('_')[1])%12)+72, 'midi').toFrequency()
+    let notes = [60,67,72];
+    return Tone.Frequency(notes[parseInt(id.split('_')[1])%3], 'midi').toFrequency();
+    // return Tone.Frequency((parseFloat(id.split('_')[1])%12)+60, 'midi').toFrequency()*1.5;
 }
 
 function getTarget(id){

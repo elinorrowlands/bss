@@ -80,5 +80,5 @@ function opacities(value){
     document.querySelector('#note_1').style.opacity = value ? 0.1 : 0.9;
     document.querySelectorAll('#note_0, #note_2').forEach(x=>{
         x.style.opacity = value ? 0.7 : 1;
-    })
+    });
 }
