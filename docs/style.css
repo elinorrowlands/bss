@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;100&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
 .logo {
   padding: 10px;
 }
@@ -104,6 +104,13 @@
   transition: all 0.1s ease-in-out;
 }
 
+.qr__card:hover {
+  transform: translate(0px, 3px);
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  border: 2px solid #9EC1CF;
+}
+
 .qr__card__bg {
   background-color: #000;
   opacity: 0.5;
@@ -128,7 +135,7 @@
   align-self: center;
 }
 
-.qr__svg:active {
+.qr__card:active {
   transform: translate(0px, 3px);
   cursor: pointer;
 }

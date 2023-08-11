@@ -83,7 +83,7 @@ html(lang="en")
                     elements[key].qr = generateQR(elements[key].url, key);
                     elements[key].qr.classList.add('qr__svg');
                     elements[key].qr.classList.add(`elements__${key}`);
-                    elements[key].qr.addEventListener('click', (e)=>{
+                    elements[key].card.addEventListener('click', (e)=>{
                         window.location.href = elements[key].url;
                     })
 
