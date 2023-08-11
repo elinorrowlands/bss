@@ -28,8 +28,6 @@
       position:absolute;
       margin:0;
       display:block;
-      //- transform:scale(2);
-      
       transform-origin:center;
       
       @media (max-width: 600px) {
@@ -40,10 +38,7 @@
         transform-origin:center;
       }
     
-      
     }
-    
-    
   </style>
 </head>
 <body>
@@ -145,5 +140,6 @@
     
     let loadScript = loadingIndicator.init();
     checkLoaded('addBackButton');
+    document.querySelector('#backButton').setAttribute('z-index', 1000);
   </script>
 </body>
