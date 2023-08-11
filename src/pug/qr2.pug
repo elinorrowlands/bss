@@ -65,11 +65,19 @@ html(lang="en")
                     elements[key].card.classList.add('qr__card');
                     elements[key].card.classList.add(`elements__${key}`);
 
+                    //- elements[key].bg = document.createElement('div');
+                    //- elements[key].bg.classList.add('qr__card__bg');
+
+
                     elements[key].number = document.createElement('div');
                     elements[key].number.classList.add('qr__number');
                     elements[key].number.innerHTML = i+1;
 
                     elements[key].url = baseURL + value.folder;
+
+                    elements[key].text = document.createElement('div');
+                    elements[key].text.classList.add('qr__text');
+                    elements[key].text.innerHTML = key;
 
                     elements[key].qr = generateQR(elements[key].url, key);
                     elements[key].qr.classList.add('qr__svg');
@@ -80,9 +88,11 @@ html(lang="en")
 
                     elements[key].qr.querySelector('rect').remove();
 
+                    //- elements[key].card.appendChild(elements[key].bg);
                     elements[key].card.appendChild(elements[key].number);
                     elements[key].card.appendChild(elements[key].qr);
                     document.querySelector('.bar.qr__container').appendChild(elements[key].card);
+                    elements[key].card.appendChild(elements[key].text);
                 })
 
                 document.querySelectorAll('.qr__svg').forEach((qr, i)=>{

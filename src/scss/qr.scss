@@ -24,6 +24,20 @@
     mix-blend-mode:normal;
 }
 
+.qr__text{
+    font-size:30px;
+    // font-weight:bold;
+    font-weight:thin;
+    letter-spacing: 0.1em;
+    margin:0;
+    padding:0;
+    opacity:1;
+    align-self:center;
+    color:#9EC1CF;
+    // color:black;
+    // mix-blend-mode:screen;
+}
+
 .qr__container{
     background-image:url("bg1.svg");
     background-size:cover;
@@ -49,6 +63,24 @@
     padding:1em;
     // margin:none;
     transition: all 0.1s ease-in-out;
+}
+
+.qr__card__bg{
+    background-color:#000;
+    opacity:0.5;
+    border-radius:10px;
+    height:250px;
+    width:130px;
+    margin:0;
+    padding:0;
+    position:relative;
+    // display:block;
+    top:0;
+    left:0;
+    // z-index:-1;
+    transition: all 0.1s ease-in-out;
+
+
 }
 
 .qr__svg{
