@@ -4,54 +4,43 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title BSS
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
-        link(rel='stylesheet', href='../../style.css')
+        link(rel='stylesheet', href='style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
-        script(src="../../main.js" defer)
-        style.
-            button{
-                font-size: 2rem;
-            }
-            
-            .mute{
-                width:2rem;
-                height:2rem;
-                margin:2rem;
-            }
-
-            .text{
-                border-radius:10px;
-                font-weight:bold;
-                text-align:center;
-                opacity:0.8;
-                letter-spacing:0.1px;
-                transition:all 1s, left 35.5s ease-in-out, top 34.5s ease-in-out, opacity 0.5s ease-in-out;
-                mix-blend-mode:soft-light;
-            }
-
-            .text.active{
-                opacity:1;
-                letter-spacing:0.2px;
-            }
-
-            body {
-                background-color:navy;
-                transition: filter 1s;
-                overflow:hidden;
-                touch-action:none;
-                user-select:none;
-                -webkit-user-select: none; /* Safari */
-                background-image:url("../../bg1.svg");
-                background-size:cover;
-                background-repeat:no-repeat;
-                background-position:center;
-                height:100vh;
-                width:100vw;
-                filter: hue-rotate(0deg);
-            }
-
+    
         
     body
         //- include ../../loading
-        h1 Text coming soon
+        main(style="padding:2rem;")
+            h1 Biodivergent Sites and Sounds
+            p We are always told that encountering nature and preserving the environment is important. 
+            p But what if you experience access barriers and being out in nature is much harder for you to do? 
+
+            p Biodivergent Sites and Sounds is a play on the word Neurodivergent, and Site (site specific) to also mirror site as encountered through technology. Bringing an immersive and accessible experience for audiences and the Harlesden community to encounter nature and the preservation of environment, enhancing the important work of Canal and River Trust and with other partners who nurture the artist’s voice, particularly when they are so often excluded. This project aims to lead by the Neurodivergent voice, encountering nature through prolific and colourful, magical, ritualistic and repetitive methods of making, layering, pattern-finding and autistic stimming. 
+
+            p Biodivergent Sites and Sounds shines light on the importance of preserving our waterways and landscapes via autistic female led activities. Elinor's paintings are responses to the local stories and sounds found around London's waterways. With creative technologist, Charles Matthews, they have digitalised part of London’s waterways into an online interactive site mapping soundscapes of Harlesden's Canalside. These digital trails will illustrate autoethnographic links with place, community, biodiversity and the natural world, culminating in Elinor's exhibition at Creative Health Camden featuring paintings that illustrate the scenographical sensory soundscapes that she has made in collaboration with other autistic musicians and pupils from Harlesden primary school to examine ‘autistic stimming’ as an act of power, self-expression and creativity. 
+
+            p This project is funded by Arts Council England, alongside partners Canal and River Trust, The Free Space project and in kind support from Cole’s Gallery. 
+            ul
+                li Lead artist - Elinor Rowlands 
+
+                li Creative Technologist - Charles Matthews 
+
+                li Musicians - Jo-anne Cox, Dee Fry, and Rdyer 
+
+                li Art Publication printed and published by - Gemma Abbott (Unfamiliars) 
+
+                li Interim Project Manager - Lucie Bickerdike (Feb - June 2023)
+
+                li Project Manager - Nick Lawford (July 2023 - January 2024)
+
+                li Co-facilitator and Access Support for working with a local Harlesden Primary School and Young Brent Foundation - Gemma Abbott 
+
+                li Marketing and Communication access support - Lucie Bickerdike 
+
+                li Events and communication access support - Nick Lawford 
+
+
+        footer
+            include footer  
