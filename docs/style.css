@@ -77,27 +77,27 @@
 }
 
 .qr__svg.elements__ripples {
-  background-image: url("element_ripples.svg");
+  background-image: url("svg/element_ripples.svg");
 }
 
 .qr__svg.elements__painting {
-  background-image: url("element_painting.svg");
+  background-image: url("svg/element_painting.svg");
 }
 
 .qr__svg.elements__mix {
-  background-image: url("element_mix.svg");
+  background-image: url("svg/element_mix.svg");
 }
 
 .qr__svg.elements__bridge {
-  background-image: url("element_bridge.svg");
+  background-image: url("svg/element_bridge.svg");
 }
 
 .qr__svg.elements__text {
-  background-image: url("element_text.svg");
+  background-image: url("svg/element_text.svg");
 }
 
 .qr__svg.elements__circle {
-  background-image: url("element_circle.svg");
+  background-image: url("svg/element_circle.svg");
 }
 
 .main__qr {
@@ -267,7 +267,7 @@ footer {
   touch-action: none;
   user-select: none;
   -webkit-user-select: none; /* Safari */
-  background-image: url("element_painting.svg");
+  background-image: url("svg/element_painting.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
