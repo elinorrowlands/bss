@@ -65,6 +65,18 @@
   <script src="./interact.js" defer></script>
   <script src="./touch.js" defer></script>
   <script>
+    function checkLoaded(name) {
+        const interval = 100;
+        window.setTimeout(function() {
+            if (window[name]) {
+                window[name]();
+            } else {
+                checkLoaded(name);
+            }
+        }, interval);
+    }
+  </script>
+  <script>
     const container = 'body';
     const sounds = {
         loop: new Tone.Player("nesting.mp3"),
@@ -128,5 +140,6 @@
     Tone.start();
     
     let loadScript = loadingIndicator.init();
+    checkLoaded('addBackButton');
   </script>
 </body>

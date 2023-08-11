@@ -60,6 +60,7 @@ body
   script(src='./script.js' type='module' defer)
   script(src='./interact.js' defer)
   script(src='./touch.js' defer)
+  include ../../checkLoaded
   script.
     const container = 'body';
     const sounds = {
@@ -124,3 +125,4 @@ body
     Tone.start();
 
     let loadScript = loadingIndicator.init();
+    checkLoaded('addBackButton');
