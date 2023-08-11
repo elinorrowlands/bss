@@ -69,5 +69,18 @@
     </div>
   </body>
   <script type="module" src="./mix.js"></script>
+  <script>
+    function checkLoaded(name) {
+        const interval = 100;
+        window.setTimeout(function() {
+            if (window[name]) {
+                window[name]();
+            } else {
+                checkLoaded(name);
+            }
+        }, interval);
+    }
+  </script>
+  <script>checkLoaded('addBackButton');</script>
   <script>touch.unlisten();</script>
 </html>
