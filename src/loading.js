@@ -24,7 +24,6 @@ let loadingIndicator = {
 }
 
 function loaded(){
-    // todo: add load status message for screen readers
     document.querySelectorAll('.loading').forEach(element => {
         clearInterval(loadBlink);
         element.style.opacity = 0;
