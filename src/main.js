@@ -4,6 +4,7 @@ import MultitouchMapper from '@matthewscharles/multitouch-mapper';
 import CM from '@matthewscharles/cm-toolbox';
 import {loadingIndicator} from './loading.js';
 import addBackButton from './backButton.js';
+import StatusVO from 'status-vo';
 
 
 window.cm = CM;
@@ -13,3 +14,4 @@ window.srtToSbv = srtToSbv;
 window.touch = new MultitouchMapper();
 window.loadingIndicator = loadingIndicator;
 window.addBackButton = addBackButton;
+window.StatusVO = StatusVO;

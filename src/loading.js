@@ -30,6 +30,10 @@ function loaded(){
         element.style.opacity = 0;
         setTimeout(() => {
             element.style.display = 'none';
+            if(window.StatusVO){
+                window.StatusVO.init();
+                window.StatusVO.update('ready');
+            }
         }, 1000);
     });
 }

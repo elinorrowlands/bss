@@ -29,6 +29,7 @@
     "pug": "^3.0.2",
     "qrcode-svg": "^1.1.0",
     "sass": "^1.63.6",
+    "status-vo": "^1.0.2",
     "sync-cc": "^1.0.4",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
