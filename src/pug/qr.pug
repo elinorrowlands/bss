@@ -25,12 +25,13 @@ html(lang="en")
             
     body
         main.splash.qr__container
-            .bar.qr__container(style="margin:none!important;")
+            ol.bar.qr__container(style="margin:none!important;")
         footer
             include footer  
         include checkLoaded
         script.
-            let baseURL = 'https://elinorrowlands.github.io/bss/'
+            let baseURL = 'https://elinorrowlands.github.io/bss/';
+
             let elements = {
                 'bridge': {
                     folder: 'elements/bridge',
@@ -61,23 +62,21 @@ html(lang="en")
             window.addEventListener('load',()=>{
 
                 Object.entries(elements).forEach(([key, value],i) => {
-                    elements[key].card = document.createElement('div');
+                    elements[key].card = document.createElement('li');
                     elements[key].card.classList.add('qr__card');
                     elements[key].card.classList.add(`elements__${key}`);
-
-                    //- elements[key].bg = document.createElement('div');
-                    //- elements[key].bg.classList.add('qr__card__bg');
-
+                    elements[key].card.setAttribute('role', 'button');
 
                     elements[key].number = document.createElement('div');
                     elements[key].number.classList.add('qr__number');
                     elements[key].number.innerHTML = i+1;
+                    // remove redundancy for screen reader
+                    elements[key].number.setAttribute('aria-hidden', 'true');
 
                     elements[key].url = baseURL + value.folder;
 
                     elements[key].text = document.createElement('div');
                     elements[key].text.classList.add('qr__text');
-                    // rename folder later once final naming confirmed
                     elements[key].text.innerHTML = key.replace('painting','heart');
 
                     elements[key].qr = generateQR(elements[key].url, key);
@@ -89,7 +88,6 @@ html(lang="en")
 
                     elements[key].qr.querySelector('rect').remove();
 
-                    //- elements[key].card.appendChild(elements[key].bg);
                     elements[key].card.appendChild(elements[key].number);
                     elements[key].card.appendChild(elements[key].qr);
                     document.querySelector('.bar.qr__container').appendChild(elements[key].card);
