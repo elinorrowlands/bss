@@ -12,9 +12,9 @@
     delta 
  */
 
-// currently adapting for other pages
+// depending on which central script we're using, the instance of MultitouchMapper could be called touch or multitouchMapper
 
-if(!window.multitouchMapper) multitouchMapper = window.touch;
+if(!window.multitouchMapper) window.multitouchMapper = window.touch;
 
 multitouchMapper.setAction('.visual')
 
@@ -28,11 +28,6 @@ function getTarget(id){
     return document.querySelector(`#${id.split('_hc')[0]}`);
 }
 
-/**
- * For touch listener
- * 
- */
-
 const Pickup = (e) =>{
     const preset = {
         transition:{
@@ -44,7 +39,7 @@ const Pickup = (e) =>{
     }
     
     let { element, type } = e.detail;
-    //todo: debounce
+    //todo: debounce, if needed...
     let target = getTarget(element.id);
     let value = preset.transition[type];
     
@@ -63,6 +58,7 @@ const Pickup = (e) =>{
     }
     
     target.style.opacity = preset.opacity[type];
+
 }
 
 document.addEventListener('touch-pickup',(e)=>Pickup(e));

@@ -70,7 +70,7 @@
 
 .qr__text {
   font-size: 30px;
-  font-weight: thin;
+  font-weight: 100;
   letter-spacing: 0.1em;
   margin: 0;
   padding: 0;
@@ -437,8 +437,6 @@ path {
   flex-basis: 20%;
   flex-direction: row;
   justify-content: space-around;
-  /* align-items:center; */
-  /* margin:0px!important; */
   padding: 1em;
   row-gap: 1em;
   flex-wrap: wrap;

@@ -1,5 +1,3 @@
-// todo: add high contrast version
-
 .qr__number{
     font-size:40px;
     background-color:#9EC1CF;
@@ -26,16 +24,13 @@
 
 .qr__text{
     font-size:30px;
-    // font-weight:bold;
-    font-weight:thin;
+    font-weight:100;
     letter-spacing: 0.1em;
     margin:0;
     padding:0;
     opacity:1;
     align-self:center;
     color:#9EC1CF;
-    // color:black;
-    // mix-blend-mode:screen;
 }
 
 .qr__container{
@@ -86,8 +81,6 @@
     left:0;
     // z-index:-1;
     transition: all 0.1s ease-in-out;
-
-
 }
 
 .qr__svg{
