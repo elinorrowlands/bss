@@ -7,6 +7,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js")
         script(src="../main.js" defer)
         style.
             .qr__container{
@@ -66,6 +67,7 @@ html(lang="en")
                     elements[key].card.classList.add('qr__card');
                     elements[key].card.classList.add(`elements__${key}`);
                     elements[key].card.setAttribute('role', 'button');
+                    elements[key].card.id = `qr__card__${key}`;
 
                     elements[key].number = document.createElement('div');
                     elements[key].number.classList.add('qr__number');
@@ -78,11 +80,17 @@ html(lang="en")
                     elements[key].text.classList.add('qr__text');
                     elements[key].text.innerHTML = key.replace('painting','heart');
 
-                    elements[key].qr = generateQR(elements[key].url, key);
+                    elements[key].qr = generateQR(elements[key].url, `qr__${key}`);
                     elements[key].qr.classList.add('qr__svg');
                     elements[key].qr.classList.add(`elements__${key}`);
                     elements[key].card.addEventListener('click', (e)=>{
-                        window.location.href = elements[key].url;
+                        if(e.shiftKey){
+                            elements[key].card.innerHTML = '';
+                            new QRCode(elements[key].card, elements[key].url);
+                        } else {
+                            window.location.href = elements[key].url;
+                        }
+                        
                     })
 
                     elements[key].qr.querySelector('rect').remove();
@@ -95,8 +103,7 @@ html(lang="en")
 
                 document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
                     qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
-                        //- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
-                        //- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
+                    
                         
                         let number = Math.sin(i)*255;
 
@@ -109,16 +116,15 @@ html(lang="en")
                         }
 
                         x.style.fill=`rgba(${number},255,255,1)`;
-                        //- x.style.opacity = Math.abs(Math.cos(i))+0.5;
                         x.style.stroke = 'black';
 
                     })
 
                     qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
-                        //- x.style.fill=`rgba(255,255,255,1)`;
+                        
                         x.style.strokeWidth = '3px';
                         x.style.stroke='black';
-                        //- console.log(x);
+                        
                         x.style.display='none';
                     })
                 })
