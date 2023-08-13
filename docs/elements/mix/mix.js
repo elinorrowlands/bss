@@ -1,3 +1,5 @@
+
+
 function loaded(){
     // todo: add load status message for screen readers
     document.querySelectorAll('.loading').forEach(element => {
@@ -12,7 +14,7 @@ function start(){
     loaded();
 }
 
-let mix = {
+window.mix = {
     channels:[new Tone.Channel(), new Tone.Channel()],
     meters:[new Tone.Meter(), new Tone.Meter()],
     filter: new Tone.Filter(200, "lowpass"),
@@ -70,21 +72,5 @@ function setMeters(state){
     }
 }
 
-
-
-document.querySelector('#crossFader').addEventListener("input", (e) => {
-    let value = parseFloat(e.target.value);
-    let percentage = value * 50;
-    let leftValue = (percentage/2);
-    let rightValue = 100-(percentage/2);
-    document.querySelector('main').style.background = `linear-gradient(90deg, rgba(249,212,35,0.5) ${leftValue}%, rgba(32,42,68,0.4) ${rightValue}%)`;
-    mix.crossFader.fade.rampTo(value, 0.1, Tone.now());
-
-    mix.channels.forEach((channel,i) => {
-        let balance = 0.5*(i-value);
-        channel.pan.rampTo(balance, 0.1, Tone.now())
-    })
-
-    document.querySelector('.body__background').style.filter = `hue-rotate(${Math.floor(180+(value*120))}deg)`;
-    
-})
+import crossFaderUpdate from './crossFader.js';
+document.querySelector('#crossFader').addEventListener("input", crossFaderUpdate);
