@@ -10,6 +10,12 @@ let meterUpdate = function(){
     })
 }
 
+
+// next
+function scroll(){
+    document.querySelector('image').style.transform='translate(-50%, -100%) scale(2)';
+}
+
 function setMeters(state){
     if(state){
         meterInterval = setInterval(meterUpdate, 100);
