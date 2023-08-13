@@ -99,23 +99,23 @@ body {
 }
 
 .meter{
-    width:100px;
-    height:100px;
+    width:800px;
+    height:800px;
     height:2rem;
     margin:2rem;
     transition:all 1s;
     position:absolute;
     z-index:-1;
-    top:calc(50vh - 50px);
+    top:calc(50vh - 100px);
     display:block;
     border-radius:50%;
 }
 
 #meter_0{
     /* background-color:rgba(249,212,35,0.5); */
-    left:-50px;
+    left:-400px;
 }
 #meter_1{
     /* background-color:rgba(249,212,35,0.5); */
-    right:-50px;
+    right:-400px;
 }
