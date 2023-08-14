@@ -58,22 +58,24 @@ body {
 
 .waveform{
     position:absolute;
+    transform-origin:center top;
+    transform:scale(4);
     height:100%;
     top:0;
     bottom:0;
     left:0;
     right:0;
-    margin:auto;
+    margin:auto;   
 }
 
 .waveform#left{
     right:auto;
-    left:2em;
+    left:0px;
 }
 
 .waveform#right{
     left:auto;
-    right:2em;
+    right:0px;
 }
 
 .main__background{
