@@ -108,7 +108,7 @@ body {
     z-index:-1;
     /* top:calc(50vh - 100px); */
     display:block;
-    border-radius:50%;
+    /* border-radius:50%; */
     opacity:0.7;
 }
 

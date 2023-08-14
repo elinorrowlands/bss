@@ -31,22 +31,25 @@ html(lang="en")
                 //- background-color:navy;
                 max-width:800px;
             }
+            input{
+                opacity:0;
+            }
     body
         .body__background(aria-hidden="true")
         svg#meter_0.meter(viewbox='0,0,800,800' aria-hidden="true") 
             style.
                 circle{
-                    transition:all 0.5s ease-in-out;
+                    //- transition:all 0.5s ease-in-out, x 0s, y 0s;
                 }
                 
-            circle#circle_0(cx="400" cy="400" r="0" fill="beige")
+            circle#circle_0.thumb(cx="400" cy="400" r="0" fill="cyan")
             
         svg#meter_1.meter(viewbox='0,0,800,800' aria-hidden="true")
             style.
                 circle{
-                    transition:all 0.5s ease-in-out;
+                    //- transition:all 0.5s ease-in-out;
                 }
-            circle#circle_1(cx="400" cy="400" r="0" fill="cyan" )
+            circle#circle_1.thumb(cx="400" cy="400" r="0" fill="beige" )
         main.main__qr
             include L.svg 
             include R.svg
@@ -60,6 +63,22 @@ html(lang="en")
     script.
         checkLoaded('addBackButton');
     script.
-        touch.unlisten();
+        //- touch.unlisten();
+        touch.setAction('.meter');
+        document.addEventListener('touch-pickup',(e)=>{
+            console.log(e.detail);
+            let {x, y, range} = e.detail.relative;
+            let value = x / range.x;
+            document.querySelector('#crossFader').value = value;
+            document.querySelector('#crossFader').dispatchEvent(new Event('input'));
+            if(x<10)x=10;
+            if(x>range.x)x=range.x - 10;
+            if(y<10)y=10;
+            if(y>range.y)y=range.y - 10;
+            document.querySelectorAll('.thumb').forEach((thumb)=>{
+                thumb.setAttribute('cx',x);
+                thumb.setAttribute('cy',range.y - y);
+            })
+        })
     
     
