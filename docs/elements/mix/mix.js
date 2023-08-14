@@ -1,12 +1,23 @@
 let meterInterval;
 let startButton = document.querySelector("#start");
 let playFlag = false;
+let startTime = 0;
+let elapsedTime = 0;
 
 let meterUpdate = function(){
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*10000)}`;
         // document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*100000)}`;
+    })
+    elapsedTime = Tone.now() - startTime;
+    
+    sounds.forEach((sound,i) => {
+        let position = elapsedTime / durations[i];
+        let ids = ['#left', '#right'];
+        let y = Math.floor(0-(200-(position*200)));
+        console.log(y);
+        document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
     })
 }
 
@@ -15,6 +26,8 @@ let meterUpdate = function(){
 function scroll(){
     document.querySelector('image').style.transform='translate(-50%, -100%) scale(2)';
 }
+
+window.scroll=scroll;
 
 function setMeters(state){
     if(state){
@@ -25,7 +38,6 @@ function setMeters(state){
 }
 
 function loaded(){
-    // todo: add load status message for screen readers
     document.querySelectorAll('.loading').forEach(element => {
         element.style.opacity = 0;
         setTimeout(() => {
@@ -86,6 +98,9 @@ startButton.addEventListener("click", () => {
     setMeters(playFlag);
 
     startButton.innerHTML = playFlag ? "STOP" : "START";
+    if(playFlag){
+        startTime = Tone.now();
+    }
 
     sounds.forEach(sound => {
         sound[playFlag ? 'start' : 'stop']()
