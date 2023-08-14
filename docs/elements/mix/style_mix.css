@@ -101,21 +101,22 @@ body {
 .meter{
     width:800px;
     height:800px;
-    height:2rem;
-    margin:2rem;
     transition:all 1s;
     position:absolute;
     z-index:-1;
-    top:calc(50vh - 100px);
+    /* top:calc(50vh - 100px); */
     display:block;
     border-radius:50%;
+    opacity:0.3;
 }
 
 #meter_0{
     /* background-color:rgba(249,212,35,0.5); */
-    left:-400px;
+    /* left:-400px; */
+    left:calc(50vw - 400px);
 }
 #meter_1{
     /* background-color:rgba(249,212,35,0.5); */
-    right:-400px;
+    /* right:-400px; */
+    right:calc(50vw - 400px);
 }

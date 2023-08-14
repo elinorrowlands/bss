@@ -14,11 +14,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <style>
       .body__background,main{
-          border-radius:50%!important;
+          //- border-radius:50%!important;
           border:none;
       }
       .main__qr,.bar{
           border:none!important;
+      }
+      image{
+          transition: all 0.3s ease-in-out;
+          opacity:0.1;
+      }
+      .meter{
+          
       }
     </style>
   </head>
@@ -31,7 +38,7 @@
         }
         
       </style>
-      <circle id="circle_0" cx="400" cy="400" r="0" fill="black"></circle>
+      <circle id="circle_0" cx="400" cy="400" r="0" fill="beige"></circle>
     </svg>
     <svg class="meter" id="meter_1" viewbox="0,0,800,800" aria-hidden="true">
       <style>
@@ -39,7 +46,7 @@
             transition:all 0.5s ease-in-out;
         }
       </style>
-      <circle id="circle_1" cx="400" cy="400" r="0" fill="black"></circle>
+      <circle id="circle_1" cx="400" cy="400" r="0" fill="cyan"></circle>
     </svg>
     <main class="main__qr">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,282,1600" style="filter:hue-rotate(-90deg)" aria-hidden="true" version="1.1" class="waveform" id="left">

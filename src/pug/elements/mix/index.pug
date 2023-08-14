@@ -13,11 +13,18 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
         style.
             .body__background,main{
-                border-radius:50%!important;
+                //- border-radius:50%!important;
                 border:none;
             }
             .main__qr,.bar{
                 border:none!important;
+            }
+            image{
+                transition: all 0.3s ease-in-out;
+                opacity:0.1;
+            }
+            .meter{
+                
             }
     body
         .body__background(aria-hidden="true")
@@ -27,14 +34,14 @@ html(lang="en")
                     transition:all 0.5s ease-in-out;
                 }
                 
-            circle#circle_0(cx="400" cy="400" r="0" fill="black")
+            circle#circle_0(cx="400" cy="400" r="0" fill="beige")
             
         svg#meter_1.meter(viewbox='0,0,800,800' aria-hidden="true")
             style.
                 circle{
                     transition:all 0.5s ease-in-out;
                 }
-            circle#circle_1(cx="400" cy="400" r="0" fill="black" )
+            circle#circle_1(cx="400" cy="400" r="0" fill="cyan" )
         main.main__qr
             include L.svg 
             include R.svg

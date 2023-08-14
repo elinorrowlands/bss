@@ -7,11 +7,13 @@ let mixRecord = [];
 
 let meterUpdate = function(){
     let ids = ['#left__wave', '#right__wave'];
+    
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
+        //todo: multiply by crossfader value accordingly
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*10000)}`;
         console.log(i, level);
-        document.querySelector(ids[i]).style.opacity = (level*16)+0.5;
+        document.querySelector(ids[i]).style.opacity = (level*12)+0.5;
         // document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*100000)}`;
     })
     elapsedTime = Tone.now() - startTime;
