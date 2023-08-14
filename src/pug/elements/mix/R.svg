@@ -13,10 +13,15 @@
 		</mask>
 	</defs>
 	<g id="line">
-		<rect x="141" y="0" width="1" height="1600" fill="#000000" opacity="0"/>
+		<rect class="vertical" x="141" y="0" width="1" height="1600" fill="#000000" opacity="0"/>
+
 	</g>
-	<g>
-		<image mask="url(#wave2)" id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg">
+	<g id="line__pos">
+		
+	</g>
+	<g mask="url(#wave2)">
+		<image  id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg">
 		</image>
+		<rect id="pos__right" class="vertical" x="0" y="0" width="100%" height="1" fill="#ffffff" opacity="1"/>
 	</g>
 </svg>

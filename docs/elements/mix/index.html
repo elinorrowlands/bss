@@ -55,11 +55,12 @@
 		</mask>
 	</defs>
 	<g id="line">
-		<rect x="141" y="0" width="1" height="1600" fill="#000000" style="opacity:0;"/>
+		<rect class="vertical" x="141" y="0" width="1" height="1600" fill="#000000" style="opacity:0;"/>
 	</g>
-	<g>
-		<image mask="url(#wave)" id="left__wave" x="0" y="0" width="282" height="1600" href="texture.jpg">
+	<g mask="url(#wave)">
+		<image  id="left__wave" x="0" y="0" width="282" height="1600" href="texture.jpg">
 		</image>
+		<rect id="pos__left" class="vertical" x="0" y="0" width="100%" height="1" fill="#ffffff" opacity="1"/>
 	</g>
 </svg>
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,237,1344" style="filter:hue-rotate(90deg)" aria-hidden="true" version="1.1" class="waveform" id="right">
@@ -77,11 +78,16 @@
 		</mask>
 	</defs>
 	<g id="line">
-		<rect x="141" y="0" width="1" height="1600" fill="#000000" opacity="0"/>
+		<rect class="vertical" x="141" y="0" width="1" height="1600" fill="#000000" opacity="0"/>
+
 	</g>
-	<g>
-		<image mask="url(#wave2)" id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg">
+	<g id="line__pos">
+		
+	</g>
+	<g mask="url(#wave2)">
+		<image  id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg">
 		</image>
+		<rect id="pos__right" class="vertical" x="0" y="0" width="100%" height="1" fill="#ffffff" opacity="1"/>
 	</g>
 </svg>
 
@@ -98,8 +104,8 @@
           }
           
         </style>
-        <circle class="thumb" id="circle_0" cx="400" cy="400" r="100" fill="cyan"></circle>
-        <rect class="slider" x="0" y="0" width="400" height="800" fill="cyan" opacity="0.4"></rect>
+        <circle class="thumb" id="circle_0" cx="50%" cy="50%" r="50" fill="cyan"></circle>
+        <rect class="slider" x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4"></rect>
       </svg>
       <svg class="meter" id="meter_1" viewbox="0,0,800,800" aria-hidden="true">
         <style>
@@ -110,8 +116,8 @@
               
           }
         </style>
-        <rect class="slider" x="400" y="0" width="400" height="800" fill="beige" opacity="0.4"></rect>
-        <circle class="thumb" id="circle_1" cx="400" cy="400" r="100" fill="beige"></circle>
+        <rect class="slider" x="50%" y="0" width="50%" height="100%" fill="beige" opacity="0.4"></rect>
+        <circle class="thumb" id="circle_1" cx="50%" cy="50%" r="50" fill="beige"></circle>
       </svg>
       <div class="bar">
         <button class="button allowDefault" id="start">START</button>
@@ -139,7 +145,7 @@
     //- touch.unlisten();
     touch.setAction('.meter');
     document.addEventListener('touch-pickup',(e)=>{
-        console.log(e.detail);
+        //- console.log(e.detail);
         let {type, id} = e.detail;
         if(id=='start') return;
         if(type=='start'){

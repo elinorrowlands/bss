@@ -54,8 +54,8 @@ html(lang="en")
                         
                     }
                     
-                circle#circle_0.thumb(cx="400" cy="400" r="100" fill="cyan")
-                rect.slider(x="0" y="0" width="400" height="800" fill="cyan" opacity="0.4")
+                circle#circle_0.thumb(cx="50%" cy="50%" r="50" fill="cyan")
+                rect.slider(x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4")
                 
             svg#meter_1.meter(viewbox='0,0,800,800' aria-hidden="true")
                 style.
@@ -65,8 +65,8 @@ html(lang="en")
                     rect{
                         
                     }
-                rect.slider(x="400" y="0" width="400" height="800" fill="beige" opacity="0.4")
-                circle#circle_1.thumb(cx="400" cy="400" r="100" fill="beige" )
+                rect.slider(x="50%" y="0" width="50%" height="100%" fill="beige" opacity="0.4")
+                circle#circle_1.thumb(cx="50%" cy="50%" r="50" fill="beige" )
             .bar
                 button.button.allowDefault#start START
         include ../../loading
@@ -78,7 +78,7 @@ html(lang="en")
         //- touch.unlisten();
         touch.setAction('.meter');
         document.addEventListener('touch-pickup',(e)=>{
-            console.log(e.detail);
+            //- console.log(e.detail);
             let {type, id} = e.detail;
             if(id=='start') return;
             if(type=='start'){

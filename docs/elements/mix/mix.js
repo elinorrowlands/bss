@@ -8,31 +8,38 @@ let scrollWaves = false;
 
 let meterUpdate = function(){
     let ids = ['#left__wave', '#right__wave'];
+    let lines = ['#pos__left', '#pos__right']
     
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
         //todo: multiply by crossfader value accordingly
         let crossFaderValue = document.querySelector('#crossFader').value;
-        let multipliedLevel = level * (i === 0 ? crossFaderValue : (1-crossFaderValue)) * 1000;
+        let multipliedLevel = (level * (i === 0 ? crossFaderValue : (1-crossFaderValue)) * 5000) + 5;
         // console.log(Math.floor(multipliedLevel));
         // console.log(i, multipliedLevel);
         document.querySelector(`#circle_${1 - i}`).style.r = `${Math.floor(multipliedLevel)}px`;
         // document.querySelector(`#circle_${1 - i}`).style.r = `${Math.floor(multipliedLevel)}`;
         // console.log(i, level);
         // document.querySelector(ids[i]).style.opacity = (level*12)+0.5;
-        document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*100000)}`;
+        // document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*00000)}`;
     })
-    if(scrollWaves){
-        elapsedTime = Tone.now() - startTime;
     
-        sounds.forEach((sound,i) => {
-            let position = elapsedTime / durations[i];
-            
-            let y = (0-(200-(position*200)));
+    elapsedTime = Tone.now() - startTime;
+
+    sounds.forEach((sound,i) => {
+        let position = elapsedTime / durations[i];
+        
+        let y = position * 100;
+        if(scrollWaves){
+            y = (0-(200-(position*200)));
             document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
-        })
-    }
-    
+        } else {
+            
+            document.querySelector(lines[i]).setAttribute('y', `${y}%`);
+        }
+    })
+
+
 }
 
 
