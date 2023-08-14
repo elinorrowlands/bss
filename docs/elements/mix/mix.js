@@ -3,18 +3,22 @@ let startButton = document.querySelector("#start");
 let playFlag = false;
 let startTime = 0;
 let elapsedTime = 0;
+let mixRecord = [];
 
 let meterUpdate = function(){
+    let ids = ['#left__wave', '#right__wave'];
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(level*10000)}`;
+        console.log(i, level);
+        document.querySelector(ids[i]).style.opacity = (level*16)+0.5;
         // document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*100000)}`;
     })
     elapsedTime = Tone.now() - startTime;
     
     sounds.forEach((sound,i) => {
         let position = elapsedTime / durations[i];
-        let ids = ['#left__wave', '#right__wave'];
+        
         let y = (0-(200-(position*200)));
         document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
     })
@@ -105,8 +109,6 @@ startButton.addEventListener("click", () => {
         sound[playFlag ? 'start' : 'stop']()
     })
 })
-
-
 
 import crossFaderUpdate from './crossFader.js';
 document.querySelector('#crossFader').addEventListener("input", crossFaderUpdate);
