@@ -14,9 +14,8 @@ let meterUpdate = function(){
     
     sounds.forEach((sound,i) => {
         let position = elapsedTime / durations[i];
-        let ids = ['#left', '#right'];
-        let y = Math.floor(0-(200-(position*200)));
-        console.log(y);
+        let ids = ['#left__wave', '#right__wave'];
+        let y = (0-(200-(position*200)));
         document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
     })
 }
@@ -79,7 +78,7 @@ window.sounds = [
 window.durations = [0,0];
 window.heights = [0,0];
 
-// is this still relevant? or now redundant?
+// is this tone.loaded call still relevant? or now redundant?
 
 Tone.loaded().then(start);
 

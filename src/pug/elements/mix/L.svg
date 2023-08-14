@@ -25,7 +25,7 @@
 		</mask>
 	</defs>
 	<g>
-		<image mask="url(#wave)" x="0" y="0" width="282" height="1600" href="texture.jpg">
+		<image mask="url(#wave)" id="left__wave" x="0" y="0" width="282" height="1600" href="texture.jpg">
 		</image>
 	</g>
 </svg>
