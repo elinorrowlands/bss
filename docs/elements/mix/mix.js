@@ -4,6 +4,7 @@ let playFlag = false;
 let startTime = 0;
 let elapsedTime = 0;
 let mixRecord = [];
+let scrollWaves = false;
 
 let meterUpdate = function(){
     let ids = ['#left__wave', '#right__wave'];
@@ -13,20 +14,25 @@ let meterUpdate = function(){
         //todo: multiply by crossfader value accordingly
         let crossFaderValue = document.querySelector('#crossFader').value;
         let multipliedLevel = level * (i === 0 ? crossFaderValue : (1-crossFaderValue)) * 1000;
+        // console.log(Math.floor(multipliedLevel));
         // console.log(i, multipliedLevel);
-        document.querySelector(`#circle_${i}`).style.r = `${Math.floor(multipliedLevel)}`;
+        document.querySelector(`#circle_${1 - i}`).style.r = `${Math.floor(multipliedLevel)}px`;
+        // document.querySelector(`#circle_${1 - i}`).style.r = `${Math.floor(multipliedLevel)}`;
         // console.log(i, level);
-        document.querySelector(ids[i]).style.opacity = (level*12)+0.5;
-        // document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*100000)}`;
+        // document.querySelector(ids[i]).style.opacity = (level*12)+0.5;
+        document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*100000)}`;
     })
-    elapsedTime = Tone.now() - startTime;
+    if(scrollWaves){
+        elapsedTime = Tone.now() - startTime;
     
-    sounds.forEach((sound,i) => {
-        let position = elapsedTime / durations[i];
-        
-        let y = (0-(200-(position*200)));
-        document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
-    })
+        sounds.forEach((sound,i) => {
+            let position = elapsedTime / durations[i];
+            
+            let y = (0-(200-(position*200)));
+            document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
+        })
+    }
+    
 }
 
 

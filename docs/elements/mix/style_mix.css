@@ -14,6 +14,7 @@ button{
 
 #start{
     font-size:2rem;
+    z-index: 2;
 }
 
 body {
@@ -59,7 +60,7 @@ body {
 .waveform{
     position:absolute;
     transform-origin:center top;
-    transform:scale(4);
+    /* transform:scale(4); */
     height:100%;
     top:0;
     bottom:0;
@@ -103,12 +104,14 @@ body {
 .meter{
     width:800px;
     height:800px;
+    
+    
     transition:all 1s;
     position:absolute;
-    z-index:-1;
+    z-index:1;
     /* top:calc(50vh - 100px); */
     display:block;
-    /* border-radius:50%; */
+    border-radius:50%;
     opacity:0.7;
 }
 

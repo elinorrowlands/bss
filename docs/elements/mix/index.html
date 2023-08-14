@@ -19,13 +19,17 @@
       }
       .main__qr,.bar{
           border:none!important;
-          max-height:800px!important;
+          //- max-height:800px!important;
+          //- width:800px;
+          //- height:800px;
       }
       image{
           transition: all 0.3s ease-in-out;
-          opacity:0.1;
+          opacity:0.7;
       }
-      .meter{
+      #start{
+          position:absolute;
+          bottom:20px;
           
       }
       button.nav__back{
@@ -38,24 +42,7 @@
     </style>
   </head>
   <body>
-    <div class="body__background" aria-hidden="true"></div>
-    <svg class="meter" id="meter_0" viewbox="0,0,800,800" aria-hidden="true"> 
-      <style>
-        circle{
-            //- transition:all 0.5s ease-in-out, x 0s, y 0s;
-        }
-        
-      </style>
-      <circle class="thumb" id="circle_0" cx="400" cy="400" r="0" fill="cyan"></circle>
-    </svg>
-    <svg class="meter" id="meter_1" viewbox="0,0,800,800" aria-hidden="true">
-      <style>
-        circle{
-            //- transition:all 0.5s ease-in-out;
-        }
-      </style>
-      <circle class="thumb" id="circle_1" cx="400" cy="400" r="0" fill="beige"></circle>
-    </svg>
+    <div class="body__background" aria-hidden="true" style="display:none;"></div>
     <main class="main__qr">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,239,1356" style="filter:hue-rotate(-90deg)" aria-hidden="true" version="1.1" class="waveform" id="left">
 	<defs>
@@ -98,11 +85,36 @@
 	</g>
 </svg>
 
-      <div class="bar">
-        <button class="button" id="start">START</button>
-      </div>
-      <div class="bar" style="width:100%;">
+      <div class="bar" style="width:100%; display:none;">
         <input id="crossFader" type="range" min="0" max="1" step="0.01" value="0.5"/>
+      </div>
+      <svg class="meter" id="meter_0" viewbox="0,0,800,800" aria-hidden="true"> 
+        <style>
+          circle{
+              transition:r 0.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out;
+          }
+          rect{
+              
+          }
+          
+        </style>
+        <circle class="thumb" id="circle_0" cx="400" cy="400" r="100" fill="cyan"></circle>
+        <rect class="slider" x="0" y="0" width="400" height="800" fill="cyan" opacity="0.4"></rect>
+      </svg>
+      <svg class="meter" id="meter_1" viewbox="0,0,800,800" aria-hidden="true">
+        <style>
+          circle{
+              transition:r 0.1s ease-in-out;
+          }
+          rect{
+              
+          }
+        </style>
+        <rect class="slider" x="400" y="0" width="400" height="800" fill="beige" opacity="0.4"></rect>
+        <circle class="thumb" id="circle_1" cx="400" cy="400" r="100" fill="beige"></circle>
+      </svg>
+      <div class="bar">
+        <button class="button allowDefault" id="start">START</button>
       </div>
     </main>
     <div class="loading"> 
@@ -128,6 +140,17 @@
     touch.setAction('.meter');
     document.addEventListener('touch-pickup',(e)=>{
         console.log(e.detail);
+        let {type, id} = e.detail;
+        if(id=='start') return;
+        if(type=='start'){
+            document.querySelectorAll('.thumb').forEach((thumb)=>{
+                thumb.setAttribute('transition',`r 0.1s ease-in-out, x 0.6, y 0.6s ease-in-out`);
+            })
+        } else {
+            document.querySelectorAll('.thumb').forEach((thumb)=>{
+                thumb.setAttribute('transition',`r 0.1s ease-in-out`);
+            })
+        }
         let {x, y, range} = e.detail.relative;
         let value = x / range.x;
         document.querySelector('#crossFader').value = value;
@@ -139,6 +162,15 @@
         document.querySelectorAll('.thumb').forEach((thumb)=>{
             thumb.setAttribute('cx',x);
             thumb.setAttribute('cy',range.y - y);
+        })
+        document.querySelectorAll('.slider').forEach((slider,i)=>{
+            if(i==0){
+                slider.setAttribute('width',x);
+            } else {
+                slider.setAttribute('width',range.x - x);
+                slider.setAttribute('x',x);
+            }
+            
         })
     })
   </script>
