@@ -40,7 +40,7 @@ html(lang="en")
             }
     body
         .body__background(aria-hidden="true" style="display:none;")
-        main.main__qr
+        main.main__qr(style="background:none!important;")
             include L.svg 
             include R.svg
             .bar(style="width:100%; display:none;")
@@ -102,6 +102,7 @@ html(lang="en")
                 thumb.setAttribute('cx',x);
                 thumb.setAttribute('cy',range.y - y);
             })
+            mix.notch.frequency.rampTo((4000 * ((1-y)/range.y)) + 4000, 0.1);
             document.querySelectorAll('.slider').forEach((slider,i)=>{
                 if(i==0){
                     slider.setAttribute('width',x);

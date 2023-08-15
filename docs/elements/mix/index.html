@@ -43,7 +43,7 @@
   </head>
   <body>
     <div class="body__background" aria-hidden="true" style="display:none;"></div>
-    <main class="main__qr">
+    <main class="main__qr" style="background:none!important;">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,239,1356" style="filter:hue-rotate(-90deg)" aria-hidden="true" version="1.1" class="waveform" id="left">
 	<defs>
 		<mask id="wave">
@@ -169,6 +169,7 @@
             thumb.setAttribute('cx',x);
             thumb.setAttribute('cy',range.y - y);
         })
+        mix.notch.frequency.rampTo((4000 * ((1-y)/range.y)) + 4000, 0.1);
         document.querySelectorAll('.slider').forEach((slider,i)=>{
             if(i==0){
                 slider.setAttribute('width',x);

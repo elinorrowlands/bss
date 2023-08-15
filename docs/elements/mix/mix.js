@@ -86,12 +86,15 @@ window.mix = {
     reverb: new Tone.Reverb(2).toDestination(),
     reverbChannel: new Tone.Channel(),
     active:[true, true],
-    crossFader: new Tone.CrossFade(0.5)     
+    crossFader: new Tone.CrossFade(0.5),
+    notch: new Tone.Filter(200, "notch")      
 }
 
 mix.reverbChannel.connect(mix.filter);
 mix.filter.connect(mix.reverb);
-mix.crossFader.toDestination();
+mix.crossFader.connect(mix.notch);
+// mix.crossFader.toDestination();
+mix.notch.toDestination();
 
 window.sounds = [
     new Tone.Player("channels_L.mp3"),

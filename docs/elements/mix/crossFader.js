@@ -8,7 +8,8 @@ const crossFaderUpdate = (e) => {
     let percentage = value * 50;
     let leftValue = (percentage/2);
     let rightValue = 100-(percentage/2);
-    document.querySelector('main').style.background = `linear-gradient(90deg, rgba(249,212,35,0.2) ${leftValue}%, rgba(32,42,68,0.2) ${rightValue}%)`;
+    // document.querySelector('main').style.background = `linear-gradient(90deg, rgba(249,212,35,0.2) ${leftValue}%, rgba(32,42,68,0.2) ${rightValue}%)`;
+    document.querySelector('main').style.background = 'none';
     mix.crossFader.fade.rampTo(value, 0.1, Tone.now());
     document.querySelectorAll('.waveform').forEach((x,i)=>{
         x.style.opacity = 0.2 + Math.abs(1-i-value)*0.8;
