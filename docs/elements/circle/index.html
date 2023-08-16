@@ -1,61 +1,144 @@
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BSS</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
-    <link rel="stylesheet" href="../../style.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
-    <script src="../../main.js" defer="defer"></script>
-    <style>
-      button{
-          font-size: 2rem;
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>BSS: Ripples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rakkas&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style_circles.css">
+  <style>
+    body{
+        overflow:hidden;
+        transition:all 1s ease;
+        height:100vh;
+        width:100vw;
+    }
+    
+    canvas{
+      user-select:none;
+    }
+    
+    #water-ripples-title{
+      display:none;
+    }
+    
+    #painting,#centeredCircle{
+      user-select:none;
+      width:100%; 
+      position:absolute;
+      margin:0;
+      display:block;
+      transform-origin:center;
+      
+      @media (max-width: 600px) {
+       width:100%; 
+       height:100%;
+      
+        top:0;
+        transform-origin:center;
       }
-      
-      .mute{
-          width:2rem;
-          height:2rem;
-          margin:2rem;
-      }
-      
-      .text{
-          border-radius:10px;
-          font-weight:bold;
-          text-align:center;
-          opacity:0.8;
-          letter-spacing:0.1px;
-          transition:all 1s, left 35.5s ease-in-out, top 34.5s ease-in-out, opacity 0.5s ease-in-out;
-          mix-blend-mode:soft-light;
-      }
-      
-      .text.active{
-          opacity:1;
-          letter-spacing:0.2px;
-      }
-      
-      body {
-          background-color:navy;
-          transition: filter 1s;
-          overflow:hidden;
-          touch-action:none;
-          user-select:none;
-          -webkit-user-select: none; /* Safari */
-          background-image:url("../../bg1.svg");
-          background-size:cover;
-          background-repeat:no-repeat;
-          background-position:center;
-          height:100vh;
-          width:100vw;
-          filter: hue-rotate(0deg);
-      }
-      
-      
-    </style>
-  </head>
-  <body>
-    <h1>element coming soon</h1>
-  </body>
-</html>
+    
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas"></div>
+  <div id="content">
+    <div id="water-ripples">
+      <div id="water-ripples-title">
+        <h1 style="user-select:none;pointer-events:none;"></h1>
+      </div>
+      <svg id="centeredCircle" width="100%" height="100%" viewBox="0 0 100 100">
+        <circle id="waterCircle" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" style="opacity:0.4;"></circle>
+        <circle id="echoCircle" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" style="opacity:0.4;"></circle>
+        <circle id="echoCircle2" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" style="opacity:0.4;"></circle>
+      </svg><img src="water_frame_0.png" alt="water" crossorigin="" data-sampler="planeTexture">
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js"></script>
+  <script src="../../main.js"></script>
+  <script src="./script.js" type="module" defer></script>
+  <script src="./interact.js" defer></script>
+  <script src="./touch.js" defer></script>
+  <script>
+    function checkLoaded(name) {
+        const interval = 100;
+        window.setTimeout(function() {
+            if (window[name]) {
+                window[name]();
+            } else {
+                checkLoaded(name);
+            }
+        }, interval);
+    }
+  </script>
+  <script>
+    const container = 'body';
+    const sounds = {
+        loop: new Tone.Player("nesting.mp3"),
+        meter: new Tone.Meter(),
+        filter: new Tone.Filter(200, "lowpass"),
+        hpf: new Tone.Filter(400, "highpass"),
+        echo: new Tone.FeedbackDelay("2n", 0.5).toMaster(),
+        echoMeter: new Tone.Meter()
+    }
+    let moused = false;
+    
+    sounds.echo.wet.value = 1;
+    sounds.loop.connect(sounds.filter);
+    sounds.filter.toMaster();
+    sounds.filter.connect(sounds.hpf);
+    sounds.hpf.connect(sounds.echo);
+    sounds.echo.connect(sounds.echoMeter);
+    sounds.filter.connect(sounds.meter);
+    
+    function setBGAnimation(){
+        let i = 0, count = 0;
+        setInterval( () => {
+            i = i === 0 ? 1 : 0;
+            count++;
+            
+            if(moused){
+                let hue = Math.floor(count/30);
+                document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`
+            } else {
+                document.body.style.filter = `hue-rotate(0deg)`
+            }
+            
+            $('#waterCircle').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel()))
+            $('#waterCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getLevel())*4})`);
+            $('#echoCircle').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*6})`);
+            $('#echoCircle2').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*10})`);
+    
+        }, 30)
+    }
+    
+    setBGAnimation();
+    
+    let started = false;
+    
+    window.addEventListener('mousedown', (e) => {
+    Tone.start();
+        sounds.loop.loop = true;
+        if(!started){
+            sounds.loop.start();    
+            started = true;
+        }
+     sounds.filter.frequency.rampTo(1000, 1);
+        moused = true;   
+    });
+    
+    window.addEventListener('mouseup',(e) => {
+        sounds.filter.frequency.rampTo(200, 1);
+        moused=false;
+    });
+    
+    Tone.start();
+    
+    let loadScript = loadingIndicator.init();
+    checkLoaded('addBackButton');
+  </script>
+</body>

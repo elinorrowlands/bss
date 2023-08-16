@@ -87,12 +87,17 @@ window.mix = {
     reverbChannel: new Tone.Channel(),
     active:[true, true],
     crossFader: new Tone.CrossFade(0.5),
-    notch: new Tone.Filter(200, "notch")      
+    notch: new Tone.Filter(200, "notch"),
+    echo: new Tone.FeedbackDelay(0.5, 0.5)      
 }
+
+mix.echo.wet.value = 1;
 
 mix.reverbChannel.connect(mix.filter);
 mix.filter.connect(mix.reverb);
 mix.crossFader.connect(mix.notch);
+mix.notch.connect(mix.echo);
+mix.echo.toDestination();
 // mix.crossFader.toDestination();
 mix.notch.toDestination();
 

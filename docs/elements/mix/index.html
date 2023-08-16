@@ -14,14 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <style>
       .body__background,main{
-          //- border-radius:50%!important;
           border:none;
       }
       .main__qr,.bar{
           border:none!important;
-          //- max-height:800px!important;
-          //- width:800px;
-          //- height:800px;
+          
       }
       image{
           transition: all 0.3s ease-in-out;
@@ -60,7 +57,7 @@
 	<g mask="url(#wave)">
 		<image  id="left__wave" x="0" y="0" width="282" height="1600" href="texture.jpg">
 		</image>
-		<rect id="pos__left" class="vertical" x="0" y="0" width="100%" height="8" fill="#ffffff" opacity="0.5"/>
+		<rect id="pos__left" class="vertical" x="0" y="0" width="100%" height="8" fill="beige" opacity="0.5"/>
 	</g>
 </svg>
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,237,1344" style="filter:hue-rotate(90deg)" aria-hidden="true" version="1.1" class="waveform" id="right">
@@ -87,7 +84,7 @@
 	<g mask="url(#wave2)">
 		<image  id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg">
 		</image>
-		<rect id="pos__right" class="vertical" x="0" y="0" width="100%" height="8" fill="#ffffff" opacity="0.5"/>
+		<rect id="pos__right" class="vertical" x="0" y="0" width="100%" height="8" fill="cyan" opacity="0.5"/>
 	</g>
 </svg>
 
@@ -142,7 +139,6 @@
   </script>
   <script>checkLoaded('addBackButton');</script>
   <script>
-    //- touch.unlisten();
     touch.setAction('.meter');
     document.addEventListener('touch-pickup',(e)=>{
         //- console.log(e.detail);
@@ -152,24 +148,33 @@
             document.querySelectorAll('.thumb').forEach((thumb)=>{
                 thumb.setAttribute('transition',`r 0.1s ease-in-out, x 0.6, y 0.6s ease-in-out`);
             })
+            mix.echo.effectReturn.gain.rampTo(1, 0.1);
         } else {
             document.querySelectorAll('.thumb').forEach((thumb)=>{
                 thumb.setAttribute('transition',`r 0.1s ease-in-out`);
             })
+            mix.echo.effectReturn.gain.rampTo(0.2,1);
         }
         let {x, y, range} = e.detail.relative;
         let value = x / range.x;
         document.querySelector('#crossFader').value = value;
         document.querySelector('#crossFader').dispatchEvent(new Event('input'));
+    
         if(x<10)x=10;
         if(x>range.x)x=range.x - 10;
         if(y<10)y=10;
         if(y>range.y)y=range.y - 10;
+    
         document.querySelectorAll('.thumb').forEach((thumb)=>{
             thumb.setAttribute('cx',x);
             thumb.setAttribute('cy',range.y - y);
         })
-        mix.notch.frequency.rampTo((4000 * ((1-y)/range.y)) + 4000, 0.1);
+        
+        let notchValue = 4000 * ((y)/range.y);
+        console.log(notchValue)
+        mix.notch.frequency.rampTo(notchValue, 0.1);
+        mix.notch.Q.rampTo((20 * ((1-x)/range.x)) + 20, 0.1);
+        mix.echo.delayTime.rampTo((0.1 * ((1-y)/range.y)) + 0.5, 0.1);
         document.querySelectorAll('.slider').forEach((slider,i)=>{
             if(i==0){
                 slider.setAttribute('width',x);
