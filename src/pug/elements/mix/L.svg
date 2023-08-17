@@ -1,4 +1,4 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,239,1356" style="filter:hue-rotate(-90deg)" aria-hidden="true" version="1.1" class="waveform" id="left">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,239,1356" style="filter:hue-rotate(-90deg)" aria-hidden="true" version="1.1" class="waveform inactive" id="left">
 	<defs>
 		<mask id="wave">
 			<path d="M0,1356L118,1356L111,1307L112,1264L110,1244L113,1225L113,1205L115,1181L106,1140L114,1104L114,1084L107,1065L114,1048L109,1032L103,1012L103,992L115,952L106,915L99,900L103,885L107,847L116,810L112,760L115,716L109,622L106,579L96,543L92,529L81,512L86,507L102,493L108,453L106,410L85,377L101,357L89,317L103,280L100,237L103,220L109,202L97,158L94,139L90,118L89,118L90,109L93,78L85,49L99,22L114,0L0,0L0,1356Z" fill="#000000"/>

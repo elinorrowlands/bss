@@ -144,6 +144,9 @@ circle.inactive{
     fill:black;
 }
 
+.slider{
+    transition:fill 1.5s ease;
+}
 
 #slider__left.inactive{
     fill:black;
@@ -151,4 +154,13 @@ circle.inactive{
 
 #slider__right.inactive{
     fill:gray;
+}
+
+.waveform{
+    transition:filter 1s;
+    z-index:10;
+}
+
+.waveform.inactive{
+    filter:grayscale(100%);
 }
