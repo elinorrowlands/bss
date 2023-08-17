@@ -109,7 +109,10 @@ startButton.addEventListener("click", () => {
     playFlag = !playFlag;
     crossFaderUpdate({target:{value:0.5}});
     setMeters(playFlag);
-
+    document.querySelectorAll('.thumb').forEach(x=>{
+        x.style.opacity = playFlag ? 0.9 : 0.3;
+        if(!playFlag) x.setAttribute('r', 30)
+    })
     startButton.innerHTML = playFlag ? "STOP" : "START";
     if(playFlag){
         startTime = Tone.now();

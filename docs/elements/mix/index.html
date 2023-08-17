@@ -36,6 +36,9 @@
       input{
           opacity:0;
       }
+      .waveform{
+          transform:scaleX(2);
+      }
     </style>
   </head>
   <body>
@@ -93,26 +96,28 @@
         <style>
           circle{
               transition:r 0.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out;
+              opacity:0.3;
           }
           rect{
               
           }
           
         </style>
-        <circle class="thumb" id="circle_1" cx="50%" cy="50%" r="50" fill="cyan"></circle>
+        <circle class="thumb" id="circle_1" cx="50%" cy="50%" r="25" fill="cyan"></circle>
         <rect class="slider" x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4"></rect>
       </svg>
       <svg class="meter" id="meter_1" viewbox="0,0,800,800" aria-hidden="true">
         <style>
           circle{
               transition:r 0.1s ease-in-out;
+              opacity:0.3;
           }
           rect{
               
           }
         </style>
         <rect class="slider" x="50%" y="0" width="50%" height="100%" fill="beige" opacity="0.4"></rect>
-        <circle class="thumb" id="circle_0" cx="50%" cy="50%" r="50" fill="beige"></circle>
+        <circle class="thumb" id="circle_0" cx="50%" cy="50%" r="20" fill="beige"></circle>
       </svg>
       <div class="bar">
         <button class="button allowDefault" id="start">START</button>
