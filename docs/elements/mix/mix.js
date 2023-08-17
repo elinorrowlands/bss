@@ -15,6 +15,8 @@ let meterUpdate = function(){
         let crossFaderValue = document.querySelector('#crossFader').value;
         let multipliedLevel = (level * (i === 1 ? crossFaderValue : (1-crossFaderValue)) * 5000) + 5;
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(multipliedLevel)}px`;
+
+        document.querySelector(ids[i]).style.opacity = level*32;
     })
     
     elapsedTime = Tone.now() - startTime;

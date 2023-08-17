@@ -164,3 +164,7 @@ circle.inactive{
 .waveform.inactive{
     filter:grayscale(100%);
 }
+
+.vertical{
+    transition: opacity 0.5s;
+}
