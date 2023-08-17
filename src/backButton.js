@@ -10,6 +10,9 @@ function addBackButton(){
     if(urlParams.has('from')){
         let home = urlParams.get('from');
     }
+    if(urlParams.has('standalone')){
+        return;
+    }
     let homePage = urlParams.get('from') == 'map' ? 'map2' : 'index';
     backButton.setAttribute("onclick",`window.location = 'https://elinorrowlands.github.io/bss/${homePage}.html'`);
     backButton.id = "backButton";
