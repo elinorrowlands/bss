@@ -68,12 +68,12 @@ body {
 
 .waveform#left{
     right:auto;
-    left:100px;
+    left:10px;
 }
 
 .waveform#right{
     left:auto;
-    right:100px;
+    right:10px;
 }
 
 .main__background{
@@ -114,10 +114,31 @@ body {
     opacity:0.7;
 }
 
-/* @media only screen and (max-width: 600px) {
-    .meter{
+@media only screen and (min-width: 600px) {
+    /* .meter{
         width:400px;
         height:400px;
+    } */
+    .waveform{
+        transform:scaleX(1.5);
     }
-} */
+    .waveform#left{
+        right:auto;
+        left:100px;
+    }
+    .waveform#right{
+        left:auto;
+        right:100px;
+    }
+    
+}
+@media only screen and (max-width: 600px) {
+    .meter{
+        /* width:400px;
+        height:400px; */
+        /* transform:scale(0.5); */
+    }
+   
+    
+}
 
