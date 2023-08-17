@@ -13,7 +13,7 @@ function addBackButton(){
     let homePage = urlParams.get('from') == 'map' ? 'map2' : 'index';
     backButton.setAttribute("onclick",`window.location = 'https://elinorrowlands.github.io/bss/${homePage}.html'`);
     backButton.id = "backButton";
-    backButton.classList.add('button', 'nav__back')
+    backButton.classList.add('button', 'nav__back', 'allowDefault')
     document.body.appendChild(backButton);
 }
 
