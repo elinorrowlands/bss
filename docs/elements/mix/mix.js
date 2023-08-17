@@ -12,17 +12,9 @@ let meterUpdate = function(){
     
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
-        //todo: multiply by crossfader value accordingly
         let crossFaderValue = document.querySelector('#crossFader').value;
         let multipliedLevel = (level * (i === 1 ? crossFaderValue : (1-crossFaderValue)) * 5000) + 5;
-        // console.log(Math.floor(multipliedLevel));
-        // console.log(i, multipliedLevel);
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(multipliedLevel)}px`;
-        // console.log(i, multipliedLevel, document.querySelector(`#circle_${i}`).getAttribute('fill'));
-        // document.querySelector(`#circle_${1 - i}`).style.r = `${Math.floor(multipliedLevel)}`;
-        // console.log(i, level);
-        // document.querySelector(ids[i]).style.opacity = (level*12)+0.5;
-        // document.querySelector(`#circle_${i}`).style.ry = `${Math.floor(level*00000)}`;
     })
     
     elapsedTime = Tone.now() - startTime;
@@ -35,21 +27,12 @@ let meterUpdate = function(){
             y = (0-(200-(position*200)));
             document.querySelector(ids[i]).style.transform = `translate(-50%, ${y}%) scale(2)`;
         } else {
-            
             document.querySelector(lines[i]).setAttribute('height', `${y}%`);
         }
     })
 
 
 }
-
-
-// next
-function scroll(){
-    document.querySelector('image').style.transform='translate(-50%, -100%) scale(2)';
-}
-
-window.scroll=scroll;
 
 function setMeters(state){
     if(state){

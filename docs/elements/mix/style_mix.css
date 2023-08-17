@@ -53,14 +53,11 @@ body {
     right:0;
     z-index:-1;
     opacity:0.8;
-    
-
 }
 
 .waveform{
     position:absolute;
     transform-origin:center top;
-    /* transform:scale(4); */
     height:100%;
     top:0;
     bottom:0;
@@ -71,12 +68,12 @@ body {
 
 .waveform#left{
     right:auto;
-    left:0px;
+    left:100px;
 }
 
 .waveform#right{
     left:auto;
-    right:0px;
+    right:100px;
 }
 
 .main__background{
@@ -124,13 +121,3 @@ body {
     }
 } */
 
-#meter_0{
-    /* background-color:rgba(249,212,35,0.5); */
-    /* left:-400px; */
-    left:calc(50vw - 400px);
-}
-#meter_1{
-    /* background-color:rgba(249,212,35,0.5); */
-    /* right:-400px; */
-    right:calc(50vw - 400px);
-}
