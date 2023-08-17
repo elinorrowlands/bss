@@ -99,15 +99,16 @@
               elements[key].qr = generateQR(elements[key].url, `qr__${key}`);
               elements[key].qr.classList.add('qr__svg');
               elements[key].qr.classList.add(`elements__${key}`);
-              elements[key].card.addEventListener('click', (e)=>{
+              const clickEvent = (e)=>{
                   if(e.shiftKey){
                       elements[key].card.innerHTML = '';
                       new QRCode(elements[key].card, elements[key].url);
                   } else {
                       window.location.href = elements[key].url;
-                  }
-                  
-              })
+                  } 
+              }
+              elements[key].card.addEventListener('click', clickEvent);
+              elements[key].card.addEventListener('touchend', clickEvent);
       
               elements[key].qr.querySelector('rect').remove();
       
@@ -148,6 +149,7 @@
       })
       
       checkLoaded('addBackButton');
+      touch.unlisten();
     </script>
   </body>
 </html>
