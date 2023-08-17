@@ -111,7 +111,11 @@ startButton.addEventListener("click", () => {
     setMeters(playFlag);
     document.querySelectorAll('.thumb').forEach(x=>{
         x.style.opacity = playFlag ? 0.9 : 0.3;
-        if(!playFlag) x.setAttribute('r', 30)
+        if(!playFlag) x.setAttribute('r', 30);
+        x.classList[playFlag ? 'remove' : 'add']('inactive');
+    })
+    document.querySelectorAll('.slider').forEach(x=>{
+        x.classList[playFlag ? 'remove' : 'add']('inactive');
     })
     startButton.innerHTML = playFlag ? "STOP" : "START";
     if(playFlag){

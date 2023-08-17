@@ -137,8 +137,18 @@ body {
         /* width:400px;
         height:400px; */
         /* transform:scale(0.5); */
-    }
-   
-    
+    }   
 }
 
+circle.inactive{
+    fill:black;
+}
+
+
+#slider__left.inactive{
+    fill:black;
+}
+
+#slider__right.inactive{
+    fill:gray;
+}
