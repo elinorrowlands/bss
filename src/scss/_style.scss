@@ -2,7 +2,6 @@
 
 @import "logo.scss";
 @import "qr.scss";
-@import "animations.scss";
 @import "icons.scss";
 @import "footer.scss";
 @import "button.scss";
@@ -58,7 +57,6 @@ h1 {
 
 
 path {
-    /* opacity:0.5; */
     transition: opacity 1s ease-in-out;
 }
 
@@ -91,7 +89,6 @@ path {
     display:flex;
     justify-content:center;
     align-items:center;
-    //- font-size:2rem;
     font-weight:bold;
     text-align:center;
     opacity:1;
@@ -115,8 +112,8 @@ canvas#overlay {
     touch-action:none;
     pointer-events:none;
     overflow:hidden;
-    user-select:none;
-     -webkit-user-select: none; /* Safari */
+    -webkit-user-select: none;
+     user-select:none; /* Safari */
   }
 
   .nav__back{

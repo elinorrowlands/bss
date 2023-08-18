@@ -12,7 +12,6 @@
 }
 
 .footer__logos {
-    /* height:80%; */
     font-size: 2rem;
     color: lightgray;
     justify-content: space-around;
@@ -25,11 +24,9 @@
 }
 
 footer {
-    // position:absolute;
     position:relative;
     bottom:0;
     left:0;
-    /* height:250px; */
     width:100%;
     max-height: 250px;
     background-color:darkblue;

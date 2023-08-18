@@ -160,30 +160,16 @@
   background-color: navy;
 }
 
-@keyframes opacity {
-  0% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 0.8;
-  }
+main.qr__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1em;
+  justify-items: center;
+  align-items: center;
+  margin: 2em;
+  background-color: navy;
 }
-@keyframes scale {
-  0% {
-    transform: scale(3);
-  }
-  100% {
-    transform: scale(5);
-  }
-}
-@keyframes scale2 {
-  0% {
-    transform: scale(6);
-  }
-  100% {
-    transform: scale(8);
-  }
-}
+
 .icon {
   width: 100px;
   height: 100px;
@@ -241,7 +227,6 @@
 }
 
 .footer__logos {
-  /* height:80%; */
   font-size: 2rem;
   color: lightgray;
   justify-content: space-around;
@@ -257,7 +242,6 @@ footer {
   position: relative;
   bottom: 0;
   left: 0;
-  /* height:250px; */
   width: 100%;
   max-height: 250px;
   background-color: darkblue;
@@ -407,7 +391,6 @@ h1 {
 }
 
 path {
-  /* opacity:0.5; */
   transition: opacity 1s ease-in-out;
 }
 
@@ -462,8 +445,8 @@ canvas#overlay {
   touch-action: none;
   pointer-events: none;
   overflow: hidden;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
+  -webkit-user-select: none;
+  user-select: none; /* Safari */
 }
 
 .nav__back {

@@ -12,8 +12,6 @@
     transform: scale(8);
     margin: none;
     z-index: -1;
-    // animation: opacity 20s ease-in-out infinite alternate;
-    // animation: scale 60s ease-in-out infinite alternate;
     transition:transform 60s ease-in-out;
 
     @media screen and (max-width: 850px) {
