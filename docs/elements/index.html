@@ -14,21 +14,50 @@
       .qr__container{
           margin:auto;
           background-color:rgba(0,64,128,0.8);
+          
+      }
+      
+      .index{
+          width:90%!important;
       }
       
       main{
           left:0px;
           right:0px;
           margin:auto;
-          margin-top:100px;
-          padding-top:100px;
+          //- margin-top:100px;
+          //- padding-top:100px;
+      }
+      #main__title{
+          display: inline-block;
+          position: static;
+          
       }
       
     </style>
   </head>
-  <body>
+  <body><svg id="main__title" role='header' xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="37.125 437.625 532.144 200.85746">
+    <defs/>
+    
+    <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" stroke="none" fill="none" stroke-opacity="1">
+        
+        <g id="Canvas_1_Layer_1">
+        
+        <g id="Graphic_4">
+            <text transform="translate(48.875 551.48246)" fill="white">
+            <tspan font-family="Crimson Text" font-size="68" fill="white" x="0" y="63">Sites and Sounds</tspan>
+            </text>
+        </g>
+        <g id="Graphic_5">
+            <text transform="translate(42.125 442.625)" fill="white">
+            <tspan font-family="Crimson Text" font-size="96" fill="white" x="0" y="88">Biodivergent</tspan>
+            </text>
+        </g>
+        </g>
+    </g>
+</svg>
     <main class="splash qr__container">
-      <ol class="bar qr__container" style="margin:none!important;"></ol>
+      <ol class="bar qr__container index" style="margin:none!important;"></ol>
     </main>
     <footer>
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="../logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="../logos/chc.png" alt="Creative Health Camden"/></a></p>
@@ -46,6 +75,7 @@
       }
     </script>
     <script>
+      document.querySelector('#main__title').classList.add('nav__back')
       let baseURL = 'https://elinorrowlands.github.io/bss/';
       
       let elements = {
@@ -79,8 +109,7 @@
       
           Object.entries(elements).forEach(([key, value],i) => {
               elements[key].card = document.createElement('li');
-              elements[key].card.classList.add('qr__card');
-              elements[key].card.classList.add(`elements__${key}`);
+              elements[key].card.classList.add('qr__card', 'allowDefault', `elements__${key}`);
               elements[key].card.setAttribute('role', 'button');
               elements[key].card.id = `qr__card__${key}`;
       
@@ -147,7 +176,7 @@
       })
       
       checkLoaded('addBackButton');
-      touch.unlisten();
+      if(window.touch) touch.unlisten();
     </script>
   </body>
 </html>

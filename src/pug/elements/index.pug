@@ -13,23 +13,35 @@ html(lang="en")
             .qr__container{
                 margin:auto;
                 background-color:rgba(0,64,128,0.8);
+                
+            }
+
+            .index{
+                width:90%!important;
             }
 
             main{
                 left:0px;
                 right:0px;
                 margin:auto;
-                margin-top:100px;
-                padding-top:100px;
+                //- margin-top:100px;
+                //- padding-top:100px;
+            }
+            #main__title{
+                display: inline-block;
+                position: static;
+                
             }
             
     body
+        include ../svg/title.svg
         main.splash.qr__container
-            ol.bar.qr__container(style="margin:none!important;")
+            ol.bar.qr__container.index(style="margin:none!important;")
         footer
             include footer  
         include ../checkLoaded
         script.
+            document.querySelector('#main__title').classList.add('nav__back')
             let baseURL = 'https://elinorrowlands.github.io/bss/';
 
             let elements = {
@@ -63,8 +75,7 @@ html(lang="en")
 
                 Object.entries(elements).forEach(([key, value],i) => {
                     elements[key].card = document.createElement('li');
-                    elements[key].card.classList.add('qr__card');
-                    elements[key].card.classList.add(`elements__${key}`);
+                    elements[key].card.classList.add('qr__card', 'allowDefault', `elements__${key}`);
                     elements[key].card.setAttribute('role', 'button');
                     elements[key].card.id = `qr__card__${key}`;
 
@@ -131,5 +142,5 @@ html(lang="en")
             })
 
             checkLoaded('addBackButton');
-            touch.unlisten();
+            if(window.touch) touch.unlisten();
             
