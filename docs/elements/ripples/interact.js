@@ -24,7 +24,7 @@ document.querySelectorAll('svg image').forEach((e,i)=>{
           sustain:0.91,
           release:2.1
         },
-        volume:-10
+        volume:-60
     }).connect(echo);
     synth.toMaster();
     synth.voices.forEach(x=>{
