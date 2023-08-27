@@ -16,6 +16,7 @@
     }
     
     canvas{
+      -webkit-user-select: none; /* Safari */
       user-select:none;
     }
     
@@ -24,6 +25,7 @@
     }
     
     #painting,#centeredCircle{
+      -webkit-user-select: none; /* Safari */
       user-select:none;
       width:100%; 
       position:absolute;
@@ -81,7 +83,7 @@
     const container = 'body';
 
     const sounds = {
-        loop: new Tone.Player("nesting.mp3"),
+        loop: new Tone.Player("../../loops/rusty_can_0.mp3"),
         meter: new Tone.Meter(),
         filter: new Tone.Filter(200, "lowpass"),
         hpf: new Tone.Filter(400, "highpass"),
@@ -92,7 +94,9 @@
     let moused = false;
     
     sounds.echo.wet.value = 1;
+    sounds.loop.volume.value=-12;
     sounds.loop.connect(sounds.filter);
+    sounds.filter.Q.value = 0;
     sounds.filter.toMaster();
     sounds.filter.connect(sounds.hpf);
     sounds.hpf.connect(sounds.echo);
