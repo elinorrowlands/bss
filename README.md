@@ -32,5 +32,6 @@ This repository may also include artistic works by project collaborators.
 Please note: no license is granted for the use of these works. 
 
 ---
+Sounds of the Grand Union Canal (Kensal Green) by <a href=https://freesound.org/people/deleted_user_1654820/sounds/98823/>deleted_user_1654820</a> on <a href=https://freesound.org/>freesound.org</a>.  Sound file licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC Noncommercial 3.0 license</a>.
 
 Icons from [the Noun Project](https://thenounproject.com/) have been used with a paid license.
