@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
+@keyframes opacity {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(5);
+  }
+}
+@keyframes scale2 {
+  0% {
+    transform: scale(6);
+  }
+  100% {
+    transform: scale(8);
+  }
+}
 .logo {
   padding: 10px;
 }
@@ -315,7 +339,7 @@ footer {
   filter: brightness(80%) grayscale(100%) hue-rotate(0deg);
 }
 
-#water {
+.front__water {
   opacity: 0.6;
   position: fixed;
   display: block;
@@ -325,11 +349,23 @@ footer {
   width: 100%;
   height: 100vh;
   transform-origin: center center;
-  transform: scale(8);
+  transform: scale(4);
   margin: none;
   z-index: -1;
-  transition: transform 60s ease-in-out;
+  transition: transform 160s ease-in-out;
 }
+.front__water.alt {
+  transform: scale(6);
+  opacity: 0.5;
+  animation: scale2 161s ease-in-out infinite alternate;
+}
+
+.front__water.alt2 {
+  transform: scale(7);
+  opacity: 0.3;
+  animation: scale2 121s ease-in-out infinite alternate;
+}
+
 #main__title {
   /* background-color:red; */
   opacity: 0.8;
