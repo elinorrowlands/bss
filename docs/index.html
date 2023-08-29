@@ -10,18 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./main.js" defer="defer"></script>
     <title>Biodivergent Sites and Sounds</title>
-    <script>
-      let animationCount = 1;
-      
-      const animation = ()=>{
-          let waterscale = animationCount % 2 == 0 ? 1.1 : 1.2;
-          document.querySelectorAll('.front__water').forEach((x,i)=>{
-              x.style.transform = `scale(${waterscale})`
-              console.log(x);
-          });
-          animationCount++;
-      }            
-    </script>
   </head>
   <body>
     <main class="splash"><svg id="main__title" role='header' xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="37.125 437.625 532.144 200.85746">
@@ -44,15 +32,13 @@
         </g>
     </g>
 </svg><img class="front__water" src="bg0_lo.png" alt="An abstract water texture in dark blue with a faint wash of aqua, gently ebbing back and forth."/><img class="front__water alt" src="bg0_lo.png" aria-hidden="true"/><img class="front__water alt2" src="bg0_lo.png" aria-hidden="true"/>
-      <div class="nav__icon"><a href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds"><img class="icon icon__info" src="icons/noun-information-150178-FFFFFF.svg" title="Information"/></a></div>
+      <div class="nav__icon"><a href="about.html"><img class="icon icon__info" src="icons/noun-information-150178-FFFFFF.svg" title="Information"/></a></div>
     </main>
     <footer>
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
     </footer>
   </body>
   <script>
-    //- animation();
-    //- window.setInterval(animation, 60000);
     let infoIcon = document.querySelector('.icon__info');
     let rect = infoIcon.getBoundingClientRect();
     let footer = document.querySelector('footer');

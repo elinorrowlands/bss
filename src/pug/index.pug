@@ -3,17 +3,6 @@ html(lang="en")
         include head
         script(src="./main.js" defer)
         title Biodivergent Sites and Sounds
-        script.
-            let animationCount = 1;
-
-            const animation = ()=>{
-                let waterscale = animationCount % 2 == 0 ? 1.1 : 1.2;
-                document.querySelectorAll('.front__water').forEach((x,i)=>{
-                    x.style.transform = `scale(${waterscale})`
-                    console.log(x);
-                });
-                animationCount++;
-            }            
     body
         main.splash
             include svg/title.svg
@@ -22,13 +11,11 @@ html(lang="en")
             img.front__water.alt(src="bg0_lo.png" aria-hidden="true")
             img.front__water.alt2(src="bg0_lo.png" aria-hidden="true")
             .nav__icon
-                a(href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds")
+                a(href="about.html")
                     img.icon.icon__info(src='icons/noun-information-150178-FFFFFF.svg' title="Information")  
         footer
             include footer
     script.
-        //- animation();
-        //- window.setInterval(animation, 60000);
         let infoIcon = document.querySelector('.icon__info');
         let rect = infoIcon.getBoundingClientRect();
         let footer = document.querySelector('footer');
