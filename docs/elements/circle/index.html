@@ -51,6 +51,11 @@
         bottom:0px;
         right:0px;
         margin:auto;
+        transition:all 1.5s ease;
+      }
+      
+      #can__bg{
+        transition:all 1s ease;
       }
       
   </style>
@@ -73,7 +78,11 @@
       
     </div>
   </div>
-  <img src="can/can_bg_900.svg" alt="background" class="canBG">
+  <img id="can__bg" src="can/can_bg_900.svg" alt="background" class="canBG">
+  <img id="can__0__ghost" src="can/can_0.png" class="canBG ghost" alt="can">
+  <img id="can__1__ghost" src="can/can_1.png" class="canBG ghost" alt="can">
+  <img id="can__0" src="can/can_0.png" class="canBG" alt="can">
+  <img id="can__1" src="can/can_1.png" class="canBG" alt="can">
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
   <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
@@ -126,17 +135,32 @@
             count++;
             
             if(moused){
-                let hue = Math.floor(count/30);
+                let hue = Math.floor(count/30%100);
+                $('#can__bg').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel())*2);
                 document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`;
+                // $('.canBG.ghost').css('filter',`hue-rotate(${Math.floor(hue)}deg) grayscale(${Tone.dbToGain(sounds.meter.getLevel())*1000}%)`);
+                // $('.canBG.ghost').css({opacity:0.9 + Tone.dbToGain(sounds.meter.getLevel())});
+                document.querySelectorAll('.canBG.ghost').forEach((el) => {
+                    el.style.filter = `hue-rotate(${Math.floor(hue)}deg) grayscale(${Tone.dbToGain(sounds.meter.getLevel())*1000}%)`;
+                    el.style.transform = `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`;
+                    el.style.opacity = 0.9 + Tone.dbToGain(sounds.meter.getLevel());
+                })
+                // console.log(0.9 + Tone.dbToGain(sounds.meter.getLevel()))
             } else {
+                $('#can__bg').css('opacity',0.5 + Tone.dbToGain(sounds.meter.getLevel()));
                 document.body.style.filter = `hue-rotate(0deg)`;
+                $('.canBG.ghost').css('opacity',0.4 + Tone.dbToGain(sounds.meter.getLevel()));
+                $('.canBG.ghost').css('opacity',0);
             }
-            
+           
             $('#waterCircle').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel()));
             $('#waterCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getLevel())*4})`);
+            $('#can__0').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`);
+            $('#can__bg').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`);
             $('#echoCircle').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*6})`);
+            $('#can__1').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.echoMeter.getLevel())*1.3})`);
             $('#echoCircle2').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*10})`);
-    
+            
         }, 30)
     }
     
