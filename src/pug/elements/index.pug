@@ -13,20 +13,18 @@ html(lang="en")
             .qr__container{
                 margin:auto;
                 background-color:rgba(0,64,128,0.8);
-                
             }
 
             .index{
                 width:90%!important;
             }
-
+            
             main{
                 left:0px;
                 right:0px;
                 margin:auto;
-                //- margin-top:100px;
-                //- padding-top:100px;
             }
+            
             #main__title{
                 display: inline-block;
                 position: static;
@@ -119,9 +117,7 @@ html(lang="en")
 
                         if (number < 0) {
                             number = 0;
-                        }
-
-                        if (number >200){
+                        } else if (number >200){
                             number = 200;
                         }
 
@@ -143,4 +139,3 @@ html(lang="en")
 
             checkLoaded('addBackButton');
             if(window.touch) touch.unlisten();
-            

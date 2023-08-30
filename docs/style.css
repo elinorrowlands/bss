@@ -499,7 +499,7 @@ button.nav__back {
 }
 
 .link {
-  font-size: large;
+  font-size: 3rem;
   text-underline-offset: 0.4em;
 }
 
@@ -516,8 +516,7 @@ a:visited {
   padding: 1em;
   margin: 1em;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 1em;
-  border: 1px solid lightgray;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
