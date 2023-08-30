@@ -25,8 +25,15 @@ This list is for internal planning and does not represent current features:
 
 
 ## Credits
-- Lead artist: Elinor Rowlands
-- Creative technologist: Charles Matthews
+- Lead artist - Elinor Rowlands
+- Creative Technologist - Charles Matthews
+- Musicians - Jo-anne Cox, Dee Fry, and Rdyer
+- Art Publication printed and published by - Gemma Abbott (Unfamiliars)
+- Interim Project Manager - Lucie Bickerdike (Feb - June 2023)
+- Project Manager - Nick Lawford (July 2023 - January 2024)
+- Co-facilitator and Access Support for working with a local Harlesden Primary School and Young Brent Foundation - Gemma Abbott
+- Marketing and Communication access support - Lucie Bickerdike
+- Events and communication access support - Nick Lawford
 
 This repository may also include artistic works by project collaborators. 
 Please note: no license is granted for the use of these works. 
