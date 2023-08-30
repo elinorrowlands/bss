@@ -2,19 +2,16 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title BSS
+        title BSS: About
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         link(rel='stylesheet', href='style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
-    
-        
     body
-        //- include ../../loading
-        main(style="padding:2rem;")
-            h1 Biodivergent Sites and Sounds
-            a(href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds") Information page hosted on elinorrowlands.com
+        include svg/title.svg
+        main.textBlock
+            a.link(href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds") More information on elinorrowlands.com
             p We are always told that encountering nature and preserving the environment is important. 
             p But what if you experience access barriers and being out in nature is much harder for you to do? 
 
@@ -41,7 +38,11 @@ html(lang="en")
                 li Marketing and Communication access support - Lucie Bickerdike 
 
                 li Events and communication access support - Nick Lawford 
-
-
         footer
             include footer  
+        script.
+            document.querySelectorAll('.nav__back').forEach((el)=>{
+                el.addEventListener('click', ()=>{
+                    window.location.href="index.html";
+                })
+            })

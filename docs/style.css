@@ -394,6 +394,7 @@ body {
   display: flex;
   margin: 0;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
 }
 
@@ -497,12 +498,26 @@ button.nav__back {
   z-index: 10;
 }
 
+.link {
+  font-size: large;
+  text-underline-offset: 0.4em;
+}
+
 a {
   color: lightgray;
 }
 
 a:visited {
   color: #bbb;
+}
+
+.textBlock {
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+  border: 1px solid lightgray;
 }
 
 /*# sourceMappingURL=style.css.map */
