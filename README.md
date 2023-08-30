@@ -11,19 +11,20 @@ The [main website](https://elinorrowlands.github.com/) is hosted on GitHub pages
 - [BSS on researchcatalog.net](https://www.researchcatalogue.net/view/1934405/1934406)
 
 ## Elements
+**- [Index of elements](https://elinorrowlands.github.io/bss/elements) -**
+
 - [bridge](https://elinorrowlands.github.io/bss/bridge)
-- [painting](https://elinorrowlands.github.io/bss/painting)
 - [ripples](https://elinorrowlands.github.io/bss/ripples)
 - [text](https://elinorrowlands.github.io/bss/text)
 - [mix](https://elinorrowlands.github.io/bss/mix/)
+- [heart](https://elinorrowlands.github.io/bss/painting)
 
+**- [Map](https://elinorrowlands.github.io/bss/map2.html) -**
 ## Options
 This list is for internal planning and does not represent current features:
-- [ ] colour
-- [ ] contrast
-- [ ] motion
-
-
+[ ] colour
+[ ] contrast
+[ ] motion
 ## Credits
 - Lead artist - Elinor Rowlands
 - Creative Technologist - Charles Matthews
@@ -38,7 +39,7 @@ This list is for internal planning and does not represent current features:
 This repository may also include artistic works by project collaborators. 
 Please note: no license is granted for the use of these works. 
 
----
+### External resources
 Sounds of the Grand Union Canal (Kensal Green) by <a href=https://freesound.org/people/deleted_user_1654820/sounds/98823/>deleted_user_1654820</a> on <a href=https://freesound.org/>freesound.org</a>.  Sound file licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC Noncommercial 3.0 license</a>.
 
 Icons from [the Noun Project](https://thenounproject.com/) have been used with a paid license.
