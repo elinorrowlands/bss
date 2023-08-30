@@ -16,17 +16,21 @@ html(lang="en")
             }
             
             .textColumn{
-                max-width:1000px;
+                max-width:90%;
                 margin:auto;
-                //- margin-left:10em;
+                border-radius:0.4rem;
             }
-            
-        
+            .highlight{
+                background-color:darkblue;
+                padding:1em;
+                text-align:center;
+            }
     body
         include svg/title.svg
         main.textBlock
-            div.textColumn
+            div.textColumn.highlight
                 a.link(href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds") More information on elinorrowlands.com
+            div.textColumn
                 p We are always told that encountering nature and preserving the environment is important. 
                 p But what if you experience access barriers and being out in nature is much harder for you to do? 
 

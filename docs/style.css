@@ -498,6 +498,10 @@ button.nav__back {
   z-index: 10;
 }
 
+.nav__back {
+  cursor: pointer;
+}
+
 .link {
   font-size: 3rem;
   text-underline-offset: 0.4em;
@@ -515,8 +519,9 @@ a:visited {
   display: inline-block;
   padding: 1em;
   margin: 1em;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: 2rem;
+  background-color: hsl(233.26, 50.28%, 65.29%);
+  font-size: 1.5rem;
+  border-radius: 0.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */
