@@ -209,6 +209,8 @@
         loop: new Tone.Player("../../loops/rusty_can_0.mp3"),
         loop2: new Tone.Player("../../loops/rusty_can_1.mp3"),
         loop3: new Tone.Player("../../loops/rusty_can_2.mp3"),
+        can: new Tone.Player("./can.mp3"),
+        can2: new Tone.Player("./can.mp3"),
         meter: new Tone.Meter(),
         notch: new Tone.Filter(200, "notch").toMaster(),
         notch2: new Tone.Filter(200, "notch").toMaster(),
@@ -221,7 +223,10 @@
     }
 
     let moused = false;
-    
+    sounds.can2.reverse = false;
+    sounds.can.toMaster();
+    sounds.can2.toMaster();
+    sounds.can2.connect(sounds.echo);
     sounds.echo.wet.value = 1;
     sounds.echo.connect(sounds.notch2);
     sounds.loop.volume.value=-12;

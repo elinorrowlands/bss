@@ -21,7 +21,9 @@ document.querySelectorAll('path').forEach((element,i) => {
 multitouchMapper
     .setAction('#canvas')
     .setAction('.guide')
+    .setAction('.circ')
 
+multitouchMapper.depth = 3;
 const Pickup = (e) =>{
     let { element, type, query} = e.detail;
     console.log(type, element.id);
@@ -41,13 +43,22 @@ const Pickup = (e) =>{
             sounds[id].volume.rampTo(-12,0.7);
             sounds.loop.volume.rampTo(-30,1);
         }
+        if(query == '.circ'){
+            sounds.can.start();
+            sounds.can.reverse=false;
+        }
     } else if (type == 'end' || type == 'leave'){
         if(sounds[id]){
             sounds[id].volume.rampTo(-Infinity,8);
             sounds.loop.volume.rampTo(-12,3);
         }
+        if(query == '.circ'){
+            if(sounds.can.state =='stopped') sounds.can.start();
+            sounds.can.reverse = true;
+        }
         document.body.style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
+        sounds.can.playbackRate = (x/range.x)*2;
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
         if(sounds[id])console.log(id, sounds[id].volume.value)
         let notchValue = 8000 * ((y)/range.y);
