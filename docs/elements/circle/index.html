@@ -222,7 +222,8 @@
         hpf: new Tone.Filter(400, "highpass"),
         echo: new Tone.FeedbackDelay("0.5", 0.5),
         echoMeter: new Tone.Meter(),
-        compressor: new Tone.Compressor(-30, 6),
+        loop2Meter: new Tone.Meter(),
+        loop3Meter: new Tone.Meter(),
         
     }
 
@@ -242,8 +243,10 @@
     sounds.loop.connect(sounds.filter);
     sounds.loop2.connect(sounds.filter);
     sounds.loop3.connect(sounds.filter);
+    sounds.loop2.connect(sounds.loop2Meter);
+    sounds.loop3.connect(sounds.loop3Meter);
     sounds.echo.toMaster();
-    // sounds.compressor.connect(sounds.filter);
+    
     sounds.filter.Q.value = 0;
     sounds.filter.connect(sounds.notch);
     sounds.filter.connect(sounds.hpf);
@@ -285,6 +288,8 @@
             $('#echoCircle').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*6})`);
             $('#can__1').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.echoMeter.getLevel())*1.3})`);
             $('#echoCircle2').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*10})`);
+            $('#can__0__circ').css('opacity', `${0.1 + Tone.dbToGain(sounds.loop2Meter.getLevel())*4}`);
+            $('#can__1__circ').css('opacity', `${0.1 + Tone.dbToGain(sounds.loop3Meter.getLevel())*4}`);
             
         }, 30)
     }
