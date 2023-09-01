@@ -25,15 +25,28 @@ multitouchMapper
 const Pickup = (e) =>{
     let { element, type, query } = e.detail;
     
-    let id = element.id;
+    
+    
+    let id = element.parentElement.id;
     if(query=='.guide'){
-        console.log(query,id);    
+        console.log(query,id);
+            let linkedId = element.dataset.linked;
+            console.log(linkedId, document.querySelector('linkedId'))
+            let amount = (type == 'start' || type == 'enter' || type=='move') ? 200 : 0;
+            document.querySelector(`#${linkedId}`).style.filter=`grayScale(${amount}%) brightness(${amount}%)`;
+        
     }
     
     if(type == 'start' || type == 'enter'){
-        
+        if(sounds[id]){
+            sounds[id].volume.rampTo(-12,0.3);
+            sounds.loop.volume.rampTo(-30,1);
+        }
     } else if (type == 'end' || type == 'leave'){
-        
+        if(sounds[id]){
+            sounds[id].volume.rampTo(-Infinity,1);
+            sounds.loop.volume.rampTo(-12,3);
+        }
         document.body.style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
