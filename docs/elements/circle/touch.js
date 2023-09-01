@@ -23,12 +23,14 @@ multitouchMapper
     .setAction('.guide')
 
 const Pickup = (e) =>{
-    let { element, type, query } = e.detail;
+    let { element, type, query} = e.detail;
+    let {y, x, range} = e.detail.relative;
     let id = element.parentElement.id;
     if(query=='.guide'){
         let linkedId = element.dataset.linked;
         let amount = (type == 'start' || type == 'enter' || type=='move') ? 200 : 0;
         document.querySelector(`#${linkedId}`).style.filter=`grayScale(${amount}%) brightness(${amount}%)`;
+        sounds.notch2.Q.rampTo(amount/100, 0.1);
     }
     
     if(type == 'start' || type == 'enter'){
@@ -44,6 +46,10 @@ const Pickup = (e) =>{
         document.body.style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
+        let notchValue = 8000 * ((y)/range.y);
+        sounds.notch.frequency.rampTo(notchValue, 0.1);
+        notchValue = 8000 * ((x)/range.x);
+        sounds.notch2.frequency.rampTo(notchValue, 1);
     }
     
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>BSS: Ripples</title>
+  <title>BSS: Circle</title>
 
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="./style.css">
@@ -209,6 +209,7 @@
         loop3: new Tone.Player("../../loops/rusty_can_2.mp3"),
         meter: new Tone.Meter(),
         notch: new Tone.Filter(200, "notch").toMaster(),
+        notch2: new Tone.Filter(200, "notch").toMaster(),
         filter: new Tone.Filter(200, "lowpass"),
         hpf: new Tone.Filter(400, "highpass"),
         echo: new Tone.FeedbackDelay("2n", 0.5),
@@ -218,7 +219,7 @@
     let moused = false;
     
     sounds.echo.wet.value = 1;
-    sounds.echo.connect(sounds.notch);
+    sounds.echo.connect(sounds.notch2);
     sounds.loop.volume.value=-12;
     sounds.loop2.volume.value=-Infinity;
     sounds.loop3.volume.value=-Infinity;
@@ -226,7 +227,7 @@
     sounds.loop2.connect(sounds.filter);
     sounds.loop3.connect(sounds.filter);
     sounds.filter.Q.value = 0;
-    sounds.filter.toMaster();
+    sounds.filter.connect(sounds.notch);
     sounds.filter.connect(sounds.hpf);
     sounds.hpf.connect(sounds.echo);
     sounds.echo.connect(sounds.echoMeter);
