@@ -22,18 +22,20 @@ multitouchMapper
     .setAction('#canvas')
     .setAction('.guide')
     .setAction('.circ')
-
+let counter1 = 0;
 multitouchMapper.depth = 3;
 const Pickup = (e) =>{
     let { element, type, query} = e.detail;
-    console.log(type, element.id);
+    // console.log(type, element.id);
+    console.log(counter1)
+    
     let {y, x, range} = e.detail.relative;
     let id = element.parentElement.id;
     if(query=='.guide'){
         let linkedId = element.dataset.linked;
         let amount = (type == 'start' || type == 'enter' || type=='move') ? 200 : 0;
         document.querySelector(`#${linkedId}`).style.filter=`grayScale(${amount}%) brightness(${amount}%)`;
-        sounds.notch2.Q.rampTo(amount/200, 0.1);
+        // sounds.notch2.Q.rampTo(amount/200, 0.1);
     } else if(element.dataset.loop){
         sounds[element.dataset.loop].volume.rampTo(-20,1);
     }
@@ -48,6 +50,7 @@ const Pickup = (e) =>{
             sounds.can.reverse=false;
         }
     } else if (type == 'end' || type == 'leave'){
+        counter1++;
         if(sounds[id]){
             sounds[id].volume.rampTo(-Infinity,8);
             sounds.loop.volume.rampTo(-12,3);
@@ -60,11 +63,11 @@ const Pickup = (e) =>{
     } else if(type == 'move'){
         sounds.can.playbackRate = (x/range.x)*2;
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
-        if(sounds[id])console.log(id, sounds[id].volume.value)
-        let notchValue = 8000 * ((y)/range.y);
-        sounds.notch.frequency.rampTo(notchValue, 0.1);
-        notchValue = 8000 * ((x)/range.x);
-        sounds.notch2.frequency.rampTo(notchValue, 1);
+        // if(sounds[id])console.log(id, sounds[id].volume.value)
+        // let notchValue = 8000 * ((y)/range.y);
+        // sounds.notch.frequency.rampTo(notchValue, 0.1);
+        // notchValue = 8000 * ((x)/range.x);
+        // sounds.notch2.frequency.rampTo(notchValue, 1);
         // console.log(e.detail.delta);
         // console.log(sounds.echo.delayTime.value);
         sounds.echo.delayTime.rampTo(sounds.echo.delayTime.value + e.detail.delta.x/1000, 0.1);
