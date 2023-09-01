@@ -51,6 +51,10 @@
         right:0px;
         margin:auto;
         transition:all 1.5s ease;
+        @media(min-width:600px){
+          width:100vh;
+          height:100vh;
+        }
       }
       
       #can__bg{
@@ -187,6 +191,7 @@
   <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js"></script>
+  <script src="./rippleInit.js" type="module"></script>
   <script src="../../main.js"></script>
   <script src="./touch.js" defer></script>
 
@@ -225,6 +230,7 @@
     sounds.can2.reverse = false;
     sounds.can.toMaster();
     sounds.can2.toMaster();
+    sounds.can.connect(sounds.echo);
     sounds.can2.connect(sounds.echo);
     sounds.echo.wet.value = 1;
     sounds.echo.connect(sounds.notch2);
@@ -241,8 +247,8 @@
     sounds.filter.Q.value = 0;
     sounds.filter.connect(sounds.notch);
     sounds.filter.connect(sounds.hpf);
-    // sounds.notch.toMaster();
-    // sounds.notch2.toMaster();
+    sounds.notch.toMaster();
+    sounds.notch2.toMaster();
     sounds.filter.toMaster();
     sounds.hpf.connect(sounds.echo);
     sounds.echo.connect(sounds.echoMeter);
