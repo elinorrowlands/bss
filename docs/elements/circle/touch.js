@@ -14,6 +14,10 @@
 
 if(!window.multitouchMapper) multitouchMapper = window.touch;
 
+document.querySelectorAll('path').forEach((element,i) => {
+    if(!element.id) element.id = `path_${i}`;
+})
+
 multitouchMapper
     .setAction('#canvas')
     .setAction('.guide')
