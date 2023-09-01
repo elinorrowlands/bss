@@ -63,13 +63,13 @@ const Pickup = (e) =>{
     } else if(type == 'move'){
         sounds.can.playbackRate = (x/range.x)*2;
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
-        // if(sounds[id])console.log(id, sounds[id].volume.value)
-        // let notchValue = 8000 * ((y)/range.y);
-        // sounds.notch.frequency.rampTo(notchValue, 0.1);
-        // notchValue = 8000 * ((x)/range.x);
-        // sounds.notch2.frequency.rampTo(notchValue, 1);
-        // console.log(e.detail.delta);
-        // console.log(sounds.echo.delayTime.value);
+        if(sounds[id])console.log(id, sounds[id].volume.value)
+        let notchValue = 8000 * ((y)/range.y);
+        sounds.notch.frequency.rampTo(notchValue, 0.1);
+        notchValue = 8000 * ((x)/range.x);
+        sounds.notch2.frequency.rampTo(notchValue, 1);
+        console.log(e.detail.delta);
+        console.log(sounds.echo.delayTime.value);
         sounds.echo.delayTime.rampTo(sounds.echo.delayTime.value + e.detail.delta.x/1000, 0.1);
     }
 }

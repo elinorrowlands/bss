@@ -188,7 +188,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js"></script>
   <script src="../../main.js"></script>
-  <!-- <script src="./script.js" type="module" defer></script> -->
   <script src="./touch.js" defer></script>
 
   <script>
@@ -237,6 +236,7 @@
     sounds.loop.connect(sounds.filter);
     sounds.loop2.connect(sounds.filter);
     sounds.loop3.connect(sounds.filter);
+    sounds.echo.toMaster();
     // sounds.compressor.connect(sounds.filter);
     sounds.filter.Q.value = 0;
     sounds.filter.connect(sounds.notch);
