@@ -12,8 +12,6 @@
     delta 
  */
 
-// depending on which central script we're using, the instance of MultitouchMapper could be called touch or multitouchMapper
-
 if(!window.multitouchMapper) window.multitouchMapper = window.touch;
 
 multitouchMapper.setAction('.visual')
@@ -21,7 +19,6 @@ multitouchMapper.setAction('.visual')
 function getNoteFromId(id){
     let notes = [60,67,72];
     return Tone.Frequency(notes[parseInt(id.split('_')[1])%3], 'midi').toFrequency();
-    // return Tone.Frequency((parseFloat(id.split('_')[1])%12)+60, 'midi').toFrequency()*1.5;
 }
 
 function getTarget(id){

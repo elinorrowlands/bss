@@ -119,9 +119,6 @@ startButton.addEventListener("click", () => {
     document.querySelectorAll('.slider').forEach(x=>{
         x.classList[playFlag ? 'remove' : 'add']('inactive');
     })
-    // document.querySelectorAll('.waveform').forEach(x=>{
-    //     x.style.filter=`grayscale(${playFlag ? 100 : 0}%)`;
-    // })
     startButton.innerHTML = playFlag ? "STOP" : "START";
     if(playFlag){
         startTime = Tone.now();
