@@ -12,33 +12,20 @@
     delta 
  */
 
-// currently adapting for other pages
-
 if(!window.multitouchMapper) multitouchMapper = window.touch;
 
-multitouchMapper.setAction('.visual')
-    .setAction('.canBG')
-    .setAction('.canvas')
-
-function getNoteFromId(id){
-    return Tone.Frequency(1*(parseFloat(id.split('_')[1])%12)+72, 'midi').toFrequency()
-}
-
-function getTarget(id){
-    return document.querySelector(`#${id.split('_hc')[0]}`);
-}
-
-/**
- * For touch listener
- * 
- */
+multitouchMapper
+    .setAction('#canvas')
+    .setAction('.guide')
 
 const Pickup = (e) =>{
-    let { element, type } = e.detail;
-    let target = getTarget(element.id);
-    let value = preset.transition[type];
+    let { element, type, query } = e.detail;
     
-    let id = getNoteFromId(element.id);
+    let id = element.id;
+    if(query=='.guide'){
+        console.log(query,id);    
+    }
+    
     if(type == 'start' || type == 'enter'){
         
     } else if (type == 'end' || type == 'leave'){
