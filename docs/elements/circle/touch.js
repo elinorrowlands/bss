@@ -65,8 +65,8 @@ const Pickup = (e) =>{
         sounds.notch.frequency.rampTo(notchValue, 0.1);
         notchValue = 8000 * ((x)/range.x);
         sounds.notch2.frequency.rampTo(notchValue, 1);
-        console.log(e.detail.delta);
-        console.log(sounds.echo.delayTime.value);
+        // console.log(e.detail.delta);
+        // console.log(sounds.echo.delayTime.value);
         sounds.echo.delayTime.rampTo(sounds.echo.delayTime.value + e.detail.delta.x/1000, 0.1);
     }
 }
