@@ -24,17 +24,11 @@ multitouchMapper
 
 const Pickup = (e) =>{
     let { element, type, query } = e.detail;
-    
-    
-    
     let id = element.parentElement.id;
     if(query=='.guide'){
-        console.log(query,id);
-            let linkedId = element.dataset.linked;
-            console.log(linkedId, document.querySelector('linkedId'))
-            let amount = (type == 'start' || type == 'enter' || type=='move') ? 200 : 0;
-            document.querySelector(`#${linkedId}`).style.filter=`grayScale(${amount}%) brightness(${amount}%)`;
-        
+        let linkedId = element.dataset.linked;
+        let amount = (type == 'start' || type == 'enter' || type=='move') ? 200 : 0;
+        document.querySelector(`#${linkedId}`).style.filter=`grayScale(${amount}%) brightness(${amount}%)`;
     }
     
     if(type == 'start' || type == 'enter'){
@@ -51,7 +45,6 @@ const Pickup = (e) =>{
     } else if(type == 'move'){
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
     }
-    
     
 }
 
