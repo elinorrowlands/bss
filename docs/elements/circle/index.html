@@ -224,7 +224,6 @@
         echoMeter: new Tone.Meter(),
         loop2Meter: new Tone.Meter(),
         loop3Meter: new Tone.Meter(),
-        
     }
 
     let moused = false;
@@ -233,11 +232,15 @@
     sounds.can2.toMaster();
     sounds.can.connect(sounds.echo);
     sounds.can2.connect(sounds.echo);
+    
     sounds.echo.wet.value = 1;
     sounds.echo.connect(sounds.notch2);
+    
     sounds.loop.volume.value=-12;
+    
     sounds.notch.Q.value = 0;
     sounds.notch2.Q.value = 0;
+    
     sounds.loop2.volume.value=-Infinity;
     sounds.loop3.volume.value=-Infinity;
     sounds.loop.connect(sounds.filter);
@@ -267,15 +270,14 @@
                 let hue = Math.floor(count/30%100);
                 $('#can__bg').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel())*2);
                 document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`;
-                
                 document.querySelectorAll('.canBG.ghost').forEach((el) => {
                     el.style.filter = `hue-rotate(${Math.floor(hue)}deg) grayscale(${Tone.dbToGain(sounds.meter.getLevel())*1000}%)`;
                     el.style.transform = `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`;
                     el.style.opacity = 0.9 + Tone.dbToGain(sounds.meter.getLevel());
                 })
             } else {
-                $('#can__bg').css('opacity',0.5 + Tone.dbToGain(sounds.meter.getLevel()));
                 document.body.style.filter = `hue-rotate(0deg)`;
+                $('#can__bg').css('opacity',0.5 + Tone.dbToGain(sounds.meter.getLevel()));
                 $('.canBG.ghost').css('opacity',0.4 + Tone.dbToGain(sounds.meter.getLevel()));
                 $('.canBG.ghost').css('opacity',0);
             }
