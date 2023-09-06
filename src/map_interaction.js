@@ -14,7 +14,14 @@ if(!localStorage.getItem('markers')){
     localStorage.setItem('markers', JSON.stringify(markers));
 }
 
-window.gui = typeof dat != 'undefined' ? new dat.GUI() : {add:()=>{}, addFolder:()=>{}, open:()=>{}, close:()=>{}, hide:()=>{}, show:()=>{}};
+window.gui = typeof dat != 'undefined' ? new dat.GUI() : {
+    add:()=>{}, 
+    addFolder:()=>{}, 
+    open:()=>{}, 
+    close:()=>{}, 
+    hide:()=>{}, 
+    show:()=>{}
+};
 
 let circleObject = {
     main:document.querySelector('#circle_0'),
@@ -31,7 +38,6 @@ let circleObject = {
  * @param {Number} index - index of circle
  * 
  */
-
 class CircleMarker{
     constructor(cx = 100, cy = 100, index = 0){
         this.cx = cx;
@@ -62,7 +68,6 @@ class CircleMarker{
 let circleMarkers = [circleObject];
 let positionFolder = gui.addFolder('positions');
 let elementFolders = [positionFolder.addFolder('element 1')];
-
 
 let parameters = {
     marker_0_cx: elementFolders[0].add(markers.elements.circle_0, 'cx', 0, 1600),
@@ -117,25 +122,16 @@ function mapLoad(){
 
         touch.setAction('.visual',{
             start:function(element,e,obj){
-                // console.log('start')
-                // element.style.opacity=0.2;
             },
             enter:function(element,e,obj){
-                // console.log('enter')
-                // element.style.opacity=0.2;
             },
             move:function(element,e,obj){
                 let {x,y} = obj.relative;
                 let {max_x, max_y} = obj.relative.range;
-                // console.log('move', x, y)
             },
             end:function(element,e,obj){
-                // console.log('end')
-                // element.style.opacity=0.1;
             },
             leave:function(element,e,obj){
-                // console.log('leave')
-                // element.style.opacity=0.1;
             }
         })
     

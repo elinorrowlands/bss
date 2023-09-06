@@ -1,9 +1,9 @@
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Biodivergent Sites and Sounds: QR codes
-        link(rel='stylesheet', href='../style.css')
+        link(rel='stylesheet' href='../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
@@ -18,19 +18,19 @@ html(lang="en")
             .index{
                 width:90%!important;
             }
-            
+
             main{
                 left:0px;
                 right:0px;
                 margin:auto;
             }
-            
+
             #main__title{
                 display: inline-block;
                 position: static;
                 height:20vh!important;
             }
-            
+
     body
         include ../svg/title.svg
         main.splash.qr__container
@@ -112,7 +112,7 @@ html(lang="en")
 
                 document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
                     qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
-                    
+
                         let number = Math.sin(i)*255;
 
                         if (number < 0) {
@@ -123,18 +123,15 @@ html(lang="en")
 
                         x.style.fill=`rgba(${number},255,255,1)`;
                         x.style.stroke = 'black';
-
                     })
 
                     qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
-                        
                         x.style.strokeWidth = '3px';
                         x.style.stroke='black';
-                        
                         x.style.display='none';
                     })
                 })
-                
+
             })
 
             checkLoaded('addBackButton');

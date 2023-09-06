@@ -29,7 +29,7 @@ body {
     overflow:hidden;
     touch-action:none;
     user-select:none;
-    -webkit-user-select: none; /* Safari */
+    -webkit-user-select: none; 
     background-image:url("../../bg1.svg");
     background-size:cover;
     background-repeat:no-repeat;

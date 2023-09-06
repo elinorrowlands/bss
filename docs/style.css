@@ -315,7 +315,7 @@ footer {
   bottom: 0;
   right: 0;
   margin: auto;
-  -webkit-user-select: none; /* Safari */
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -324,7 +324,7 @@ footer {
   transition: filter 1s;
   overflow: hidden;
   touch-action: none;
-  -webkit-user-select: none; /* Safari */
+  -webkit-user-select: none;
   user-select: none;
   background-image: url("svg/element_painting.svg");
   background-size: cover;
@@ -485,7 +485,7 @@ canvas#overlay {
   pointer-events: none;
   overflow: hidden;
   -webkit-user-select: none;
-  user-select: none; /* Safari */
+  user-select: none;
 }
 
 button.nav__back {
