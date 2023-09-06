@@ -119,21 +119,11 @@
 }
 
 main.qr__container{
-    // make this a grid with maximum four elements per row
-    
+    background-color:navy;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1em;
     justify-items:center;
     align-items:center;
-    
-    
-    
-    // display:flex;
-    // justify-content:space-around;
-    // align-items:center;
-    // flex-direction:column;
     margin:2em;
-    // flex-grow: 1;
-    background-color:navy;
 }

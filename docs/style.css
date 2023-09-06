@@ -185,13 +185,13 @@
 }
 
 main.qr__container {
+  background-color: navy;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1em;
   justify-items: center;
   align-items: center;
   margin: 2em;
-  background-color: navy;
 }
 
 .icon {
