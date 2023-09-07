@@ -2,8 +2,8 @@ import {srtToSbv, generateQR} from '@matthewscharles/cm-toolbox';
 import SyncCC from 'sync-cc';
 import MultitouchMapper from '@matthewscharles/multitouch-mapper';
 import CM from '@matthewscharles/cm-toolbox';
-import {loadingIndicator} from './loading.js';
-import addBackButton from './backButton.js';
+import {loadingIndicator} from './js/loading.js';
+import addBackButton from './js/backButton.js';
 import StatusVO from 'status-vo';
 
 
