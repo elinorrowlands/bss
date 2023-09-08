@@ -47,33 +47,12 @@
     </script>
     <script>
       let baseURL = 'https://elinorrowlands.github.io/bss/';
-      
-      let elements = {
-          'bridge': {
-              folder: 'elements/bridge',
-              qr:null
-          },
-          'ripples': {
-              folder: 'elements/ripples',
-              qr:null
-          },
-          'circle': {
-              folder: 'elements/circle',
-              qr:null
-          },
-          'text': {
-              folder: 'elements/text',
-              qr:null
-          },
-          'mix': {
-              folder: 'elements/mix',
-              qr:null
-          },
-          'painting': {
-              folder: 'elements/painting',
-              qr:null
-          },
-      }
+      let elementNames = ['bridge', 'ripples', 'circle', 'text', 'mix', 'painting'];
+      let elements = {};
+      elementNames.forEach((name)=>{
+          elements[name] = {};
+          elements[name].folder = `elements/${name}/`;
+      })
       
       window.addEventListener('load',()=>{
       
