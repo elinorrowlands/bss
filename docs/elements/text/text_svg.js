@@ -40,31 +40,63 @@ function loaded(){
 
 /**
  * 
- * @param {Object} captionObject 
+ * @param {Object} captionObject  
  */
 
 function placeCaptions(captionObject){
     captionObject.forEach((text,i) => {
-        let textElement = document.createElement('div');
+        let textSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        let textElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         let colourValue = ((12+i)*10)+(Math.random()*(255-((12+i)*10)));
     
-        Object.assign(textElement.style,{
+        // Object.assign(textElement.style,{
+        //     position: 'absolute',
+        //     top: i==0 ? '45%': (5+Math.random()*80)+'%',
+        //     left: i==0 ? '45%':(5+Math.random()*70)+'%',
+        //     fontSize: i==0 ? '50px': (20+Math.random()*30)+'px',
+        //     userSelect: 'none',
+        //     cursor:'pointer',
+        //     color:`rgba(${colourValue},${colourValue},${colourValue},1)`,
+        //     opacity: i==0 ? 1:0.1
+        // });
+        
+        Object.assign(textSVG.style,{
             position: 'absolute',
             top: i==0 ? '45%': (5+Math.random()*80)+'%',
             left: i==0 ? '45%':(5+Math.random()*70)+'%',
             fontSize: i==0 ? '50px': (20+Math.random()*30)+'px',
             userSelect: 'none',
             cursor:'pointer',
-            color:`rgba(${colourValue},${colourValue},${colourValue},1)`,
+            // color:`rgba(${colourValue},${colourValue},${colourValue},1)`,
+            backgroundColor:`rgba(${colourValue},${colourValue},${colourValue},1)`,
             opacity: i==0 ? 1:0.1
-        });
+        })
         
+        textElement.setAttribute('x', '0');
+        textElement.setAttribute('y', '0');
+        textElement.setAttribute('text-anchor', 'middle');
+        textElement.setAttribute('alignment-baseline', 'middle');
+        textElement.setAttribute('dominant-baseline', 'middle');
+        textElement.setAttribute('font-size', '1em');
+        textElement.setAttribute('font-family', 'sans-serif');
+        textElement.setAttribute('font-weight', 'bold');
+        textElement.setAttribute('letter-spacing', '0.1em');
+        textElement.setAttribute('textLength', '100%');
+        textSVG.setAttribute('width', '800px');
+        textSVG.setAttribute('height', '800px');
+        textSVG.setAttribute('viewBox', '0 0 100 100');
+        
+        textSVG.classList.add('text');
         textElement.id = `text_${i}`;
+        textElement.classList.add('interactive');
+        
+        textElement.fill = `rgba(${colourValue},${colourValue},${colourValue},1)`;
         textElement.innerHTML = text.content[0];
         textElement.classList.add('text');
     
-        captionObject.element = textElement;
-        document.body.appendChild(textElement);
+        captionObject[i].element = textSVG;
+        textSVG.appendChild(textElement);
+        document.body.appendChild(textSVG);
     });
 }
 
@@ -72,7 +104,7 @@ function start(){
     loaded();
     placeCaptions(captionObject);
     
-    touch.setAction('.text');
+    touch.setAction('.text.interactive');
     
     const Pickup = (e) =>{
         const preset = {
