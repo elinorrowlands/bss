@@ -7,7 +7,7 @@ backdrop.volume.value = '-12';
 player.connect(echo);
 
 /**
- * Loading screen to break out
+ * Loading screen, to break out later (see loading.js in the source folder)
  */
 
 let loadBlinkCount = 0;
@@ -39,7 +39,7 @@ function loaded(){
 }
 
 /**
- * 
+ * Place captions on the screen
  * @param {Object} captionObject 
  */
 
@@ -51,7 +51,7 @@ function placeCaptions(captionObject){
         Object.assign(textElement.style,{
             position: 'absolute',
             top: i==0 ? '45%': (5+Math.random()*80)+'%',
-            left: i==0 ? '45%':(5+Math.random()*70)+'%',
+            left: i==0 ? '5%':(5+Math.random()*70)+'%',
             fontSize: i==0 ? '50px': (20+Math.random()*30)+'px',
             userSelect: 'none',
             cursor:'pointer',

@@ -14,8 +14,9 @@ button{
     text-align:center;
     opacity:0.8;
     letter-spacing:0.1px;
-    transition:all 1s, left 21.5s ease-in-out, top 24.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition:all 1s, left 18.5s ease-in-out, top 16.5s ease-in-out, opacity 0.5s ease-in-out;
     mix-blend-mode:soft-light;
+    white-space: nowrap;
 }
 
 .text.active{
@@ -28,8 +29,8 @@ body {
     transition: filter 1s;
     overflow:hidden;
     touch-action:none;
-    user-select:none;
     -webkit-user-select: none; 
+    user-select:none;
     background-image:url("../../bg1.svg");
     background-size:cover;
     background-repeat:no-repeat;
