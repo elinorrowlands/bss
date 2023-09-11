@@ -11,7 +11,6 @@ let pugFiles = [
     'elements/index',
 
     'elements/mix/index',
-    'elements/mix/checkboxes',
     'elements/mix/mix_ripple',
 
     'elements/bridge/index',
