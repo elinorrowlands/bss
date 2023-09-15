@@ -1,10 +1,16 @@
-const filter = new Tone.Filter(200, 'lowpass').toDestination();
-const echo = new Tone.FeedbackDelay('1n', 0.5).connect(filter);
-const player = new Tone.Player('./waters_excerpt.mp3').toDestination();
-const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination();
-backdrop.loop = true;
-backdrop.volume.value = '-12';
-player.connect(echo);
+let mix = {
+    filter: new Tone.Filter(200, 'lowpass').toDestination(),
+    echo: new Tone.FeedbackDelay(1, 0.5),
+    player: new Tone.Player('./waters_excerpt.mp3').toDestination(),
+    backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
+}
+
+
+mix.backdrop.connect(mix.filter);
+mix.backdrop.loop = true;
+mix.backdrop.volume.value = '-12';
+mix.echo.connect(mix.filter);
+mix.player.connect(mix.echo);
 
 /**
  * Loading screen, to break out later (see loading.js in the source folder)
@@ -21,8 +27,16 @@ const loadBlink = () => {
 setInterval(loadBlink, 5000);
 Tone.loaded().then(start);
 
-
-const newCaption = ["00:00:06.420,00:00:08.160\nwhere is the water's edge?", '00:00:11.700,00:00:13.380\nin the wide expanses', '00:00:15.030,00:00:16.950\nor the half filled bathtub', '00:00:19.260,00:00:20.100\nin the river', '00:00:20.580,00:00:21.840\nor the boiling kettle', '00:00:22.770,00:00:23.760\nin the steam', '00:00:23.880,00:00:24.750\nor the snow', '00:00:25.140,00:00:28.170\nor the rainbow mist of a summer hose'];
+const newCaption = [
+    "00:00:06.420,00:00:08.160\nwhere is the water's edge?", 
+    '00:00:11.700,00:00:13.380\nin the wide expanses?', 
+    '00:00:15.030,00:00:16.950\nor the half filled bathtub?', 
+    '00:00:19.260,00:00:20.100\nin the river?', 
+    '00:00:20.580,00:00:21.840\nor the boiling kettle?', 
+    '00:00:22.770,00:00:23.760\nin the steam?', 
+    '00:00:23.880,00:00:24.750\nor the snow?', 
+    '00:00:25.140,00:00:28.170\nor the rainbow mist of a summer hose?'
+];
 
 let captionObject = syncCC.splitCaptions(newCaption);
 let playFlag = false;
@@ -77,7 +91,7 @@ function start(){
     const Pickup = (e) =>{
         const preset = {
             opacity:{
-                start:0.5, enter:0.5, end:1, move:0.5, leave:1
+                start:0.7, enter:0.7, end:1, move:0.9, leave:1, cancel:0.5
             }
         }
         
@@ -89,21 +103,21 @@ function start(){
         
         if(type == 'start' || type == 'enter'){
             if(!playFlag){
-                backdrop.start();
+                mix.backdrop.start();
                 playFlag = true;
             }
     
-            filter.frequency.rampTo((y)+80, 0.5);
+            mix.filter.frequency.rampTo((y)+80, 0.5);
             element.classList.add('active');
             document.body.style.filter = `hue-rotate(${element.style.left}deg)`;
-            player.start(Tone.now(), text.startS, text.endS-text.startS);
+            mix.player.start(Tone.now(), text.startS, text.endS-text.startS);
             element.style.left = x+'px';
             element.style.top = y+'px';
-            console.log(element.style.top, element.style.left)
+            // console.log(element.style.top, element.style.left)
             
         } else if (type == 'end' || type == 'leave'){
     
-            filter.frequency.rampTo(200, 0.5);
+            mix.filter.frequency.rampTo(200, 1);
             element.classList.remove('active');
             document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
             document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
@@ -113,7 +127,7 @@ function start(){
         } else if(type == 'move'){
     
             document.body.style.filter = `hue-rotate(${element.x}deg)`;
-            filter.frequency.rampTo((y)+ 200, 0.5);
+            mix.filter.frequency.rampTo((y)+ 500, 0.5);
             element.style.left = x+'px';
             element.style.top = y+'px';
             document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
@@ -122,6 +136,11 @@ function start(){
         }
         
         target.style.opacity = preset.opacity[type];
+        window.setInterval(()=>{
+            target.style.opacity = preset.opacity.cancel;
+        }
+        ,4000);
+        
     }
     
     document.addEventListener('touch-pickup',(e)=>Pickup(e));
