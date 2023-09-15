@@ -1,17 +1,3 @@
-let mix = {
-    filter: new Tone.Filter(200, 'lowpass').toDestination(),
-    echo: new Tone.FeedbackDelay(1, 0.5),
-    player: new Tone.Player('./waters_excerpt.mp3').toDestination(),
-    backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
-}
-
-
-mix.backdrop.connect(mix.filter);
-mix.backdrop.loop = true;
-mix.backdrop.volume.value = '-12';
-mix.echo.connect(mix.filter);
-mix.player.connect(mix.echo);
-
 /**
  * Loading screen, to break out later (see loading.js in the source folder)
  */
@@ -25,6 +11,25 @@ const loadBlink = () => {
 }
 
 setInterval(loadBlink, 5000);
+
+/**
+ * All sounds for current page
+ */
+let mix = {
+    filter: new Tone.Filter(200, 'lowpass').toDestination(),
+    echo: new Tone.FeedbackDelay(1, 0.5),
+    player: new Tone.Player('./waters_excerpt.mp3').toDestination(),
+    backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
+}
+
+mix.backdrop.connect(mix.filter);
+mix.backdrop.loop = true;
+mix.backdrop.volume.value = '-12';
+mix.echo.connect(mix.filter);
+mix.player.connect(mix.echo);
+
+
+
 Tone.loaded().then(start);
 
 const newCaption = [
@@ -53,7 +58,7 @@ function loaded(){
 }
 
 /**
- * Place captions on the screen
+ * Place captions on the screen in random positions
  * @param {Object} captionObject 
  */
 
@@ -89,6 +94,7 @@ function start(){
     touch.setAction('.text');
     
     const Pickup = (e) =>{
+        
         const preset = {
             opacity:{
                 start:0.7, enter:0.7, end:1, move:0.9, leave:1, cancel:0.5
@@ -96,7 +102,7 @@ function start(){
         }
         
         let { element, type, x, y } = e.detail;
-        
+        if(element.classList.contains('allowDefault'))return;
         let target = element;
         
         let text = captionObject[element.id.split('_')[1]];
@@ -113,16 +119,34 @@ function start(){
             mix.player.start(Tone.now(), text.startS, text.endS-text.startS);
             element.style.left = x+'px';
             element.style.top = y+'px';
-            // console.log(element.style.top, element.style.left)
+            element.style.textShadow = `0px 5px 3px rgba(0,0,0,1)`;
+            element.style.backgroundColor = `rgba(0,0,128,0.5)`;
+            
+            // if(!element.style.transition){
+            //     element.style.transition = 'all 1s, left 18.5s ease-in-out, top 16.5s ease-in-out, opacity 0.5s ease-in-out';
+            // }
+            // element.style.transition = element.style.transition.split(', ').map((t)=>{
+            //     if(t.includes('top') || t.includes('left')){
+            //         return '0.1s';
+            //     }
+            //     return t;
+            // }).join(', ');
+            
             
         } else if (type == 'end' || type == 'leave'){
-    
+            element.style.transition = element.style.transition.split(', ').map((t)=>{
+                if(t.includes('top') || t.includes('left')){
+                    return '18s';
+                }
+                return t;
+            }).join(', ');
             mix.filter.frequency.rampTo(200, 1);
             element.classList.remove('active');
             document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
             document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
-            
+            element.style.textShadow = `0px 0px 10px rgba(0,0,128,0.4)`;
             document.body.style.filter = `hue-rotate(0deg)`;
+            element.style.backgroundColor = `transparent`;
     
         } else if(type == 'move'){
     
@@ -132,7 +156,7 @@ function start(){
             element.style.top = y+'px';
             document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
             document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
-    
+            element.style.textShadow = `0px 0px 10px rgba(0,0,0,${(y/100)})`;
         }
         
         target.style.opacity = preset.opacity[type];
