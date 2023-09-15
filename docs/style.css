@@ -497,6 +497,7 @@ button.nav__back {
   display: block;
   width: auto;
   z-index: 10;
+  background-color: navy;
 }
 
 .nav__back {

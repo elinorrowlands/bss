@@ -1,3 +1,4 @@
+
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
@@ -22,6 +23,7 @@
           margin-top:100px;
           padding-top:100px;
       }
+      
     </style>
   </head>
   <body>
@@ -89,6 +91,9 @@
       
           document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
               qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
+                  //- x.setAttribute('rx', `${Math.abs(Math.sin(i)*2)}px`);
+                  //- x.setAttribute('rx', `${Math.abs(Math.cos(i)*30)}px`);
+                  
                   let number = Math.sin(i)*255;
       
                   if (number < 0) {
@@ -100,13 +105,16 @@
                   }
       
                   x.style.fill=`rgba(${number},255,255,1)`;
+                  //- x.style.opacity = Math.abs(Math.cos(i))+0.5;
                   x.style.stroke = 'black';
       
               })
       
               qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
+                  //- x.style.fill=`rgba(255,255,255,1)`;
                   x.style.strokeWidth = '3px';
                   x.style.stroke='black';
+                  //- console.log(x);
                   x.style.display='none';
               })
           })
