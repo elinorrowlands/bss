@@ -12,10 +12,7 @@ const loadBlink = () => {
 
 setInterval(loadBlink, 5000);
 
-/**
- * All sounds for current page
- */
-let mix = {
+const mix = {
     filter: new Tone.Filter(200, 'lowpass').toDestination(),
     echo: new Tone.FeedbackDelay(1, 0.5),
     player: new Tone.Player('./waters_excerpt.mp3').toDestination(),
@@ -27,8 +24,6 @@ mix.backdrop.loop = true;
 mix.backdrop.volume.value = '-12';
 mix.echo.connect(mix.filter);
 mix.player.connect(mix.echo);
-
-
 
 Tone.loaded().then(start);
 
@@ -57,35 +52,7 @@ function loaded(){
         });
 }
 
-/**
- * Place captions on the screen in random positions
- * @param {Object} captionObject 
- */
-
-function placeCaptions(captionObject){
-    captionObject.forEach((text,i) => {
-        let textElement = document.createElement('div');
-        let colourValue = ((12+i)*10)+(Math.random()*(255-((12+i)*10)));
-    
-        Object.assign(textElement.style,{
-            position: 'absolute',
-            top: i==0 ? '45%': (5+Math.random()*80)+'%',
-            left: i==0 ? '5%':(5+Math.random()*70)+'%',
-            fontSize: i==0 ? '50px': (20+Math.random()*30)+'px',
-            userSelect: 'none',
-            cursor:'pointer',
-            color:`rgba(${colourValue},${colourValue},${colourValue},1)`,
-            opacity: i==0 ? 1:0.1
-        });
-        
-        textElement.id = `text_${i}`;
-        textElement.innerHTML = text.content[0];
-        textElement.classList.add('text');
-    
-        captionObject.element = textElement;
-        document.body.appendChild(textElement);
-    });
-}
+import placeCaptions from './text_placeCaptions.js';
 
 function start(){
     loaded();
@@ -103,8 +70,8 @@ function start(){
         
         let { element, type, x, y } = e.detail;
         if(element.classList.contains('allowDefault'))return;
-        let target = element;
         
+        let target = element;
         let text = captionObject[element.id.split('_')[1]];
         
         if(type == 'start' || type == 'enter'){
@@ -112,34 +79,16 @@ function start(){
                 mix.backdrop.start();
                 playFlag = true;
             }
-    
-            mix.filter.frequency.rampTo((y)+80, 0.5);
-            element.classList.add('active');
+            
             document.body.style.filter = `hue-rotate(${element.style.left}deg)`;
+            mix.filter.frequency.rampTo((y)+80, 0.5);
             mix.player.start(Tone.now(), text.startS, text.endS-text.startS);
-            element.style.left = x+'px';
-            element.style.top = y+'px';
+            element.classList.add('active');
+            element.style.left = `${x}px;`;
+            element.style.top = `${y}px;`;
             element.style.textShadow = `0px 5px 3px rgba(0,0,0,1)`;
-            element.style.backgroundColor = `rgba(0,0,128,0.5)`;
-            
-            // if(!element.style.transition){
-            //     element.style.transition = 'all 1s, left 18.5s ease-in-out, top 16.5s ease-in-out, opacity 0.5s ease-in-out';
-            // }
-            // element.style.transition = element.style.transition.split(', ').map((t)=>{
-            //     if(t.includes('top') || t.includes('left')){
-            //         return '0.1s';
-            //     }
-            //     return t;
-            // }).join(', ');
-            
-            
+            element.style.backgroundColor = `rgba(0,0,128,0.5)`;            
         } else if (type == 'end' || type == 'leave'){
-            element.style.transition = element.style.transition.split(', ').map((t)=>{
-                if(t.includes('top') || t.includes('left')){
-                    return '18s';
-                }
-                return t;
-            }).join(', ');
             mix.filter.frequency.rampTo(200, 1);
             element.classList.remove('active');
             document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
@@ -152,8 +101,8 @@ function start(){
     
             document.body.style.filter = `hue-rotate(${element.x}deg)`;
             mix.filter.frequency.rampTo((y)+ 500, 0.5);
-            element.style.left = x+'px';
-            element.style.top = y+'px';
+            element.style.left = `${x}px;`;
+            element.style.top = `${y}px;`;
             document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
             document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
             element.style.textShadow = `0px 0px 10px rgba(0,0,0,${(y/100)})`;
