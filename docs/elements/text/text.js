@@ -24,8 +24,6 @@ mix.backdrop.volume.value = '-12';
 mix.echo.connect(mix.filter);
 mix.player.connect(mix.echo);
 
-Tone.loaded().then(start);
-
 const newCaption = [
     "00:00:06.420,00:00:08.160\nwhere is the water's edge?", 
     '00:00:11.700,00:00:13.380\nin the wide expanses?', 
@@ -39,6 +37,13 @@ const newCaption = [
 
 let captionObject = syncCC.splitCaptions(newCaption);
 window.playFlag = false;
+
+function startElement(){
+    document.querySelector('section.instructions').style.display = 'none';
+    Tone.loaded().then(start);
+}
+
+document.querySelector('button.start').addEventListener('click', startElement);
 
 function loaded(){
         StatusVO.update('loaded');

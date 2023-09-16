@@ -216,7 +216,6 @@ main.qr__container {
 }
 @media screen and (orientation: landscape) {
   .nav__icon {
-    /* max-height:10vw; */
     margin: 5vh;
   }
 }
@@ -228,7 +227,6 @@ main.qr__container {
 }
 @media screen and (orientation: landscape) {
   .icon__info {
-    /* max-height:10vw; */
     transform: translate(0px, -50px);
   }
 }
@@ -496,7 +494,7 @@ button.nav__back {
   margin: auto;
   display: block;
   width: auto;
-  z-index: 10;
+  z-index: 3000;
   background-color: navy;
 }
 
