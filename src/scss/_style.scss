@@ -1,3 +1,11 @@
+html,
+body {
+    overscroll-behavior-y: none;
+}
+
+$background: darkblue;
+$background2: navy;
+
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
 @import "animations.scss";
 @import "logo.scss";
@@ -7,14 +15,10 @@
 @import "button.scss";
 @import "map.scss";
 @import "front.scss";
-
-html,
-body {
-    overscroll-behavior-y: none;
-}
+@import "instructions.scss";
 
 body {
-    background-color: darkblue;
+    background-color: $background;
     font-family: Nunito;
     font-weight: 100;
     color: lightgray;
@@ -51,7 +55,7 @@ path {
 
 h1 {
     font-size: 4rem;
-    background-color: navy;
+    background-color: $background2;
     padding: 1em;
 }
 
@@ -85,7 +89,7 @@ path {
     left:0;
     width:100%;
     height:100%;
-    background-color:navy;
+    background-color:$background2;
     color:white;
     display:flex;
     justify-content:center;
@@ -127,7 +131,7 @@ canvas#overlay {
     display:block;
     width:auto;
     z-index:3000;
-    background-color:navy;
+    background-color:$background2;
   }
   
   .nav__back{
@@ -163,7 +167,7 @@ canvas#overlay {
 }
 
 .highlight{
-    background-color:darkblue;
+    background-color:$background;
     padding:1em;
     text-align:center;
 }

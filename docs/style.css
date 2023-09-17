@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -216,6 +221,7 @@ main.qr__container {
 }
 @media screen and (orientation: landscape) {
   .nav__icon {
+    /* max-height:10vw; */
     margin: 5vh;
   }
 }
@@ -227,6 +233,7 @@ main.qr__container {
 }
 @media screen and (orientation: landscape) {
   .icon__info {
+    /* max-height:10vw; */
     transform: translate(0px, -50px);
   }
 }
@@ -379,9 +386,15 @@ footer {
   margin: auto;
 }
 
-html,
-body {
-  overscroll-behavior-y: none;
+section.instructions {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: none;
+  padding-top: 20vh;
+  z-index: 2000;
+  background-color: navy;
+  text-align: center;
 }
 
 body {
