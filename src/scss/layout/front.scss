@@ -1,3 +1,15 @@
+#main__title {
+    opacity: 0.8;
+    width: 90vw;
+    max-width: 800px;
+    height: 40vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 300;
+    margin: auto;
+}
+
 .front__water {
     opacity: 0.6;
     position: fixed;
@@ -28,17 +40,4 @@
     transform: scale(7);
     opacity:0.3;
     animation: scale2 121s ease-in-out infinite alternate;
-}
-
-
-#main__title {
-    opacity: 0.8;
-    width: 90vw;
-    max-width: 800px;
-    height: 40vw;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 300;
-    margin: auto;
 }

@@ -1,22 +1,24 @@
-$background: darkblue;
-$background2: navy;
-
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
 
-@import "animations.scss";
+// note: imports should be changed to @use where possible
+
+@import "abstracts/colours";
+
+@import "animations";
 @import "base/body";
+@import "base/typography";
 
-@import "components/logo.scss";
-@import "components/icons.scss";
-@import "components/button.scss";
+@import "components/logo";
+@import "components/icons";
+@import "components/button";
 
-@import "layout/footer.scss";
-@import "layout/front.scss";
-@import "layout/instructions.scss";
-@import "layout/loading.scss";
+@import "layout/footer";
+@import "layout/front";
+@import "layout/instructions";
+@import "layout/loading";
 
-@import "qr.scss";
-@import "map.scss";
+@import "qr";
+@import "map";
 
 
 main.splash {
@@ -99,11 +101,6 @@ canvas#overlay {
   
   .nav__back{
     cursor:pointer;
-  }
-
-  .link{
-    font-size:3rem;
-    text-underline-offset: 0.4em;
   }
   
   a{

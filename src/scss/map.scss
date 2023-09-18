@@ -14,9 +14,9 @@
 
 #backdrop {
     -webkit-user-select: none;
+    user-select:none;
     filter:brightness(70%) grayscale(0%) hue-rotate(0deg);
     touch-action:none;
-    user-select:none;
     overflow:hidden;
     width:100vw;
     height:100vh;

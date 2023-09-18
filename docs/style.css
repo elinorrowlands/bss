@@ -40,6 +40,11 @@ body {
   color: lightgray;
 }
 
+.link {
+  font-size: 3rem;
+  text-underline-offset: 0.4em;
+}
+
 .logo {
   padding: 10px;
 }
@@ -193,6 +198,18 @@ footer {
   margin: none;
 }
 
+#main__title {
+  opacity: 0.8;
+  width: 90vw;
+  max-width: 800px;
+  height: 40vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 300;
+  margin: auto;
+}
+
 .front__water {
   opacity: 0.6;
   position: fixed;
@@ -218,18 +235,6 @@ footer {
   transform: scale(7);
   opacity: 0.3;
   animation: scale2 121s ease-in-out infinite alternate;
-}
-
-#main__title {
-  opacity: 0.8;
-  width: 90vw;
-  max-width: 800px;
-  height: 40vw;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 300;
-  margin: auto;
 }
 
 .instructions {
@@ -410,9 +415,9 @@ main.qr__container {
 
 #backdrop {
   -webkit-user-select: none;
+  user-select: none;
   filter: brightness(70%) grayscale(0%) hue-rotate(0deg);
   touch-action: none;
-  user-select: none;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
@@ -507,11 +512,6 @@ button.nav__back {
 
 .nav__back {
   cursor: pointer;
-}
-
-.link {
-  font-size: 3rem;
-  text-underline-offset: 0.4em;
 }
 
 a {
