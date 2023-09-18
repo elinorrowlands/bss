@@ -1,0 +1,24 @@
+.loading{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:$background2;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    text-align:center;
+    opacity:1;
+    transition:opacity 1s;
+    padding:none;
+    margin:none;
+    transition:all 5s;
+    z-index:1000;
+}
+
+.loadMsg{
+    transition: all 5s;
+}
