@@ -1,32 +1,32 @@
 .button{
-    border-radius:10px;
+    background-color: transparent;
     background: transparent;
+    border-radius:10px;
+    border: 2px solid #fff;
+    color: #fff;
     display: inline-block;
-    text-rendering: optimizeLegibility;
     font-family: "Nunito";
     font-size: 18px;
-    line-height: 1em;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    font-weight: 500;
     font-style: normal;
+    font-weight: 500;
+    letter-spacing: .2em;
+    line-height: 1em;
     list-style: none;
-    text-align: center;
-    padding-top: 1em;
-    padding-right: 1.24em;
     padding-bottom: 1em;
     padding-left: 1.44em;
+    padding-right: 1.24em;
+    padding-top: 1em;
+    text-align: center;
     text-decoration: none;
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
     transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
     width: 10em;
 }   
 
 .button:hover{
     background-color: #fff;
-    color:darkblue;
     border-color: transparent;
+    color:darkblue;
     cursor: pointer;
 } 

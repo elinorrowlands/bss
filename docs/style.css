@@ -28,6 +28,18 @@ body {
     transform: scale(8);
   }
 }
+body {
+  background-color: darkblue;
+  font-family: Nunito;
+  font-weight: 100;
+  color: lightgray;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .logo {
   padding: 10px;
 }
@@ -414,18 +426,6 @@ main.qr__container {
 
 #backdrop.interacting {
   filter: brightness(80%) grayscale(100%) hue-rotate(0deg);
-}
-
-body {
-  background-color: darkblue;
-  font-family: Nunito;
-  font-weight: 100;
-  color: lightgray;
-  display: flex;
-  margin: 0;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
 }
 
 main.splash {

@@ -13,20 +13,19 @@
 }
 
 #backdrop {
+    -webkit-user-select: none; 
     background-color:navy;
-    transition: filter 1s;
+    background-image:url("svg/element_painting.svg");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    filter:brightness(70%) grayscale(0%) hue-rotate(0deg);
+    height:100vh;
     overflow:hidden;
     touch-action:none;
-    -webkit-user-select: none; 
+    transition: filter 1s;
     user-select:none;
-    
-    background-image:url("svg/element_painting.svg");
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:100vh;
     width:100vw;
-    filter:brightness(70%) grayscale(0%) hue-rotate(0deg);
 }
 
 #backdrop.interacting {

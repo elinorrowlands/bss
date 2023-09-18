@@ -1,10 +1,10 @@
 .instructions{
+    background-color:$background2;
     display:block;
-    width:100vw;
     height:100vh;
     margin:none;
     padding-top: 20vh;
-    z-index: 2000;
-    background-color:$background2;
     text-align:center;
+    width:100vw;
+    z-index: 2000;
 }

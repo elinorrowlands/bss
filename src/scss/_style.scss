@@ -1,14 +1,10 @@
-html,
-body {
-    overscroll-behavior-y: none;
-}
-
 $background: darkblue;
 $background2: navy;
 
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
 
 @import "animations.scss";
+@import "base/body";
 
 @import "components/logo.scss";
 @import "components/icons.scss";
@@ -22,17 +18,6 @@ $background2: navy;
 @import "qr.scss";
 @import "map.scss";
 
-body {
-    background-color: $background;
-    font-family: Nunito;
-    font-weight: 100;
-    color: lightgray;
-    display: flex;
-    margin: 0;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-}
 
 main.splash {
     flex-grow: 1;
