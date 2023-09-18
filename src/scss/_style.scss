@@ -7,16 +7,20 @@ $background: darkblue;
 $background2: navy;
 
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
+
 @import "animations.scss";
-@import "logo.scss";
+
+@import "components/logo.scss";
+@import "components/icons.scss";
+@import "components/button.scss";
+
+@import "layout/footer.scss";
+@import "layout/front.scss";
+@import "layout/instructions.scss";
+@import "layout/loading.scss";
+
 @import "qr.scss";
-@import "icons.scss";
-@import "footer.scss";
-@import "button.scss";
 @import "map.scss";
-@import "front.scss";
-@import "instructions.scss";
-@import "loading.scss";
 
 body {
     background-color: $background;

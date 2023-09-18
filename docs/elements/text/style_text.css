@@ -1,3 +1,19 @@
+body {
+    background-color:navy;
+    transition: filter 1s;
+    overflow:hidden;
+    touch-action:none;
+    -webkit-user-select: none; 
+    user-select:none;
+    background-image:url("../../bg1.svg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:100vh;
+    width:100vw;
+    filter: hue-rotate(0deg);
+}
+
 button{
     font-size: 2rem;
 }
@@ -29,18 +45,3 @@ button{
     letter-spacing:0.2px;
 }
 
-body {
-    background-color:navy;
-    transition: filter 1s;
-    overflow:hidden;
-    touch-action:none;
-    -webkit-user-select: none; 
-    user-select:none;
-    background-image:url("../../bg1.svg");
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:100vh;
-    width:100vw;
-    filter: hue-rotate(0deg);
-}

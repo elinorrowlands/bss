@@ -3,10 +3,10 @@
     height: 100px;
     max-height: 10vh;
     display: inline-block;
-    @media screen and(orientation:landscape) {
+    
+    @media screen and (orientation:landscape) {
         max-height: 10vw;
     }
-
 }
 
 
@@ -18,7 +18,7 @@
     max-height: 10vh;
     align-content: center;
 
-    @media screen and(orientation:landscape) {
+    @media screen and (orientation:landscape) {
         /* max-height:10vw; */
         margin: 5vh;
     }
@@ -26,10 +26,10 @@
 
 .icon__info {
     transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
     opacity: 0.8;
-    @media screen and(orientation:landscape) {
-        /* max-height:10vw; */
+    cursor: pointer;
+    
+    @media screen and (orientation:landscape) {
         transform: translate(0px, -50px);
     }
 }
