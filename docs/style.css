@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
-html,
-body {
-  overscroll-behavior-y: none;
-}
-
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -28,16 +23,21 @@ body {
     transform: scale(8);
   }
 }
+html,
 body {
+  overscroll-behavior-y: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
   background-color: darkblue;
   font-family: Nunito;
   font-weight: 100;
   color: lightgray;
-  display: flex;
-  margin: 0;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
 }
 
 .logo {
@@ -128,35 +128,35 @@ body {
 }
 
 .button {
-  border-radius: 10px;
+  background-color: transparent;
   background: transparent;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  color: #fff;
   display: inline-block;
-  text-rendering: optimizeLegibility;
   font-family: "Nunito";
   font-size: 18px;
-  line-height: 1em;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-weight: 500;
   font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1em;
   list-style: none;
-  text-align: center;
-  padding-top: 1em;
-  padding-right: 1.24em;
   padding-bottom: 1em;
   padding-left: 1.44em;
+  padding-right: 1.24em;
+  padding-top: 1em;
+  text-align: center;
   text-decoration: none;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
   width: 10em;
 }
 
 .button:hover {
   background-color: #fff;
-  color: darkblue;
   border-color: transparent;
+  color: darkblue;
   cursor: pointer;
 }
 
@@ -233,14 +233,14 @@ footer {
 }
 
 .instructions {
+  background-color: navy;
   display: block;
-  width: 100vw;
   height: 100vh;
   margin: none;
   padding-top: 20vh;
-  z-index: 2000;
-  background-color: navy;
   text-align: center;
+  width: 100vw;
+  z-index: 2000;
 }
 
 .loading {
@@ -395,33 +395,33 @@ main.qr__container {
 }
 
 .map__layer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
   -webkit-user-select: none;
   user-select: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 #backdrop {
-  background-color: navy;
-  transition: filter 1s;
-  overflow: hidden;
-  touch-action: none;
   -webkit-user-select: none;
+  filter: brightness(70%) grayscale(0%) hue-rotate(0deg);
+  touch-action: none;
   user-select: none;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  transition: filter 1s;
+  background-color: navy;
   background-image: url("svg/element_painting.svg");
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
-  width: 100vw;
-  filter: brightness(70%) grayscale(0%) hue-rotate(0deg);
+  background-size: cover;
 }
 
 #backdrop.interacting {
