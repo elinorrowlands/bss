@@ -9,8 +9,8 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     margin: 0;
-    background-color: $text;
+    background-color: $background;
     font-family: Nunito;
     font-weight: 100;
-    color: lightgray;
+    color: $text;
 }
