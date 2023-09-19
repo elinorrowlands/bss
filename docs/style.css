@@ -1,4 +1,7 @@
+@charset "UTF-8";
+/* ⚝ Biodivergent Sites and Sounds */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
+/* ⚝ Animations */
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -23,6 +26,7 @@
     transform: scale(8);
   }
 }
+/* ⚝ Body */
 html,
 body {
   overscroll-behavior-y: none;
@@ -34,17 +38,19 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   margin: 0;
-  background-color: lightgray;
+  background-color: darkblue;
   font-family: Nunito;
   font-weight: 100;
   color: lightgray;
 }
 
+/* ⚝ Typography */
 .link {
   font-size: 3rem;
   text-underline-offset: 0.4em;
 }
 
+/* ⚝ Sponsor logos */
 .logo {
   padding: 10px;
 }
@@ -90,6 +96,7 @@ body {
   }
 }
 
+/* ⚝ Icons */
 .icon {
   width: 100px;
   height: 100px;
@@ -132,6 +139,7 @@ body {
   opacity: 1;
 }
 
+/* ⚝ Buttons */
 .button {
   background-color: transparent;
   background: transparent;
@@ -165,6 +173,7 @@ body {
   cursor: pointer;
 }
 
+/* ⚝ Footer */
 .footer__text {
   font-size: 2rem;
   color: lightgray;
@@ -198,6 +207,7 @@ footer {
   margin: none;
 }
 
+/* ⚝ Front page */
 #main__title {
   opacity: 0.8;
   width: 90vw;
@@ -237,17 +247,19 @@ footer {
   animation: scale2 121s ease-in-out infinite alternate;
 }
 
+/* ⚝ Instructions */
 .instructions {
   background-color: navy;
   display: block;
   height: 100vh;
+  width: 100vw;
   margin: none;
   padding-top: 20vh;
   text-align: center;
-  width: 100vw;
   z-index: 2000;
 }
 
+/* ⚝ Loading */
 .loading {
   position: absolute;
   top: 0;
@@ -273,6 +285,7 @@ footer {
   transition: all 5s;
 }
 
+/* ⚝ QR codes */
 .qr__number {
   font-size: 40px;
   background-color: #9EC1CF;
@@ -399,6 +412,7 @@ main.qr__container {
   margin: 2em;
 }
 
+/* ⚝ Map */
 .map__layer {
   -webkit-user-select: none;
   user-select: none;
