@@ -1,6 +1,6 @@
 .qr__number{
     font-size:40px;
-    background-color:#9EC1CF;
+    background-color:$number;
     color:black;
     mix-blend-mode:screen;
     font-weight:bold;
@@ -17,8 +17,8 @@
 }
 
 .qr__number.high-contrast{
-    color:black;
-    background-color:white;
+    color:$background--hc;
+    background-color:$number--hc;
     mix-blend-mode:normal;
 }
 
@@ -30,7 +30,7 @@
     padding:0;
     opacity:1;
     align-self:center;
-    color:#9EC1CF;
+    color:$number;
 }
 
 .qr__container{
@@ -47,7 +47,7 @@
     flex-direction:column;
     justify-content:space-around;
     
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px $shadow;
     height:250px;
     width:130px;
     background-image:url("bg1.svg");
@@ -63,8 +63,8 @@
 .qr__card:hover{
     transform:translate(0px,3px);
     cursor:pointer;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-    border: 2px solid #9EC1CF;
+    box-shadow: 0px 0px 20px 0px $shadow;
+    border: 2px solid $number;
 }
 
 .qr__svg{
@@ -118,7 +118,7 @@
 }
 
 main.qr__container{
-    background-color:navy;
+    background-color:$background2;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1em;

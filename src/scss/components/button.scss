@@ -2,8 +2,8 @@
     background-color: transparent;
     background: transparent;
     border-radius:10px;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid $outline;
+    color: $outline;
     display: inline-block;
     font-family: "Nunito";
     font-size: 18px;
@@ -25,8 +25,8 @@
 }   
 
 .button:hover{
-    background-color: #fff;
+    background-color: $outline;
     border-color: transparent;
-    color:darkblue;
+    color: $background;
     cursor: pointer;
 } 

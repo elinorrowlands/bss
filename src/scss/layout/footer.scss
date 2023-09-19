@@ -1,6 +1,6 @@
 .footer__text {
     font-size: 2rem;
-    color: lightgray;
+    color: $text;
     text-align: left;
     margin-top: 2em;
     margin-left:100px;
@@ -11,7 +11,7 @@
 
 .footer__logos {
     font-size: 2rem;
-    color: lightgray;
+    color: $text;
     justify-content: space-around;
     flex-wrap: wrap;
     display: flex;
@@ -27,6 +27,6 @@ footer {
     left:0;
     width:100%;
     max-height: 250px;
-    background-color:darkblue;
+    background-color:$background;
     margin:none;
 }

@@ -37,7 +37,7 @@ main.splash {
     width: 100%;
     height: 100vh;
     transform-origin: center center;
-    background-color: aqua;
+    background-color: $wash;
     margin: none;
 }
 
@@ -104,18 +104,18 @@ canvas#overlay {
   }
   
   a{
-    color:lightgray;
+    color:$link;
   }
   
   a:visited{
-        color:#bbb;
+        color:$link--visited;
   }
   
   .textBlock{
     display:inline-block;
     padding:1em;
     margin:1em;
-    background-color:hsl(233.26,50.28%,65.29%);
+    background-color:$background-text;
     font-size:1.5rem;
     border-radius:0.4rem;
   }
