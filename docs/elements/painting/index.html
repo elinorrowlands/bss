@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Painting interaction demo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rakkas&amp;display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSS: Heart</title>
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <style>
@@ -11,8 +12,8 @@
       transition: filter 1s;
       overflow:hidden;
       touch-action:none;
-      user-select:none;
       -webkit-user-select: none; 
+      user-select:none;
       background-image:url("../../svg/element_painting.svg");
       background-size:cover;
       background-repeat:no-repeat;
@@ -32,13 +33,12 @@
       pointer-events:none;
       cursor:pointer;
       overflow:hidden;
+	  -webkit-user-select: none; 
       user-select:none;
-       -webkit-user-select: none; 
     }
     
     svg {
       transform-origin:center center;
-      //- transition:all 1s;
       position:absolute;
       top:0;
       bottom:0;
@@ -60,7 +60,6 @@
     #painting {
       transform-origin:center center;
       transition: all 1s;
-      
     }
 
     .loading {
@@ -1288,3 +1287,4 @@
     }
   </script>
   <script>checkLoaded('addBackButton');</script>
+</html>
