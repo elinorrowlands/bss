@@ -15,4 +15,9 @@ body {
     font-family: Nunito;
     font-weight: 100;
     color: $text;
+    transition: filter 1s;
+}
+
+body.full{
+    overflow:hidden;
 }
