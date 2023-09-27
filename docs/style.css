@@ -410,6 +410,12 @@ html, body {
   opacity: 1;
 }
 
+h1.ripples {
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 /* ⚝ QR codes */
 .qr__number {
   font-size: 40px;

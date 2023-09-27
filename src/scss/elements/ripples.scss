@@ -126,3 +126,9 @@ html, body {
   .no-curtains #water-ripples-title h1 {
     opacity: 1;
   }
+  
+  h1.ripples{
+    -webkit-user-select:none;
+    user-select:none;
+    pointer-events:none;
+  }
