@@ -5,64 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BSS: Heart</title>
 	<link rel="stylesheet" href="../../style.css">
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script> -->
-  	<style>
-		body {
-			overflow:hidden;
-			touch-action:none;
-			-webkit-user-select: none; 
-			user-select:none;
-			background-image:url("../../svg/element_painting.svg");
-			background-size:cover;
-			background-repeat:no-repeat;
-			background-position:center;
-			height:100vh;
-			width:100vw;
-		}
-
-		canvas#overlay {
-			position:absolute;
-			top:0;
-			left:0;
-			width:100%;
-			height:100%;
-			z-index:100;
-			touch-action:none;
-			pointer-events:none;
-			cursor:pointer;
-			overflow:hidden;
-			-webkit-user-select: none; 
-			user-select:none;
-		}
-
-		svg {
-			transform-origin:center center;
-			position:absolute;
-			top:0;
-			bottom:0;
-			left:0;
-			right:0;
-			
-			display:block;
-			height:100vh;
-			width:100vw;
-			cursor:pointer;
-			transform:scale(3) translate(0,800);
-		}
-
-		svg g {
-			transform-origin:center center;
-			transition:all 1s;
-		}
-
-		#painting {
-			transform-origin:center center;
-			transition: all 1s;
-		}
-  	</style>
   </head>
-  <body>
-	  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3026 4034">
+  <body class="heart">
+	  <svg class='heart' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3026 4034">
 		<defs>
 			<linearGradient id="fade_horizontal" x1="0%" y1="0%" x2="100%" y2="0%">
 				<stop offset="0.05" stop-color="black"></stop>
