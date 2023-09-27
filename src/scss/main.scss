@@ -19,6 +19,8 @@
 @import "layout/instructions";
 @import "layout/loading";
 
+@import "elements/ripples.scss";
+
 @import "qr";
 @import "map";
 
@@ -132,4 +134,11 @@ canvas#overlay {
     background-color:$background;
     padding:1em;
     text-align:center;
+}
+
+body.fullpage{
+  overflow:hidden;
+  transition:all 1s ease;
+  height:100vh;
+  width:100vw;
 }

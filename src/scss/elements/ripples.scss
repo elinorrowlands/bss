@@ -1,0 +1,22 @@
+#painting.ripples{
+    -webkit-user-select:none;
+    user-select:none;
+    width:100%; 
+    position:absolute;
+    margin:0;
+    display:block;
+    
+    transform-origin:center;
+    
+    @media (max-width: 600px) {
+     width:100%; 
+     height:100%;
+    
+      top:0;
+      transform-origin:center;
+    }
+  }
+  
+  #water-ripples-title{
+    display:none;
+  }

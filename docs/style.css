@@ -290,6 +290,28 @@ footer {
   transition: all 5s;
 }
 
+#painting.ripples {
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  display: block;
+  transform-origin: center;
+}
+@media (max-width: 600px) {
+  #painting.ripples {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform-origin: center;
+  }
+}
+
+#water-ripples-title {
+  display: none;
+}
+
 /* ⚝ QR codes */
 .qr__number {
   font-size: 40px;
@@ -560,6 +582,13 @@ a:visited {
   background-color: darkblue;
   padding: 1em;
   text-align: center;
+}
+
+body.fullpage {
+  overflow: hidden;
+  transition: all 1s ease;
+  height: 100vh;
+  width: 100vw;
 }
 
 /*# sourceMappingURL=style.css.map */
