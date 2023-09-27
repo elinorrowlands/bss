@@ -49,6 +49,11 @@ body.full {
   overflow: hidden;
 }
 
+canvas {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* ⚝ Typography */
 .link {
   font-size: 3rem;
@@ -290,6 +295,7 @@ footer {
   transition: all 5s;
 }
 
+/* ⚝ Elements: Ripples */
 #painting.ripples {
   -webkit-user-select: none;
   user-select: none;
@@ -310,6 +316,98 @@ footer {
 
 #water-ripples-title {
   display: none;
+}
+
+/* layout from external demo: curtains, etc. */
+html, body {
+  min-height: 100%;
+}
+
+#note_1 {
+  transition: all 1s !important;
+}
+
+/*** layout ***/
+/*** canvas ***/
+#canvas.ripples {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
+/*** content ***/
+.dg.ac {
+  z-index: 3 !important;
+}
+
+#content.ripples {
+  position: relative;
+  z-index: 2;
+  touch-action: none; /* disable pull to refresh on mobile */
+}
+
+#water-ripples {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#water-ripples-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#water-ripples-title h1 {
+  color: white;
+  font-size: 8.5vw;
+  margin: 0;
+  opacity: 0;
+}
+
+#water-ripples img {
+  display: none;
+}
+
+#curtainsjs-ad {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-size: 0.75em;
+  color: white;
+  z-index: 3;
+  font-family: "Arial", sans-serif;
+}
+
+#curtainsjs-ad a {
+  color: inherit;
+}
+
+/*** handling errors ***/
+.no-curtains #water-ripples {
+  display: flex;
+  overflow: hidden;
+}
+
+.no-curtains #water-ripples img {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.no-curtains #water-ripples-title h1 {
+  opacity: 1;
 }
 
 /* ⚝ QR codes */

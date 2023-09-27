@@ -21,3 +21,8 @@ body {
 body.full{
     overflow:hidden;
 }
+
+canvas{
+    -webkit-user-select:none;
+    user-select:none;
+  }
