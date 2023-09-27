@@ -1,0 +1,21 @@
+.body__background.mix,main.mix{
+    border:none;
+}
+.main__qr.mix,.bar.mix{
+    border:none!important; 
+}
+image.mix{
+    transition: all 0.3s ease-in-out;
+    opacity:0.7;
+}
+#start.mix{
+    position:absolute;
+    bottom:20px;
+    
+}
+button.nav__back.mix{
+    max-width:800px;
+}
+input.mix{
+    opacity:0;
+}
