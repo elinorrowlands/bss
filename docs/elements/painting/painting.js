@@ -1,3 +1,5 @@
+window.multitouchMapper = window.touch;
+
 function fixFolder(){
     document.querySelectorAll('image').forEach((x,i)=>{
       x.setAttribute('xlink:href',`svg-test/${x.getAttribute('xlink:href')}`)

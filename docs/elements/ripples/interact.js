@@ -13,30 +13,30 @@ document.querySelectorAll('svg image').forEach((e,i)=>{
 
 
     const echo = new Tone.FeedbackDelay('4n',0.5).toMaster();
-    const synth = new Tone.PolySynth({
+    // const synth = new Tone.PolySynth({
        
-        oscillator:{
-          type:'sine'
-        },
-        envelope:{
-          attack:0.1,
-          decay:0.89,
-          sustain:0.91,
-          release:2.1
-        },
-        volume:-60
-    }).connect(echo);
-    synth.toMaster();
-    synth.voices.forEach(x=>{
-        x.envelope.attack = 0.5;
-        x.envelope.release = 1;
-        x.oscillator.type='sine';
-      }
-    )
+    //     oscillator:{
+    //       type:'sine'
+    //     },
+    //     envelope:{
+    //       attack:0.1,
+    //       decay:0.89,
+    //       sustain:0.91,
+    //       release:2.1
+    //     },
+    //     volume:-60
+    // }).connect(echo);
+    // synth.toMaster();
+    // synth.voices.forEach(x=>{
+    //     x.envelope.attack = 0.5;
+    //     x.envelope.release = 1;
+    //     x.oscillator.type='sine';
+    //   }
+    // )
 
     const meter = new Tone.Meter();
-    synth.connect(meter);
-    let level = 0;
+    // synth.connect(meter);
+    // let level = 0;
 
     // multitouchMapper.setAction('.visual',{
         

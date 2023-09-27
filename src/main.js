@@ -1,3 +1,4 @@
+import * as Tone from "tone";
 import SyncCC from "sync-cc";
 import MultitouchMapper from "@matthewscharles/multitouch-mapper";
 
@@ -11,7 +12,8 @@ import StatusVO from "status-vo";
 // using global scope while I work through webpack issues
 
 Object.assign(window,
-    {
+  {
+    Tone,
     cm: CM,
     srtToSbv,
     generateQR,

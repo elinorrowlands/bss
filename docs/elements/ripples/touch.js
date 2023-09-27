@@ -46,9 +46,9 @@ const Pickup = (e) =>{
     
     let id = getNoteFromId(element.id);
     if(type == 'start' || type == 'enter'){
-        synth.triggerAttack(id);
+        // synth.triggerAttack(id);
     } else if (type == 'end' || type == 'leave'){
-        synth.triggerRelease(id);
+        // synth.triggerRelease(id);
         document.body.style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
