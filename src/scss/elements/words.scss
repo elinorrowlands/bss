@@ -14,7 +14,13 @@ body.words {
     filter: hue-rotate(0deg);
 }
 
+.wordContainer{
+    width:100vw;
+    height:100vh;
+}
+
 .words {
+   
     &.transparent{
         opacity:0;
     }
@@ -36,10 +42,17 @@ body.words {
         padding:1.5rem;
         -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
         mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-        
+        font-size:2rem;
         &.active{
             opacity:1;
             letter-spacing:0.2px;
         }
+    }
+    &.moving{
+        position:absolute;
+        display:block;
+        transition:all 0s;
+        color:white;
+        z-index:40000;
     }
 }
