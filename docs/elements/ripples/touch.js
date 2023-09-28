@@ -26,6 +26,7 @@ function getTarget(id){
 }
 
 const Pickup = (e) =>{
+    Tone.start();
     const preset = {
         transition:{
             start:0.5, enter:0.5, end:1, move:-1, leave:2

@@ -80,4 +80,4 @@ const Pickup = (e) =>{
     }
 }
 
-document.addEventListener('touch-pickup',(e)=>Pickup(e));
+Tone.loaded().then(()=>{document.addEventListener('touch-pickup',(e)=>Pickup(e));})

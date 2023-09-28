@@ -79,6 +79,7 @@ force.on('tick', function(e){
     // })
     item.style('top', d=>{return `${parseInt(d.y)}px`})
         .style('left', d=>{return `${parseInt(d.x)}px`})
+        // .style('font-size', d=>{return `${(d.y/window.innerHeight*30)+10}px`})
         // .style('font-size', d=>{return `${d.size * 1.5}px`})
 });
 
