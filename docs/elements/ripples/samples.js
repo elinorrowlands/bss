@@ -33,9 +33,14 @@ function setBGAnimation(){
       $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getValue())*2));
       $('#note_2').css('transform', `translate(360px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.1})`);
       $('#note_0').css('transform', `translate(-100px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.9})`);
-
+if(Tone.dbToGain(sounds.echoMeter.getValue())>0.09){
+    const bumpEvent = new CustomEvent('bump');
+        window.dispatchEvent(bumpEvent);
+    }
   }, 30)
 }
+
+
 
 setBGAnimation();
 

@@ -68,6 +68,10 @@ let item = container.selectAll('wordContainer')
 
    // setInterval(()=>{force.alpha(0.01)},250);
 
+   window.addEventListener('bump', () => {
+    // console.log('bump')
+    force.alpha(0.5);
+    });
       
 force.on('tick', function(e){ 
     // item.attr('transform', function(d, i){
