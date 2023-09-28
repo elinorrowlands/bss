@@ -23,7 +23,7 @@
 		
 	</g>
 	<g mask="url(#wave2)">
-		<image  id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg"/>
+		<image class="mix" id="right__wave" x="0" y="0" width="237" height="1344" href="texture2.jpg"/>
 		<rect id="pos__right" class="vertical" x="0" y="0" width="100%" height="8" fill="cyan" opacity="0.5"/>
 	</g>
 </svg>
