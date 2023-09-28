@@ -39,7 +39,7 @@ let captionObject = syncCC.splitCaptions(newCaption);
 window.playFlag = false;
 
 function startElement(){
-    console.log('start')
+    Tone.start();
     document.querySelector('section.instructions').style.display = 'none';
     Tone.loaded().then(start);
 }
