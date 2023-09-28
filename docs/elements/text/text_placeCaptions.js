@@ -21,7 +21,7 @@ function placeCaptions(captionObject){
         
         textElement.id = `text_${i}`;
         textElement.innerHTML = text.content[0];
-        textElement.classList.add('text');
+        textElement.classList.add('text', 'words');
     
         captionObject.element = textElement;
         document.body.appendChild(textElement);

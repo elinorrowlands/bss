@@ -1,6 +1,9 @@
 .body__background.mix,main.mix{
     border:none;
 }
+.main__qr.mix{
+    background:none;
+}
 .main__qr.mix,.bar.mix{
     border:none!important; 
 }
@@ -16,6 +19,20 @@ image.mix{
 button.nav__back.mix{
     max-width:800px;
 }
+.bar.mix.xf{
+    width:100%; 
+    display:none;
+}
 input.mix{
     opacity:0;
+}
+
+circle.mix.display1{
+    transition:r 0.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out, fill 1s;
+    opacity:0.3;
+}
+
+circle.mix.display2{
+    transition:r 0.1s ease-in-out, fill 1s;
+    opacity:0.3;
 }

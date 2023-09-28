@@ -1,9 +1,9 @@
 
 <html lang="en">
   <head>
+    <title>BSS: mix</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BSS: mix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
@@ -11,67 +11,23 @@
     <link href="./style_mix.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
     <script src="../../main.js"></script>
-    <style>
-      .body__background,main{
-          border:none;
-      }
-      .main__qr,.bar{
-          border:none!important;
-          
-      }
-      image{
-          transition: all 0.3s ease-in-out;
-          opacity:0.7;
-      }
-      #start{
-          position:absolute;
-          bottom:20px;
-          
-      }
-      button.nav__back{
-          max-width:800px;
-      }
-      input{
-          opacity:0;
-      }
-      
-    </style>
   </head>
   <body>
-    <div class="body__background" aria-hidden="true" style="display:none;"></div>
-    <main class="main__qr" style="background:none!important;">
-      <div class="bar" style="width:100%; display:none;">
-        <input id="crossFader" type="range" min="0" max="1" step="0.01" value="0.5"/>
+    <div class="body__background mix" aria-hidden="true"></div>
+    <main class="main__qr mix">
+      <div class="bar mix xf">
+        <input class="mix" id="crossFader" type="range" min="0" max="1" step="0.01" value="0.5"/>
       </div>
-      <svg class="meter" id="meter_0" viewbox="0,0,800,800" aria-hidden="true"> 
-        <style>
-          circle{
-              transition:r 0.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out, fill 1s;
-              opacity:0.3;
-          }
-          rect{
-              
-          }
-          
-        </style>
-        <circle class="thumb inactive" id="circle_1" cx="50%" cy="50%" r="25" fill="cyan"></circle>
-        <rect class="inactive slider" id="slider__right" x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4"></rect>
+      <svg class="meter mix" id="meter_0" viewbox="0,0,800,800" aria-hidden="true"> 
+        <circle class="thumb mix inactive display1" id="circle_1" cx="50%" cy="50%" r="25" fill="cyan"></circle>
+        <rect class="mix inactive slider" id="slider__right" x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4"></rect>
       </svg>
       <svg class="meter" id="meter_1" viewbox="0,0,800,800" aria-hidden="true">
-        <style>
-          circle{
-              transition:r 0.1s ease-in-out, fill 1s;
-              opacity:0.3;
-          }
-          rect{
-              
-          }
-        </style>
         <rect class="inactive slider" id="slider__left" x="50%" y="0" width="50%" height="100%" fill="beige" opacity="0.5"></rect>
-        <circle class="thumb inactive" id="circle_0" cx="50%" cy="50%" r="20" fill="beige"></circle>
+        <circle class="thumb inactive mix display2" id="circle_0" cx="50%" cy="50%" r="20" fill="beige"></circle>
       </svg>
-      <div class="bar">
-        <button class="button allowDefault" id="start">START</button>
+      <div class="bar mix">
+        <button class="button allowDefault mix" id="start">START</button>
       </div><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,239,1356" style="filter:hue-rotate(-90deg)" aria-hidden="true" version="1.1" class="waveform inactive" id="left">
 	<defs>
 		<mask id="wave">

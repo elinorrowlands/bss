@@ -1,8 +1,8 @@
 html(lang="en")
     head
+        title BSS: mix
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title BSS: mix
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
@@ -10,61 +10,20 @@ html(lang="en")
         link(href="./style_mix.css" rel="stylesheet")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
         script(src="../../main.js")
-        style.
-            .body__background,main{
-                border:none;
-            }
-            .main__qr,.bar{
-                border:none!important;
-                
-            }
-            image{
-                transition: all 0.3s ease-in-out;
-                opacity:0.7;
-            }
-            #start{
-                position:absolute;
-                bottom:20px;
-                
-            }
-            button.nav__back{
-                max-width:800px;
-            }
-            input{
-                opacity:0;
-            }
-    // todo: apply .mix classes here
     body
-        .body__background(aria-hidden="true" style="display:none;")
-        main.main__qr(style="background:none!important;")
-            .bar(style="width:100%; display:none;")
-                input#crossFader(type="range" min="0" max="1" step="0.01" value="0.5")
-            svg#meter_0.meter(viewbox='0,0,800,800' aria-hidden="true") 
-                style.
-                    circle{
-                        transition:r 0.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out, fill 1s;
-                        opacity:0.3;
-                    }
-                    rect{
-                        
-                    }
-                    
-                circle#circle_1.thumb.inactive(cx="50%" cy="50%" r="25" fill="cyan")
-                rect#slider__right.inactive.slider(x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4")
+        .body__background.mix(aria-hidden="true")
+        main.main__qr.mix
+            .bar.mix.xf
+                input#crossFader.mix(type="range" min="0" max="1" step="0.01" value="0.5")
+            svg#meter_0.meter.mix(viewbox='0,0,800,800' aria-hidden="true") 
+                circle#circle_1.thumb.mix.inactive.display1(cx="50%" cy="50%" r="25" fill="cyan")
+                rect#slider__right.mix.inactive.slider(x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4")
                 
             svg#meter_1.meter(viewbox='0,0,800,800' aria-hidden="true")
-                style.
-                    circle{
-                        transition:r 0.1s ease-in-out, fill 1s;
-                        opacity:0.3;
-                    }
-                    rect{
-                        
-                    }
                 rect#slider__left.inactive.slider(x="50%" y="0" width="50%" height="100%" fill="beige" opacity="0.5")
-                circle#circle_0.thumb.inactive(cx="50%" cy="50%" r="20" fill="beige" )
-            .bar
-                button.button.allowDefault#start START
+                circle#circle_0.thumb.inactive.mix.display2(cx="50%" cy="50%" r="20" fill="beige" )
+            .bar.mix
+                button.button.allowDefault.mix#start START
             include L.svg 
             include R.svg
         include ../../loading
