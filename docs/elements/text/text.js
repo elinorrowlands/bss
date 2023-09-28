@@ -38,16 +38,6 @@ const newCaption = [
 let captionObject = syncCC.splitCaptions(newCaption);
 window.playFlag = false;
 
-// function startElement(){
-//     Tone.start();
-//     document.querySelector('section.instructions').style.display = 'none';
-//     Tone.loaded().then(window.start);
-// }
-
-// document.querySelectorAll('button.startElement').forEach(button=>{
-//     button.addEventListener('click', startElement);
-// });
-
 function loaded(){
         StatusVO.update('loaded');
         clearInterval(loadBlink);

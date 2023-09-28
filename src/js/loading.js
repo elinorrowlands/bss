@@ -37,5 +37,4 @@ function loaded(){
     });
 }
 
-
 export { loadingIndicator, loaded }
