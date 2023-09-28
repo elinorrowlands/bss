@@ -7,7 +7,6 @@ html(lang="en")
         link(rel='stylesheet', href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        //- link(rel="stylesheet" href="./style_text.css")
         script(src="../../main.js" defer)
         script(src="./text.js" defer type="module")
     body.words
@@ -15,7 +14,7 @@ html(lang="en")
         section.instructions
             p This element features text that has been broken up and scattered in the water.
             p Drag and tap around the words on-screen to play different parts of the text.
-            button.button.start#nav__start Start
+            button.button.start.allowDefault#nav__start Start
     include ../../checkLoaded
     script.
         checkLoaded('addBackButton');
