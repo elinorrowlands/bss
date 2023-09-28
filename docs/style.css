@@ -513,14 +513,14 @@ circle.mix.display2 {
   opacity: 0.3;
 }
 
-.words.body {
+body.words {
   background-color: navy;
   transition: filter 1s;
   overflow: hidden;
   touch-action: none;
   -webkit-user-select: none;
   user-select: none;
-  background-image: url("../../bg1.svg");
+  background-image: url("bg1.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -528,6 +528,7 @@ circle.mix.display2 {
   width: 100vw;
   filter: hue-rotate(0deg);
 }
+
 .words.text {
   border-radius: 10px;
   font-weight: bold;
