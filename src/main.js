@@ -7,6 +7,7 @@ import { srtToSbv, generateQR } from "@matthewscharles/cm-toolbox";
 
 import { loadingIndicator } from "./js/loading.js";
 import addBackButton from "./js/backButton.js";
+import assignStartButton from "./js/assignStartButton.js";
 import StatusVO from "status-vo";
 
 // using global scope while I work through webpack issues
@@ -24,3 +25,6 @@ Object.assign(window,
     StatusVO
   }
 )
+
+window.addEventListener('load', assignStartButton);
+// assignStartButton();

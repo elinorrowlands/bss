@@ -273,7 +273,7 @@ footer {
 }
 
 /* ⚝ Instructions */
-.instructions {
+section.instructions {
   background-color: navy;
   display: block;
   height: 100vh;
