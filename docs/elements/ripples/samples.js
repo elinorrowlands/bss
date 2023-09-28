@@ -30,9 +30,9 @@ function setBGAnimation(){
           document.body.style.filter = `hue-rotate(0deg)`;
       }
       
-      $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getLevel())*2));
-      $('#note_2').css('transform', `translate(360px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getLevel())*1.1})`);
-      $('#note_0').css('transform', `translate(-100px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getLevel())*1.9})`);
+      $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getValue())*2));
+      $('#note_2').css('transform', `translate(360px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.1})`);
+      $('#note_0').css('transform', `translate(-100px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.9})`);
 
   }, 30)
 }
