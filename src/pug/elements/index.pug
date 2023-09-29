@@ -11,16 +11,17 @@ html(lang="en")
         script(src="../main.js" defer)
         script(src="./qr.js" defer)
         style.
-            .qr__container{
+            .qr__container.elements{
                 margin:auto;
                 background-color:rgba(0,64,128,0.8);
             }
 
-            .index{
+            .index.elements{
                 width:90%!important;
+                margin:none!important;
             }
 
-            main{
+            main.elements{
                 left:0px;
                 right:0px;
                 margin:auto;
@@ -33,8 +34,8 @@ html(lang="en")
             }
     body
         include ../svg/title.svg
-        main.splash.qr__container
-            ol.bar.qr__container.index(style="margin:none!important;")
+        main.splash.qr__container.elements
+            ol.bar.qr__container.elements.index
         footer
             include footer  
         script.
