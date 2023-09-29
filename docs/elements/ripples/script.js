@@ -42,8 +42,8 @@ function setBGAnimation(){
             document.body.style.filter = `hue-rotate(0deg)`    
         }
         
-        let level = Tone.dbToGain(sounds.meter.getLevel())
-        let echoGain = Tone.dbToGain(sounds.echoMeter.getLevel())*2;
+        let level = Tone.dbToGain(sounds.meter.getValue())
+        let echoGain = Tone.dbToGain(sounds.echoMeter.getValue())*2;
 
         if(moused&&paintingFlag){
             $('#note_0').css('transform', `scale(${1 + level*2})`);

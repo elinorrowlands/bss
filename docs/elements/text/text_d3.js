@@ -41,38 +41,25 @@ let item = container.selectAll('wordContainer')
     .classed('text', true)
     .classed('moving', true)
     .call(force.drag); 
-    // .append('g') 
-
-// item.append('svg')
-//     .attr("preserveAspectRatio", "xMinYMin meet")
-//     .attr("viewBox", (d,i)=>{
-//         let dim = circleWidth + d.size;
-//         return `0 0 ${dim} ${dim}`
-//     })
-//     .attr("position", "absolute")
-//     .attr('top', d=>d.x)
-//     .attr('left', d=>d.y)
-//     .append('circle')
-//     .attr(cx,(d,i)=>{
-//         let dim = circleWidth + d.size;
-//         return dim
-//     })
-//     .attr('r', (d,i)=>{
-//         let dim = circleWidth + d.size;
-//         return dim
-//     })
-//     .classed('transparent', true)
-//     .classed('words', true)
           
    // setInterval(function(){force.alpha(Math.random());},1250);
 
    // setInterval(()=>{force.alpha(0.01)},250);
 
-   window.addEventListener('bump', () => {
+   window.addEventListener('bump', (e) => {
+    let {value} = e.detail;
+    
+    console.log(value);
     // console.log('bump')
-    force.alpha(0.5);
+    force.alpha(value);
+    force.charge(-1000*value);
     });
       
+    // window.addEventListener('bump', () => {
+    //     // console.log('bump')
+    //     force.alpha(0.5);
+    //     });
+            
 force.on('tick', function(e){ 
     // item.attr('transform', function(d, i){
     //     return 'translate(' + d.x + ','+ d.y + ')'

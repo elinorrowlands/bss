@@ -12,8 +12,8 @@ let moused = false;
 sounds.echo.wet.value = 1;
 sounds.loop.connect(sounds.filter);
 sounds.filter.toMaster();
-sounds.filter.connect(sounds.hpf);
-sounds.hpf.connect(sounds.echo);
+// sounds.filter.connect(sounds.hpf);
+// sounds.hpf.connect(sounds.echo);
 sounds.echo.connect(sounds.echoMeter);
 sounds.filter.connect(sounds.meter);
 
@@ -33,8 +33,12 @@ function setBGAnimation(){
       $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getValue())*2));
       $('#note_2').css('transform', `translate(360px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.1})`);
       $('#note_0').css('transform', `translate(-100px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.9})`);
-if(Tone.dbToGain(sounds.echoMeter.getValue())>0.09){
-    const bumpEvent = new CustomEvent('bump');
+if(Tone.dbToGain(sounds.meter.getValue())>0.09){
+    const bumpEvent = new CustomEvent('bump',{
+        detail: {
+            value: Tone.dbToGain(sounds.meter.getValue())
+        }
+    });
         window.dispatchEvent(bumpEvent);
     }
   }, 30)
