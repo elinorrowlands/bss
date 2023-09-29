@@ -7,6 +7,7 @@ import { srtToSbv, generateQR } from "@matthewscharles/cm-toolbox";
 
 import { replaceSvgAll } from "./js/replaceSvg.js";
 import { loadingIndicator } from "./js/loading.js";
+import assignClasses from "./js/assignClasses.js";
 import addBackButton from "./js/backButton.js";
 import assignStartButton from "./js/assignStartButton.js";
 import StatusVO from "status-vo";
@@ -22,6 +23,7 @@ Object.assign(window,
     syncCC: new SyncCC(),
     touch: new MultitouchMapper(),
     loadingIndicator,
+    assignClasses,
     addBackButton,
     StatusVO
   }

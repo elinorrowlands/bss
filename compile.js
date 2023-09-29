@@ -11,7 +11,7 @@ let pugFiles = [
     'elements/index',
 
     'elements/mix/index',
-    'elements/mix/mix_ripple',
+    // 'elements/mix/mix_ripple',
 
     'elements/bridge/index',
     'elements/bridge/effect',

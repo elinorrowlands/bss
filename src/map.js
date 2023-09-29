@@ -1,3 +1,5 @@
+// todo: update to reflect main.js or incorporate mapLoad into main.js
+
 import { srtToSbv, generateQR } from '@matthewscharles/cm-toolbox';
 import SyncCC from 'sync-cc';
 import MultitouchMapper from '@matthewscharles/multitouch-mapper'
