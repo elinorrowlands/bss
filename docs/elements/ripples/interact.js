@@ -12,7 +12,7 @@ document.querySelectorAll('svg image').forEach((e,i)=>{
     })
 
 
-    const echo = new Tone.FeedbackDelay('4n',0.5).toMaster();
+    // const echo = new Tone.FeedbackDelay('4n',0.5).toMaster();
     // const synth = new Tone.PolySynth({
        
     //     oscillator:{
@@ -34,7 +34,7 @@ document.querySelectorAll('svg image').forEach((e,i)=>{
     //   }
     // )
 
-    const meter = new Tone.Meter();
+    // const meter = new Tone.Meter();
     // synth.connect(meter);
     // let level = 0;
 

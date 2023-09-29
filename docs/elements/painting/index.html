@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BSS: Heart</title>
 	<link rel="stylesheet" href="../../style.css">
+	<script src="../../main.js" defer></script>
   </head>
   <body class="heart">
 	<svg class='heart' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3026 4034">
@@ -1037,19 +1038,6 @@
 	</div>
   </body>
 
-<script src="../../main.js"></script>
-<script src="./painting.js"></script>
-<script>
-    function checkLoaded(name) {
-        const interval = 100;
-        window.setTimeout(function() {
-            if (window[name]) {
-                window[name]();
-            } else {
-                checkLoaded(name);
-            }
-        }, interval);
-    }
-  </script>
-  <script>checkLoaded('addBackButton');</script>
+	<script src="./painting.js" defer></script>
+
 </html>
