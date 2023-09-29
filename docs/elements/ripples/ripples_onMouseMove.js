@@ -33,7 +33,6 @@ export default function onMouseMove(e) {
 
         weblgMouseCoords = this.ripples.mouseToPlaneCoords(this.mouse.current.x, this.mouse.current.y);
         this.ripples.uniforms.mousePosition.value = [weblgMouseCoords.x, weblgMouseCoords.y];
-
         
         if(updateVelocity) {
             this.mouse.velocity = {
