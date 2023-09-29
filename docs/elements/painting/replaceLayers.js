@@ -1,4 +1,4 @@
 window.addEventListener('load', ()=>{
     console.log('loaded');
-    assignClasses();
+    assignClasses(document.querySelector('svg'), true);
 })
