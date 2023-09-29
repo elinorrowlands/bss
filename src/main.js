@@ -5,6 +5,7 @@ import MultitouchMapper from "@matthewscharles/multitouch-mapper";
 import CM from "@matthewscharles/cm-toolbox";
 import { srtToSbv, generateQR } from "@matthewscharles/cm-toolbox";
 
+import { replaceSvgAll } from "./js/replaceSvg.js";
 import { loadingIndicator } from "./js/loading.js";
 import addBackButton from "./js/backButton.js";
 import assignStartButton from "./js/assignStartButton.js";
@@ -27,6 +28,7 @@ Object.assign(window,
 )
 
 window.addEventListener('load', ()=>{
+  replaceSvgAll();
   loadingIndicator.init();
   addBackButton();
   assignStartButton();
