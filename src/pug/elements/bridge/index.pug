@@ -94,12 +94,11 @@ body(onload="loader()")
                     }
             
         include bridge_simplified.html
-//- include ../../checkLoaded
 script(src='conversions.js')
 script(src='setInteractions.js')
 script(src='loader.js')
 script.
-    let loadScript = loadingIndicator.init()
+    //- let loadScript = loadingIndicator.init()
     document.querySelectorAll('#Group_2 path').forEach((x,i)=>{
         x.classList.add('interact')
         x.classList.add('path')
