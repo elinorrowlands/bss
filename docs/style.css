@@ -190,7 +190,7 @@ canvas#overlay {
   text-rendering: optimizeLegibility;
   text-transform: uppercase;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
-  width: 10em;
+  max-width: 500px;
 }
 
 .button:hover {

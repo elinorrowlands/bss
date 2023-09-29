@@ -1,4 +1,4 @@
-window.layersToSvg = true;
+// window.layersToSvg = true;
 window.multitouchMapper = window.touch;
 
 function getContainerSvg(containerElement){
