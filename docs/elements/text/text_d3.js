@@ -1,11 +1,4 @@
-// let   w = 1000,
-//       h =  800,
-//       circleWidth = 5; 
- 
-let textInput = 'the quick brown fox jumps over the lazy dog';
-textInput = textInput.split(' ');
-
-textInput= 
+let textInput= 
     `where is the water's edge? 
     \nin the wide expanses? 
     \nor the half filled bathtub? 
@@ -76,9 +69,9 @@ force.on('tick', function(e){
 });
 
 
-item.append('div')
+item.append('span')
     .text(d=>d.name)
-    // .classed('5ords', true)
+    // .classed('words', true)
     // .classed('text', true)
 
 force.start();
