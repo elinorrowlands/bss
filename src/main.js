@@ -26,5 +26,8 @@ Object.assign(window,
   }
 )
 
-window.addEventListener('load', assignStartButton);
-// assignStartButton();
+window.addEventListener('load', ()=>{
+  loadingIndicator.init();
+  addBackButton();
+  assignStartButton();
+});

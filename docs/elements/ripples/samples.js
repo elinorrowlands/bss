@@ -71,4 +71,4 @@ window.addEventListener('mouseup',(e) => {
 Tone.start();
 let loadScript = loadingIndicator.init();
 var paintingFlag = true;
-checkLoaded('addBackButton');
+// checkLoaded('addBackButton');

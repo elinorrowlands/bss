@@ -67,18 +67,6 @@
   <script src="./script.js" type="module" defer></script>
   <script src="./interact.js" defer></script>
   <script src="./touch.js" defer></script>
-  <script>
-    function checkLoaded(name) {
-        const interval = 100;
-        window.setTimeout(function() {
-            if (window[name]) {
-                window[name]();
-            } else {
-                checkLoaded(name);
-            }
-        }, interval);
-    }
-  </script>
   <script src="./samples.js" defer></script>
   <script src="../text/text_d3.js" defer></script>
   <script>
