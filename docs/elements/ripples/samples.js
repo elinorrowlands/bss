@@ -2,7 +2,7 @@ const sounds = {
     loop: new Tone.Player("nesting.mp3"),
     meter: new Tone.Meter(),
     filter: new Tone.Filter(200, "lowpass"),
-    hpf: new Tone.Filter(400, "highpass"),
+    // hpf: new Tone.Filter(400, "highpass"),
     echo: new Tone.FeedbackDelay("2n", 0.5).toMaster(),
     echoMeter: new Tone.Meter()
 }

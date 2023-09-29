@@ -42,17 +42,14 @@ let item = container.selectAll('wordContainer')
     .classed('moving', true)
     .call(force.drag); 
           
-   // setInterval(function(){force.alpha(Math.random());},1250);
-
-   // setInterval(()=>{force.alpha(0.01)},250);
-
+   
    window.addEventListener('bump', (e) => {
-    let {value} = e.detail;
-    
-    console.log(value);
-    // console.log('bump')
+    let {value} = e.detail; 
     force.alpha(value);
     force.charge(-1000*value);
+    if(window.rippleScene){
+        rippleScene.ripples.mouse.velocity = {x:1, y:1};
+    }
     });
       
     // window.addEventListener('bump', () => {
@@ -64,8 +61,16 @@ force.on('tick', function(e){
     // item.attr('transform', function(d, i){
     //     return 'translate(' + d.x + ','+ d.y + ')'
     // })
-    item.style('top', d=>{return `${parseInt(d.y)}px`})
-        .style('left', d=>{return `${parseInt(d.x)}px`})
+    item.style('top', d=>{
+        let y = d.y;
+        if(y>window.innerHeight-50) y = window.innerHeight-50;
+        if(y<50) y = 50;
+        return `${parseInt(y)}px`})
+        .style('left', d=>{
+            let x = d.x;
+            if(x>window.innerWidth-250) x = window.innerWidth-250;
+            if(x<50) x = 50;
+            return `${parseInt(x)}px`})
         // .style('font-size', d=>{return `${(d.y/window.innerHeight*30)+10}px`})
         // .style('font-size', d=>{return `${d.size * 1.5}px`})
 });
