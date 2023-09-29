@@ -1,4 +1,15 @@
+window.layersToSvg = true;
 window.multitouchMapper = window.touch;
+
+function getContainerSvg(containerElement){
+  do {
+    containerElement = containerElement.parentElement;
+} while (containerElement.tagName !== 'svg');
+// containerElement = containerElement.parentElement;
+console.log('getcontainersvg', containerElement)
+return containerElement;
+}
+
 
 function fixFolder(){
     document.querySelectorAll('image').forEach((x,i)=>{
@@ -79,10 +90,12 @@ function fixFolder(){
       multitouchMapper.setAction('.visual',{
           
           start: function(element, e, obj){
+              
               Tone.start();
               console.log('start',element.id, document.querySelector(`#${element.id.split('_hc')[0]}`))
               console.log(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
+              if(window.layersToSvg) newElement = getContainerSvg(newElement);
               newElement.style.transition = 'all 0.1s ease';
               newElement.style.opacity = 0.3;
               synth.triggerAttack(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency());
@@ -91,6 +104,7 @@ function fixFolder(){
           enter: function(element, e, obj){
               
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
+              if(window.layersToSvg) newElement = getContainerSvg(newElement);
               newElement.style.transition = 'all 0.1s ease';
               newElement.style.opacity = 0.3;
               synth.triggerAttack(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency());
@@ -99,23 +113,28 @@ function fixFolder(){
           end: function(element, e, obj){
               
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
+              if(window.layersToSvg) newElement = getContainerSvg(newElement);
               newElement.style.transition = 'all 1s ease';
               newElement.style.opacity = 1;
               synth.triggerRelease(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
-              newElement.parentElement.style.transform = `rotate(${0}deg)`;
+              newElement.style.transform = `rotate(${0}deg)`;
           },
   
           leave: function(element, e, obj){
               
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
+              if(window.layersToSvg) newElement = getContainerSvg(newElement);
+              
               newElement.style.transition = 'all 1s ease';
               newElement.style.opacity = 1;
               synth.triggerRelease(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
-              newElement.parentElement.style.transform = `rotate(${0}deg)`;
+              newElement.style.transform = `rotate(${0}deg)`;
           },
   
           move: function(element, e, obj){
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
+              if(window.layersToSvg) newElement = getContainerSvg(newElement);
+              console.log(window.layersToSvg, newElement);
               newElement.style.transition = 'all 4s ease';
               newElement.style.opacity = 0;
               synth._voices.forEach((voice,i)=>{
@@ -123,7 +142,8 @@ function fixFolder(){
               })
               
               document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
-              newElement.parentElement.style.transform = `rotate(${level * obj.distance.y * 10}deg)`;
+              newElement.style.transform = `rotate(${level * obj.distance.y * 100}deg)`;
+              console.log(newElement.style.transform)
           }
       })
   

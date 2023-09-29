@@ -7,7 +7,7 @@
  * @param {boolean} copyMasks whether to copy masks or not -- this works with a specific gradient masking setup I use. cm
  */
 
-function assignClasses(element=document, copyMasks = false){
+function assignClasses(element=document, copyMasks = false, bringParent = false){
     let HC = {};
     element.querySelectorAll('.hc, .pickup').forEach((hcElement)=>{
         // console.log(hcElement)
@@ -24,8 +24,10 @@ function assignClasses(element=document, copyMasks = false){
     });
     
     element.querySelectorAll('Image').forEach((imageGroup)=>{
+        if(bringParent) imageGroup = imageGroup.parentElement;
         let noteName = imageGroup.id.replace('_Image','');
         let classes = [noteName, 'note'];
+        
         imageGroup.classList.add(...classes);
         
         // console.log(imageGroup.id, imageGroup.parentElement.parentElement.parentElement.parentElement);
@@ -46,7 +48,7 @@ function assignClasses(element=document, copyMasks = false){
         newSVG.classList.add('note','display',noteName);
         
         if(copyMasks){
-            console.log('mask group',containerElement.querySelector('g.mask__edges'));
+            // console.log('mask group',containerElement.querySelector('g.mask__edges'));
             masks.push(containerElement.querySelector('g.mask__edges').cloneNode(false));
             masks.push(containerElement.querySelector('g.mask__edges g.mask__edges').cloneNode(false))
             masks[0].appendChild(masks[1]);
@@ -62,6 +64,5 @@ function assignClasses(element=document, copyMasks = false){
         container.appendChild(newSVG);
     });
 }
-
 
 export default assignClasses;
