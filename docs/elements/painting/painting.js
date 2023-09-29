@@ -92,8 +92,8 @@ function fixFolder(){
           start: function(element, e, obj){
               
               Tone.start();
-              console.log('start',element.id, document.querySelector(`#${element.id.split('_hc')[0]}`))
-              console.log(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
+              // console.log('start',element.id, document.querySelector(`#${element.id.split('_hc')[0]}`))
+              // console.log(Tone.Frequency(1*(parseFloat(element.id.split('_')[1])%12)+72, 'midi').toFrequency())
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
               newElement.style.transition = 'all 0.1s ease';
@@ -142,8 +142,8 @@ function fixFolder(){
               })
               
               document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
-              newElement.style.transform = `rotate(${level * obj.distance.y * 100}deg)`;
-              console.log(newElement.style.transform)
+              newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
+              console.log(newElement.style.transform, newElement)
           }
       })
   
