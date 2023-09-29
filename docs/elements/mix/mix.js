@@ -107,6 +107,11 @@ sounds.forEach((sound,i) => {
     mix.channels[i].connect(i === 0 ? mix.crossFader.a : mix.crossFader.b);
 });
 
+
+
+window.addEventListener('load',()=>{
+    console.log('startButton', startButton)
+})
 startButton.addEventListener("click", () => {
     playFlag = !playFlag;
     crossFaderUpdate({target:{value:0.5}});

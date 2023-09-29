@@ -14,11 +14,20 @@ image.mix{
 #start.mix{
     position:absolute;
     bottom:20px;
-    
 }
-button.nav__back.mix{
-    max-width:800px;
+
+#start.mix.square{
+    position:absolute;
+    bottom:20px;
+    height:100px;
+    width:100px;
+    border:none;
+    &:hover{
+        cursor:pointer;
+        background:none;
+    }
 }
+
 .bar.mix.xf{
     width:100%; 
     display:none;
@@ -35,4 +44,16 @@ circle.mix.display1{
 circle.mix.display2{
     transition:r 0.1s ease-in-out, fill 1s;
     opacity:0.3;
+}
+
+// svg#start{
+//    z-index:9999; 
+// }
+
+.start__icon{
+    width:100%;
+    height:100%;
+    transform-origin:center center;
+    transform:scale(10);
+    display:inline-block;
 }

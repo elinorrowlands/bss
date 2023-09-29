@@ -10,6 +10,12 @@ html(lang="en")
         link(href="./style_mix.css" rel="stylesheet")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
         script(src="../../main.js" defer)
+        script(type="module" src="./mix.js" defer)
+        script(src="mix2.js" defer)
+        style.
+            #start__icon{
+                
+            }
     body
         .body__background.mix(aria-hidden="true")
         main.main__qr.mix
@@ -25,11 +31,13 @@ html(lang="en")
             svg#meter_1.meter(viewbox='0,0,800,800' aria-hidden="true")
                 rect#slider__left.inactive.slider(x="50%" y="0" width="50%" height="100%" fill="beige" opacity="0.5")
                 circle#circle_0.thumb.inactive.mix.display2(cx="50%" cy="50%" r="20" fill="beige" )
+            
             .bar.mix
-                button.button.allowDefault.mix#start START
+                button.button#start.allowDefault.mix START
+                    //- object.svg-import.allowDefault.mix.start__icon(data="../../icons/noun-play-1018347-FFFFFF.svg" type="image/svg+xml" aria-label='start')
+                
             object#left.svg-import(data="./L.svg" type="image/svg+xml")
             object#right.svg-import(data="./R.svg" type="image/svg+xml")
 
-    script(type="module" src="./mix.js" defer)
-    script(src="mix2.js" defer)
+
         

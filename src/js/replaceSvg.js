@@ -5,8 +5,7 @@
  * @param {HTMLElement} objectElement 
  */
 
-const replaceSvgObject = function(objectElement) {
-    console.log(objectElement)
+const replaceSvgObject = function(objectElement, attributes=['role','aria-label','aria-hidden']) {
     let newSvgElement = objectElement.contentDocument.querySelector('svg');
     if (!newSvgElement) {
         // since this is now in the window onload, 
@@ -41,6 +40,13 @@ const replaceSvgObject = function(objectElement) {
     newSvgElement.classList.replace('svg-import', 'svg-imported');
     
     newSvgElement.id = `${objectElement.id}`;
+     // Transfer attributes from objectElement to newSvgElement
+     attributes.forEach(attr => {
+        if (objectElement.hasAttribute(attr)) {
+            newSvgElement.setAttribute(attr, objectElement.getAttribute(attr));
+        }
+    });
+    
     objectElement.replaceWith(newSvgElement); 
 }
 
