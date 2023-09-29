@@ -15,6 +15,9 @@ html(lang="en")
         main.main__qr.mix
             .bar.mix.xf
                 input#crossFader.mix(type="range" min="0" max="1" step="0.01" value="0.5")
+                
+            // these inline SVGs can stay for now
+            
             svg#meter_0.meter.mix(viewbox='0,0,800,800' aria-hidden="true") 
                 circle#circle_1.thumb.mix.inactive.display1(cx="50%" cy="50%" r="25" fill="cyan")
                 rect#slider__right.mix.inactive.slider(x="0" y="0" width="50%" height="100%" fill="cyan" opacity="0.4")
@@ -26,8 +29,6 @@ html(lang="en")
                 button.button.allowDefault.mix#start START
             object#left.svg-import(data="./L.svg" type="image/svg+xml")
             object#right.svg-import(data="./R.svg" type="image/svg+xml")
-            //- include L.svg
-            //- include R.svg
 
     script(type="module" src="./mix.js" defer)
     script(src="mix2.js" defer)
