@@ -3,29 +3,30 @@
 /**
  * Assign classes to elements and create new SVGs for each relevant layer.
  * Generic version of function developed in instrument sandbox
- * @param {*} element 
+ * @param {HTMLObject} element svg element
  */
 
 function assignClasses(element=document){
     let HC = {};
-    element.querySelectorAll(generateSelector('hc')).forEach((element)=>{
-        let noteName = element.id.replace('_Imageremove_hc','');
+    element.querySelectorAll('.hc, .pickup').forEach((hcElement)=>{
+        console.log(hcElement)
+        let noteName = hcElement.id.replace('_Imageremove_hc','');
         let classes = [noteName,'note','hc']; 
-        element.classList.add(...classes);
-        element.querySelectorAll('path,polygon,polyline').forEach((y,i)=>{
+        hcElement.classList.add(...classes);
+        hcElement.querySelectorAll('path,polygon,polyline').forEach((y,i)=>{
             y.classList.add('note', ...classes);
             y.id = `${noteName}_hc_${i}`;
             y.dataset.note = noteName;
         })
         
-        HC[noteName] = element;
+        HC[noteName] = hcElement;
     });
-    
-    element.querySelectorAll(generateSelector('Image')).forEach((imageGroup)=>{
+    console.log(HC);
+    element.querySelectorAll('Image').forEach((imageGroup)=>{
         let noteName = imageGroup.id.replace('_Image','');
         let classes = [noteName, 'note'];
         imageGroup.classList.add(...classes);
-        
+        console.log(imageGroup, imageGroup.parentElement)
         let newSVG = imageGroup.parentElement.cloneNode(false);
         let container = imageGroup.parentElement.parentElement || document.body;
     
