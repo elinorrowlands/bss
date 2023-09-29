@@ -79,24 +79,16 @@ function setBGAnimation(){
         let rgbaValues = [Tone.dbToGain(sounds.meter.getLevel())*10,
                           Tone.dbToGain(sounds.loop2Meter.getLevel())*10,
                           Tone.dbToGain(sounds.loop3Meter.getLevel())*10];
-        // console.log('rgbaValues',rgbaValues);
         rgbaValues = rgbaValues
                         .map((x)=>{return Math.floor(x*255)})
                         .map((x=>{if(x>255) {return 255} else {return x}}))
         
         let rgbaString = `rgba(${rgbaValues.join(',')},0.9)`;
         let rgbaString2 = `rgba(${rgbaValues.reverse().join(',')},0.9)`;
-        // document.querySelector('.button').innerHTML = rgbaString;
-                        // .map((x)=>{return x.toString(16)})
-        // $('#waterCircle').attr('fill',`rgba(${0.1 + Tone.dbToGain(sounds.meter.getLevel())},${0.1 + Tone.dbToGain(sounds.loop2Meter.getLevel())},${0.1 + Tone.dbToGain(sounds.loop3Meter.getLevel())},1)`);
-        // console.log('rgbaValues',rgbaValues);
-        // document.querySelector('.button').setAttribute('color',rgbaString);
-        // $('#waterCircle').attr('fill',`#${rgbaValues.join('')}`);
-        // $('#echoCircle').attr('fill',`#${rgbaValues.reverse().join('')}`);
+    
         document.querySelector('#echoCircle').setAttribute('fill',rgbaString);
         document.querySelector('#echoCircle2').setAttribute('fill',rgbaString2);
         $('#waterCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getLevel())*4})`);
-        // $('#echoCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getLevel())*4})`);
         $('#can__0').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`);
         $('#can__0__circ').css('r', `${100 + Tone.dbToGain(sounds.meter.getLevel())*4}`);
         $('#can__bg').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`);
