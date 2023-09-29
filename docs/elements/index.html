@@ -58,18 +58,6 @@
       <p class="footer__logos" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo" id="logo__canal" src="../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"> <img class="logo" id="logo__ace" src="../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo" id="logo__coles" src="../logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo" id="logo__chc" src="../logos/chc.png" alt="Creative Health Camden"/></a></p>
     </footer>
     <script>
-      function checkLoaded(name) {
-          const interval = 100;
-          window.setTimeout(function() {
-              if (window[name]) {
-                  window[name]();
-              } else {
-                  checkLoaded(name);
-              }
-          }, interval);
-      }
-    </script>
-    <script>
       document.querySelector('#main__title').classList.add('nav__back')
       let baseURL = 'https://elinorrowlands.github.io/bss/';
       
@@ -165,7 +153,7 @@
       
       })
       
-      checkLoaded('addBackButton');
+      //- checkLoaded('addBackButton');
       if(window.touch) touch.unlisten();
     </script>
   </body>
