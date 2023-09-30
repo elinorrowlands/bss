@@ -9,11 +9,16 @@ html(lang="en")
     body 
         main
         #backdrop
-        include map/map2.html
+        //- include map/map2.html
+        //- object#map.svg-import(data="svg/map2.svg" type="image/svg+xml")
         canvas#overlay
 
     include checkLoaded
 
     script(type="module").
-        checkLoaded('mapLoad')
+        //- checkLoaded('mapLoad')
         Tone.start();
+        document.querySelectorAll('#water_halo path').forEach((x,i)=>{
+            x.classList.add('visual');
+            x.id = `water_halo_${i}`;
+        })
