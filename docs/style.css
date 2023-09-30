@@ -701,6 +701,7 @@ body.words {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  gap: 10em;
   margin: 2em;
   flex-grow: 1;
   background-color: navy;
@@ -710,7 +711,7 @@ main.qr__container {
   background-color: navy;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1em;
+  grid-gap: 2em;
   justify-items: center;
   align-items: center;
   margin: 2em;
