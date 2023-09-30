@@ -6,35 +6,18 @@ function getContainerSvg(containerElement){
     containerElement = containerElement.parentElement;
 } while (containerElement.tagName !== 'svg');
 // containerElement = containerElement.parentElement;
-console.log('getcontainersvg', containerElement)
+// console.log('getcontainersvg', containerElement)
 return containerElement;
 }
 
 
 function fixFolder(){
-    document.querySelectorAll('image').forEach((x,i)=>{
-      x.setAttribute('xlink:href',`svg-test/${x.getAttribute('xlink:href')}`)
-    })
-  }
-
-  document.querySelectorAll('svg image').forEach((e,i)=>{
-    if(i>0){
-      e.id =`note_${i-1}`;
-      e.style.transformOrigin = 'center center';
-      e.parentElement.classList.add('pickup');
-      
-      e.parentElement.querySelectorAll(`[id$='_hc']`).forEach((x)=>{
-        x.querySelectorAll('path').forEach((y,j)=>{
-          y.classList.add('visual');
-          y.id = `note_${i-1}_hc_${j}`;
-          y.style.opacity=0;
-        })
-      })
-
-    } else {
-      e.style.opacity=0;
-    }
+  document.querySelectorAll('image').forEach((x,i)=>{
+    x.setAttribute('xlink:href',`svg-test/${x.getAttribute('xlink:href')}`)
   })
+}
+
+
   
   const echo = new Tone.FeedbackDelay('4n',0.5).toDestination();
   const synth = new Tone.PolySynth({
@@ -58,35 +41,12 @@ function fixFolder(){
   synth.connect(meter);
   let level = 0;
 
-  /**
-   * Loading code to break out
-  */
-  let loadBlinkCount = 0;
-  const loadBlink = () => {
-      document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;
-      document.querySelectorAll('.loading')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
-      document.querySelectorAll('.loadMsg')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
-      loadBlinkCount++;
-  }
-
-  setInterval(loadBlink, 5000);
-
-  function loaded(){
-      // todo: add load status message for screen readers
-      document.querySelectorAll('.loading').forEach(element => {
-          clearInterval(loadBlink);
-          element.style.opacity = 0;
-          setTimeout(() => {
-              element.style.display = 'none';
-          }, 1000);
-      });
-  }
   Tone.loaded().then(()=>{
       start();
   });
   
   function start(){
-      loaded();
+      
       multitouchMapper.setAction('.visual',{
           
           start: function(element, e, obj){
@@ -134,7 +94,7 @@ function fixFolder(){
           move: function(element, e, obj){
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
-              console.log(window.layersToSvg, newElement);
+              // console.log(window.layersToSvg, newElement);
               newElement.style.transition = 'all 4s ease';
               newElement.style.opacity = 0;
               synth._voices.forEach((voice,i)=>{
@@ -143,7 +103,7 @@ function fixFolder(){
               
               document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
               newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
-              console.log(newElement.style.transform, newElement)
+              // console.log(newElement.style.transform, newElement)
           }
       })
   
