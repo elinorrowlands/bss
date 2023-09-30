@@ -23,6 +23,10 @@
     bottom:0;
 }
 
+.footer__content{
+    text-align: center;
+}
+
 footer {
     position:relative;
     bottom:0;
@@ -31,4 +35,11 @@ footer {
     max-height: 250px;
     background-color:$background;
     margin:none;
+}
+
+.logo-fit{
+    width:20%;
+    margin:2.5%;
+    aspect-ratio:3/2;
+    object-fit:contain;
 }
