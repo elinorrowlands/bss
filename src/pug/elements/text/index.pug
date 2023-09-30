@@ -10,7 +10,17 @@ html(lang="en")
         script(src="../../main.js" defer)
         script(src="./text.js" defer type="module")
     body.words
-        section.instructions
-            p This element features a text that has been broken up and scattered in the water.
-            p Drag and tap around the words on-screen to play different parts of the text.
-            button.button.startElement.allowDefault#nav__start Start
+        // INSTRUCTIONS ON PAGE LOAD
+        section.instructions.flex.scrollable
+            .instructions__text
+                h1.instructions Text
+                p Instructions ...
+                p Instructions ...
+                p Instructions ...
+                
+                button.button.startElement.allowDefault#nav__start Start 
+                
+                p Instructions ...
+                p Instructions ...
+                
+            include ../footer__back

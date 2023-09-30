@@ -725,6 +725,14 @@ body.words {
   opacity: 1;
   align-self: center;
   color: #9EC1CF;
+  paint-order: stroke;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-opacity: 1;
+  stroke: navy;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: 1px 1px 0px #000;
 }
 
 .qr__container {
@@ -803,7 +811,7 @@ body.words {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  gap: 10em;
+  gap: 2em;
   margin: 2em;
   flex-grow: 1;
   background-color: navy;
@@ -893,6 +901,8 @@ path {
 h1 {
   font-size: 4rem;
   background-color: navy;
+}
+h1.padded {
   padding: 1em;
 }
 

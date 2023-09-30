@@ -56,9 +56,11 @@ path {
 h1 {
     font-size: 4rem;
     background-color: $background2;
-    padding: 1em;
+    
+    &.padded{
+      padding: 1em;
+    }
 }
-
 
 path {
     transition: opacity 1s ease-in-out;

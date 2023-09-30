@@ -13,9 +13,25 @@ body.fullpage
       include interact_painting.html
       img(src='reflection1.jpeg' alt='water' crossorigin='' data-sampler='planeTexture')
       //- img(src='reflection_edge.png' alt='water' crossorigin='' data-sampler='planeTexture')
-  section.instructions
-    p Ripples instructions ...
-    button.button.startElement.allowDefault#nav__start Start
+  
+      // INSTRUCTIONS ON PAGE LOAD
+      section.instructions.flex.scrollable
+          .instructions__text
+              h1.instructions Ripples
+              p Instructions ...
+              p Instructions ...
+              p Instructions ...
+              
+              button.button.startElement.allowDefault#nav__start Start 
+              
+              p Instructions ...
+              p Instructions ...
+            
+          include ../footer__back
+
+  
+  
+  
   script(src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js')
   script(src='https://www.curtainsjs.com/build/curtains.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
