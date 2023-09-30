@@ -854,6 +854,18 @@ main.qr__container {
   filter: brightness(80%) grayscale(100%) hue-rotate(0deg);
 }
 
+#map2 {
+  opacity: 0.9;
+}
+
+.water__halo.halo {
+  opacity: 0.3;
+}
+
+.halo {
+  opacity: 0.3;
+}
+
 main.splash {
   flex-grow: 1;
   overflow: hidden;

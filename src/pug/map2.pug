@@ -4,13 +4,14 @@ html(lang="en")
         title Biodivergent Sites and Sounds: map
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
-        script(src="./map/main.js" defer)
+        //- script(src="./map/main.js" defer)
         
-    body 
+    body(style='background-color: #fff!important;')
         main
-        #backdrop
+        //- #backdrop
         //- include map/map2.html
-        //- object#map.svg-import(data="svg/map2.svg" type="image/svg+xml")
+        object#map2.svg-import.map__layer(data="svg/map2a.svg" type="image/svg+xml")
+        object#map.svg-import.map__layer(data="svg/map2.svg" type="image/svg+xml")
         canvas#overlay
 
     include checkLoaded

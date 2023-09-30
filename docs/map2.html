@@ -11,11 +11,11 @@
     <title>Biodivergent Sites and Sounds: map</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-    <script src="./map/main.js" defer="defer"></script>
   </head>
-  <body> 
+  <body style="background-color: #fff!important;">
     <main></main>
-    <div id="backdrop"></div>
+    <object class="svg-import map__layer" id="map2" data="svg/map2a.svg" type="image/svg+xml"></object>
+    <object class="svg-import map__layer" id="map" data="svg/map2.svg" type="image/svg+xml"></object>
     <canvas id="overlay"></canvas>
   </body>
   <script>
@@ -33,5 +33,9 @@
   <script type="module">
     //- checkLoaded('mapLoad')
     Tone.start();
+    document.querySelectorAll('#water_halo path').forEach((x,i)=>{
+        x.classList.add('visual');
+        x.id = `water_halo_${i}`;
+    })
   </script>
 </html>
