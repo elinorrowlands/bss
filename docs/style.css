@@ -238,6 +238,7 @@ canvas#overlay {
 
 .footer__content {
   text-align: center;
+  vertical-align: middle;
 }
 
 footer {
@@ -256,7 +257,30 @@ footer {
   aspect-ratio: 3/2;
   object-fit: contain;
 }
+.logo-fit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
+@supports not (aspect-ratio: 3/2) {
+  .logo-fit {
+    position: relative;
+  }
+  .logo-fit:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 66.6666666667%;
+  }
+  .logo-fit > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
 /* ⚝ Front page */
 #main__title {
   opacity: 0.8;
