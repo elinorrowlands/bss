@@ -239,6 +239,7 @@ canvas#overlay {
 .footer__content {
   text-align: center;
   vertical-align: middle;
+  margin: none;
 }
 
 footer {
@@ -249,6 +250,22 @@ footer {
   max-height: 250px;
   background-color: darkblue;
   margin: none;
+}
+
+footer.instructions {
+  position: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-height: 250px;
+  background-color: darkblue;
+  margin: none;
+  box-sizing: border-box;
+  min-height: none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .logo-fit {
@@ -347,6 +364,23 @@ section.instructions {
   position: absolute;
   text-align: center;
   z-index: 2000;
+}
+
+section.instructions.grid {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.instructions__text {
+  flex-grow: 1;
+}
+
+section.instructions.flex {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ⚝ Loading */

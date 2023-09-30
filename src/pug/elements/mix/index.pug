@@ -12,10 +12,6 @@ html(lang="en")
         script(src="../../main.js" defer)
         script(type="module" src="./mix.js" defer)
         script(src="mix2.js" defer)
-        style.
-            #start__icon{
-                
-            }
     body
         .body__background.mix(aria-hidden="true")
         main.main__qr.mix
@@ -38,8 +34,10 @@ html(lang="en")
                 
             object#left.svg-import(data="./L.svg" type="image/svg+xml")
             object#right.svg-import(data="./R.svg" type="image/svg+xml")
-        section.instructions
-            p Mix instructions ...
-            button.button.startElement.allowDefault#nav__start Start
+        section.instructions.flex
+            .instructions__text
+                p Mix instructions ...
+                button.button.startElement.allowDefault#nav__start Start
+            include ../footer__back
 
         

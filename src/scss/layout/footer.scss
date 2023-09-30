@@ -43,6 +43,7 @@
 .footer__content{
     text-align: center;
     vertical-align: middle;
+    margin:none;
 }
 
 footer {
@@ -53,6 +54,22 @@ footer {
     max-height: 250px;
     background-color:$background;
     margin:none;
+}
+
+footer.instructions {
+    position:auto;
+    bottom:auto;
+    left:auto;
+    width:100%;
+    max-height: 250px;
+    background-color:$background;
+    margin:none;
+    box-sizing: border-box;
+    min-height: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .logo-fit{
