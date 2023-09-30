@@ -13,7 +13,7 @@
 }
 
 .front__water {
-    opacity: 0.6;
+    opacity: 0.1;
     position: fixed;
     display: block;
     top: 0;
@@ -34,7 +34,7 @@
 
 .front__water.alt{
     transform: scale(6);
-    opacity:0.5;
+    opacity:0.2;
     animation: scale2 161s ease-in-out infinite alternate;
 }
 
