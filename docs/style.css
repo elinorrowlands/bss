@@ -27,6 +27,12 @@
   }
 }
 /* ⚝ Body */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html,
 body {
   overscroll-behavior-y: none;
@@ -198,6 +204,12 @@ canvas#overlay {
   border-color: transparent;
   color: darkblue;
   cursor: pointer;
+}
+
+#main__title.about {
+  display: inline-block;
+  position: static;
+  height: 20vh !important;
 }
 
 /* ⚝ Footer */
