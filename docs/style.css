@@ -383,6 +383,11 @@ section.instructions.flex {
   flex-direction: column;
 }
 
+.scrollable {
+  overflow: auto;
+  padding: 1em;
+}
+
 /* ⚝ Loading */
 .loading {
   position: absolute;
