@@ -7,11 +7,12 @@ const ready = () => {
 
 const render = () => {
         this.ripples.uniforms.velocity.value = [this.mouse.velocity.x, this.mouse.velocity.y];
-
+        if(window.verbose)console.log('pre-lerp',this.mouse.velocity))
         this.mouse.velocity = {
             x: this.lerp(this.mouse.velocity.x, 0, 0.1),
             y: this.lerp(this.mouse.velocity.y, 0, 0.1),
         };
+        if(window.verbose)console.log('post-lerp',this.mouse.velocity)
 
         this.ripples.uniforms.velocity.value = [this.mouse.velocity.x, this.mouse.velocity.y];
 

@@ -6,9 +6,9 @@
 export default function update(e={x:0,y:0}){
     let {x, y} = e;
     // act as if the mouse is pressed
-    this.mouse.last.x = this.mouse.current.x;
-    this.mouse.last.y = this.mouse.current.y;
-    
+    this.mouse.last.x = x;
+    this.mouse.last.y = y;
+    console.log('update', this.mouse.last.x, this.mouse.last.y)
     let weblgMouseCoords = this.ripples.mouseToPlaneCoords(this.mouse.last.x, this.mouse.last.y);
     this.ripples.uniforms.lastMousePosition.value = [weblgMouseCoords.x, weblgMouseCoords.y];
     

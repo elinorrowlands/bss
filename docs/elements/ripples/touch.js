@@ -27,6 +27,7 @@ function getTarget(id){
 
 const Pickup = (e) =>{
     Tone.start();
+    let (x,y) = e.detail;
     const preset = {
         transition:{
             start:0.5, enter:0.5, end:1, move:-1, leave:2
@@ -55,6 +56,8 @@ const Pickup = (e) =>{
     let id = getNoteFromId(element.id);
     if(type == 'start'){
         // synth.triggerAttack(id);
+        console.log('touch start')
+        rippleScene.ripples.update({x, y});
         viscosity.value = 2;
     } else if(type == 'enter') {
     }else if (type == 'end' || type == 'leave'){
@@ -63,6 +66,7 @@ const Pickup = (e) =>{
     } else if(type == 'move'){
         document.body.style.filter = `hue-rotate(${element.x}deg)`;
         viscosity.value = Math.max(7, (iterations/100)+1);
+        console.log('touch move')
     }
     
     target.style.opacity = preset.opacity[type];

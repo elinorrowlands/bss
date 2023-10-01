@@ -206,6 +206,15 @@ export default class Ripples {
                 window.addEventListener("mousemove", (e) => this.onMouseMove(e));
                 window.addEventListener("touchmove", (e) => this.onMouseMove(e));
             }).onRender(() => {
+                let threshold = 1;
+                if(this.mouse.velocity.x > threshold) this.mouse.velocity.x = threshold;
+                if(this.mouse.velocity.x < -threshold) this.mouse.velocity.x = -threshold;
+                if(this.mouse.velocity.y > threshold) this.mouse.velocity.y = threshold;
+                if(this.mouse.velocity.y < -threshold) this.mouse.velocity.y = -threshold;
+                
+                if(this.mouse.velocity.x> 0 || this.mouse.velocity.y > 0){
+                    // console.log('after',this.mouse.velocity)    
+                }
                 this.ripples.uniforms.velocity.value = [this.mouse.velocity.x, this.mouse.velocity.y];
 
                 this.mouse.velocity = {
@@ -213,23 +222,17 @@ export default class Ripples {
                     y: this.lerp(this.mouse.velocity.y, 0, 0.1),
                 };
                 if(this.mouse.velocity.x> 0 || this.mouse.velocity.y > 0){
-                    console.log(this.mouse.velocity)    
+                    // console.log('before',this.mouse.velocity)    
                 }
                 
-                this.mouse.velocity.x = Math.max(this.mouse.velocity.x, 5);
-                this.mouse.velocity.x = Math.min(this.mouse.velocity.x, -5);
-                this.mouse.velocity.y = Math.max(this.mouse.velocity.y, 5);
-                this.mouse.velocity.y = Math.min(this.mouse.velocity.y, -5);
                 
-                console.log(this.mouse.velocity)    
-                
-                this.ripples.uniforms.velocity.value = [this.mouse.velocity.x, this.mouse.velocity.y];
-
+                if(window.verbose)console.log(this.ripples.uniforms.velocity.value);
                 this.ripples.uniforms.time.value++;
-
+                
                 // update the render target
                 this.writePass && this.ripples.setRenderTarget(this.writePass);
-
+                
+                this.ripples.uniforms.velocity.value = [this.mouse.velocity.x, this.mouse.velocity.y];
             }).onAfterRender(() => {
                 // swap FBOs and update texture
                 if(this.readPass && this.writePass) {
