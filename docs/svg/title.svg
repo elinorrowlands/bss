@@ -3,7 +3,7 @@
     <style>
     text{
         paint-order:stroke;
-        stroke-width:20px;
+        stroke-width:3px;
         stroke-linecap:butt;
         stroke-linejoin:miter;
         stroke-opacity:1;
