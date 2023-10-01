@@ -68,7 +68,7 @@ const Pickup = (e) =>{
         if(sounds[id]){
             // sounds[id].volume.rampTo(-12,1);
         }
-        console.log('range.x',range.x)
+        if(window.verbose)console.log('range.x',range.x)
         document.querySelector('main').style.filter = `hue-rotate(${x/range.x*360}deg)`;
         let notchValue = 4000+(4000 * ((y)/range.y));
         sounds.notch.frequency.rampTo(notchValue, 1);
