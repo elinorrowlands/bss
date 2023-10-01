@@ -371,6 +371,7 @@ export default class RipplesScene {
 
             canvas.setAttribute("data-sampler", "titleTexture");
             canvas.style.display = "none";
+            canvas.setAttribute('id', 'ripples__canvas')
 
             this.scenePlane.loadCanvas(canvas);
 

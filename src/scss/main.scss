@@ -161,3 +161,11 @@ body.fullpage{
 // .hc path,polygon,rect{
 //   opacity:0;
 // }
+
+.awaitStart{
+  transition:opacity 10s ease;
+}
+
+.transparent{
+  opacity:0;
+}

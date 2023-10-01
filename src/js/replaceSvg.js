@@ -5,7 +5,7 @@
  * @param {HTMLElement} objectElement 
  */
 
-const replaceSvgObject = function(objectElement, attributes=['role','aria-label','aria-hidden']) {
+const replaceSvgObject = function(objectElement, attributes=['role','aria-label','aria-hidden', 'alt']) {
     let newSvgElement = objectElement.contentDocument.querySelector('svg');
     if (!newSvgElement) {
         // since this is now in the window onload, 

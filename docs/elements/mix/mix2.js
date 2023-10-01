@@ -42,3 +42,6 @@ document.addEventListener('touch-pickup',(e)=>{
         
     })
 })
+
+document.querySelector('#crossFader').value = 50;
+document.querySelector('#crossFader').dispatchEvent(new Event('input'));

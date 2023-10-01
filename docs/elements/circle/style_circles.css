@@ -4,7 +4,7 @@ body {
     background: url('reflection1.jpeg') no-repeat center center fixed;
     background-size: cover;
     touch-action: none;
-    filter:hue-rotate(180deg);
+    /* filter:hue-rotate(180deg); */
     transition:filter 1s ease;
     transform-origin: center center;
     overflow:hidden;

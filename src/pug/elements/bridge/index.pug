@@ -45,7 +45,7 @@ head
     
 body(onload="loader()")
     #backdrop
-    main.container
+    main.container.awaitStart.transparent
         #toolbar.allowDefault(style='display:block;')
             #play__container
                 button#play PLAY
@@ -94,9 +94,20 @@ body(onload="loader()")
                     }
             
         include bridge_simplified.html
-    section.instructions
-        p Bridge instructions ...
-        button.button.startElement.allowDefault#nav__start Start
+    // INSTRUCTIONS ON PAGE LOAD
+    section.instructions.flex.scrollable
+        .instructions__text
+            h1.instructions Bridge
+            p Instructions ...
+            p Instructions ...
+            p Instructions ...
+            
+            button.button.startElement.allowDefault#nav__start Start 
+            
+            p Instructions ...
+            p Instructions ...
+        
+        include ../footer__back
 script(src='conversions.js')
 script(src='setInteractions.js')
 script(src='loader.js')

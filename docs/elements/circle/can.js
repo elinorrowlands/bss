@@ -1,4 +1,4 @@
-
+// const elementsWithoutId = document.querySelectorAll('path*:not([id])');
 
 const container = 'body';
 
@@ -53,6 +53,8 @@ sounds.hpf.connect(sounds.echo);
 sounds.echo.connect(sounds.echoMeter);
 sounds.filter.connect(sounds.meter);
 
+
+
 function setBGAnimation(){
     let i = 0, count = 0;
     setInterval( () => {
@@ -61,24 +63,24 @@ function setBGAnimation(){
         
         if(moused){
             let hue = Math.floor(count/30%100);
-            $('#can__bg').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel())*2);
-            document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`;
+            $('#can__bg').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getValue())*2);
+            document.querySelector('#canvas').style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`;
             document.querySelectorAll('.canBG.ghost').forEach((el) => {
-                el.style.filter = `hue-rotate(${Math.floor(hue)}deg) grayscale(${Tone.dbToGain(sounds.meter.getLevel())*1000}%)`;
-                el.style.transform = `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`;
-                el.style.opacity = 0.9 + Tone.dbToGain(sounds.meter.getLevel());
+                el.style.filter = `hue-rotate(${Math.floor(hue)}deg) grayscale(${Tone.dbToGain(sounds.meter.getValue())*1000}%)`;
+                el.style.transform = `scale(${0.9 + Tone.dbToGain(sounds.meter.getValue())*1})`;
+                el.style.opacity = 0.9 + Tone.dbToGain(sounds.meter.getValue());
             })
         } else {
-            document.body.style.filter = `hue-rotate(0deg)`;
-            $('#can__bg').css('opacity',0.5 + Tone.dbToGain(sounds.meter.getLevel()));
-            $('.canBG.ghost').css('opacity',0.4 + Tone.dbToGain(sounds.meter.getLevel()));
+            document.querySelector('#canvas').style.filter = `hue-rotate(0deg)`;
+            $('#can__bg').css('opacity',0.5 + Tone.dbToGain(sounds.meter.getValue()));
+            $('.canBG.ghost').css('opacity',0.4 + Tone.dbToGain(sounds.meter.getValue()));
             $('.canBG.ghost').css('opacity',0);
         }
        
-        $('#waterCircle').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getLevel()));
-        let rgbaValues = [Tone.dbToGain(sounds.meter.getLevel())*10,
-                          Tone.dbToGain(sounds.loop2Meter.getLevel())*10,
-                          Tone.dbToGain(sounds.loop3Meter.getLevel())*10];
+        $('#waterCircle').css('opacity',0.1 + Tone.dbToGain(sounds.meter.getValue()));
+        let rgbaValues = [Tone.dbToGain(sounds.meter.getValue())*10,
+                          Tone.dbToGain(sounds.loop2Meter.getValue())*10,
+                          Tone.dbToGain(sounds.loop3Meter.getValue())*10];
         rgbaValues = rgbaValues
                         .map((x)=>{return Math.floor(x*255)})
                         .map((x=>{if(x>255) {return 255} else {return x}}))
@@ -88,15 +90,15 @@ function setBGAnimation(){
     
         document.querySelector('#echoCircle').setAttribute('fill',rgbaString);
         document.querySelector('#echoCircle2').setAttribute('fill',rgbaString2);
-        $('#waterCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getLevel())*4})`);
-        $('#can__0').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`);
-        $('#can__0__circ').css('r', `${100 + Tone.dbToGain(sounds.meter.getLevel())*4}`);
-        $('#can__bg').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getLevel())*1})`);
-        $('#echoCircle').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*6})`);
-        $('#can__1').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.echoMeter.getLevel())*1.3})`);
-        $('#echoCircle2').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getLevel())*10})`);
-        $('#can__0__circ').css('opacity', `${0.1 + Tone.dbToGain(sounds.loop2Meter.getLevel())*4}`);
-        $('#can__1__circ').css('opacity', `${0.1 + Tone.dbToGain(sounds.loop3Meter.getLevel())*4}`);
+        $('#waterCircle').css('transform', `scale(${0.1 + Tone.dbToGain(sounds.meter.getValue())*4})`);
+        $('#can__0').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getValue())*1})`);
+        $('#can__0__circ').css('r', `${100 + Tone.dbToGain(sounds.meter.getValue())*4}`);
+        $('#can__bg').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.meter.getValue())*1})`);
+        $('#echoCircle').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getValue())*6})`);
+        $('#can__1').css('transform', `scale(${0.9 + Tone.dbToGain(sounds.echoMeter.getValue())*1.3})`);
+        $('#echoCircle2').css('transform', `scale(${0 + Tone.dbToGain(sounds.echoMeter.getValue())*10})`);
+        $('#can__0__circ').css('opacity', `${0.1 + Tone.dbToGain(sounds.loop2Meter.getValue())*4}`);
+        $('#can__1__circ').css('opacity', `${0.1 + Tone.dbToGain(sounds.loop3Meter.getValue())*4}`);
         
     },60)
 }
@@ -125,6 +127,9 @@ window.addEventListener('mouseup',(e) => {
     sounds.filter.frequency.rampTo(200, 1);
     moused=false;
 });
+
+
+
 
 Tone.start();
 

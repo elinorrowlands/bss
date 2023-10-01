@@ -1000,4 +1000,12 @@ body.fullpage {
   max-height: 90vh;
 }
 
+.awaitStart {
+  transition: opacity 10s ease;
+}
+
+.transparent {
+  opacity: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

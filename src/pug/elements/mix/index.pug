@@ -14,7 +14,7 @@ html(lang="en")
         script(src="mix2.js" defer)
     body
         .body__background.mix(aria-hidden="true")
-        main.main__qr.mix
+        main.main__qr.mix.awaitStart.transparent
             .bar.mix.xf
                 input#crossFader.mix(type="range" min="0" max="1" step="0.01" value="0.5")
                 
@@ -29,7 +29,7 @@ html(lang="en")
                 circle#circle_0.thumb.inactive.mix.display2(cx="50%" cy="50%" r="20" fill="beige" )
             
             .bar.mix
-                button.button#start.allowDefault.mix START
+                button.button#start.allowDefault.mix PLAY
                     //- object.svg-import.allowDefault.mix.start__icon(data="../../icons/noun-play-1018347-FFFFFF.svg" type="image/svg+xml" aria-label='start')
                 
             object#left.svg-import(data="./L.svg" type="image/svg+xml")
@@ -43,7 +43,7 @@ html(lang="en")
                 p Instructions ...
                 p Instructions ...
                 
-                button.button.startElement.allowDefault#nav__start Start
+                button.button.startElement.allowDefault#nav__start Start »
                 
                 p Instructions ...
                 p Instructions ...
