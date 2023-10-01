@@ -128,8 +128,5 @@ window.addEventListener('mouseup',(e) => {
     moused=false;
 });
 
-
-
-
 Tone.start();
 

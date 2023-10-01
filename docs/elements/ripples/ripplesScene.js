@@ -1,6 +1,8 @@
 import Ripples from './ripples.js'
 import writeTitleCanvas from './ripples_writeTitleCanvas.js'
 
+const useText = false;
+
 /*** 
 This is the class that renders the whole scene (tiles texture and title) and apply the texture returned by our Ripples class to create ripples
 ***/
@@ -377,7 +379,7 @@ export default class RipplesScene {
 
             this.scenePlane.onLoading((texture) => {
                 texture.shouldUpdate = false;
-                if(false && this.scenePlane.canvases && this.scenePlane.canvases.length > 0) {
+                if(useText && this.scenePlane.canvases && this.scenePlane.canvases.length > 0) {
                     // title
                     if(document.fonts) {
                         document.fonts.ready.then(() => {

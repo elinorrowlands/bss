@@ -19,14 +19,14 @@ export default function onMouseMove(e) {
         
         updateVelocity = [this.mouse.last.x, this.mouse.last.y, this.mouse.current.x, this.mouse.current.y] != [0,0,0,0];
 
-        // if(
-        //     this.mouse.last.x === 0
-        //     && this.mouse.last.y === 0
-        //     && this.mouse.current.x === 0
-        //     && this.mouse.current.y === 0
-        // ) {
-        //     updateVelocity = false;
-        // }
+        if(
+            this.mouse.last.x === 0
+            && this.mouse.last.y === 0
+            && this.mouse.current.x === 0
+            && this.mouse.current.y === 0
+        ) {
+            updateVelocity = false;
+        }
 
         this.mouse.current.x = e.targetTouches ? e.targetTouches[0].clientX : e.clientX;
         this.mouse.current.y = e.targetTouches ? e.targetTouches[0].clientY : e.clientY;

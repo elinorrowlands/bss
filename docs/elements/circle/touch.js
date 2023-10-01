@@ -61,7 +61,7 @@ const Pickup = (e) =>{
             if(sounds.can.state =='stopped') sounds.can.start();
             sounds.can.reverse = true;
         }
-        document.body.style.filter = `hue-rotate(0deg)`;
+        document.querySelector('main').style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
         
         sounds.can.playbackRate = (x/range.x)*2;
@@ -69,7 +69,7 @@ const Pickup = (e) =>{
             // sounds[id].volume.rampTo(-12,1);
         }
         console.log('range.x',range.x)
-        document.body.style.filter = `hue-rotate(${x/range.x*360}deg)`;
+        document.querySelector('main').style.filter = `hue-rotate(${x/range.x*360}deg)`;
         let notchValue = 4000+(4000 * ((y)/range.y));
         sounds.notch.frequency.rampTo(notchValue, 1);
         notchValue = 4000+(4000 * ((x)/range.x));
