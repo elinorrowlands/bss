@@ -457,6 +457,11 @@ html, body {
   z-index: 1;
   width: 100vw;
   overflow: none;
+  transition: filter 0.5s;
+}
+
+main.ripples {
+  transition: filter 0.6s;
 }
 
 /*** content ***/

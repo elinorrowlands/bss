@@ -1,12 +1,5 @@
 import RipplesScene from './ripplesScene.js'
-import ramps from './tone_ramps.js';
 
-let mouseX = 0;
-let started = false;
-let moused = false;
-let bgAnimation;
-let count = 0;
-var paintingFlag = false;
 window.addEventListener("load", () => {
     if(!window.rippleScene){
         window.rippleScene = new RipplesScene({

@@ -11,7 +11,7 @@ var paintingFlag = false;
 window.addEventListener("load", () => {
     if(!window.rippleScene){
         window.rippleScene = new RipplesScene({
-            viscosity: 10,
+            viscosity: 5,
             speed: 8,
             size: 0.75,
             displacementStrength: 1.5,
@@ -28,18 +28,24 @@ window.addEventListener("keydown", (e) => {
     } else if (e.key == "h"){
         rippleScene.gui.hide();
     }
+    // if(e.key == "a"){
+    //     rippleScene.ripples.ripples.uniforms.viscosity.value = rippleScene.ripples.ripples.uniforms.viscosity.value == 5 ? 1 : 5;
+    // }
 });
 
 function setBGAnimation(){
     bgAnimation = setInterval( () => {
         
         count++;
-        
+        let hueElement = document.querySelector('main');
+        let canvasElement = document.querySelector('canvas');
         if(moused){
             let hue = mouseX;
-            document.body.style.filter = `hue-rotate(${hue}deg) brightness(100%)`
+            hueElement.style.filter = `hue-rotate(${hue}deg) brightness(100%)`
+            canvasElement.style.filter = `hue-rotate(${-hue}deg) brightness(100%)`
         } else {
-            document.body.style.filter = `hue-rotate(0deg)`    
+            hueElement.style.filter = `hue-rotate(0deg)`    
+            canvasElement.style.filter = `hue-rotate(0deg)`
         }
         
         let level = Tone.dbToGain(sounds.meter.getValue())
