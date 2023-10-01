@@ -50,7 +50,7 @@ function setBGAnimation(){
             if(canvasElement) canvasElement.style.filter = `hue-rotate(0deg)`
         }
         
-        let level = Tone.dbToGain(sounds.meter.getValue())
+        let level = Tone.dbToGain(sounds.meter.getValue()*4)
         let echoGain = Tone.dbToGain(sounds.echoMeter.getValue())*2;
 
         if(moused&&paintingFlag){

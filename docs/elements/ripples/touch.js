@@ -62,9 +62,9 @@ const Pickup = (e) =>{
     } else if(type == 'enter') {
     }else if (type == 'end' || type == 'leave'){
         // synth.triggerRelease(id);
-        document.body.style.filter = `hue-rotate(0deg)`;
+        document.querySelector('main').style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
-        document.body.style.filter = `hue-rotate(${element.x}deg)`;
+        document.querySelector('main').style.filter = `hue-rotate(${x}deg)`;
         viscosity.value = Math.max(7, (iterations/100)+1);
         console.log('touch move')
     }
