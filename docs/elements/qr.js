@@ -10,8 +10,8 @@ let elements = {
         folder: 'elements/ripples',
         qr:null
     },
-    'circle': {
-        folder: 'elements/circle',
+    'rusty_can': {
+        folder: 'elements/rusty_can',
         qr:null
     },
     'text': {
@@ -22,8 +22,8 @@ let elements = {
         folder: 'elements/mix',
         qr:null
     },
-    'painting': {
-        folder: 'elements/painting',
+    'heart': {
+        folder: 'elements/heart',
         qr:null
     },
 }
@@ -45,7 +45,7 @@ window.addEventListener('load',()=>{
 
         elements[key].text = document.createElement('div');
         elements[key].text.classList.add('qr__text');
-        elements[key].text.innerHTML = key.replace('painting','heart');
+        elements[key].text.innerHTML = key.replace('_',' ');
 
         elements[key].qr = generateQR(elements[key].url, `qr__${key}`);
         elements[key].qr.classList.add('qr__svg');
