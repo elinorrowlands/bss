@@ -13,32 +13,16 @@ body.fullpage.bridge
     #backdrop.bridge
     main.container.awaitStart.transparent
         include toolbar
-    div#interactive
-        svg#interactive__svg.bridge(version='1.1' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 100 100' preserveaspectratio='none')
-            defs 
-                linearGradient#gradient(x1='0%' y1='0%' x2='100%' y2='0%')
-                    stop(offset='0%' stop-color='white')
-                    stop(offset='50%' stop-color='black')
-                    stop(offset='100%' stop-color='white')
-                mask#cover__img--mask 
-                    rect#cover__img--mask(x='0' y='0' width='100' height='200' fill='white')
-                    rect#cover__img--mask__bottom.bridge.cover__mask(x='0' y='25' width='100' height='25' fill='black')
-                    rect#cover__img--mask__top.bridge.cover__mask(x='0' y='0' width='100' height='10' fill='black')       
-        object#bridge.bridge.svg-import(data='bridge_simplified.svg' type='image/svg+xml')
-        object#bridge_white_light.bridge.svg-import(data='bridge_white_light.svg' type='image/svg+xml')
-        object#bridge_white_light_interaction.bridge.svg-import(data='bridge_white_light_interaction.svg' type='image/svg+xml')
-        
+        div#interactive
+            include bridge_masks
+            object#bridge.bridge.svg-import(data='bridge_simplified.svg' type='image/svg+xml')
+            object#bridge_white_light.bridge.svg-import(data='bridge_white_light.svg' type='image/svg+xml')
+            object#bridge_white_light_interaction.bridge.svg-import(data='bridge_white_light_interaction.svg' type='image/svg+xml')
+            
     // INSTRUCTIONS ON PAGE LOAD
     section.instructions.flex.scrollable
         .instructions__text
             h1.instructions Bridge
-            p Instructions ...
-            p Instructions ...
-            p Instructions ...
-            
+            p Swipe under the bridge to change the sights and sounds.
             button.button.startElement.allowDefault#nav__start Start 
-            
-            p Instructions ...
-            p Instructions ...
-        
         include ../footer__back
