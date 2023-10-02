@@ -28,37 +28,41 @@ window.saveState = function saveState(index){
         states[index][parameterName] = faders[parameterName].value;
     })
     
-    states[index].colour = RGBToHSL(...hexToRGB(document.querySelector('#colour-picker').value));
+    states[index].colour = CM.RGBToHSL(...CM.hexToRGB(document.querySelector('#colour-picker').value));
 }
 
 
-window.interpolateStates = function interpolateStates(value){
-    let parameters = ['echo', 'lpf', 'comb__time', 'comb__feedback'];
-   
-    if(true){
+window.interpolateStates = function interpolateStates(value, parameters=['echo', 'lpf', 'comb__time', 'comb__feedback']){
+
+    let updateFaders = true;
+    if(updateFaders){
         parameters.forEach(parameterName=>{
             faders[parameterName].value = interpolateParameter(value, parameterName, states[1], states[2]);
         })
     }
-    
+
     let hsl = hslToArray(interpolateColour(value, states[1], states[2]));
 
-    if(true){
-        document.querySelector('#colour-picker').value = HSLToHex(...hsl);
-    }
+    let updateColours = true;
+    if(updateColours){
+        let colourPicker = document.querySelector('#colour-picker');
+        if(colourPicker) {
+            colourPicker.value = CM.HSLToHex(...hsl);
+            document.body.style.backgroundColor = document.querySelector('#colour-picker').value;
+        }
+}
 
-    document.body.style.backgroundColor = document.querySelector('#colour-picker').value;
+    
 
     echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
     
     lpf.frequency.rampTo(faders.lpf.value*20000+50, 0.1)
-    console.log(faders.lpf.value*20000+50, 0.1)
+    // console.log(faders.lpf.value*20000+50, 0.1)
     comb.delayTime.rampTo(states[1].comb__time * (1-value) + states[2].comb__time * value * 0.8 + 0.1, 0.1);
     comb.resonance.rampTo(states[1].comb__feedback * (1-value) + states[2].comb__feedback * value * 0.8 + 0.1, 0.1);
 }
 
 const loader = ()=>{
-    console.log('loader')
     touch.depth=4;
 
     faders = {
@@ -99,8 +103,6 @@ const loader = ()=>{
 
     states.current={};
     Object.assign(states.current, states[1]);
-
-   
 
     window.hslToArray = function hslToArray(hsl){
         // let output = hsl.match(/\d+/g).map(Number);
@@ -144,21 +146,40 @@ const loader = ()=>{
         playButton.innerHTML = player.state == 'started' ? 'STOP' : 'PLAY';
     });
 
-    faders.echo.addEventListener('input', (e) => {
-        echo.wet.rampTo(parseFloat(e.target.value), 0.1);
-    });
-
-    faders.lpf.addEventListener('input',(e)=>{
-        lpf.frequency.rampTo(parseFloat(e.target.value)*20000+50, 0.1);
+    let parametersTypes = {
+        echo: {
+            parameter: echo.wet,
+            process: (value) => (value * 20000) + 50,
+            time: 0.1
+        },
+        lpf: {
+            parameter: lpf.frequency,
+            process: (value) => (value * 20000) + 50,
+            time: 0.1
+        },
+        comb__time: {
+            parameter: comb.delayTime,
+            process: (value) => (value * 0.5),
+            time: 0.1
+        },
+        comb__feedback: {
+            parameter: comb.resonance,
+            process: (value) => (value),
+            time: 0.1
+        }
+    }
+    
+    let parameterNames = Object.keys(parametersTypes);
+    parameterNames.forEach(parameterName=>{
+        faders[parameterName].addEventListener('input', (e)=>{
+            parametersTypes[parameterName]
+                .parameter.rampTo(
+                    parametersTypes[parameterName].process(parseFloat(e.target.value))
+                    , parametersTypes[parameterName].time
+                );
+        })
     })
-
-    faders.comb__time.addEventListener('input',(e)=>{
-        comb.delayTime.rampTo(parseFloat(e.target.value)*0.5, 0.2);
-    })
-
-    faders.comb__feedback.addEventListener('input',(e)=>{
-        comb.resonance.rampTo(parseFloat(e.target.value), 0.1);
-    })
+    
 
     setInteractions();
 

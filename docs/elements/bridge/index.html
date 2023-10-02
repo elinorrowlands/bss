@@ -6,7 +6,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.js"></script>
   <link rel="stylesheet" href="../../style.css">
   <script src="../../main.js" defer></script>
-  <script src="conversions.js"></script>
   <script src="window.js" type="module" defer></script>
 </head>
 <body class="fullpage bridge">
@@ -38,36 +37,32 @@
         <input id="states__interpolate" type="range" min="0" max="1" step="0.01" value="0">
       </div>
     </div>
+    <div id="interactive">
+      <svg class="bridge" id="interactive__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="none">
+        <defs> 
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="white"></stop>
+            <stop offset="50%" stop-color="black"></stop>
+            <stop offset="100%" stop-color="white"></stop>
+          </linearGradient>
+          <mask id="cover__img--mask"> 
+            <rect id="cover__img--mask" x="0" y="0" width="100" height="200" fill="white"></rect>
+            <rect class="bridge cover__mask" id="cover__img--mask__bottom" x="0" y="25" width="100" height="25" fill="black"></rect>
+            <rect class="bridge cover__mask" id="cover__img--mask__top" x="0" y="0" width="100" height="10" fill="black">      </rect>
+          </mask>
+        </defs>
+      </svg>
+      <object class="bridge svg-import" id="bridge" data="bridge_simplified.svg" type="image/svg+xml"></object>
+      <object class="bridge svg-import" id="bridge_white_light" data="bridge_white_light.svg" type="image/svg+xml"></object>
+      <object class="bridge svg-import" id="bridge_white_light_interaction" data="bridge_white_light_interaction.svg" type="image/svg+xml"></object>
+    </div>
   </main>
-  <div id="interactive">
-    <svg class="bridge" id="interactive__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="none">
-      <defs> 
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="white"></stop>
-          <stop offset="50%" stop-color="black"></stop>
-          <stop offset="100%" stop-color="white"></stop>
-        </linearGradient>
-        <mask id="cover__img--mask"> 
-          <rect id="cover__img--mask" x="0" y="0" width="100" height="200" fill="white"></rect>
-          <rect class="bridge cover__mask" id="cover__img--mask__bottom" x="0" y="25" width="100" height="25" fill="black"></rect>
-          <rect class="bridge cover__mask" id="cover__img--mask__top" x="0" y="0" width="100" height="10" fill="black">      </rect>
-        </mask>
-      </defs>
-    </svg>
-    <object class="bridge svg-import" id="bridge" data="bridge_simplified.svg" type="image/svg+xml"></object>
-    <object class="bridge svg-import" id="bridge_white_light" data="bridge_white_light.svg" type="image/svg+xml"></object>
-    <object class="bridge svg-import" id="bridge_white_light_interaction" data="bridge_white_light_interaction.svg" type="image/svg+xml"></object>
-  </div>
   <!-- INSTRUCTIONS ON PAGE LOAD-->
   <section class="instructions flex scrollable">
     <div class="instructions__text">
       <h1 class="instructions">Bridge</h1>
-      <p>Instructions ...</p>
-      <p>Instructions ...</p>
-      <p>Instructions ...</p>
+      <p>Swipe under the bridge to change the sights and sounds.</p>
       <button class="button startElement allowDefault" id="nav__start">Start </button>
-      <p>Instructions ...</p>
-      <p>Instructions ...</p>
     </div>
     <footer class="instructions">
       <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"></a></p>
