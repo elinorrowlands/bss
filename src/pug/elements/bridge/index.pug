@@ -12,27 +12,7 @@ head
 body.fullpage.bridge
     #backdrop.bridge
     main.container.awaitStart.transparent
-        #toolbar.allowDefault
-            #play__container
-                button#play PLAY
-            #effect__container
-                label(for='effect__echo') Echo time
-                input#effect__echo.fader(type='range' min='0' max='1' step='0.01' value='0.5')
-                label(for='effect__echo') Echo amount
-                input#effect__echo.fader(type='range' min='0' max='1' step='0.01' value='0.5')
-                label(for='effect__lpf') Lowpass filter
-                input#effect__lpf.fader(type='range' min='0' max='1' step='0.01' value='0.5')
-                label(for='effect__comb__time') Comb time
-                input#effect__comb__time.fader(type='range' min='0.1' max='0.9' step='0.01' value='0.5')
-                label(for='effect__comb__feedback') Comb resonance
-                input#effect__comb__feedback.fader(type='range' min='0' max='0.9' step='0.01' value='0.5')
-            #colour-picker__container
-                label(for='colour-picker') Colour picker
-                input#colour-picker(type='color' value='#0000ff')
-            #states__containers
-                button#states__save__1 SAVE 1
-                button#states__save__2 SAVE 2
-                input#states__interpolate(type='range' min='0' max='1' step='0.01' value='0')
+        include toolbar
     div#interactive
         svg#interactive__svg.bridge(version='1.1' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 100 100' preserveaspectratio='none')
             defs 
