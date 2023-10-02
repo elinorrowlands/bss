@@ -41,11 +41,12 @@
     #path{
         transition:all 0.5s ease;
     }
-    
+    script(src='conversions.js')
+    script(src='window.js' type='module' defer)
     
   </style>
 </head>
-<body onload="loader()">
+<body>
   <div id="backdrop"></div>
   <main class="container awaitStart transparent">
     <div class="allowDefault" id="toolbar" style="display:block;">
@@ -1021,14 +1022,3 @@
     </footer>
   </section>
 </body>
-<script src="conversions.js"></script>
-<script src="setInteractions.js"></script>
-<script src="loader.js"></script>
-<script>
-  //- let loadScript = loadingIndicator.init()
-  document.querySelectorAll('#Group_2 path').forEach((x,i)=>{
-      x.classList.add('interact')
-      x.classList.add('path')
-      x.id=`water${i}`
-  })
-</script>

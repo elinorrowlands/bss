@@ -1,3 +1,5 @@
+import setInteractions from './setInteractions.js';
+
 let faders;
 
 function playToggle(override = false, player){
@@ -164,3 +166,5 @@ const loader = ()=>{
     document.querySelector('#states__interpolate').dispatchEvent(new Event('input'));
 
 }
+
+export default loader;

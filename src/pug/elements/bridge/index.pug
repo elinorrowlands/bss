@@ -41,9 +41,10 @@ head
         #path{
             transition:all 0.5s ease;
         }
-
+        script(src='conversions.js')
+        script(src='window.js' type='module' defer)
     
-body(onload="loader()")
+body()
     #backdrop
     main.container.awaitStart.transparent
         #toolbar.allowDefault(style='display:block;')
@@ -108,13 +109,4 @@ body(onload="loader()")
             p Instructions ...
         
         include ../footer__back
-script(src='conversions.js')
-script(src='setInteractions.js')
-script(src='loader.js')
-script.
-    //- let loadScript = loadingIndicator.init()
-    document.querySelectorAll('#Group_2 path').forEach((x,i)=>{
-        x.classList.add('interact')
-        x.classList.add('path')
-        x.id=`water${i}`
-    })
+

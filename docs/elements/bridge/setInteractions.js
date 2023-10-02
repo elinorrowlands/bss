@@ -1,4 +1,4 @@
-function setInteractions(){
+const setInteractions = function(){
     touch.setAction('.interact')
 
     const interactions = {
@@ -95,3 +95,5 @@ function setInteractions(){
         })
     })
 }
+
+export default setInteractions;
