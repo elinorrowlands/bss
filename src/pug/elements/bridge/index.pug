@@ -93,8 +93,10 @@ body.fullpage
                     .cover{
                         transition:opacity 2s, fill 3s;
                     }
-            
-        include bridge_simplified.html
+        object#bridge.bridge.svg-import(data='bridge_simplified.svg' type='image/svg+xml')
+        object#bridge_white_light.bridge.svg-import(data='bridge_white_light.svg' type='image/svg+xml')
+        object#bridge_white_light_interaction.bridge.svg-import(data='bridge_white_light_interaction.svg' type='image/svg+xml')
+        
     // INSTRUCTIONS ON PAGE LOAD
     section.instructions.flex.scrollable
         .instructions__text

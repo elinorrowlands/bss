@@ -1,0 +1,41 @@
+<svg id="white_light_interaction" class="bridge interact" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="24.75 50.625 524.57996 524.25" style="position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;transform:scale(0.8); transform-origin:center center;">
+    <defs>
+      <linearGradient id="fade_horizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0.05" stop-color="white"></stop>
+          <stop offset="0.4" stop-color="black"></stop>
+          <stop offset="0.6" stop-color="black"></stop>
+          <stop offset="0.95" stop-color="white"></stop>
+      </linearGradient>
+      <linearGradient id="fade_vertical" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0.05" stop-color="white"></stop>
+          <stop offset="0.4" stop-color="black"></stop>
+          <stop offset="0.6" stop-color="black"></stop>
+          <stop offset="0.95" stop-color="white"></stop>
+      </linearGradient>
+      <mask id="mask_horizontal">
+            
+        <rect x="24.75" y="50.625" width="524.57996" height="524.25" fill="url(#fade_horizontal)"/>
+
+    </mask>
+    <mask id="mask_vertical">
+        
+        <rect x="24.75" y="50.625" width="524.57996" height="524.25" fill="url(#fade_vertical)"/>
+    </mask>
+  </defs>
+  <g mask="url(#mask_vertical)">
+    <g mask="url(#mask_horizontal)">
+  
+  <g >
+    <!-- rect matches new viewbox -->
+    
+     
+   </g>
+   <g >
+    
+     <rect  x="24.75" y="50.625" width="524.57996" height="524.25" fill="gray" style="opacity:0.2;"/>
+   </g>
+  </g>
+  </g>
+  </svg>
+
+  
