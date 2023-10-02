@@ -77,6 +77,11 @@ canvas#overlay {
   user-select: none;
 }
 
+svg {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* ⚝ Typography */
 .link {
   font-size: 3rem;
