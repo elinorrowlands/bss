@@ -2,7 +2,7 @@ import setInteractions from './setInteractions.js';
 
 let faders;
 
-function playToggle(override = false, player){
+window.playToggle = function playToggle(override = false, player){
     if(player.state == 'started' && !override){
         player.stop();
     }        
@@ -13,16 +13,16 @@ function playToggle(override = false, player){
 }
 
 
-function interpolateParameter(value, parameterName, start, end){
+window.interpolateParameter = function interpolateParameter(value, parameterName, start, end){
     return start[parameterName] * (1-value) + end[parameterName] * value;
 }
 
-function interpolateColour(value, start, end){
+window.interpolateColour = function interpolateColour(value, start, end){
     let hsl = [start.colour[0] * (1-value) + end.colour[0] * value, start.colour[1] * (1-value) + end.colour[1] * value, start.colour[2] * (1-value) + end.colour[2] * value];
     return `hsl(${hsl[0]},${hsl[1]}%,${hsl[2]}%)`;
 }
 
-function saveState(index){
+window.saveState = function saveState(index){
     let parameters = ['echo', 'lpf', 'comb__time', 'comb__feedback'];
     parameters.forEach(parameterName=>{
         states[index][parameterName] = faders[parameterName].value;
@@ -32,7 +32,7 @@ function saveState(index){
 }
 
 
-function interpolateStates(value){
+window.interpolateStates = function interpolateStates(value){
     let parameters = ['echo', 'lpf', 'comb__time', 'comb__feedback'];
    
     if(true){
@@ -58,6 +58,7 @@ function interpolateStates(value){
 }
 
 const loader = ()=>{
+    console.log('loader')
     touch.depth=4;
 
     faders = {
@@ -107,8 +108,6 @@ const loader = ()=>{
         output = output.map(x=>parseFloat(x));
         return output;
     }
-
-    
 
     document.querySelector('#states__interpolate').addEventListener('input', (e)=>{
         interpolateStates(e.target.value);

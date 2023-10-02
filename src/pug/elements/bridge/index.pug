@@ -2,10 +2,10 @@ doctype html
 head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title BSS: Bridge
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.js')
     script(src='../../main.js' defer)
     link(rel='stylesheet', href='../../style.css')
-    title BSS: Bridge
     style.
         body {
             transition: background-color 0.1s;
@@ -41,10 +41,10 @@ head
         #path{
             transition:all 0.5s ease;
         }
-        script(src='conversions.js')
-        script(src='window.js' type='module' defer)
+    script(src='conversions.js')
+    script(src='window.js' type='module' defer)
     
-body()
+body.fullpage
     #backdrop
     main.container.awaitStart.transparent
         #toolbar.allowDefault(style='display:block;')
