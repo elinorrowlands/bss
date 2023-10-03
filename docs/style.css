@@ -393,6 +393,10 @@ section.instructions.flex {
   padding: 1em;
 }
 
+.nodisplay {
+  display: none;
+}
+
 /* ⚝ Loading */
 .loading {
   position: absolute;
@@ -955,6 +959,17 @@ button.nav__back {
   position: absolute;
   top: 10px;
   left: 10px;
+  right: 10px;
+  margin: auto;
+  display: block;
+  width: auto;
+  z-index: 3000;
+  background-color: navy;
+}
+
+button.nav__info {
+  position: absolute;
+  top: 10px;
   right: 10px;
   margin: auto;
   display: block;

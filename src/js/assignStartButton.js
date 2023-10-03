@@ -1,7 +1,9 @@
 function startElement(){
     Tone.start();
-    document.querySelector('section.instructions').style.display = 'none';
-    document.querySelectorAll('.awaitStart').forEach(element=>element.classList.remove('transparent'));
+    document.querySelector('section.instructions').classList.add('nodisplay');
+    document.querySelectorAll('.awaitStart').forEach(element=>{
+        element.classList.remove('transparent')
+    });
     Tone.loaded().then(window.start);
 }
 

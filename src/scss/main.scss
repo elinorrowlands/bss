@@ -109,6 +109,20 @@ canvas#overlay {
     background-color:$background2;
   }
   
+  button.nav__info{
+    position:absolute;
+    top:10px;
+    // left:10px;
+    right:10px;
+    margin:auto;
+    display:block;
+    width:auto;
+    z-index:3000;
+    background-color:$background2;
+  }
+  
+  
+  
   .nav__back{
     cursor:pointer;
   }
