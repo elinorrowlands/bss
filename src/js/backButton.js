@@ -24,6 +24,7 @@ function addBackButton(){
     });
     
     document.body.appendChild(backButton);
+    document.body.appendChild(infoButton)
 }
 
 export default addBackButton

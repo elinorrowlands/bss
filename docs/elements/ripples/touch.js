@@ -14,7 +14,7 @@
 
 if(!window.multitouchMapper) window.multitouchMapper = window.touch;
 
-multitouchMapper.setAction('.visual')
+multitouchMapper.setAction('.visual');
 
 function getNoteFromId(id){
     let notes = [60,67,72];
@@ -27,7 +27,7 @@ function getTarget(id){
 
 const Pickup = (e) =>{
     Tone.start();
-    let (x,y) = e.detail;
+    let {x,y} = e.detail;
     const preset = {
         transition:{
             start:0.5, enter:0.5, end:1, move:-1, leave:2
