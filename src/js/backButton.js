@@ -20,7 +20,14 @@ function addBackButton(){
     infoButton.classList.add('button', 'nav__info', 'allowDefault');
     infoButton.innerHTML = "?";
     infoButton.addEventListener('click',()=>{
+        
         document.querySelector('section.instructions').classList.remove('nodisplay');
+        document.querySelector('section.instructions').style.display = 'flex';
+        document.querySelectorAll('.awaitStart').forEach(element=>{
+            element.classList.add('transparent')
+        });
+        // document.querySelector('#infoButton').classList.add('transparent');
+        document.querySelector('#infoButton').style.display='none';
     });
     
     document.body.appendChild(backButton);

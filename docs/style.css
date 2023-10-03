@@ -387,6 +387,9 @@ section.instructions.flex {
   display: flex;
   flex-direction: column;
 }
+section.instructions.flex.nodisplay {
+  display: none;
+}
 
 .scrollable {
   overflow: auto;
@@ -970,9 +973,9 @@ button.nav__back {
 button.nav__info {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
   margin: auto;
-  display: block;
+  display: none;
   width: auto;
   z-index: 3000;
   background-color: navy;
