@@ -13,6 +13,10 @@ function startElement(){
 
 const assignStartButton = function(){
     document.querySelectorAll('button.startElement').forEach(button=>{
+        button.innerHTML = 'Loading ...';
+        Tone.loaded().then(()=>{
+            button.innerHTML = 'Start';
+        })
         button.addEventListener('click', startElement);
     });
 }

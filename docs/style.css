@@ -584,7 +584,7 @@ svg.heart {
 }
 
 svg.heart.on {
-  transition: all 0.01s;
+  transition: all 0s;
   opacity: 0.5;
 }
 
