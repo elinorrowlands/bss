@@ -103,7 +103,7 @@ function fixFolder(){
               // synth._voices.forEach((voice,i)=>{
               //     voice.detune.rampTo((i%2 == 0 ? obj.distance.x : obj.distance.y),1)
               // })
-              newElement.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
+              // newElement.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
               // document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
               // newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
               // console.log('🟣newElement',newElement.id, newElement.tagName, '🟢element',element.id, element.tagName)

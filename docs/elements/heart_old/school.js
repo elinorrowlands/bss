@@ -2,7 +2,7 @@
 
 
 window.addEventListener('load',()=>{
-  let numberOfPlayers = 8;
+  let numberOfPlayers = 4;
   window.players = [];
   let playerAllocations = []
   for(let i = 0; i < numberOfPlayers; i++){
