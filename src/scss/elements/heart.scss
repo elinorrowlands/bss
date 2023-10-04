@@ -18,12 +18,20 @@ svg.heart {
     bottom:0;
     left:0;
     right:0;
-    
+    transition: all 1s ease-in-out;
     display:block;
     height:100vh;
     width:100vw;
     cursor:pointer;
     transform:scale(3) translate(0,800);
+    opacity:1;
+    
+}
+
+svg.heart.on{
+    transition: all 0.01s;
+    opacity:0.5;
+    
 }
 
 svg.heart g {

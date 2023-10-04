@@ -55,8 +55,8 @@ function fixFolder(){
               // console.log(element.id.split('_')[1]);
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
-              newElement.style.transition = 'all 0.1s ease';
-              newElement.style.opacity = 0.3;
+              // newElement.style.transition = 'all 0.1s ease';
+              newElement.classList.add('on');
               // synth.triggerAttack(Tone.Frequency(1*(cPenta[parseFloat(element.id.split('_')[1])%5])+72, 'midi').toFrequency());
           },
   
@@ -64,8 +64,10 @@ function fixFolder(){
               
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
-              newElement.style.transition = 'all 0.1s ease';
-              newElement.style.opacity = 0.3;
+              // newElement.style.transition = 'all 0.1s ease';
+              // newElement.style.opacity = 0.3;
+              newElement.classList.add('on');
+              console.log(newElement.classList)
               // synth.triggerAttack(Tone.Frequency(1*(cPenta[parseFloat(element.id.split('_')[1])%5])+72, 'midi').toFrequency());
           },
   
@@ -73,10 +75,11 @@ function fixFolder(){
               
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
-              newElement.style.transition = 'all 1s ease';
-              newElement.style.opacity = 1;
+              // newElement.style.transition = 'all 1s ease';
+              // newElement.style.opacity = 1;
+              newElement.classList.remove('on');
               // synth.triggerRelease(Tone.Frequency(1*(cPenta[parseFloat(element.id.split('_')[1])%5])+72, 'midi').toFrequency())
-              newElement.style.transform = `rotate(${0}deg)`;
+              // newElement.style.transform = `rotate(${0}deg)`;
           },
   
           leave: function(element, e, obj){
@@ -84,24 +87,25 @@ function fixFolder(){
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
               
-              newElement.style.transition = 'all 1s ease';
-              newElement.style.opacity = 1;
+              // newElement.style.transition = 'all 1s ease';
+              // newElement.style.opacity = 1;
+              newElement.classList.remove('on');
               // synth.triggerRelease(Tone.Frequency(1*(cPenta[parseFloat(element.id.split('_')[1])%5])+72, 'midi').toFrequency())
-              newElement.style.transform = `rotate(${0}deg)`;
+              // newElement.style.transform = `rotate(${0}deg)`;
           },
   
           move: function(element, e, obj){
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
               
-              newElement.style.transition = 'all 4s ease';
-              newElement.style.opacity = 0;
+              // newElement.style.transition = 'all 4s ease';
+              // newElement.style.opacity = 0;
               // synth._voices.forEach((voice,i)=>{
               //     voice.detune.rampTo((i%2 == 0 ? obj.distance.x : obj.distance.y),1)
               // })
-              
-              document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
-              newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
+              newElement.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
+              // document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
+              // newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
               // console.log('🟣newElement',newElement.id, newElement.tagName, '🟢element',element.id, element.tagName)
           }
       })
