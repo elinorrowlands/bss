@@ -360,7 +360,7 @@ Ripples.prototype = {
 
 		function dropAtPointer(pointer, big) {
 			if (pointerEventsEnabled()) {
-				console.log('big?',(big ? 0.14 : 0.01));
+				// console.log('big?',(big ? 0.14 : 0.01));
 				that.dropAtPointer(
 					pointer,
 					that.dropRadius * (big ? 1.5 : 1),

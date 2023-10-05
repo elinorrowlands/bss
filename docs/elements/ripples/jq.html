@@ -35,8 +35,15 @@
             transition:all 0.5s ease;
             transform-origin: center center;
     }
+    #centeredCircle{
+      position:absolute;
+      display:block;
+      top:0;
+      left:0;
+      //- z-index:10;
+    }
     #waterCircle{
-          transform:scale(0);
+          transform:scale(1);
       }
       #echoCircle{
           transform:scale(0);
@@ -47,12 +54,13 @@
       }
   </style>
 </head>
-<body class="fullpage">
+<body class="fullpage" id="ripples__body">
   <main class="ripples">
     <div id="ripples__jq"></div>
     <svg id="centeredCircle" width="100%" height="100%" viewBox="0 0 100 100">
       <circle id="waterCircle" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" style="opacity:0.4;"></circle>
     </svg>
+    <object class="ripples svg-import" id="painting" type="image/svg+xml" data="interact_painting.svg"></object>
   </main>
   <!-- INSTRUCTIONS ON PAGE LOAD-->
   <section class="instructions flex scrollable">
@@ -82,14 +90,15 @@
       catch (e) {
         $('.error').show().text(e);
       }
-      touch.setAction('#ripples__jq')
-      document.querySelector('canvas').addEventListener('click',(e)=>{
+      touch.setAction('.ripple__interact')
+      //- document.querySelector('canvas').addEventListener('click',(e)=>{
     
-        //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
-        //- $(container).ripples('drop',e.clientX,e.clientY, 50, 0.05)
-        //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
-      })
+      //-   //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
+      //-   //- $(container).ripples('drop',e.clientX,e.clientY, 50, 0.05)
+      //-   //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
+      //- })
       window.addEventListener('touch-pickup',(e)=>{
+        console.log('.', e.detail)
         let {x,y, type} = e.detail
         if(type == 'start' || type == 'enter'){ 
           //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
