@@ -27,7 +27,7 @@ function addBackButton(){
             element.classList.add('transparent')
         });
         // document.querySelector('#infoButton').classList.add('transparent');
-        document.querySelector('#infoButton').style.display='none';
+        document.querySelector('#infoButton').style.opacity=0.5;
     });
     
     document.body.appendChild(backButton);

@@ -1,0 +1,43 @@
+doctype html
+head
+  title BSS: Ripples
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0')
+  link(rel='stylesheet' href='../../style.css')
+  script(src='../../main.js' defer)
+body.fullpage
+  main.awaitStart.transparent.ripples
+    #canvas.ripples
+    #content.ripples
+      #water-ripples
+        #water-ripples-title
+          h1.ripples
+        img(src='reflection1.jpeg' alt='water' crossorigin='' data-sampler='planeTexture')
+        object#painting.ripples.svg-import(type="image/svg+xml" data="interact_painting.svg")
+        //- img(src='reflection_edge.png' alt='water' crossorigin='' data-sampler='planeTexture')
+
+  // INSTRUCTIONS ON PAGE LOAD
+  section.instructions.flex.scrollable
+      .instructions__text
+          h1.instructions - 3 - 
+          h1.instructions Ripples
+          p Instructions ...
+          p The ripple strength has been lowered temporarily.
+          p For best results, drag rather than clicking/tapping.
+          
+          button.button.startElement.allowDefault#nav__start Start 
+          
+          p Instructions ...
+          p Instructions ...
+        
+      include ../footer__back
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js')
+  script(src='https://www.curtainsjs.com/build/curtains.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js')
+  script(src='../js/script.js' type='module' defer)
+  script(src='./interact.js' defer)
+  script(src='./touch.js' defer)
+  script(src='./samples.js' defer)
+    

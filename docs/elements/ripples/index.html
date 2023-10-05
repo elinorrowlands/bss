@@ -5,40 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../style.css">
   <script src="../../main.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script src="../js/ripples_jq/jquery.ripples.js" defer></script>
+  <script src="./ripples_jq.js" defer></script>
+  <script src="./samples.js" defer></script>
+  <style>
+    main{
+      overflow:hidden;
+      position:absolute;
+      top:0;
+      left:0;
+      width:100vw;
+      height:100vh;
+      transition:filter 1s ease;
+    }
+    body{
+      //- position:absolute;
+      //- width:100vw;
+      //- height:100vh;
+      background-image: url(./reflection1.jpeg);
+      background-size: cover;
+      //- background-repeat: repeat;
+      //- touch-action:none;
+    }
+    svg{
+      touch-action:none;
+    }
+    canvas{
+      touch-action: none;
+    }
+    circle{
+            transition:all 0.5s ease;
+            transform-origin: center center;
+    }
+    #centeredCircle{
+      position:absolute;
+      display:block;
+      top:0;
+      left:0;
+      //- z-index:10;
+    }
+    #waterCircle{
+          transform:scale(1);
+    }
+    #echoCircle{
+        transform:scale(0);
+    }
+    #echoCircle2{
+        transform:scale(0);
+        transition: all 1s ease;
+    }
+    .ripple__interact__display{
+      transition: all 30s;
+      opacity:1;
+    }
+    .ripple__interact__display.on{
+      transition: all 1s ease;
+      opacity:0;
+      
+    }
+    
+    .ripple__interact{
+      opacity:0;
+    }
+  </style>
 </head>
-<body class="fullpage">
-  <main class="awaitStart transparent ripples">
-    <div class="ripples" id="canvas"></div>
-    <div class="ripples" id="content">
-      <div id="water-ripples">
-        <div id="water-ripples-title">
-          <h1 class="ripples"></h1>
-        </div><img src="reflection1.jpeg" alt="water" crossorigin="" data-sampler="planeTexture">
-        <object class="ripples svg-import" id="painting" type="image/svg+xml" data="interact_painting.svg"></object>
-      </div>
-    </div>
+<body class="fullpage" id="ripples__body">
+  <main class="ripples">
+    <div id="ripples__jq"></div>
+    <svg id="centeredCircle" width="100%" height="100%" viewBox="0 0 100 100">
+      <circle id="waterCircle" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" style="opacity:0.4;"></circle>
+    </svg>
+    <object class="ripples svg-import" id="painting" type="image/svg+xml" data="interact_painting.svg"></object>
   </main>
   <!-- INSTRUCTIONS ON PAGE LOAD-->
   <section class="instructions flex scrollable">
     <div class="instructions__text">
       <h1 class="instructions">- 3 - </h1>
       <h1 class="instructions">Ripples</h1>
-      <p>Instructions ...</p>
-      <p>The ripple strength has been lowered temporarily.</p>
-      <p>For best results, drag rather than clicking/tapping.</p>
+      <p>Experimental version October 2023.</p>
+      <p>Touch zoom is disabled during the interaction.</p>
+      <p>Please make sure you are zoomed out before starting!</p>
+      <p>If you get stuck zoomed in, please refresh the page to zoom back out from this information page.</p>
       <button class="button startElement allowDefault" id="nav__start">Start </button>
-      <p>Instructions ...</p>
-      <p>Instructions ...</p>
     </div>
     <footer class="instructions">
       <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"></a></p>
     </footer>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../js/script.js" type="module" defer></script>
-  <script src="./interact.js" defer></script>
-  <script src="./touch.js" defer></script>
-  <script src="./samples.js" defer></script>
 </body>

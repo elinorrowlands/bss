@@ -5,39 +5,100 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='../../style.css')
   script(src='../../main.js' defer)
-body.fullpage
-  main.awaitStart.transparent.ripples
-    #canvas.ripples
-    #content.ripples
-      #water-ripples
-        #water-ripples-title
-          h1.ripples
-        img(src='reflection1.jpeg' alt='water' crossorigin='' data-sampler='planeTexture')
-        object#painting.ripples.svg-import(type="image/svg+xml" data="interact_painting.svg")
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' defer)
+  script(src='../js/ripples_jq/jquery.ripples.js' defer)
+  script(src='./ripples_jq.js' defer)
+  script(src='./samples.js' defer)
+  style.
+    main{
+      overflow:hidden;
+      position:absolute;
+      top:0;
+      left:0;
+      width:100vw;
+      height:100vh;
+      transition:filter 1s ease;
+    }
+    body{
+      //- position:absolute;
+      //- width:100vw;
+      //- height:100vh;
+      background-image: url(./reflection1.jpeg);
+      background-size: cover;
+      //- background-repeat: repeat;
+      //- touch-action:none;
+    }
+    svg{
+      touch-action:none;
+    }
+    canvas{
+      touch-action: none;
+    }
+    circle{
+            transition:all 0.5s ease;
+            transform-origin: center center;
+    }
+    #centeredCircle{
+      position:absolute;
+      display:block;
+      top:0;
+      left:0;
+      //- z-index:10;
+    }
+    #waterCircle{
+          transform:scale(1);
+    }
+    #echoCircle{
+        transform:scale(0);
+    }
+    #echoCircle2{
+        transform:scale(0);
+        transition: all 1s ease;
+    }
+    .ripple__interact__display{
+      transition: all 30s;
+      opacity:1;
+    }
+    .ripple__interact__display.on{
+      transition: all 1s ease;
+      opacity:0;
+      
+    }
+    
+    .ripple__interact{
+      opacity:0;
+    }
+body.fullpage#ripples__body
+  //- main.awaitStart.transparent.ripples
+  main.ripples
+    #ripples__jq
+    
+        //- img(src='reflection1.jpeg' alt='water' crossorigin='' data-sampler='planeTexture')
         //- img(src='reflection_edge.png' alt='water' crossorigin='' data-sampler='planeTexture')
-
+    svg#centeredCircle(width='100%', height='100%', viewBox='0 0 100 100')
+      circle#waterCircle(cx='50', cy='50', r='40', stroke='green', stroke-width='4', fill='yellow' style='opacity:0.4;')
+      //- circle#echoCircle(cx='50', cy='50', r='40', stroke='none', stroke-width='4', fill='darkblue' style='opacity:0.4;')
+      //- circle#echoCircle2(cx='50', cy='50', r='40', stroke='none', stroke-width='4', fill='darkblue' style='opacity:0.4;')
+    object#painting.ripples.svg-import(type="image/svg+xml" data="interact_painting.svg")
   // INSTRUCTIONS ON PAGE LOAD
   section.instructions.flex.scrollable
       .instructions__text
           h1.instructions - 3 - 
           h1.instructions Ripples
-          p Instructions ...
-          p The ripple strength has been lowered temporarily.
-          p For best results, drag rather than clicking/tapping.
-          
+          p Experimental version October 2023.
+         
+          p Touch zoom is disabled during the interaction.
+          p Please make sure you are zoomed out before starting!
+          p If you get stuck zoomed in, please refresh the page to zoom back out from this information page.
           button.button.startElement.allowDefault#nav__start Start 
           
-          p Instructions ...
-          p Instructions ...
+          
         
       include ../footer__back
-
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js')
-  script(src='https://www.curtainsjs.com/build/curtains.min.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  
   //- script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js')
-  script(src='../js/script.js' type='module' defer)
-  script(src='./interact.js' defer)
-  script(src='./touch.js' defer)
-  script(src='./samples.js' defer)
-    
+  //- script(src='../js/script.js' type='module' defer)
+  //- script(src='./interact.js' defer)
+  //- script(src='./touch.js' defer)
+  
+  

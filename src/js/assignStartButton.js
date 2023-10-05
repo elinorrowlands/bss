@@ -6,8 +6,9 @@ function startElement(){
     document.querySelectorAll('.awaitStart').forEach(element=>{
         element.classList.remove('transparent')
     });
-    document.querySelector('#infoButton').style.display="block";
+    document.querySelector('#infoButton').style.opacity = 1;
     touch.listen();
+    window.scrollTo(0,0);
     Tone.loaded().then(window.start);
 }
 

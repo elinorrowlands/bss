@@ -980,11 +980,11 @@ button.nav__back {
 }
 
 button.nav__info {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 20px;
   margin: auto;
-  display: none;
+  display: block;
   width: auto;
   z-index: 3000;
   background-color: navy;
