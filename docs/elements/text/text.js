@@ -35,7 +35,7 @@ const newCaption = [
     '00:00:25.140,00:00:28.170\nor the rainbow mist of a summer hose?'
 ];
 
-let captionObject = syncCC.splitCaptions(newCaption);
+window.captionObject = syncCC.splitCaptions(newCaption);
 window.playFlag = false;
 
 function loaded(){

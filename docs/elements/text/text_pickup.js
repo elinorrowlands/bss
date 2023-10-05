@@ -7,7 +7,7 @@ const Pickup = (e, mix, captionObject) =>{
     }
     
     let { element, type, x, y } = e.detail;
-    if(element.classList.contains('allowDefault'))return;
+    if(element.classList.contains('allowDefault')) return;
     
     let target = element;
     let text = captionObject[element.id.split('_')[1]];

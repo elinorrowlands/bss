@@ -4,9 +4,8 @@ const calculateStartInterval = function(query = 'image', players = window.player
     return lengthInSeconds/divisions * index;
 }
 
-const playFromIntervals = function(player,players,id, query = 'image'){
-    player.start(Tone.immediate(), calculateStartInterval(query, players, id));
-}
+
+
 
 const getLowestPlayNumber = (players)=>{
    return players.reduce((lowestPlayer, currentPlayer) => {
@@ -18,4 +17,14 @@ const getLowestPlayNumber = (players)=>{
     }, players[0]);
 }
 
-export {calculateStartInterval, getLowestPlayNumber, playFromIntervals}
+const playFromIntervals = function(player,players,id, query = 'image'){
+    player.start(Tone.immediate(), calculateStartInterval(query, players, id));
+}
+
+const playFromCaption = function(){
+    
+}
+
+
+
+export {calculateStartInterval, getLowestPlayNumber, playFromIntervals, playFromCaption}
