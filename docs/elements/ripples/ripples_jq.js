@@ -30,17 +30,17 @@ $(document).ready(function() {
         // console.log('newElement:', newElement)
         
         if(type == 'start' || type == 'enter'){ 
-            console.log(query)
+            // console.log(query)
             if(query=='.ripple__interact'){
                 newElement.classList.add('on')
-                console.log(newElement)
+                // console.log(newElement)
             //- element.style.opacity=0;
             }
             //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
             //- $(container).ripples('set', 'interactive', true)
         } else if(type == 'end' || type == 'leave'){
             if(query=='.ripple__interact'){
-            console.log('on')
+            // console.log('on')
                 newElement.classList.remove('on')
             }
             //- $(container).ripples('set', 'interactive', false)

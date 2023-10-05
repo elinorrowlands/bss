@@ -1,6 +1,6 @@
 const sounds = {
-    loop: new Tone.Player("nesting.mp3"),
-    // loop: new Tone.Player("../../loops/heart_heart_trees.m4a"),
+    // loop: new Tone.Player("nesting.mp3"),
+    loop: new Tone.Player("../../loops/heart_heart_trees.m4a"),
     meter: new Tone.Meter(),
     filter: new Tone.Filter(200, "lowpass"),
     // hpf: new Tone.Filter(400, "highpass"),
@@ -30,10 +30,10 @@ function setBGAnimation(){
         //   let hue = Math.floor(count/30);
         let hue = Math.floor(count/2) % 360;
           
-          document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(110%)`;
-          console.log(hue)
+          document.querySelector('main').style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(110%)`;
+        //   console.log(hue)
       } else {
-          document.body.style.filter = `hue-rotate(0deg)`;
+        document.querySelector('main').style.filter = `hue-rotate(0deg)`;
       }
       
     //   $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getValue())*2));
