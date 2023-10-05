@@ -20,7 +20,7 @@
       top:0;
       left:0;
       width:100vw;
-      height:100vh;
+      height:100vw;
       background-image: url(./reflection1.jpeg);
       background-size: cover;
     }
@@ -47,15 +47,22 @@
     $(document).ready(function() {
       try {
         $('#ripples__jq').ripples({
-          resolution: 256,
+          resolution: 512,
           dropRadius: 5, //px
           perturbance: 0.01,
+          interactive:false
         });
         
       }
       catch (e) {
         $('.error').show().text(e);
       }
+      touch.setAction('#ripples__jq')
+      window.addEventListener('touch-pickup',(e)=>{
+        let {x,y} = e.detail
+        $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
+      })
+      
     })
   </script>
 </body>

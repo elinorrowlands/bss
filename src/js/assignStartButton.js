@@ -7,12 +7,14 @@ function startElement(){
         element.classList.remove('transparent')
     });
     document.querySelector('#infoButton').style.display="block";
+    touch.listen();
     Tone.loaded().then(window.start);
 }
 
 
 const assignStartButton = function(){
     document.querySelectorAll('button.startElement').forEach(button=>{
+        touch.unlisten();
         button.innerHTML = 'Loading ...';
         Tone.loaded().then(()=>{
             button.innerHTML = 'Start';
