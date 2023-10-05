@@ -18,12 +18,15 @@
     }
     #ripples__jq{
       position:absolute;
-      top:-50vh;
-      left:-50vw;
-      width:200vw;
-      height:200vw;
+      //- top:-50vh;
+      //- left:-50vw;
+      //- width:200vw;
+      //- height:200vw;
+      width:100vw;
+      height:100vh;
       background-image: url(./reflection1.jpeg);
       background-size: cover;
+      //- background-repeat: repeat;
     }
     
   </style>
@@ -52,7 +55,8 @@
           resolution: 256,
           dropRadius: 40, //px
           perturbance: 0.01,
-          interactive:false
+          interactive:false,
+          //- imageUrl: 'reflection1_symmetry.png'
         });
         
       }

@@ -670,7 +670,8 @@ Ripples.prototype = {
 				') * 0.25;',
 
 				'info.g += (average - info.r) * 2.0;',
-				'info.g *= 0.995;',
+				// 'info.g *= 0.995;',
+				'info.g *= 0.98;',
 				'info.r += info.g;',
 
 				'gl_FragColor = info;',
