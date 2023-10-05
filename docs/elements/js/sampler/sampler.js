@@ -1,7 +1,7 @@
 let numberOfPlayers = 8;
 let sample = './harlesden1.mp3';
 
-
+import { calculateStartInterval, getLowestPlayNumber } from './sampler_functions.js';
 
 /**
  * Create a sampler with multiple players using different start times from the same sample
@@ -11,7 +11,7 @@ let sample = './harlesden1.mp3';
  * @param {*} voiceStealing 
  */
 
-const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calculateStartInterval, voiceStealing = true){
+const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calculateStartInterval, voiceStealing = true, connectEcho = true){
     //
     window.players = [];
     window.playCount = 0;
@@ -24,9 +24,10 @@ const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calcu
         });
         // for some reason, setting the volume to zero on load doesn't work
         // players[i].volume.rampTo(-Infinity, 0.1)
-        players[i].player.connect(echo);
+        if(connectEcho) players[i].player.connect(echo);
     }
-    let divisions = document.querySelectorAll('image').length;
+    
+    
     Tone.loaded().then(()=>{
         window.addEventListener('touch-pickup', (e)=>{
             let {x,y, element, type} = e.detail;
@@ -47,7 +48,9 @@ const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calcu
                 
                 players[nextAvailablePlayer].playNumber = playCount;
                 players[nextAvailablePlayer].player.volume.rampTo(-6, 0.01);
-                players[nextAvailablePlayer].player.start(Tone.now(), distribute('image', players, id));
+                
+                players[nextAvailablePlayer].player.start(Tone.now(), distribute('image', players, id), undefined);
+                
                 players[nextAvailablePlayer].allocation = id;
                 
             } else if (type == 'end' || type == 'leave'){
