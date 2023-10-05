@@ -16,7 +16,7 @@ textInput.forEach((entry,i)=>{
     })
 })
 
-let container = d3.select('body')
+let container = d3.select('main')
     .append("div")
     .classed("wordContainer", true)
     
