@@ -5,8 +5,8 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='../../style.css')
   script(src='../../main.js' defer)
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-  script(src='../js/ripples_jq/jquery.ripples.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' defer)
+  script(src='../js/ripples_jq/jquery.ripples.js' defer)
   
   style.
     main{
@@ -28,6 +28,10 @@ head
       background-image: url(./reflection1.jpeg);
       background-size: cover;
       //- background-repeat: repeat;
+      touch-action:none;
+    }
+    svg{
+      touch-action:none;
     }
     canvas{
       touch-action: none;
@@ -52,6 +56,15 @@ head
       #echoCircle2{
           transform:scale(0);
           transition: all 1s ease;
+      }
+      .ripple__interact{
+        transition: all 1s ease;
+        opacity:1;
+      }
+      .ripple__interact.on{
+        transition: all 0.5s ease;
+        opacity:0;
+        
       }
 body.fullpage#ripples__body
   //- main.awaitStart.transparent.ripples
@@ -108,13 +121,27 @@ body.fullpage#ripples__body
       //-   //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
       //- })
       window.addEventListener('touch-pickup',(e)=>{
-        console.log('.', e.detail)
-        let {x,y, type} = e.detail
+        //- console.log('.', e.detail)
+        
+        let {x,y, type, query, element} = e.detail
+        
         if(type == 'start' || type == 'enter'){ 
+          if(query=='.ripple__interact'){
+            element.classList.add('on')
+            //- element.style.opacity=0;
+          }
           //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
-          $(container).ripples('set', 'interactive', true)
+          //- $(container).ripples('set', 'interactive', true)
         } else if(type == 'end' || type == 'leave'){
-          $(container).ripples('set', 'interactive', false)
+          if(query=='.ripple__interact'){
+            console.log('on')
+            element.classList.remove('on')
+          }
+          //- $(container).ripples('set', 'interactive', false)
+          $(container).ripples('drop',x,y, 50, 0.05)
+        } else if(type == 'move'){
+          //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
+          //- $(container).ripples('setDropRadius', 50)
           $(container).ripples('drop',x,y, 50, 0.05)
         }
         //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)

@@ -32,9 +32,11 @@ function isPercentage(str) {
 function loadConfig() {
 	var canvas = document.createElement('canvas');
 	gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-
+	
 	if (!gl) {
 		// Browser does not support WebGL.
+		// document.body.style.opacity=0;
+		// document.body.style.transform = 'scale(4)'
 		return null;
 	}
 
@@ -54,6 +56,12 @@ function loadConfig() {
 
 	// If no floating point extensions are supported we can bail out early.
 	if (!extensions.OES_texture_float) {
+		// document.body.style.opacity=0;
+		let supportMessage = document.createElement('p');
+		supportMessage.style.color='pink';
+		supportMessage.style.fontSize = '1.5em';
+		supportMessage.innerHTML = '🚫 This browser does not support the water effect.<br> Please try a different device for the full experience.';
+		document.querySelector('.instructions__text').appendChild(supportMessage);
 		return null;
 	}
 
