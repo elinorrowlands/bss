@@ -8,18 +8,28 @@ head
   script(src='../js/ripples_jq/jquery.ripples.js')
   
   style.
-    .ripples_jq{
+    main{
+      overflow:hidden;
       position:absolute;
       top:0;
       left:0;
-      width:100%;
-      height:100%;
+      width:100vw;
+      height:100vh;
+    }
+    #ripples__jq{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100vw;
+      height:100vh;
       background-image: url(./reflection1.jpeg);
+      background-size: cover;
     }
     
 body.fullpage
-  main.awaitStart.transparent.ripples
-    .ripples_jq
+  //- main.awaitStart.transparent.ripples
+  main.ripples
+    #ripples__jq
     
         //- img(src='reflection1.jpeg' alt='water' crossorigin='' data-sampler='planeTexture')
         //- object#painting.ripples.svg-import(type="image/svg+xml" data="interact_painting.svg")
@@ -51,16 +61,11 @@ body.fullpage
     $(document).ready(function() {
       try {
         $('#ripples__jq').ripples({
-          resolution: 512,
+          resolution: 256,
           dropRadius: 5, //px
           perturbance: 0.01,
         });
-        $('main').ripples({
-          resolution: 128,
-          dropRadius: 10, //px
-          perturbance: 0.04,
-          interactive: false
-        });
+        
       }
       catch (e) {
         $('.error').show().text(e);

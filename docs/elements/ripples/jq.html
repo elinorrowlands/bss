@@ -7,20 +7,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../js/ripples_jq/jquery.ripples.js"></script>
   <style>
-    .ripples_jq{
+    main{
+      overflow:hidden;
       position:absolute;
       top:0;
       left:0;
-      width:100%;
-      height:100%;
+      width:100vw;
+      height:100vh;
+    }
+    #ripples__jq{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100vw;
+      height:100vh;
       background-image: url(./reflection1.jpeg);
+      background-size: cover;
     }
     
   </style>
 </head>
 <body class="fullpage">
-  <main class="awaitStart transparent ripples">
-    <div class="ripples_jq"></div>
+  <main class="ripples">
+    <div id="ripples__jq"></div>
   </main>
   <!-- INSTRUCTIONS ON PAGE LOAD-->
   <section class="instructions flex scrollable">
@@ -38,16 +47,11 @@
     $(document).ready(function() {
       try {
         $('#ripples__jq').ripples({
-          resolution: 512,
+          resolution: 256,
           dropRadius: 5, //px
           perturbance: 0.01,
         });
-        $('main').ripples({
-          resolution: 128,
-          dropRadius: 10, //px
-          perturbance: 0.04,
-          interactive: false
-        });
+        
       }
       catch (e) {
         $('.error').show().text(e);
