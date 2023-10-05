@@ -1,5 +1,6 @@
 const sounds = {
     loop: new Tone.Player("nesting.mp3"),
+    // loop: new Tone.Player("../../loops/heart_heart_trees.m4a"),
     meter: new Tone.Meter(),
     filter: new Tone.Filter(200, "lowpass"),
     // hpf: new Tone.Filter(400, "highpass"),
@@ -17,22 +18,27 @@ sounds.filter.toMaster();
 sounds.echo.connect(sounds.echoMeter);
 sounds.filter.connect(sounds.meter);
 
+window.count = 0;
+
 function setBGAnimation(){
-  let i = 0, count = 0;
+  let i = 0;
   setInterval( () => {
       i = i === 0 ? 1 : 0;
       count++;
       
       if(moused){
-          let hue = Math.floor(count/30);
-          document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(100%)`;
+        //   let hue = Math.floor(count/30);
+        let hue = Math.floor(count/2) % 360;
+          
+          document.body.style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(110%)`;
+          console.log(hue)
       } else {
           document.body.style.filter = `hue-rotate(0deg)`;
       }
       
-      $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getValue())*2));
-      $('#note_2').css('transform', `translate(360px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.1})`);
-      $('#note_0').css('transform', `translate(-100px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.9})`);
+    //   $('#note_1').css('opacity',1 - (0.1 + Tone.dbToGain(sounds.meter.getValue())*2));
+    //   $('#note_2').css('transform', `translate(360px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.1})`);
+    //   $('#note_0').css('transform', `translate(-100px) scale(${1 + Tone.dbToGain(sounds.echoMeter.getValue())*1.9})`);
 if(Tone.dbToGain(sounds.meter.getValue())>0.09){
     const bumpEvent = new CustomEvent('bump',{
         detail: {
@@ -51,16 +57,18 @@ setBGAnimation();
 let started = false;
 
 window.addEventListener('mousedown', (e) => {
-Tone.start();
-sounds.loop.loop = true;
+    window.count = parseInt(e.clientX/window.innerWidth*360);
+    console.log(window.count)
+    Tone.start();
+    sounds.loop.loop = true;
 
-if(!started){
-    sounds.loop.start();    
-    started = true;
-}
+    if(!started){
+        sounds.loop.start();    
+        started = true;
+    }
 
-sounds.filter.frequency.rampTo(1000, 1);
-moused = true;   
+    sounds.filter.frequency.rampTo(1000, 1);
+    moused = true;   
 });
 
 window.addEventListener('mouseup',(e) => {

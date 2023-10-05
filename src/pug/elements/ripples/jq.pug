@@ -8,6 +8,7 @@ head
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' defer)
   script(src='../js/ripples_jq/jquery.ripples.js' defer)
   script(src='./ripples_jq.js' defer)
+  script(src='./samples.js' defer)
   style.
     main{
       overflow:hidden;
@@ -19,10 +20,6 @@ head
     }
     body{
       //- position:absolute;
-      //- //- top:-50vh;
-      //- //- left:-50vw;
-      //- //- width:200vw;
-      //- //- height:200vw;
       //- width:100vw;
       //- height:100vh;
       background-image: url(./reflection1.jpeg);
@@ -49,23 +46,27 @@ head
     }
     #waterCircle{
           transform:scale(1);
-      }
-      #echoCircle{
-          transform:scale(0);
-      }
-      #echoCircle2{
-          transform:scale(0);
-          transition: all 1s ease;
-      }
-      .ripple__interact{
+    }
+    #echoCircle{
+        transform:scale(0);
+    }
+    #echoCircle2{
+        transform:scale(0);
         transition: all 1s ease;
-        opacity:1;
-      }
-      .ripple__interact.on{
-        transition: all 0.5s ease;
-        opacity:0;
-        
-      }
+    }
+    .ripple__interact__display{
+      transition: all 30s;
+      opacity:1;
+    }
+    .ripple__interact__display.on{
+      transition: all 1s ease;
+      opacity:0;
+      
+    }
+    
+    .ripple__interact{
+      opacity:0;
+    }
 body.fullpage#ripples__body
   //- main.awaitStart.transparent.ripples
   main.ripples
@@ -96,5 +97,5 @@ body.fullpage#ripples__body
   //- script(src='../js/script.js' type='module' defer)
   //- script(src='./interact.js' defer)
   //- script(src='./touch.js' defer)
-  //- script(src='./samples.js' defer)
+  
   
