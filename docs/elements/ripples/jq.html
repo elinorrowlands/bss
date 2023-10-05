@@ -7,6 +7,7 @@
   <script src="../../main.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
   <script src="../js/ripples_jq/jquery.ripples.js" defer></script>
+  <script src="./ripples_jq.js" defer></script>
   <style>
     main{
       overflow:hidden;
@@ -87,60 +88,4 @@
       <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"></a></p>
     </footer>
   </section>
-  <script>
-    let container = 'body'
-    $(document).ready(function() {
-      try {
-        $(container).ripples({
-          resolution: 256,
-          dropRadius: 40, //px
-          perturbance: 0.01,
-          interactive:false,
-          //- imageUrl: 'reflection1_symmetry.png'
-        });
-        
-      }
-      catch (e) {
-        $('.error').show().text(e);
-      }
-      touch.setAction('.ripple__interact')
-      //- document.querySelector('canvas').addEventListener('click',(e)=>{
-    
-      //-   //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
-      //-   //- $(container).ripples('drop',e.clientX,e.clientY, 50, 0.05)
-      //-   //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
-      //- })
-      window.addEventListener('touch-pickup',(e)=>{
-        //- console.log('.', e.detail)
-        
-        let {x,y, type, query, element} = e.detail
-        
-        if(type == 'start' || type == 'enter'){ 
-          if(query=='.ripple__interact'){
-            element.classList.add('on')
-            //- element.style.opacity=0;
-          }
-          //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
-          //- $(container).ripples('set', 'interactive', true)
-        } else if(type == 'end' || type == 'leave'){
-          if(query=='.ripple__interact'){
-            console.log('on')
-            element.classList.remove('on')
-          }
-          //- $(container).ripples('set', 'interactive', false)
-          $(container).ripples('drop',x,y, 50, 0.05)
-        } else if(type == 'move'){
-          //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
-          //- $(container).ripples('setDropRadius', 50)
-          $(container).ripples('drop',x,y, 50, 0.05)
-        }
-        //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
-      })
-      
-      
-    })
-    
-    // central ripple
-    //- $('#ripples__jq').ripples('drop',window.innerWidth/2,window.innerHeight/2, 50, 0.05)
-  </script>
 </body>

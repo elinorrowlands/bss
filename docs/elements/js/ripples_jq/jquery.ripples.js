@@ -61,6 +61,7 @@ function loadConfig() {
 		supportMessage.style.color='pink';
 		supportMessage.style.fontSize = '1.5em';
 		supportMessage.innerHTML = '🚫 This browser does not support the water effect.<br> Please try a different device for the full experience.';
+		// window.location.href = './index.html'
 		document.querySelector('.instructions__text').appendChild(supportMessage);
 		return null;
 	}
