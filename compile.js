@@ -20,6 +20,7 @@ let pugFiles = [
     'elements/text/index',
 
     'elements/ripples/index',
+    'elements/ripples/jq',
 ];
 
 let pugSourceFolder = './src/pug';

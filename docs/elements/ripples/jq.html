@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <title>BSS: Ripples</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../main.js" defer></script>
+</head>
+<body class="fullpage">
+  <main class="awaitStart transparent ripples">
+    <div class="ripples" id="canvas"></div>
+    <div class="ripples" id="content">
+      <div id="water-ripples">
+        <div id="water-ripples-title">
+          <h1 class="ripples"></h1>
+        </div><img src="reflection1.jpeg" alt="water" crossorigin="" data-sampler="planeTexture">
+        <object class="ripples svg-import" id="painting" type="image/svg+xml" data="interact_painting.svg"></object>
+      </div>
+    </div>
+  </main>
+  <!-- INSTRUCTIONS ON PAGE LOAD-->
+  <section class="instructions flex scrollable">
+    <div class="instructions__text">
+      <h1 class="instructions">- 3 - </h1>
+      <h1 class="instructions">Ripples</h1>
+      <p>Instructions ...</p>
+      <p>The ripple strength has been lowered temporarily.</p>
+      <p>For best results, drag rather than clicking/tapping.</p>
+      <button class="button startElement allowDefault" id="nav__start">Start </button>
+      <p>Instructions ...</p>
+      <p>Instructions ...</p>
+    </div>
+    <footer class="instructions">
+      <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"></a></p>
+    </footer>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
