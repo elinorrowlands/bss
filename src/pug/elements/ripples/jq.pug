@@ -2,6 +2,7 @@ doctype html
 head
   title BSS: Ripples
   meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='../../style.css')
   script(src='../../main.js' defer)
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
@@ -18,10 +19,10 @@ head
     }
     #ripples__jq{
       position:absolute;
-      top:0;
-      left:0;
-      width:100vw;
-      height:100vw;
+      top:-50vh;
+      left:-50vw;
+      width:200vw;
+      height:200vw;
       background-image: url(./reflection1.jpeg);
       background-size: cover;
     }
@@ -58,11 +59,12 @@ body.fullpage
   //- script(src='./touch.js' defer)
   //- script(src='./samples.js' defer)
   script.
+    let container = '#ripples__jq'
     $(document).ready(function() {
       try {
         $('#ripples__jq').ripples({
-          resolution: 512,
-          dropRadius: 5, //px
+          resolution: 256,
+          dropRadius: 40, //px
           perturbance: 0.01,
           interactive:false
         });
@@ -73,8 +75,13 @@ body.fullpage
       }
       touch.setAction('#ripples__jq')
       window.addEventListener('touch-pickup',(e)=>{
-        let {x,y} = e.detail
-        $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
+        let {x,y, type} = e.detail
+        if(type == 'start' || type == 'enter'){ 
+          $(container).ripples('set', 'interactive', true)
+        } else if(type == 'end' || type == 'leave'){
+          $(container).ripples('set', 'interactive', false)
+        }
+        //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
       })
       
     })
