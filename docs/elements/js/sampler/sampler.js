@@ -1,7 +1,7 @@
 let numberOfPlayers = 8;
 let sample = './harlesden1.mp3';
 
-import { calculateStartInterval, getLowestPlayNumber } from './sampler_functions.js';
+import { getLowestPlayNumber, playFromIntervals } from './sampler_functions.js';
 
 /**
  * Create a sampler with multiple players using different start times from the same sample
@@ -11,7 +11,7 @@ import { calculateStartInterval, getLowestPlayNumber } from './sampler_functions
  * @param {*} voiceStealing 
  */
 
-const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calculateStartInterval, voiceStealing = true, connectEcho = true){
+const initSampler = function(samplePath, numberOfPlayers = 6, playMethod = playFromIntervals, voiceStealing = true, connectEcho = true){
     //
     window.players = [];
     window.playCount = 0;
@@ -49,7 +49,7 @@ const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calcu
                 players[nextAvailablePlayer].playNumber = playCount;
                 players[nextAvailablePlayer].player.volume.rampTo(-6, 0.01);
                 
-                players[nextAvailablePlayer].player.start(Tone.now(), distribute('image', players, id), undefined);
+                playMethod(players[nextAvailablePlayer].player, players, id);
                 
                 players[nextAvailablePlayer].allocation = id;
                 
@@ -68,7 +68,7 @@ const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calcu
 }
 
 window.addEventListener('load',()=>{
-    initSampler(sample, numberOfPlayers, calculateStartInterval)
+    initSampler(sample, numberOfPlayers, playFromIntervals)
 })
 
 
