@@ -17,19 +17,35 @@ head
       width:100vw;
       height:100vh;
     }
-    #ripples__jq{
-      position:absolute;
-      //- top:-50vh;
-      //- left:-50vw;
-      //- width:200vw;
-      //- height:200vw;
-      width:100vw;
-      height:100vh;
+    body{
+      //- position:absolute;
+      //- //- top:-50vh;
+      //- //- left:-50vw;
+      //- //- width:200vw;
+      //- //- height:200vw;
+      //- width:100vw;
+      //- height:100vh;
       background-image: url(./reflection1.jpeg);
       background-size: cover;
       //- background-repeat: repeat;
     }
-    
+    canvas{
+      touch-action: none;
+    }
+    circle{
+            transition:all 0.5s ease;
+            transform-origin: center center;
+    }
+    #waterCircle{
+          transform:scale(0);
+      }
+      #echoCircle{
+          transform:scale(0);
+      }
+      #echoCircle2{
+          transform:scale(0);
+          transition: all 1s ease;
+      }
 body.fullpage
   //- main.awaitStart.transparent.ripples
   main.ripples
@@ -38,7 +54,10 @@ body.fullpage
         //- img(src='reflection1.jpeg' alt='water' crossorigin='' data-sampler='planeTexture')
         //- object#painting.ripples.svg-import(type="image/svg+xml" data="interact_painting.svg")
         //- img(src='reflection_edge.png' alt='water' crossorigin='' data-sampler='planeTexture')
-
+    svg#centeredCircle(width='100%', height='100%', viewBox='0 0 100 100')
+      circle#waterCircle(cx='50', cy='50', r='40', stroke='green', stroke-width='4', fill='yellow' style='opacity:0.4;')
+      //- circle#echoCircle(cx='50', cy='50', r='40', stroke='none', stroke-width='4', fill='darkblue' style='opacity:0.4;')
+      //- circle#echoCircle2(cx='50', cy='50', r='40', stroke='none', stroke-width='4', fill='darkblue' style='opacity:0.4;')
   // INSTRUCTIONS ON PAGE LOAD
   section.instructions.flex.scrollable
       .instructions__text
@@ -62,10 +81,10 @@ body.fullpage
   //- script(src='./touch.js' defer)
   //- script(src='./samples.js' defer)
   script.
-    let container = '#ripples__jq'
+    let container = 'body'
     $(document).ready(function() {
       try {
-        $('#ripples__jq').ripples({
+        $(container).ripples({
           resolution: 256,
           dropRadius: 40, //px
           perturbance: 0.01,
@@ -78,14 +97,26 @@ body.fullpage
         $('.error').show().text(e);
       }
       touch.setAction('#ripples__jq')
+      document.querySelector('canvas').addEventListener('click',(e)=>{
+
+        //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
+        //- $(container).ripples('drop',e.clientX,e.clientY, 50, 0.05)
+        //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
+      })
       window.addEventListener('touch-pickup',(e)=>{
         let {x,y, type} = e.detail
         if(type == 'start' || type == 'enter'){ 
+          //- $('#ripples__jq').ripples('drop',x,y, 50, 0.05)
           $(container).ripples('set', 'interactive', true)
         } else if(type == 'end' || type == 'leave'){
           $(container).ripples('set', 'interactive', false)
+          $(container).ripples('drop',x,y, 50, 0.05)
         }
         //- $('#ripples__jq').ripples('drop',x,y, 5, 0.04)
       })
       
+      
     })
+    
+    // central ripple
+    //- $('#ripples__jq').ripples('drop',window.innerWidth/2,window.innerHeight/2, 50, 0.05)
