@@ -11,7 +11,7 @@ function assignClasses(element=document, copyMasks = false, bringParent = false)
     // console.log('assignClasses',element)
     let HC = {};
     element.querySelectorAll('.hc, .pickup').forEach((hcElement)=>{
-        console.log(hcElement)
+        // console.log(hcElement)
         let noteName = hcElement.id.replace('_Imageremove_hc','');
         let classes = [noteName,'note','hc']; 
         hcElement.classList.add(...classes);
