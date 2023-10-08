@@ -67,7 +67,6 @@ function fixFolder(){
               // newElement.style.transition = 'all 0.1s ease';
               // newElement.style.opacity = 0.3;
               newElement.classList.add('on');
-              // console.log(newElement.classList)
               // synth.triggerAttack(Tone.Frequency(1*(cPenta[parseFloat(element.id.split('_')[1])%5])+72, 'midi').toFrequency());
           },
   
