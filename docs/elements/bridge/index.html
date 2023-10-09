@@ -20,7 +20,6 @@
         z-index:1;
     }
     
-    
     .vectorised__container{
         opacity:0.1;
         transition: opacity 2s;
@@ -39,6 +38,12 @@
         container.style.filter='brightness(100%)';
         z-index:1;
     }
+    .beyond__container{
+        opacity:0.1;
+        transition: filter 2s, opacity 2s;
+        container.style.filter='brightness(100%), sepia(0%)';
+        z-index:1;
+    }
     
     
   </style>
@@ -48,6 +53,7 @@
   <main class="container awaitStart transparent">
     <div class="photo__container"></div>
     <div class="vectorised__container"></div>
+    <div class="beyond__container"></div>
     <div class="bridge__container"></div>
     <object class="bridge svg-import" id="bridge" data="svg/bridge_october.svg" type="image/svg+xml"></object>
   </main>
