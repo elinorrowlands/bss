@@ -9,7 +9,25 @@
   <script src="./bridge_interact.js" defer></script>
   <style>
     #bridge{
-        transform-origin: 30% 70%;
+        transform-origin: 20% 75%;
+    }
+    svg.bridge{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        z-index:1;
+    }
+    
+    //- svg.bridge.vectorised__parent{
+    //-     opacity:0.1;
+    //-     transition: opacity 2s;
+    //- }
+    
+    .vectorised__container{
+        opacity:0.1;
+        transition: opacity 2s;
     }
     
   </style>
@@ -17,6 +35,7 @@
 <body class="fullpage bridge">
   <div class="bridge" id="backdrop"></div>
   <main class="container awaitStart transparent">
+    <div class="vectorised__container"></div>
     <object class="bridge svg-import" id="bridge" data="svg/bridge_october.svg" type="image/svg+xml"></object>
   </main>
   <!-- INSTRUCTIONS ON PAGE LOAD-->

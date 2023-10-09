@@ -12,10 +12,29 @@ head
         #bridge{
             transform-origin: 20% 75%;
         }
+        svg.bridge{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100vw;
+            height:100vh;
+            z-index:1;
+        }
+        
+        //- svg.bridge.vectorised__parent{
+        //-     opacity:0.1;
+        //-     transition: opacity 2s;
+        //- }
+        
+        .vectorised__container{
+            opacity:0.1;
+            transition: opacity 2s;
+        }
     
 body.fullpage.bridge
     #backdrop.bridge
     main.container.awaitStart.transparent
+        .vectorised__container
         //- include toolbar
         //- div#interactive
         //-     include bridge_masks

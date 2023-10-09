@@ -4,8 +4,7 @@
     opacity:0.1;
   }
   .vectorised{
-    opacity:0.1;
-    transition: opacity 2s;
+
   }
 </style>
   <g id="bridge_Image" data-name="bridge Image">
@@ -64,10 +63,10 @@
     <image id="beyond2_Imageremove" data-name="beyond2 Imageremove" width="528" height="315" transform="translate(175.96 280.5) scale(0.5)" xlink:href="bridge_october6.png"/>
   </g>
   <g id="Layer_9" data-name="Layer 9">
-    <image width="2000" height="1481" transform="translate(1.44 1.18) scale(0.47 0.47)" class="vectorised" xlink:href="not_bridge_vector.png"/>
+    <image width="2000" height="1481" transform="translate(1.44 1.18) scale(0.47 0.47)" class="vectorised bridge__background" xlink:href="not_bridge_vector.png"/>
   </g>
   <g id="Layer_8" data-name="Layer 8">
-    <image width="2000" height="1481" transform="translate(0 0.37) scale(0.47 0.47)" class="vectorised" xlink:href="bridge_only_vector.png"/>
+    <image width="2000" height="1481" transform="translate(0 0.37) scale(0.47 0.47)" class="vectorised bridge__foreground" xlink:href="bridge_only_vector.png"/>
   </g>
   <g id="under">
     <g id="lJ8o4e.tif">
