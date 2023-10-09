@@ -58,7 +58,7 @@ window.addEventListener('load',()=>{
             // console.log(vectorImage.parentElement)
             if(type=='start'||type=='enter'){
                 container.style.opacity = 0.9;
-                container.style.filter='brightness(50%)';
+                container.style.filter='brightness(10%)';
             } else if(type=='end'||type=='leave'){
                 container.style.opacity = 0.1;
                 container.style.filter='brightness(100%)';

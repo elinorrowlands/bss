@@ -20,10 +20,6 @@
         z-index:1;
     }
     
-    //- svg.bridge.vectorised__parent{
-    //-     opacity:0.1;
-    //-     transition: opacity 2s;
-    //- }
     
     .vectorised__container{
         opacity:0.1;
@@ -38,8 +34,9 @@
     }
     
     .bridge__container{
-        opacity:1;
-        transition: filter 2s opacity 2s;
+        opacity:0.1;
+        transition: filter 2s, opacity 2s;
+        container.style.filter='brightness(100%)';
         z-index:1;
     }
     

@@ -20,12 +20,7 @@ head
             height:100vh;
             z-index:1;
         }
-        
-        //- svg.bridge.vectorised__parent{
-        //-     opacity:0.1;
-        //-     transition: opacity 2s;
-        //- }
-        
+       
         .vectorised__container{
             opacity:0.1;
             transition: opacity 2s;
@@ -39,8 +34,9 @@ head
         }
         
         .bridge__container{
-            opacity:1;
-            transition: filter 2s opacity 2s;
+            opacity:0.1;
+            transition: filter 2s, opacity 2s;
+            container.style.filter='brightness(100%)';
             z-index:1;
         }
     
@@ -50,6 +46,7 @@ body.fullpage.bridge
     main.container.awaitStart.transparent
         .photo__container
         .vectorised__container
+        .beyond__container
         .bridge__container
         //- include toolbar
         //- div#interactive
