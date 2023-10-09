@@ -10,6 +10,11 @@
 function assignClasses(element=document, copyMasks = false, bringParent = false){
     // console.log('assignClasses',element)
     let HC = {};
+    if(!element.querySelectorAll('.hc, .pickup').length){
+        console.log('no hc')
+        let groupsContainingPaths = document.querySelectorAll('g[id*="_hc"]');
+        groupsContainingPaths.forEach(g=>g.classList.add('hc'));
+    };
     element.querySelectorAll('.hc, .pickup').forEach((hcElement)=>{
         // console.log(hcElement)
         let noteName = hcElement.id.replace('_Imageremove_hc','');
@@ -26,7 +31,8 @@ function assignClasses(element=document, copyMasks = false, bringParent = false)
     
     element.querySelectorAll('image').forEach((imageGroup)=>{
         if(bringParent) imageGroup = imageGroup.parentElement;
-        // console.log('imageGroup',imageGroup)
+        console.log('noteName',noteName)
+        console.log('imageGroup',imageGroup)
         let noteName = imageGroup.id.replace('_Image','');
         let classes = [noteName, 'note'];
         
