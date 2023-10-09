@@ -6,7 +6,14 @@ document.querySelectorAll('image').forEach((x,i)=>{
 touch.setAction('.interact');
 
 window.addEventListener('touch-pickup',e=>{
-    let {element}=e.detail;
+    let {element, type}=e.detail;
     console.log(e.detail)
-    
+    document.querySelectorAll('.vectorised').forEach(vectorImage=>{
+        if(type=='start'||type=='enter'){
+            vectorImage.style.opacity=0.9;    
+        } else if(type=='end'||type=='leave'){
+            vectorImage.style.opacity=0.1;
+        }
+        
+    })
 })
