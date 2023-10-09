@@ -29,12 +29,28 @@ head
         .vectorised__container{
             opacity:0.1;
             transition: opacity 2s;
+            z-index:2;
         }
+        
+        .photo__container{
+            opacity:1;
+            transition: opacity 2s;
+            z-index:1;
+        }
+        
+        .bridge__container{
+            opacity:1;
+            transition: filter 2s opacity 2s;
+            z-index:1;
+        }
+    
     
 body.fullpage.bridge
     #backdrop.bridge
     main.container.awaitStart.transparent
+        .photo__container
         .vectorised__container
+        .bridge__container
         //- include toolbar
         //- div#interactive
         //-     include bridge_masks
