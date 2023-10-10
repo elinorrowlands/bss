@@ -27,8 +27,6 @@ window.saveState = function saveState(index){
     parameters.forEach(parameterName=>{
         states[index][parameterName] = faders[parameterName].value;
     })
-    
-    states[index].colour = CM.RGBToHSL(...CM.hexToRGB(document.querySelector('#colour-picker').value));
 }
 
 
@@ -41,16 +39,7 @@ window.interpolateStates = function interpolateStates(value, parameters=['echo',
         })
     }
 
-    let hsl = hslToArray(interpolateColour(value, states[1], states[2]));
-
-    let updateColours = true;
-    if(updateColours){
-        let colourPicker = document.querySelector('#colour-picker');
-        if(colourPicker) {
-            colourPicker.value = CM.HSLToHex(...hsl);
-            document.body.style.backgroundColor = document.querySelector('#colour-picker').value;
-        }
-    }
+    
 
 
     echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
@@ -179,8 +168,6 @@ const loader = ()=>{
         })
     })
     
-
-    setInteractions();
 
     document.querySelector('#states__interpolate').dispatchEvent(new Event('input'));
 

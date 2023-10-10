@@ -6,7 +6,7 @@ head
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.js')
     link(rel='stylesheet', href='../../style.css')
     script(src='../../main.js' defer)
-    script(src='./bridge_interact.js' defer)
+    script(src='./bridge_interact.js' type='module' defer)
     //- script(src='window.js' type='module' defer)
     style.
         #bridge{
@@ -55,7 +55,6 @@ body.fullpage.bridge
         .beyond__container
         .bridge__container
         .boundary__container
-        //- include toolbar
         //- div#interactive
         //-     include bridge_masks
         //-     object#bridge.bridge.svg-import(data='bridge_simplified.svg' type='image/svg+xml')
@@ -63,6 +62,7 @@ body.fullpage.bridge
         //-     object#bridge_white_light_interaction.bridge.svg-import(data='bridge_white_light_interaction.svg' type='image/svg+xml')
         object#bridge.bridge.svg-import(data='svg/bridge_october.svg' type='image/svg+xml')
         object#bridge.bridge.svg-import(data='svg/boundary.svg' type='image/svg+xml')
+    include toolbar
             
     // INSTRUCTIONS ON PAGE LOAD
     section.instructions.flex.scrollable

@@ -105,7 +105,7 @@ window.addEventListener('load',()=>{
                     container.style.filter = 'sepia(100%)';
                 });
             }
-            console.log('move',x,y, e.detail)
+            // console.log('move',x,y, e.detail)
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.9;
             });

@@ -39,7 +39,7 @@
         z-index:1;
     }
     .beyond__container{
-        opacity:0.1;
+        opacity:1;
         transition: filter 2s, opacity 2s;
         container.style.filter='brightness(100%) sepia(0%)';
         z-index:1;
@@ -59,6 +59,32 @@
     <object class="bridge svg-import" id="bridge" data="svg/bridge_october.svg" type="image/svg+xml"></object>
     <object class="bridge svg-import" id="bridge" data="svg/boundary.svg" type="image/svg+xml"></object>
   </main>
+  <div class="allowDefault" id="toolbar">
+    <div id="play__container">
+      <button id="play">PLAY</button>
+    </div>
+    <div id="effect__container">
+      <label for="effect__echo">Echo time</label>
+      <input class="fader" id="effect__echo" type="range" min="0" max="1" step="0.01" value="0.5">
+      <label for="effect__echo">Echo amount</label>
+      <input class="fader" id="effect__echo" type="range" min="0" max="1" step="0.01" value="0.5">
+      <label for="effect__lpf">Lowpass filter</label>
+      <input class="fader" id="effect__lpf" type="range" min="0" max="1" step="0.01" value="0.5">
+      <label for="effect__comb__time">Comb time</label>
+      <input class="fader" id="effect__comb__time" type="range" min="0.1" max="0.9" step="0.01" value="0.5">
+      <label for="effect__comb__feedback">Comb resonance</label>
+      <input class="fader" id="effect__comb__feedback" type="range" min="0" max="0.9" step="0.01" value="0.5">
+    </div>
+    <div id="colour-picker__container">
+      <label for="colour-picker">Colour picker</label>
+      <input id="colour-picker" type="color" value="#0000ff">
+    </div>
+    <div id="states__containers">
+      <button id="states__save__1">SAVE 1</button>
+      <button id="states__save__2">SAVE 2</button>
+      <input id="states__interpolate" type="range" min="0" max="1" step="0.01" value="0">
+    </div>
+  </div>
   <!-- INSTRUCTIONS ON PAGE LOAD-->
   <section class="instructions flex scrollable">
     <div class="instructions__text">
