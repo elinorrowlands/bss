@@ -1,3 +1,5 @@
+import loader from './setLoader.js';
+
 function getContainerSvg(containerElement){
     do {
       containerElement = containerElement.parentElement;
@@ -120,6 +122,8 @@ window.addEventListener('load',()=>{
             });
         }
     });
-    
+    document.querySelectorAll('#toolbar').forEach(toolbar=>{
+        toolbar.style.display='none';
+    })
 })
 
