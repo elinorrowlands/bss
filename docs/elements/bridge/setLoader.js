@@ -1,8 +1,6 @@
-import setInteractions from './setInteractions.js';
-
 let faders;
 
-window.playToggle = function playToggle(override = false, player){
+window.playToggle = function playToggle(override = false, player = window.player){
     if(player.state == 'started' && !override){
         player.stop();
     }        
@@ -60,16 +58,16 @@ const loader = ()=>{
         comb__feedback: document.querySelector('#effect__comb__feedback')
     }
     
-    const playButton = document.querySelector('#play');
-    const saveButton1 = document.querySelector('#states__save__1');
-    const saveButton2 = document.querySelector('#states__save__2');
+    window.playButton = document.querySelector('#play');
+    window.saveButton1 = document.querySelector('#states__save__1');
+    window.saveButton2 = document.querySelector('#states__save__2');
     
     window.states = {
         "1": {
             "echo": "0.95",
             "lpf": "0.02",
-            "comb__time": "0.15",
-            "comb__feedback": "0.83",
+            "comb__time": "0.1",
+            "comb__feedback": "0.9",
             "colour": [
                 0,
                 0,
@@ -78,7 +76,7 @@ const loader = ()=>{
         },
         "2": {
             "echo": "0.05",
-            "lpf": "0.83",
+            "lpf": "0.9",
             "comb__time": "0.15",
             "comb__feedback": "0",
             "colour": [

@@ -1,3 +1,7 @@
+/**
+ * Prototype for the bridge interaction
+ */
+
 import loader from './setLoader.js';
 
 function getContainerSvg(containerElement){
@@ -55,11 +59,40 @@ window.addEventListener('load',()=>{
     document.querySelector('main').replaceWith(document.querySelector('main'))
     
     touch.setAction('.interact');
-    
+    window.playFlag = false;
+    document.querySelectorAll('#nav__start').forEach(x=>{
+        x.addEventListener('click',()=>{
+          
+                if(!window.playFlag) {
+                    window.playFlag = true;
+                    window.playToggle();
+                }
+          
+        })    
+    })
     window.addEventListener('touch-pickup', e => {
-        let { element, type, x,y } = e.detail;
-
+        let { element, type, x,y, relative } = e.detail;
+        
+        function distance(x1, y1, x2, y2){
+            return Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
+        }
+        
+        // console.log(x, y, window.innerWidth, window.innerHeight, distance(x,y,window.innerWidth/2,window.innerHeight/2))
+        // let distanceFromCentre = distance(x,y,window.innerWidth/2,window.innerHeight/2);
+        // console.log('dist:',distanceFromCentre/window.innerWidth);
+        // interpolateStates(distanceFromCentre/window.innerWidth);
+        // const sineY = Math.sin((1 - (relative.y / relative.range.y) - 0.5) * Math.PI) * 0.5 + 0.5;
+        const sineY = 0.1-( Math.abs(Math.sin(relative.y / (relative.range.y*0.8) * Math.PI))* 0.1);
+        // interpolateStates(relative.y / relative.range.y)
+        console.log('sineY',sineY, element.id)
+        
+        
         if (type == 'start' || type == 'enter') {
+            if(element.id=='bridge__under')interpolateStates(sineY);
+           
+          
+            
+            
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.8;
             });
@@ -82,6 +115,7 @@ window.addEventListener('load',()=>{
             //     });
             // }
         } else if (type == 'end' || type == 'leave') {
+            interpolateStates(0.1);
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.1;
             });
@@ -101,6 +135,7 @@ window.addEventListener('load',()=>{
             //     });
             // }
         } else if(type=='move'){
+            if(element.id=='bridge__under')interpolateStates(sineY);
             if(element.id == 'bridge__beyond') {
                 document.querySelectorAll('.beyond__container').forEach(container => {
                     container.style.opacity = 0.9;
@@ -122,6 +157,7 @@ window.addEventListener('load',()=>{
             });
         }
     });
+    loader();
     document.querySelectorAll('#toolbar').forEach(toolbar=>{
         toolbar.style.display='none';
     })
