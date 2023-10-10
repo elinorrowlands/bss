@@ -10,7 +10,9 @@ window.addEventListener('load',()=>{
     document.querySelectorAll('image').forEach((x,i)=>{
         // if(i%2===0) return;
         let container = getContainerSvg(x);
-        // container.style.filter=`invert(${i*2}%) sepia(${i*2%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%)`
+        // console.log(container.classList)
+        if(!container.classList.contains('note_1')) return;
+        container.style.filter=`invert(${i*2}%) sepia(${i*2%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%)`
     })
     
     // document.querySelector('.split.trees').style.filter = `invert(${0}%) sepia(${55}%) saturate(4212%) hue-rotate(104deg) brightness(98%) contrast(103%)`
@@ -27,16 +29,22 @@ window.addEventListener('load',()=>{
         document.querySelector('.vectorised__container').appendChild(container);
     })
     
-    document.querySelectorAll('.beyond.photo').forEach(vectorImage=>{
-        let container = getContainerSvg(vectorImage);
-        container.classList.add('beyond__parent');
-        document.querySelector('.beyond__container').appendChild(container);
-    })
+    // document.querySelectorAll('.beyond.photo').forEach(vectorImage=>{
+    //     let container = getContainerSvg(vectorImage);
+    //     container.classList.add('beyond__parent');
+    //     document.querySelector('.beyond__container').appendChild(container);
+    // })
     
     document.querySelectorAll('.vectorised.bridge__foreground').forEach(vectorImage=>{
         let container = getContainerSvg(vectorImage);
         container.classList.add('vectorised__parent');
         document.querySelector('.bridge__container').appendChild(container);
+    })
+    
+    document.querySelectorAll('.boundary').forEach(vectorImage=>{
+        let container = getContainerSvg(vectorImage);
+        container.classList.add('vectorised__parent');
+        document.querySelector('.boundary__container').appendChild(container);
     })
     
     document.querySelector('main').appendChild(document.querySelector('.beyond__container'));
@@ -62,12 +70,15 @@ window.addEventListener('load',()=>{
             document.querySelectorAll('.photo__container').forEach(container => {
                 container.style.opacity = 0.1;
             });
-            if(element.id == 'bridge__beyond') {
-                document.querySelectorAll('.beyond__container').forEach(container => {
-                    container.style.opacity = 0.9;
-                    container.style.filter = 'sepia(100%)';
-                });
-            }
+            document.querySelectorAll('.boundary__container').forEach(container => {
+                container.style.opacity = 0;
+            });
+            // if(element.id == 'bridge__beyond') {
+            //     document.querySelectorAll('.beyond__container').forEach(container => {
+            //         container.style.opacity = 0.9;
+            //         container.style.filter = 'sepia(100%)';
+            //     });
+            // }
         } else if (type == 'end' || type == 'leave') {
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.1;
@@ -81,12 +92,12 @@ window.addEventListener('load',()=>{
             document.querySelectorAll('.photo__container').forEach(container => {
                 container.style.opacity = 1;
             });
-            if(element.id == 'bridge__beyond') {
-                document.querySelectorAll('.beyond__container').forEach(container => {
-                    container.style.opacity = 0.9;
-                    container.style.filter = 'sepia(0%)';
-                });
-            }
+            // if(element.id == 'bridge__beyond') {
+            //     document.querySelectorAll('.beyond__container').forEach(container => {
+            //         container.style.opacity = 0.9;
+            //         container.style.filter = 'sepia(0%)';
+            //     });
+            // }
         } else if(type=='move'){
             if(element.id == 'bridge__beyond') {
                 document.querySelectorAll('.beyond__container').forEach(container => {
