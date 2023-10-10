@@ -8,18 +8,19 @@
         stroke-linejoin:miter;
         stroke-opacity:1;
         stroke:navy;
+        font-family:Crimson Text;
     }
     </style>
     <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" stroke="none" fill="none" stroke-opacity="1">
         <g id="Canvas_1_Layer_1">
             <g id="Graphic_5">
                 <text transform="translate(42.125 442.625)" fill="white">
-                    <tspan font-family="Crimson Text" font-size="96" fill="white" x="0" y="88">Biodivergent</tspan>
+                    <tspan font-size="96" fill="white" x="0" y="88">Biodivergent</tspan>
                 </text>
             </g>
             <g id="Graphic_4">
                 <text transform="translate(48.875 551.48246)" fill="white">
-                    <tspan font-family="Crimson Text" font-size="68" fill="white" x="0" y="63">Sites and Sounds</tspan>
+                    <tspan font-size="68" fill="white" x="0" y="63">Sites and Sounds</tspan>
                 </text>
             </g>
         </g>
