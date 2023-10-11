@@ -38,7 +38,7 @@ window.addEventListener('load',()=>{
 
         elements[key].number = document.createElement('div');
         elements[key].number.classList.add('qr__number');
-        elements[key].number.innerHTML = i+1;
+        elements[key].number.innerHTML = `- ${i+1} -`;
         elements[key].number.setAttribute('aria-hidden', 'true');
 
         elements[key].url = baseURL + value.folder;
