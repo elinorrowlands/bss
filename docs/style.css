@@ -926,6 +926,10 @@ h1.padded {
   padding: 1em;
 }
 
+p {
+  font-size: 20px;
+}
+
 path {
   transition: opacity 1s ease-in-out;
 }
