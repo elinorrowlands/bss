@@ -6,6 +6,14 @@ let elements = {
         folder: 'elements/bridge',
         qr:null
     },
+    'text': {
+        folder: 'elements/text',
+        qr:null
+    },
+    'mix': {
+        folder: 'elements/crossing',
+        qr:null
+    },
     'ripples': {
         folder: 'elements/ripples',
         qr:null
@@ -14,16 +22,8 @@ let elements = {
         folder: 'elements/rusty_can',
         qr:null
     },
-    'text': {
-        folder: 'elements/text',
-        qr:null
-    },
-    'heart': {
-        folder: 'elements/heart',
-        qr:null
-    },
-    'mix': {
-        folder: 'elements/mix',
+    'school': {
+        folder: 'elements/school',
         qr:null
     },
 }
@@ -47,7 +47,7 @@ window.addEventListener('load',()=>{
         elements[key].text.classList.add('qr__text');
         elements[key].text.innerHTML = key.replace('_',' ')
             .replace('text', "water's edge")
-            .replace('heart', 'lock')
+            .replace('heart', 'school')
             .replace('mix', 'crossing')
 
         elements[key].qr = generateQR(elements[key].url, `qr__${key}`);
