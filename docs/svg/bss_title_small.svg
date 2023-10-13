@@ -8,12 +8,12 @@
       <title>Layer 1</title>
       <g id="Graphic_2">
         <text transform="translate(152.375 212)" fill="#666">
-          <tspan font-family="Crimson Text" font-size="24" fill="#666" x="0" y="23">Biodivergent</tspan>
+          <tspan font-family="Crimson Text" font-size="24" fill="#fff" x="0" y="23">Biodivergent</tspan>
         </text>
       </g>
       <g id="Graphic_4">
         <text transform="translate(152.375 233.375)" fill="#666">
-          <tspan font-family="Crimson Text" font-size="19" fill="#666" x="0" y="18">Sites and Sounds</tspan>
+          <tspan font-family="Crimson Text" font-size="19" fill="#fff" x="0" y="18">Sites and Sounds</tspan>
         </text>
       </g>
     </g>

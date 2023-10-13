@@ -114,7 +114,7 @@ canvas#overlay {
     display:block;
     width:auto;
     z-index:3000;
-    background-color:$background2;
+    // background-color:$background2;
   }
   
   button.nav__info{
@@ -126,7 +126,7 @@ canvas#overlay {
     display:block;
     width:auto;
     z-index:3000;
-    background-color:$background2;
+    // background-color:$background2;
   }
   
   
@@ -197,14 +197,15 @@ body.fullpage{
 }
 
 .title__button{
+  background-color:$background2;
   max-width:300px;
   height:100px;
   // height:100%;
   padding:none;
   border:none;
   border: 2px solid $outline-grey;
-  background-color: transparent;
-  background: transparent;
+  // background-color: transparent;
+  // background: transparent;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
   border-radius:10px;
   cursor: pointer;
@@ -245,12 +246,13 @@ body.fullpage{
   border:none;
   max-width:100px;
   max-height:100px;
+  background-color:transparent;
 }
 
 .nav__info:hover{
-  background-color: $outline;
-  border-color: transparent;
-  color: $background;
+  // background-color: $outline;
+  // border-color: transparent;
+  // color: $background;
   cursor: pointer;
 }
 

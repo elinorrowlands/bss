@@ -974,7 +974,6 @@ button.nav__back {
   display: block;
   width: auto;
   z-index: 3000;
-  background-color: navy;
 }
 
 button.nav__info {
@@ -985,7 +984,6 @@ button.nav__info {
   display: block;
   width: auto;
   z-index: 3000;
-  background-color: navy;
 }
 
 .nav__back {
@@ -1050,13 +1048,12 @@ body.fullpage {
 }
 
 .title__button {
+  background-color: navy;
   max-width: 300px;
   height: 100px;
   padding: none;
   border: none;
   border: 2px solid #666666;
-  background-color: transparent;
-  background: transparent;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
   border-radius: 10px;
   cursor: pointer;
@@ -1074,12 +1071,10 @@ body.fullpage {
   border: none;
   max-width: 100px;
   max-height: 100px;
+  background-color: transparent;
 }
 
 .nav__info:hover {
-  background-color: white;
-  border-color: transparent;
-  color: darkblue;
   cursor: pointer;
 }
 
