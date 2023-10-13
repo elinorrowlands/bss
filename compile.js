@@ -7,6 +7,7 @@ let pugFiles = [
     'map',
     'map2',
     'about',
+    'trail',
 
     'elements/index',
 

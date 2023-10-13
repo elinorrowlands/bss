@@ -1,29 +1,29 @@
 html(lang="en")
     head
-        include head
-        script(src="./main.js" defer)
-        script(src="./front.js" defer)
-        title Biodivergent Sites and Sounds
-        style.
-            .infoText{
-                display:none;
-            }
-    body
-        main.splash
-            object#main__title.nav__back(type="image/svg+xml" data="svg/title.svg" role="header")
-            img.front__water(src="bg0_lo.png" alt="An abstract water texture in dark blue with a faint wash of aqua, gently ebbing back and forth.")
-            img.front__water.alt(src="bg0_lo.png" aria-hidden="true")
-            img.front__water.alt2(src="bg0_lo.png" aria-hidden="true")
-            img.front__map(src="svg/map.svg")
-            .nav__icon
-                a(href="about.html")
-                    img.icon.icon__info(src='icons/noun-information-150178-FFFFFF.svg' title="Information")  
-            #infoText        
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title BSS: About
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
+        link(rel='stylesheet', href='style.css')
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
+           
+    body.about
+        object#main__title.about.nav__back(type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
+        main.textBlock
+            div.textColumn
                 p For those of you who are able, we invite you to journey along the canal towpath and listen to this soundscape, created by Elinor Rowlands in collaboration with Biodivergent Sites & Sounds artists, partners and participants.
 
                 p This soundscape is designed to be listened to as you walk or roll between the Grand Union Community Hub (the venue for our launch event in November 2023) and Acton Lane Bridge (Harlesden).
-
-
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1638593142&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/elinor-clare-rowlands" title="Elinor Clare Rowlands" target="_blank" style="color: #cccccc; text-decoration: none;">Elinor Clare Rowlands</a> · <a href="https://soundcloud.com/elinor-clare-rowlands/song-of-canal" title="Harlesden&#x27;s Canal" target="_blank" style="color: #cccccc; text-decoration: none;">Harlesden&#x27;s Canal</a></div>
         footer
-            include footer_links
-        
+            include footer  
+        script.
+            if(window.touch) touch.unlisten();
+            
+            document.querySelectorAll('.nav__back').forEach((el)=>{
+                el.addEventListener('click', ()=>{
+                    window.location.href="index.html";
+                })
+            })
