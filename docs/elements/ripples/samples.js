@@ -1,6 +1,6 @@
 const sounds = {
     // loop: new Tone.Player("nesting.mp3"),
-    loop: new Tone.Player("../../loops/heart_heart_trees.m4a"),
+    loop: new Tone.Player("../../loops/heart_heart_trees_louder.m4a"),
     meter: new Tone.Meter(),
     filter: new Tone.Filter(200, "lowpass"),
     // hpf: new Tone.Filter(400, "highpass"),
