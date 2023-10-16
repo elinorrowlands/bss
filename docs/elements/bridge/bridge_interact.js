@@ -163,5 +163,7 @@ window.addEventListener('load',()=>{
     document.querySelectorAll('#toolbar').forEach(toolbar=>{
         toolbar.style.display='none';
     })
+    interpolateStates(0.1);
+    window.echo.wet.value = 0;
 })
 
