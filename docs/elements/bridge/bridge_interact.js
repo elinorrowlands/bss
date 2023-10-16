@@ -115,7 +115,9 @@ window.addEventListener('load',()=>{
             //     });
             // }
         } else if (type == 'end' || type == 'leave') {
+            console.log('end',x,y, e.detail)
             interpolateStates(0.1);
+            echo.wet.rampTo(0, 0.1);
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.1;
             });

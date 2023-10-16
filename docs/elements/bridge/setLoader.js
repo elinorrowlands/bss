@@ -39,9 +39,10 @@ window.interpolateStates = function interpolateStates(value, parameters=['echo',
 
     
 
-
-    echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
-    
+    let echoValue = states[1].echo * (1-value) + states[2].echo * value;
+    // echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
+    echo.wet.rampTo(echoValue, 0.1);
+    console.log('echo wet', echo.wet.value)
     lpf.frequency.rampTo(faders.lpf.value*20000+50, 0.1)
     // console.log(faders.lpf.value*20000+50, 0.1)
     comb.delayTime.rampTo(states[1].comb__time * (1-value) + states[2].comb__time * value * 0.8 + 0.1, 0.1);
@@ -67,7 +68,7 @@ const loader = ()=>{
             "echo": "0.95",
             "lpf": "0.02",
             "comb__time": "0.1",
-            "comb__feedback": "0.9",
+            "comb__feedback": "0.5",
             "colour": [
                 0,
                 0,
@@ -118,8 +119,11 @@ const loader = ()=>{
     window.comb = new Tone.FeedbackCombFilter(0.5, 0.5);
 
     player.loop = true;
-    player.chain(comb, hpf, echo, lpf, Tone.Master);
-    player.chain(lpf, Tone.Master);
+    // player.chain(comb, hpf, echo, lpf, Tone.Master);
+    // this appears to work as a backup for iOS issues with latest version of Tone...
+    player.chain(lpf, echo, Tone.Master)
+    // player.chain(lpf, Tone.Master);
+    
 
 
     playButton.addEventListener('click', () => {
