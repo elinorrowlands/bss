@@ -40,7 +40,7 @@ window.interpolateStates = function interpolateStates(value, parameters=['echo',
     
 
     let echoValue = states[1].echo * (1-value) + states[2].echo * value;
-    // echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
+    
     echo.wet.rampTo(echoValue, 0.1);
     if(window.verbose)console.log('echo wet', echo.wet.value)
     lpf.frequency.rampTo(faders.lpf.value*20000+50, 0.1)
