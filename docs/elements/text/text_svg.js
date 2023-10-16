@@ -131,7 +131,7 @@ function start(){
             player.start(Tone.now(), text.startS, text.endS-text.startS);
             element.style.left = x+'px';
             element.style.top = y+'px';
-            console.log(element.style.top, element.style.left)
+            if(window.verbose)console.log(element.style.top, element.style.left)
             
         } else if (type == 'end' || type == 'leave'){
     

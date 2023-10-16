@@ -42,7 +42,7 @@ window.interpolateStates = function interpolateStates(value, parameters=['echo',
     let echoValue = states[1].echo * (1-value) + states[2].echo * value;
     // echo.wet.value = states[1].echo * (1-value) + states[2].echo * value;
     echo.wet.rampTo(echoValue, 0.1);
-    console.log('echo wet', echo.wet.value)
+    if(window.verbose)console.log('echo wet', echo.wet.value)
     lpf.frequency.rampTo(faders.lpf.value*20000+50, 0.1)
     // console.log(faders.lpf.value*20000+50, 0.1)
     comb.delayTime.rampTo(states[1].comb__time * (1-value) + states[2].comb__time * value * 0.8 + 0.1, 0.1);

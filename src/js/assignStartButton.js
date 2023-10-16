@@ -1,6 +1,6 @@
 function startElement(){
     Tone.start();
-    // this should be classLIst.add('nodisplay')  but something in CSS is preventing that from working
+    // this should be classList.add('nodisplay')  but something in CSS is preventing that from working
     document.querySelector('section.instructions').classList.add('nodisplay')
     document.querySelector('section.instructions').style.display = 'none';
     document.querySelectorAll('.awaitStart').forEach(element=>{
@@ -14,8 +14,8 @@ function startElement(){
 
 
 const assignStartButton = function(){
+    touch.unlisten();
     document.querySelectorAll('button.startElement').forEach(button=>{
-        touch.unlisten();
         button.innerHTML = 'Loading ...';
         Tone.loaded().then(()=>{
             button.innerHTML = 'Start';
