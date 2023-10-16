@@ -84,7 +84,7 @@ window.addEventListener('load',()=>{
         // const sineY = Math.sin((1 - (relative.y / relative.range.y) - 0.5) * Math.PI) * 0.5 + 0.5;
         const sineY = 0.1-( Math.abs(Math.sin(relative.y / (relative.range.y*0.8) * Math.PI))* 0.1);
         // interpolateStates(relative.y / relative.range.y)
-        console.log('sineY',sineY, element.id)
+        // console.log('sineY',sineY, element.id)
         
         
         if (type == 'start' || type == 'enter') {
