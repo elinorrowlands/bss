@@ -3,7 +3,8 @@ function addBackButton(){
     
     if(urlParams.has('standalone') || document.querySelector(".nav__back")) return;
     
-    let homePage = urlParams.get('from') == 'map' ? 'map2' : 'index';
+    // let homePage = urlParams.get('from') == 'map' ? 'map2.html' : 'index.html';
+    let homePage = urlParams.get('from') == 'map' ? 'map2.html' : 'elements/';
     
     let backButton = document.createElement("button");
     
@@ -13,7 +14,7 @@ function addBackButton(){
     backButton.classList.add('title__button','nav__back', 'allowDefault')
     
     backButton.addEventListener('click',()=>{
-        window.location = `https://elinorrowlands.github.io/bss/${homePage}.html`
+        window.location = `https://elinorrowlands.github.io/bss/${homePage}`
     });
     
     let infoButton = document.createElement("button");
