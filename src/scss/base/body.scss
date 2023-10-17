@@ -22,6 +22,7 @@ body {
     font-weight: 100;
     color: $text;
     transition: filter 1s;
+    -webkit-touch-callout: none!important;
 }
 
 body.full{
