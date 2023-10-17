@@ -1060,7 +1060,7 @@ body.fullpage {
 }
 
 .title__button:hover {
-  background-color: white;
+  background-color: hsl(233.26, 50.28%, 65.29%);
   border-color: transparent;
   color: darkblue;
   cursor: pointer;
