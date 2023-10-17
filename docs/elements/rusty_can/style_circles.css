@@ -49,3 +49,7 @@ circle{
 canvas {
     display: block;
 }
+
+image, svg {
+    touch-action: none;
+}

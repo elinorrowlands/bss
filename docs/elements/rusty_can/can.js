@@ -23,6 +23,8 @@ let moused = false;
 sounds.can2.reverse = false;
 sounds.can.toMaster();
 sounds.can2.toMaster();
+sounds.can.volume.value = -12;
+sounds.can2.volume.value = -12;
 // sounds.can.connect(sounds.echo);
 // sounds.can2.connect(sounds.echo);
 
