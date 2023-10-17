@@ -8,6 +8,7 @@ body {
     transition:filter 1s ease;
     transform-origin: center center;
     overflow:hidden;
+    -webkit-touch-callout: none!important;
 }
 
 #backdrop{
@@ -52,4 +53,5 @@ canvas {
 
 image, svg {
     touch-action: none;
+    -webkit-touch-callout: none;
 }
