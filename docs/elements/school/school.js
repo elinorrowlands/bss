@@ -111,28 +111,31 @@ function fixFolder(){
   
   let count = 0;
   let hueBuffer = 0;
-  window.setInterval(()=>{
-      count++;
-      level = Tone.dbToGain(meter.getValue());
+  // window.setInterval(()=>{
+  //     count++;
+  //     level = Tone.dbToGain(meter.getValue());
       
-      let hue = Math.floor(level*6000);
+  //     let hue = Math.floor(level*6000);
       
-      if(hue >= hueBuffer){
-          hueBuffer = hue;
-      } else {
-          hueBuffer -= 1;
-          hue = hueBuffer;
-      }
-      if(hue > 100){
-          hue = 100;
-      }
-      if(hue < 0){
-          hue = 0;
-      }
-      document.body.style.filter = `hue-rotate(${hue}deg)`;
-      document.querySelectorAll(`[id^='note_']`).forEach((e,i)=>{
+  //     if(hue >= hueBuffer){
+  //         hueBuffer = hue;
+  //     } else {
+  //         hueBuffer -= 1;
+  //         hue = hueBuffer;
+  //     }
+  //     if(hue > 100){
+  //         hue = 100;
+  //     }
+  //     if(hue < 0){
+  //         hue = 0;
+  //     }
+  //     document.body.style.filter = `hue-rotate(${hue}deg)`;
+  //     document.querySelectorAll(`[id^='note_']`).forEach((e,i)=>{
       
-      })
-  },300)
+  //     })
+  // },300)
+  
+  // Tone.loaded().then(()=>Tone.setContext(new Tone.Context({ latencyHint : "playback" })));
   }
+  
   
