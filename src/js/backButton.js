@@ -3,6 +3,12 @@ function addBackButton(){
     
     if(urlParams.has('standalone') || document.querySelector(".nav__back")) return;
     
+    let container = document.createElement("banner");
+    container.classList.add('banner__title');
+    
+    let blank = document.createElement("div");
+    blank.classList.add('blank');
+    
     // let homePage = urlParams.get('from') == 'map' ? 'map2.html' : 'index.html';
     let homePage = urlParams.get('from') == 'map' ? 'map2.html' : 'elements/';
     
@@ -33,8 +39,10 @@ function addBackButton(){
         document.querySelector('#infoButton').style.opacity=0.5;
     });
     
-    document.body.appendChild(backButton);
-    document.body.appendChild(infoButton)
+    container.appendChild(blank);
+    container.appendChild(backButton);
+    container.appendChild(infoButton);
+    document.body.appendChild(container);
 }
 
 export default addBackButton

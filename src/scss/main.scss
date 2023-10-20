@@ -106,11 +106,11 @@ canvas#overlay {
   }
 
   button.nav__back{
-    position:absolute;
-    top:10px;
-    left:10px;
-    right:10px;
-    margin:auto;
+    // position:absolute;
+    // top:10px;
+    // left:10px;
+    // right:10px;
+    // margin:auto;
     display:block;
     width:auto;
     z-index:3000;
@@ -118,11 +118,11 @@ canvas#overlay {
   }
   
   button.nav__info{
-    position:fixed;
-    top:10px;
+    // position:fixed;
+    // top:10px;
     // left:10px;
-    right:20px;
-    margin:auto;
+    // right:20px;
+    // margin:auto;
     display:block;
     width:auto;
     z-index:3000;
@@ -217,11 +217,20 @@ body.fullpage{
   cursor: pointer;
 } 
 
+.blank{
+  width:100px;
+  max-width: 15vw;
+  padding:10px;
+}
+
 .nav__info{
   cursor:pointer;
   border:none;
   width:100px;
-  max-width: 20vw;
+  // padding:10px;
+  max-width: 15vw;
+  // margin:auto;
+  // padding:auto;
   // max-width:100px;
   max-height:100px;
   background-color:transparent;
@@ -236,6 +245,16 @@ body.fullpage{
 
 .title__info{
   width:100px;
-  max-width:20vw;
+  max-width:10vw;
   height:100px;
+  // margin-right:10px;
+}
+
+.banner__title{
+  display:flex;
+  width:100vw;
+  justify-content: space-between;
+  position:absolute;
+  top:0;
+  margin:none;
 }
