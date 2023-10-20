@@ -36,6 +36,7 @@
 html,
 body {
   overscroll-behavior-y: none;
+  scroll-behavior: smooth;
 }
 
 body {
