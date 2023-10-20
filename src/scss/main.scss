@@ -191,6 +191,7 @@ body.fullpage{
 .title__back{
   // max-width:300px;
   height:100px;
+  max-width:75vw;
   // height:100%;
   padding:none;
   cursor: pointer;
@@ -198,41 +199,16 @@ body.fullpage{
 
 .title__button{
   background-color:$background2;
-  max-width:300px;
-  height:100px;
-  // height:100%;
+  // max-width:300px;
+  max-width:75vw;
+  height:100px; 
   padding:none;
   border:none;
   border: 2px solid $outline-grey;
-  // background-color: transparent;
-  // background: transparent;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
   border-radius:10px;
   cursor: pointer;
 }
-
-// .button{
-//   color: $outline;
-//   display: inline-block;
-//   font-family: "Nunito";
-//   font-size: 18px;
-//   font-style: normal;
-//   font-weight: 500;
-//   letter-spacing: .2em;
-//   line-height: 1em;
-//   list-style: none;
-//   padding-bottom: 1em;
-//   padding-left: 1.44em;
-//   padding-right: 1.24em;
-//   padding-top: 1em;
-//   text-align: center;
-//   text-decoration: none;
-//   text-rendering: optimizeLegibility;
-//   text-transform: uppercase;
- 
-//   // width: 10em;
-//   max-width:500px;
-// }   
 
 .title__button:hover{
   background-color: $background-text;
@@ -244,7 +220,9 @@ body.fullpage{
 .nav__info{
   cursor:pointer;
   border:none;
-  max-width:100px;
+  width:100px;
+  max-width: 20vw;
+  // max-width:100px;
   max-height:100px;
   background-color:transparent;
 }
@@ -258,5 +236,6 @@ body.fullpage{
 
 .title__info{
   width:100px;
+  max-width:20vw;
   height:100px;
 }

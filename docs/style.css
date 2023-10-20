@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* ⚝ Biodivergent Sites and Sounds */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap");
-/* ⚝ Colours 🎨 */ /* ⚝ Animations */
+/* ⚝ Colours 🎨 */
+/* ⚝ Animations */
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -1065,13 +1066,14 @@ body.fullpage {
 
 .title__back {
   height: 100px;
+  max-width: 75vw;
   padding: none;
   cursor: pointer;
 }
 
 .title__button {
   background-color: navy;
-  max-width: 300px;
+  max-width: 75vw;
   height: 100px;
   padding: none;
   border: none;
@@ -1091,7 +1093,8 @@ body.fullpage {
 .nav__info {
   cursor: pointer;
   border: none;
-  max-width: 100px;
+  width: 100px;
+  max-width: 20vw;
   max-height: 100px;
   background-color: transparent;
 }
@@ -1102,6 +1105,7 @@ body.fullpage {
 
 .title__info {
   width: 100px;
+  max-width: 20vw;
   height: 100px;
 }
 
