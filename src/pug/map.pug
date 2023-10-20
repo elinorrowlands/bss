@@ -2,25 +2,28 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title BSS: About
+        title BSS: Map
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js")
         link(rel='stylesheet', href='style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
+        script(src="./main.js" defer)
         script(src="./nav.js" defer)
+        script(src="./map.js" defer)
     body.about
-        //- button.allowDefault(onclick="window.location.href = 'index.html'")
         object#main__title.about.nav__back(onclick="console.log('hello')" type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
         main.textBlock
             object#map.map.svg-import(data='svg/map_B_transparent_lines_qr.svg' type='image/svg+xml')
         footer
             include footer  
         script.
-            if(window.touch) touch.unlisten();
+            //- if(window.touch) touch.unlisten();
             
             document.querySelectorAll('.nav__back').forEach((el)=>{
                 el.addEventListener('click', ()=>{
                     window.location.href="index.html";
                 })
             })
+           
+           
