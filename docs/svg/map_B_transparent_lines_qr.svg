@@ -146,14 +146,22 @@
 	.st140{fill:#A18700;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st141{fill:#00AAF1;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st142{fill:#FFFFFF;fill-opacity:0.49;stroke:#000000;stroke-miterlimit:10;}
-	.st143{font-family:'CrimsonText-Regular';}
-	.st144{font-size:60px;}
+	.element__number{font-family:'CrimsonText-Regular';}
+	.element__number{font-size:60px;}
 	.st145{fill:#FFFFFF;fill-opacity:0.59;stroke:#000000;stroke-miterlimit:10;}
 	.st146{fill:#FFFFFF;fill-opacity:0.58;stroke:#000000;stroke-miterlimit:10;}
 	.st147{fill:#FFFFFF;fill-opacity:0.63;stroke:#000000;stroke-miterlimit:10;}
 	.st148{fill:#FFFFFF;fill-opacity:0.61;stroke:#000000;stroke-miterlimit:10;}
 	.st149{display:none;}
 	.st150{font-size:300px;}
+	.element__marker{
+		fill:yellow;	
+		stroke:green;
+		stroke-width:10px;
+	}
+	.element__qr{
+		display:none;
+	}
 </style>
 <image style="overflow:visible;opacity:0.27;" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)">
 </image>
@@ -6809,47 +6817,47 @@
 	<path class="st115" d="M984,13l1-1L984,13z"/>
 	<path class="st1" d="M524,11h1l-1-1V11z"/>
 </g>
-<circle class="st142" cx="187.1" cy="389.7" r="52.7"/>
-<text transform="matrix(1 0 0 1 176.39 405.2912)" class="st143 st144">1</text>
-<circle class="st145" cx="316.5" cy="417" r="52.7"/>
-<text transform="matrix(1 0 0 1 303.634 434.7022)" class="st143 st144">2</text>
-<circle class="st146" cx="761.5" cy="347.4" r="52.7"/>
-<text transform="matrix(1 0 0 1 749 363)" class="st143 st144">3</text>
-<circle class="st147" cx="844.5" cy="464" r="52.7"/>
-<text transform="matrix(1 0 0 1 829.4996 485.0004)" class="st143 st144">4</text>
-<circle class="st148" cx="1040.5" cy="592.5" r="52.7"/>
-<text transform="matrix(1 0 0 1 1030.1 611.5078)" class="st143 st144">5</text>
-<circle class="st148" cx="1462" cy="655.5" r="52.7"/>
-<text transform="matrix(1 0 0 1 1445.577 673.2319)" class="st143 st144">6</text>
-<text transform="matrix(1 0 0 1 -0.4 204.0771)" class="st149 st143 st150">Harlesden</text>
+<circle class="element__marker" cx="187.1" cy="389.7" r="52.7"/>
+<text class="element__number" transform="matrix(1 0 0 1 176.39 405.2912)" >1</text>
+<circle class="element__marker" cx="316.5" cy="417" r="52.7"/>
+<text class="element__number" transform="matrix(1 0 0 1 303.634 434.7022)" >2</text>
+<circle class="element__marker" cx="761.5" cy="347.4" r="52.7"/>
+<text class="element__number" transform="matrix(1 0 0 1 749 363)" >3</text>
+<circle class="element__marker" cx="844.5" cy="464" r="52.7"/>
+<text class="element__number" transform="matrix(1 0 0 1 829.4996 485.0004)">4</text>
+<circle class="element__marker" cx="1040.5" cy="592.5" r="52.7"/>
+<text class="element__number" transform="matrix(1 0 0 1 1030.1 611.5078)">5</text>
+<circle class="element__marker" cx="1462" cy="655.5" r="52.7"/>
+<text class="element__number" transform="matrix(1 0 0 1 1445.577 673.2319)">6</text>
+
 <g id="QpzRSK_1_">
 	
-		<image style="overflow:visible;" width="256" height="256" id="QpzRSK" xlink:href="C601CAA704BC2681.jpg"  transform="matrix(0.3593 0 0 0.3593 143.7473 445.3835)">
+		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="QpzRSK" xlink:href="C601CAA704BC2681.jpg"  transform="matrix(0.3593 0 0 0.3593 143.7473 445.3835)">
 	</image>
 </g>
 <g id="lOSt6j_1_">
 	
-		<image style="overflow:visible;" width="256" height="256" id="lOSt6j" xlink:href="C601CAA704BC2687.jpg"  transform="matrix(0.3592 0 0 0.3592 270.5287 476.0287)">
+		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="lOSt6j" xlink:href="C601CAA704BC2687.jpg"  transform="matrix(0.3592 0 0 0.3592 270.5287 476.0287)">
 	</image>
 </g>
 <g id="xMtsbV_1_">
 	
-		<image style="overflow:visible;" width="256" height="256" id="xMtsbV" xlink:href="C601CAA704BC2680.jpg"  transform="matrix(0.351 0 0 0.351 713.566 403.8687)">
+		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="xMtsbV" xlink:href="C601CAA704BC2680.jpg"  transform="matrix(0.351 0 0 0.351 713.566 403.8687)">
 	</image>
 </g>
 <g id="DSLZSL_1_">
 	
-		<image style="overflow:visible;" width="256" height="256" id="DSLZSL" xlink:href="C601CAA704BC2683.jpg"  transform="matrix(0.351 0 0 0.351 798.066 521.5882)">
+		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="DSLZSL" xlink:href="C601CAA704BC2683.jpg"  transform="matrix(0.351 0 0 0.351 798.066 521.5882)">
 	</image>
 </g>
 <g id="ykOHhn_1_">
 	
-		<image style="overflow:visible;" width="256" height="256" id="ykOHhn" xlink:href="C601CAA704BC268F.jpg"  transform="matrix(0.351 0 0 0.351 995.566 651.066)">
+		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="ykOHhn" xlink:href="C601CAA704BC268F.jpg"  transform="matrix(0.351 0 0 0.351 995.566 651.066)">
 	</image>
 </g>
 <g id="J3sr0Q_1_">
 	
-		<image style="overflow:visible;" width="256" height="256" id="J3sr0Q" xlink:href="C601CAA704BC2682.jpg"  transform="matrix(0.351 0 0 0.351 1416.066 693.4301)">
+		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="J3sr0Q" xlink:href="C601CAA704BC2682.jpg"  transform="matrix(0.351 0 0 0.351 1416.066 693.4301)">
 	</image>
 </g>
 </svg>
