@@ -152,6 +152,16 @@ canvas#overlay {
     border-radius:0.4rem;
   }
   
+.map__block.map__block{
+    padding:none!important;
+    margin:none!important;
+ 
+}
+
+.map__main{
+  margin:none;
+}
+  
   .textColumn{
     max-width:90%;
     margin:auto;
