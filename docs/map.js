@@ -3,7 +3,8 @@ function positionNumbers(){
         let number = document.querySelector(`.${x.id}`);
         x.dataset.number = number.innerHTML;
         let pos=[x.getAttribute('cx'),x.getAttribute('cy')]
-        number.setAttribute('transform',`translate(${pos[0]} ${pos[1]})`)
+            .map(x=>parseInt(x))
+        number.setAttribute('transform',`translate(${pos[0]} ${pos[1]+5})`)
     })
 }
 
@@ -18,7 +19,7 @@ let elements = {
 
 const handleMarker = (e)=>{
     let {element, type} = e.detail;
-    console.log(elements[element.dataset.number])
+    // console.log(elements[element.dataset.number])
     if(type=="end") window.location.href=`elements/${elements[element.dataset.number].folder}/index.html?from=map`;
 }
 

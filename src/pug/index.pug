@@ -3,6 +3,7 @@ html(lang="en")
         include head
         script(src="./main.js" defer)
         script(src="./front.js" defer)
+        script(src="./map.js" defer)
         title Biodivergent Sites and Sounds
         style.
             .infoText{
@@ -12,19 +13,26 @@ html(lang="en")
                 text-align:center;
                 width:100%;
             }
+            .button{
+                width:80vw;
+                margin:10px;
+            }
     body
         main.splash
             object#main__title.nav__back(type="image/svg+xml" data="svg/title.svg" role="header")
             img.front__water(src="bg0_lo.png" alt="An abstract water texture in dark blue with a faint wash of aqua, gently ebbing back and forth.")
             img.front__water.alt(src="bg0_lo.png" aria-hidden="true")
             img.front__water.alt2(src="bg0_lo.png" aria-hidden="true")
-            //- img.front__map(src="svg/map.svg")
             .buttons
                 button.button(onclick='window.location.href="elements"') Interactive Experience
                 button.button(onclick='window.location.href="trail.html"') Soundscape 
-            .nav__icon
-                a(href="about.html")
-                    img.icon.icon__info(src='icons/noun-information-150178-FFFFFF.svg' title="Information")  
+                button.button(onclick='window.location.href="map.html"') Map
+                button.button(onclick='window.location.href="about.html"') About
+            //- .textBlock.map__block
+            object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
+            //- .nav__icon
+            //-     a(href="about.html")
+            //-         img.icon.icon__info(src='icons/noun-information-150178-FFFFFF.svg' title="Information")  
             .infoText        
                 p Biodivergent Sites & Sounds is an autoethnographic investigation of place, of waterways and of autism as a cultural identity. 
                 p An autistic-led immersive and accessible experience for audiences to experience nature and to engage in the preservation of Harlesden Canal.

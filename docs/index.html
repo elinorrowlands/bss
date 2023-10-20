@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./main.js" defer="defer"></script>
     <script src="./front.js" defer="defer"></script>
+    <script src="./map.js" defer="defer"></script>
     <title>Biodivergent Sites and Sounds</title>
     <style>
       .infoText{
@@ -19,6 +20,10 @@
           text-align:center;
           width:100%;
       }
+      .button{
+          width:80vw;
+          margin:10px;
+      }
     </style>
   </head>
   <body>
@@ -27,8 +32,10 @@
       <div class="buttons">
         <button class="button" onclick="window.location.href=&quot;elements&quot;">Interactive Experience</button>
         <button class="button" onclick="window.location.href=&quot;trail.html&quot;">Soundscape </button>
+        <button class="button" onclick="window.location.href=&quot;map.html&quot;">Map</button>
+        <button class="button" onclick="window.location.href=&quot;about.html&quot;">About</button>
       </div>
-      <div class="nav__icon"><a href="about.html"><img class="icon icon__info" src="icons/noun-information-150178-FFFFFF.svg" title="Information"/></a></div>
+      <object class="map map__main svg-import" id="map" data="svg/map_B.svg" type="image/svg+xml"></object>
       <div class="infoText">       
         <p>Biodivergent Sites & Sounds is an autoethnographic investigation of place, of waterways and of autism as a cultural identity. </p>
         <p>An autistic-led immersive and accessible experience for audiences to experience nature and to engage in the preservation of Harlesden Canal.</p>
