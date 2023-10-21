@@ -43,7 +43,9 @@
 .footer__content{
     text-align: center;
     vertical-align: middle;
-    margin:none;
+    margin:none!important;
+    max-height:250px;
+    bottom:0px;
 }
 
 footer {
@@ -90,4 +92,11 @@ footer.instructions {
     .logo-fit{
         @include aspect-ratio-fix(3,2);    
     }
+}
+
+.link__fix{
+    // position:absolute; 
+    // top:0;
+    width:0;
+    height:0;
 }

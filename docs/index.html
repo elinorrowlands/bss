@@ -14,7 +14,10 @@
     <title>Biodivergent Sites and Sounds</title>
     <style>
       .infoText{
-          display:none;
+          //- display:none;
+          max-width:800px;
+          margin:0 auto;
+          background-color:navy;
       }
       .buttons{
           text-align:center;
@@ -26,37 +29,29 @@
       }
       #map{
           //- max-width:90vw;
+          margin:10px;
       }
     </style>
   </head>
   <body>
     <main class="splash">
       <object class="nav__back" id="main__title" type="image/svg+xml" data="svg/title.svg" role="header"></object><img class="front__water" src="bg0_lo.png" alt="An abstract water texture in dark blue with a faint wash of aqua, gently ebbing back and forth."/><img class="front__water alt" src="bg0_lo.png" aria-hidden="true"/><img class="front__water alt2" src="bg0_lo.png" aria-hidden="true"/>
-      <div class="buttons"><a class="allowDefault" href="elements">
-          <button class="button">Interactive Experience</button></a><a class="allowDefault" href="trail.html">
-          <button class="button">Soundscape </button></a><a class="allowDefault" href="#map">
-          <button class="button">Map</button></a><a class="allowDefault" href="about.html">
-          <button class="button">About</button></a></div>
-      <object class="map map__main svg-import" id="map" data="svg/map_B.svg" type="image/svg+xml"></object>
-      <div class="infoText">       
+      <div class="infoText textBlock">       
         <p>Biodivergent Sites & Sounds is an autoethnographic investigation of place, of waterways and of autism as a cultural identity. </p>
         <p>An autistic-led immersive and accessible experience for audiences to experience nature and to engage in the preservation of Harlesden Canal.</p>
         <p>The project was led by multi-disciplinary artist Elinor Rowlands in collaboration with the Canal & River Trust (and its many volunteers); fellow neurodivergent artists Jo-anne Cox, Dee Fry, R.Dyer and Ben Hajioff; young people from Harlesden Primary School and Sport at the Heart through the Young Brent Foundation; and creative technologist Charles Matthews. </p>
         <p>It was kindly funded by Arts Council England and the Canal & River Trust, with support from Cole’s Gallery and Creative Health Camden. </p>
-        <p>To find out more about the project, follow this link.</p>
+        <p>To find out more about the project, follow this link: <a href="about.html">about this project</a>.</p>
       </div>
-      <div class="infoText">
-        <p>Dip your fingers in the water…</p>
-        <p> 
-          <button>ENTER                                                                  	ENTER</button>
-        </p>
-        <p>Interactive Map of the Canal                                	Walking Trail of the Canal 
-          <button>ENTER  </button>
-        </p>
-      </div>
+      <div class="buttons"><a class="allowDefault" href="elements">
+          <button class="button">Interactive Experience</button></a><a class="allowDefault" href="trail.html">
+          <button class="button">Soundscape </button></a><a class="allowDefault" href="#map">
+          <button class="button">Map</button></a><a class="allowDefault" href="about.html">
+          <button class="button">About the project</button></a></div>
+      <object class="map map__main svg-import" id="map" data="svg/map_B.svg" type="image/svg+xml"></object>
     </main>
     <footer>
-      <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="logos/chc.png" alt="Creative Health Camden"/></a></p>
+      <p class="footer__content" aria-label="project partners"><img class="logo-fit" id="logo__canal2" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/><img class="logo-fit" id="logo__ace2" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/><img class="logo-fit" id="logo__coles2" src="logos/coles.png" alt="Cole's Gallery"/><img class="logo-fit" id="logo__chc2" src="logos/chc.png" alt="Creative Health Camden"/></p>
     </footer>
   </body>
 </html>
