@@ -4,6 +4,10 @@
 	 viewBox="0 0 1600 789" style="enable-background:new 0 0 1600 789;" xml:space="preserve">
 <style type="text/css">
 	.st0{opacity:0.15;}
+	path{
+		opacity:0.9;
+	}
+	<!-- stroke-width:1.7 -->
 	.st1{fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st2{fill:#C9A800;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st3{fill:#C8A700;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
@@ -148,15 +152,15 @@
 	.st142{fill:#FFFFFF;fill-opacity:0.49;stroke:#000000;stroke-miterlimit:10;}
 	.element__number{
 		pointer-events:none;
-		paint-order: stroke;
-		stroke: #000000;
-		stroke-width:5px;
+		<!-- paint-order: stroke; -->
+		<!-- stroke: #000000; -->
+		<!-- stroke-width:5px; -->
 		transform-origin:center center;
 		-webkit-user-select:none;
 		user-select-none;
-		font-family:'CrimsonText-Regular';
-		font-size:70px;
-		font-weight: bold;
+		font-family:'Roboto';
+		font-size:75px;
+		font-weight: regular;
 		fill:beige;
 		text-anchor:middle;
 		alignment-baseline:middle;
@@ -164,7 +168,7 @@
 	}
 	.water__halo{
 		fill:cyan;
-		fill-opacity:0.25;
+		fill-opacity:0.105;
 		<!-- stroke:#000000; -->
 		stroke-opacity:0.5;
 		stroke-miterlimit:10;
@@ -184,7 +188,8 @@
 	.element__marker{
 		
 		fill:#808000;	
-		stroke:beige;
+		<!-- stroke:beige; -->
+		stroke: rgb(186, 186, 110);
 		stroke-width:5px;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -202,7 +207,15 @@
 		display:none;
 	}
 </style>
-<image style="overflow:visible;opacity:0.27;" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)">
+<defs>
+<filter id="grayscale">
+	<feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0
+										0.33 0.33 0.33 0 0
+										0.33 0.33 0.33 0 0
+										0    0    0    1 0"/>
+</filter>
+</defs>
+<image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)">
 </image>
 <g id="layer0" class="st0">
 	<path class="st1" d="M472,760l1-2h-2L472,760z"/>
