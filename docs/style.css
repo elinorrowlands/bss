@@ -892,6 +892,7 @@ main.qr__container {
 
 .map__main {
   border-radius: 0.4rem;
+  max-width: 90vw !important;
 }
 
 #backdrop {
