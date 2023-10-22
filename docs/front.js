@@ -14,5 +14,6 @@ function forceIconLocation(){
 
 window.addEventListener('load',()=>{
     // forceIconLocation();
+    balanceText();
 })
 
