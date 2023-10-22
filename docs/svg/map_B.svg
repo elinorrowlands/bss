@@ -190,16 +190,16 @@
 		fill:#808000;	
 		<!-- stroke:beige; -->
 		stroke: rgb(186, 186, 110);
-		stroke-width:5px;
+		stroke-width:0.5px;
 		cursor: pointer;
-		transition: all 0.3s ease;
+		transition: all 1.3s ease;
 	}
 	<!-- .element__group{
 		pointer-events:bounding-box;
 	} -->
 	.element__marker:hover{
 		fill:orange;	
-		stroke:red;
+		stroke:green;
 		stroke-width:10px;
 		cursor: pointer;
 	}

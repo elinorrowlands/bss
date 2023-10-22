@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* ⚝ Biodivergent Sites and Sounds */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Roboto:wght@700&family=Rubik:wght@900&display=swap");
-/* ⚝ Colours 🎨 */ /* ⚝ Animations */
+/* ⚝ Colours 🎨 */
+/* ⚝ Animations */
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -365,6 +366,8 @@ footer.instructions {
 
 .infoText {
   max-width: 800px;
+  width: 800px;
+  max-width: 90vw;
   margin: 0 auto !important;
   background-color: navy !important;
 }
