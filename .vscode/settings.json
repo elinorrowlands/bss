@@ -22,5 +22,6 @@
         "terminal.ansiWhite": "#8A8986",
         "terminal.ansiYellow": "#F9EE98",
         "editor.lineHighlightBorder": "#9fced11f"
-    }
+    },
+    "workbench.colorTheme": "beige theme"
 }

@@ -341,7 +341,7 @@ footer.instructions {
   transition: transform 160s ease-in-out;
 }
 .front__water.alt {
-  transform: scale(6);
+  transform: scale(1);
   opacity: 0.2;
   animation: scale2 161s ease-in-out infinite alternate;
 }

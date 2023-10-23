@@ -16,16 +16,14 @@
     <style>
       .buttons{
           text-align:center;
-          max-width:90vw;
-          width:800px;
-          display:block;
+          width:100%;
       }
       .button{
           width:80vw;
           margin:10px;
       }
       #map{
-          max-width:90vw;
+          //- max-width:90vw;
           margin:10px;
           width:800px;
           margin:0 auto!important;
@@ -37,19 +35,8 @@
           //- margin:0;
       }
       main{
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          align-items:center;
-          width:800px;
-          max-width:90vw;
-          margin:auto;
-      }
-      h2{
-          width:100%;
           text-align:center;
       }
-      
     </style>
   </head>
   <body>
@@ -65,9 +52,11 @@
       <h2>Dip your fingers in the water…</h2>
       <div class="buttons"><a class="allowDefault" href="elements">
           <button class="button">Interactive Experience</button></a><a class="allowDefault" href="trail.html">
-          <button class="button">Soundscape </button></a><a class="allowDefault" href="map.html">
+          <button class="button">Soundscape </button></a><a class="allowDefault" href="#map">
           <button class="button">Map</button></a><a class="allowDefault" href="about.html">
-          <button class="button">About the project</button></a></div>
+          <button class="button">About the project</button></a>
+        <object class="map map__main svg-import" id="map" data="svg/map_B.svg" type="image/svg+xml"></object>
+      </div>
     </main>
     <footer>
       <p class="footer__content" aria-label="project partners"><img class="logo-fit" id="logo__canal2" src="logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/><img class="logo-fit" id="logo__ace2" src="logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/><img class="logo-fit" id="logo__coles2" src="logos/coles.png" alt="Cole's Gallery"/><img class="logo-fit" id="logo__chc2" src="logos/chc.png" alt="Creative Health Camden"/></p>

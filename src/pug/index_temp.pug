@@ -10,16 +10,14 @@ html(lang="en")
           
             .buttons{
                 text-align:center;
-                max-width:90vw;
-                width:800px;
-                display:block;
+                width:100%;
             }
             .button{
                 width:80vw;
                 margin:10px;
             }
             #map{
-                max-width:90vw;
+                //- max-width:90vw;
                 margin:10px;
                 width:800px;
                 margin:0 auto!important;
@@ -31,19 +29,8 @@ html(lang="en")
                 //- margin:0;
             }
             main{
-                display:flex;
-                flex-direction:column;
-                justify-content:center;
-                align-items:center;
-                width:800px;
-                max-width:90vw;
-                margin:auto;
-            }
-            h2{
-                width:100%;
                 text-align:center;
             }
-            
     body
         main
             object#main__title.nav__back(type="image/svg+xml" data="svg/title.svg" role="heading")
@@ -69,12 +56,11 @@ html(lang="en")
                     button.button Interactive Experience
                 a.allowDefault(href="trail.html")
                     button.button Soundscape 
-                //- a.allowDefault(href="#map")
-                a.allowDefault(href="map.html")
+                a.allowDefault(href="#map")
                     button.button Map
                 a.allowDefault(href="about.html")
                     button.button About the project
-            //- object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
+                object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
             
             //- .nav__icon
             //-     a(href="about.html")

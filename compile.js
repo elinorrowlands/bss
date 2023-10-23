@@ -3,6 +3,7 @@ import fs from 'fs';
 
 let pugFiles = [
     'index', 
+    'index_temp',
     'qr',
     'map',
     'map2',
@@ -21,6 +22,7 @@ let pugFiles = [
     'elements/text/index',
 
     'elements/ripples/index',
+    'elements/ripples/text',
     // 'elements/ripples/jq',
 ];
 
