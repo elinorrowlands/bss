@@ -90,6 +90,10 @@ svg {
   text-underline-offset: 0.4em;
 }
 
+li {
+  margin-bottom: 1em;
+}
+
 /* ⚝ Sponsor logos */
 .logo {
   padding: 10px;
@@ -314,14 +318,8 @@ footer.instructions {
 
 /* ⚝ Front page */
 #main__title {
+  display: block;
   opacity: 0.8;
-  width: 90vw;
-  max-width: 800px;
-  height: 40vw;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 300;
   margin: auto;
 }
 

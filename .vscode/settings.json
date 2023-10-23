@@ -23,5 +23,6 @@
         "terminal.ansiYellow": "#F9EE98",
         "editor.lineHighlightBorder": "#9fced11f"
     },
-    "workbench.colorTheme": "Kimbie Dark"
+    "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+    "editor.overviewRulerBorder": false
 }

@@ -8,12 +8,18 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
         script(src="./nav.js" defer)
+        style.
+            .link{
+                margin:auto;
+                margin-bottom: 1em;
+            }
     body.about
         object#main__title.about.nav__back(type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
-        main.textBlock
-            div.textColumn.highlight
-                a.link(href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds") More information on elinorrowlands.com
-            div.textColumn
+        a.link(href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds") 
+                button.button more information on<br>elinorrowlands.com »
+        main.textBlock.infoText
+            //- div.textColumn.highlight
+            .textColumn
                 
                 p When multidisciplinary artist Elinor Rowlands moved to Harlesden in 2021 she felt isolated. Isolated by her physical and neurodivergent impairments; isolated by barriers, visible and invisible. An experience many disabled people will know only too well.
 
@@ -45,27 +51,27 @@ html(lang="en")
 
                 p You are invited to dip your fingers in the water too.
 
-                
-                ul#credits
-                    li Lead artist - Elinor Rowlands
+                .textColumn
+                    ul#credits
+                        li Lead artist - Elinor Rowlands
 
-                    li Creative Technologist - Charles Matthews
+                        li Creative Technologist - Charles Matthews
 
-                    li Musicians - Jo-anne Cox, Dee Fry, R.Dyer and Ben Hajioff
+                        li Musicians - Jo-anne Cox, Dee Fry, R.Dyer and Ben Hajioff
 
-                    li Additional photographs - Paul Anders
+                        li Additional photographs - Paul Anders
 
-                    li Art Publication of Elinor’s art and texts printed and published by - Gemma Abbott 
+                        li Art Publication of Elinor’s art and texts printed and published by - Gemma Abbott 
 
-                    li Interim Project Manager - Lucie Bickerdike (February - July 2023)
+                        li Interim Project Manager - Lucie Bickerdike (February - July 2023)
 
-                    li Project Manager - Nick Lawford (August 2023 - January 2024)
+                        li Project Manager - Nick Lawford (August 2023 - January 2024)
 
-                    li Illustrator & Marketing access support - Brigette Wellbelove
+                        li Illustrator & Marketing access support - Brigette Wellbelove
 
-                    li Events and Communication access support - Nick Lawford
+                        li Events and Communication access support - Nick Lawford
 
-                    li Harlesden Primary School access and body double - Gemma Abbott
+                        li Harlesden Primary School access and body double - Gemma Abbott
 
         footer
             include footer  
