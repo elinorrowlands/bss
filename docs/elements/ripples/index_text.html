@@ -19,7 +19,17 @@
       overflow:hidden;
     }
     </style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+      <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="../../main.js"></script>
+      <script src="../js/script.js" type="module" defer></script>
+      <script src="./interact.js" defer></script>
+      <script src="./touch.js" defer></script>
+      <script src="./samples.js" defer></script>
+      <script src="../text/text_d3.js" defer></script>
 </head>
+
 <body class="fullpage">
   <main class="ripples">
   <div class="ripples" id="canvas"></div>
@@ -33,15 +43,7 @@
     </div>
   </div>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../../main.js"></script>
-  <script src="../js/script.js" type="module" defer></script>
-  <script src="./interact.js" defer></script>
-  <script src="./touch.js" defer></script>
-  <script src="./samples.js" defer></script>
-  <script src="../text/text_d3.js" defer></script>
+
   <script>
     document.body.addEventListener('scroll',(e)=>{e.preventDefault()})
   </script>

@@ -1,3 +1,7 @@
+/**
+ * combine with text.js
+ */
+
 let textInput= 
     `where is the water's edge? 
     \nin the wide expanses? 
