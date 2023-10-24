@@ -53,9 +53,9 @@ window.addEventListener('load',()=>{
         document.querySelector('.boundary__container').appendChild(container);
     })
     
-    document.querySelector('main').appendChild(document.querySelector('.beyond__container'));
     document.querySelector('main').appendChild(document.querySelector('.vectorised__container'));
     document.querySelector('main').appendChild(document.querySelector('.bridge__container'));
+    document.querySelector('.vectorised__container').appendChild(document.querySelector('.beyond__container'));
     document.querySelector('main').replaceWith(document.querySelector('main'))
     
     touch.setAction('.interact');
@@ -91,8 +91,15 @@ window.addEventListener('load',()=>{
         
         
         if (type == 'start' || type == 'enter') {
-            if(element.id=='bridge__under')interpolateStates(sineY);
-            document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(100%) hue-rotate(220deg)')
+            player.playbackRate = 0.75;
+            // if(element.id=='bridge__under')interpolateStates(sineY);
+            interpolateStates(sineY);
+            
+            document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>{
+                x.style.filter='sepia(100%) hue-rotate(220deg)'
+                x.style.opacity=0.9;
+            })
+            
             
             
             document.querySelectorAll('.vectorised__container').forEach(container => {
@@ -101,14 +108,15 @@ window.addEventListener('load',()=>{
 
             document.querySelectorAll('.bridge__container').forEach(container => {
                 container.style.opacity = 0.9;
-                container.style.filter = 'brightness(10%)';
+                container.style.filter = `brightness(${y/window.innerHeight*20}%)`;
             });
 
             document.querySelectorAll('.photo__container').forEach(container => {
-                container.style.opacity = 0.1;
+                container.style.opacity = 0.5;
             });
             document.querySelectorAll('.boundary__container').forEach(container => {
-                container.style.opacity = 0;
+                container.style.opacity = 0.2;
+                container.style.filter='blur(1px)';
             });
             // if(element.id == 'bridge__beyond') {
             //     document.querySelectorAll('.beyond__container').forEach(container => {
@@ -117,6 +125,7 @@ window.addEventListener('load',()=>{
             //     });
             // }
         } else if (type == 'end' || type == 'leave') {
+            player.playbackRate = 1;
             document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(0%) hue-rotate(220deg)')
             console.log('end',x,y, e.detail)
             interpolateStates(0.1);
@@ -144,9 +153,15 @@ window.addEventListener('load',()=>{
             if(element.id == 'bridge__beyond') {
                 document.querySelectorAll('.beyond__container').forEach(container => {
                     container.style.opacity = 0.9;
-                    container.style.filter = 'sepia(100%)';
+                    // container.style.filter = 'sepia(100%)';
                 });
             }
+            document.querySelectorAll('.bridge__container').forEach(container => {
+                container.style.opacity = 0.9;
+                container.style.filter = `brightness(${y/window.innerHeight*20}%)`;
+            });
+
+            document.querySelector('.note_1').style.filter=`invert(${x%100}%) sepia(${x%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%) blur(${Math.abs(Math.sin(y/window.innerHeight/2))*20}px)`
             // console.log('move',x,y, e.detail)
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.9;
@@ -158,7 +173,7 @@ window.addEventListener('load',()=>{
             });
 
             document.querySelectorAll('.photo__container').forEach(container => {
-                container.style.opacity = 0.1;
+                container.style.opacity = sineY*2;
             });
         }
     });

@@ -49,6 +49,10 @@
         container.style.filter='brightness(100%) sepia(0%)';
         z-index:1;
     }
+    .note_1{
+        //- opacity:0;
+        transition: filter 0.5s;
+    }
     
     
   </style>
@@ -58,9 +62,9 @@
   <main class="container awaitStart transparent">
     <div class="photo__container"></div>
     <div class="vectorised__container"></div>
-    <div class="beyond__container"></div>
     <div class="bridge__container"></div>
     <div class="boundary__container"></div>
+    <div class="beyond__container"></div>
     <object class="bridge svg-import" id="bridge" data="svg/bridge_october.svg" type="image/svg+xml"></object>
     <object class="bridge svg-import" id="bridge" data="svg/boundary.svg" type="image/svg+xml"></object>
   </main>
