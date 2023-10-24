@@ -36,12 +36,12 @@ section.instructions.grid {
 }
 
 .instructions__header{
-    text-align:center;
+    text-align:center!important;
     padding-top: 20em;
 }
 
 .instructions__number{
-    text-align:center;
+    text-align:center!important;
 }
 
 .instructions__button{
@@ -53,7 +53,7 @@ section.instructions.grid {
     padding: 1em;
     max-width: 800px;
     // text-align: left;
-    text-align:center;
+    text-align:left;
     // line-height: 1em;
 }
 
@@ -91,12 +91,16 @@ section.instructions.flex {
     background-color:$background;
     background-color:$background;
     display:flex;
+    flex-wrap:wrap;
     align-items:first baseline;
     margin:none;
     width:100vw;
+    max-width:100%;
     
     ul {
         width:100%;
+        margin-left:0;
+        margin-right:0;
     }
     
     li {
@@ -113,3 +117,6 @@ section.instructions.flex {
     }
 }
 
+h2.instructions__heading{
+    padding-left: 1em;
+}

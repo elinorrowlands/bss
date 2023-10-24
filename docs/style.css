@@ -399,12 +399,12 @@ section.instructions.grid {
 }
 
 .instructions__header {
-  text-align: center;
+  text-align: center !important;
   padding-top: 20em;
 }
 
 .instructions__number {
-  text-align: center;
+  text-align: center !important;
 }
 
 .instructions__button {
@@ -414,7 +414,7 @@ section.instructions.grid {
 .instructions__text {
   padding: 1em;
   max-width: 800px;
-  text-align: center;
+  text-align: left;
 }
 
 section.instructions.flex {
@@ -446,12 +446,16 @@ section.instructions.flex.nodisplay {
   background-color: darkblue;
   background-color: darkblue;
   display: flex;
+  flex-wrap: wrap;
   align-items: first baseline;
   margin: none;
   width: 100vw;
+  max-width: 100%;
 }
 .instructions__interactions ul {
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 .instructions__interactions li {
   display: inline-flex;
@@ -464,6 +468,10 @@ section.instructions.flex.nodisplay {
   align-items: center;
   vertical-align: middle;
   font-size: 1.3rem;
+}
+
+h2.instructions__heading {
+  padding-left: 1em;
 }
 
 /* ⚝ Loading */
@@ -1036,7 +1044,7 @@ canvas#overlay {
 }
 
 button.nav__back {
-  display: block;
+  display: inline-block;
   width: auto;
   z-index: 3000;
   border: none;

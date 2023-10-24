@@ -14,7 +14,7 @@ html(lang="en")
         // INSTRUCTIONS ON PAGE LOAD
 section.instructions.flex.scrollable
     .instructions__text
-        h1.instructions - 2 - 
+        h1.instructions__number - 2 - 
         h1.instructions Water's Edge
         p Where is the water's edge? 
         p Is it at the piling (the canal's watertight wall)? 
@@ -22,16 +22,20 @@ section.instructions.flex.scrollable
         p Splashed along the oar? During the mooring of a boat? 
         p Does it exist in the reflection on the skin of the water?
         button.button.startElement.allowDefault#nav__start Start 
-    .instructions__interactions 
+    .instructions__interactions
+        //- h2.instructions__heading Interactions: 
         ul
             li
                 include ../interactions/single_click
             li
                 include ../interactions/explore
+            li
                 include ../interactions/drag_words
-            //- include ../interactions/touch_hold
+            li
+                include ../interactions/touch_hold
             li
                 include ../interactions/multitouch
+        //- h2.instructions__heading Reactions:
         ul
             li
                 include ../interactions/sound
@@ -39,6 +43,8 @@ section.instructions.flex.scrollable
                 include ../interactions/colour
             li            
                 include ../interactions/movement
+            li            
+                include ../interactions/ripples
             //- include ../interactions/brightness
                                 
     include ../footer__back
