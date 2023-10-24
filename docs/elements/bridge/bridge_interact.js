@@ -78,19 +78,21 @@ window.addEventListener('load',()=>{
         }
         
         // console.log(x, y, window.innerWidth, window.innerHeight, distance(x,y,window.innerWidth/2,window.innerHeight/2))
-        // let distanceFromCentre = distance(x,y,window.innerWidth/2,window.innerHeight/2);
+        let distanceFromCentre = distance(x,y,window.innerWidth/2,window.innerHeight/2);
         // console.log('dist:',distanceFromCentre/window.innerWidth);
         // interpolateStates(distanceFromCentre/window.innerWidth);
         // const sineY = Math.sin((1 - (relative.y / relative.range.y) - 0.5) * Math.PI) * 0.5 + 0.5;
         const sineY = 0.1-( Math.abs(Math.sin(relative.y / (relative.range.y*0.8) * Math.PI))* 0.1);
+        // let sineY = 0.2 + (0.8 - distanceFromCentre/window.innerWidth/2);
+        // console.log(sineY);
+        echo.delayTime.rampTo( (distanceFromCentre/window.innerWidth/2)+0.1, 0.1)
         // interpolateStates(relative.y / relative.range.y)
         // console.log('sineY',sineY, element.id)
         
         
         if (type == 'start' || type == 'enter') {
             if(element.id=='bridge__under')interpolateStates(sineY);
-           
-          
+            document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(100%) hue-rotate(220deg)')
             
             
             document.querySelectorAll('.vectorised__container').forEach(container => {
@@ -115,6 +117,7 @@ window.addEventListener('load',()=>{
             //     });
             // }
         } else if (type == 'end' || type == 'leave') {
+            document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(0%) hue-rotate(220deg)')
             console.log('end',x,y, e.detail)
             interpolateStates(0.1);
             echo.wet.rampTo(0, 0.1);

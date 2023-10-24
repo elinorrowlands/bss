@@ -117,9 +117,19 @@ section.instructions.flex {
         align-items: center;
         vertical-align:middle;
         font-size:1.3rem;
+        
+        span {
+            // max-width:300px;
+            // width:230px;
+            // background-color:red;
+        }
     }
 }
 
 h2.instructions__heading{
     padding-left: 1em;
+}
+
+.inline{
+    position:relative!important;
 }

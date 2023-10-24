@@ -44,6 +44,12 @@ head
             container.style.filter='brightness(100%) sepia(0%)';
             z-index:1;
         }
+        .beyond1remove,.beyond2remove{
+            //- opacity:0;
+            transition: filter 2s, opacity 2s;
+            container.style.filter='brightness(100%) sepia(0%)';
+            z-index:1;
+        }
     
     
 body.fullpage.bridge
@@ -93,4 +99,3 @@ body.fullpage.bridge
             //- include ../interactions/movement
             
         include ../footer__back
-    
