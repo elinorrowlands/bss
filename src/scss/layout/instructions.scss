@@ -5,6 +5,9 @@
 }
 
 section.instructions{
+    background-image: url('svg/wave1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color:$background2;
     
     display:block;
@@ -84,9 +87,11 @@ section.instructions.flex {
 .instructions__interactions{
     display:flex;
     align-items:first baseline;
-    ul{
+    
+    ul {
         width:100%;
     }
+    
     li {
         display:inline-flex;
         margin: 0 1em;

@@ -365,6 +365,9 @@ footer.instructions {
 
 /* ⚝ Instructions */
 section.instructions {
+  background-image: url("svg/wave1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: navy;
   display: block;
   height: 100vh;

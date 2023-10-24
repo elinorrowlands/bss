@@ -35,9 +35,11 @@ html(lang="en")
             
         // INSTRUCTIONS ON PAGE LOAD
         section.instructions.flex.scrollable
-            .instructions__text
+            .instructions__number
                 h1.instructions - 3 - 
+            .instructions__text
                 h1.instructions Crossing
+            .instructions__text                
                 p Canals had to be cut out of the landscape when being built. 
                 p Today, the long stretches of the waterways run on, 
                 p huddled across many channels, 
@@ -46,15 +48,21 @@ html(lang="en")
                 
                 button.button.startElement.allowDefault#nav__start Start »
             .instructions__interactions 
-            include ../interactions/single_click
-            //- include ../interactions/explore
-            include ../interactions/drag_circle
-            //- include ../interactions/touch_hold
-            //- include ../interactions/multitouch
-            include ../interactions/sound
-            include ../interactions/colour
-            //- include ../interactions/movement
-            //- include ../interactions/brightness
+                ul
+                    li
+                        include ../interactions/single_click
+                    //- include ../interactions/explore
+                    li
+                        include ../interactions/drag_circle
+                //- include ../interactions/touch_hold
+                //- include ../interactions/multitouch
+                ul
+                    li
+                        include ../interactions/sound
+                    li
+                        include ../interactions/colour
+                //- include ../interactions/movement
+                //- include ../interactions/brightness
              
             include ../footer__back
 
