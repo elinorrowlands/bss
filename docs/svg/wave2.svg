@@ -3,8 +3,8 @@
         .wave__bottom{
             transform:rotate(180deg);
             transform-origin: 50% 50%;
-            fill: #000080;
-            fill:darkblue;
+            <!-- fill: #000080; -->
+            fill:navy;
             <!-- fill: red; -->
         }
     </style>

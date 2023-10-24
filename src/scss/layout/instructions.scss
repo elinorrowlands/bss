@@ -7,7 +7,7 @@
 section.instructions{
     background-image: url('svg/wave1.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    // background-size: 100vw 200px;
     background-color:$background2;
     
     display:block;
@@ -72,9 +72,9 @@ section.instructions.flex {
 }
 
 .scrollable{
-    overflow:auto;
+    overflow-y:auto;
     // overflow-y:scroll;
-    // overflow-x:hidden;
+    overflow-x:hidden;
     // -webkit-overflow-scrolling: touch;
     // flex-grow: 1;
     padding: 1em;
@@ -85,8 +85,15 @@ section.instructions.flex {
 }
 
 .instructions__interactions{
+    background-image: url('svg/wave2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:$background;
+    background-color:$background;
     display:flex;
     align-items:first baseline;
+    margin:none;
+    width:100vw;
     
     ul {
         width:100%;
@@ -102,7 +109,7 @@ section.instructions.flex {
         justify-content: flex-start;
         align-items: center;
         vertical-align:middle;
-        font-size:2rem;
+        font-size:1.3rem;
     }
 }
 

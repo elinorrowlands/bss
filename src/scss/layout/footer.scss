@@ -46,26 +46,33 @@
     margin:none!important;
     max-height:250px;
     bottom:0px;
+    overflow:hidden;
 }
 
 footer {
     position:relative;
     bottom:0;
     left:0;
-    width:100%;
+    width:100vw;
     max-height: 250px;
     background-color:$background;
-    margin:none;
+    margin:none!important;
+    overflow:hidden;
 }
 
 footer.instructions {
+    background-image: url('svg/wave1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-color:$background2;
     position:auto;
     bottom:auto;
     left:auto;
-    width:100%;
+    overflow:hidden;
+    // width:100%;
     max-height: 250px;
     background-color:$background;
-    margin:none;
+    margin:none!important;
     box-sizing: border-box;
     min-height: none;
     display: flex;

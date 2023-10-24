@@ -23,6 +23,7 @@ let pugFiles = [
 
     'elements/ripples/index',
     'elements/ripples/text',
+    'elements/ripples/interactions_template',
     // 'elements/ripples/jq',
 ];
 

@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* ⚝ Biodivergent Sites and Sounds */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Roboto:wght@700&family=Rubik:wght@900&display=swap");
-/* ⚝ Colours 🎨 */ /* ⚝ Animations */
+/* ⚝ Colours 🎨 */
+/* ⚝ Animations */
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -37,6 +38,7 @@ html,
 body {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -255,26 +257,31 @@ li {
   margin: none !important;
   max-height: 250px;
   bottom: 0px;
+  overflow: hidden;
 }
 
 footer {
   position: relative;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   max-height: 250px;
   background-color: darkblue;
-  margin: none;
+  margin: none !important;
+  overflow: hidden;
 }
 
 footer.instructions {
+  background-image: url("svg/wave1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: auto;
   bottom: auto;
   left: auto;
-  width: 100%;
+  overflow: hidden;
   max-height: 250px;
   background-color: darkblue;
-  margin: none;
+  margin: none !important;
   box-sizing: border-box;
   min-height: none;
   display: flex;
@@ -367,7 +374,6 @@ footer.instructions {
 section.instructions {
   background-image: url("svg/wave1.svg");
   background-repeat: no-repeat;
-  background-size: cover;
   background-color: navy;
   display: block;
   height: 100vh;
@@ -425,7 +431,8 @@ section.instructions.flex.nodisplay {
 }
 
 .scrollable {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 1em;
 }
 
@@ -434,8 +441,15 @@ section.instructions.flex.nodisplay {
 }
 
 .instructions__interactions {
+  background-image: url("svg/wave2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: darkblue;
+  background-color: darkblue;
   display: flex;
   align-items: first baseline;
+  margin: none;
+  width: 100vw;
 }
 .instructions__interactions ul {
   width: 100%;
@@ -450,7 +464,7 @@ section.instructions.flex.nodisplay {
   justify-content: flex-start;
   align-items: center;
   vertical-align: middle;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 /* ⚝ Loading */
@@ -978,7 +992,6 @@ path {
 h1 {
   font-size: 4rem;
   font-family: Crimson Text;
-  background-color: navy;
 }
 h1.padded {
   padding: 1em;
@@ -1027,6 +1040,7 @@ button.nav__back {
   display: block;
   width: auto;
   z-index: 3000;
+  border: none;
 }
 
 button.nav__info {
