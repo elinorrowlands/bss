@@ -85,7 +85,7 @@ window.addEventListener('load',()=>{
         const sineY = 0.1-( Math.abs(Math.sin(relative.y / (relative.range.y*0.8) * Math.PI))* 0.1);
         // let sineY = 0.2 + (0.8 - distanceFromCentre/window.innerWidth/2);
         // console.log(sineY);
-        echo.delayTime.rampTo( (distanceFromCentre/window.innerWidth/2)+0.1, 0.1)
+        echo.delayTime.rampTo( (distanceFromCentre/window.innerWidth/2)+0.1, 0.9)
         // interpolateStates(relative.y / relative.range.y)
         // console.log('sineY',sineY, element.id)
         
