@@ -8,6 +8,9 @@ head
     script(src='./bridge_interact.js' type='module' defer)
     //- script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js')
     //- script(src='p5trails.js' defer)
+    
+        
+    //- script(src='window.js' type='module' defer)
     style.
         main{
             -webkit-touch-callout: none; /* iOS Safari */
@@ -23,35 +26,11 @@ head
             position:absolute;
             top:0;
             left:0;
-        }
-    //- script(src='window.js' type='module' defer)
-    style.
-        #bridge{
-            transform-origin: 20% 75%;
-        }
-        svg.bridge{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100vw;
-            height:100vh;
-            z-index:1;
-        }
-       
-        .vectorised__container{
-            opacity:0.1;
-            transition: opacity 1s;
-            z-index:2;
+            mask: url(#boundary);
         }
         
-        .photo__container{
+        .boundary__container{
             opacity:1;
-            transition: opacity 2s;
-            z-index:1;
-        }
-        
-        .bridge__container{
-            opacity:0.1;
             transition: filter 2s, opacity 2s;
             container.style.filter='brightness(100%)';
             z-index:1;
@@ -84,7 +63,7 @@ body.fullpage.bridge
         .beyond__container
        
         object#bridge.bridge.svg-import(data='svg/bridge_october.svg' type='image/svg+xml')
-        object#bridge.bridge.svg-import(data='svg/boundary.svg' type='image/svg+xml')
+        object#bridge.bridge.svg-import(data='svg/boundary.svg' type='image/svg+xml' id='boundary')
     include toolbar
             
     // INSTRUCTIONS ON PAGE LOAD
@@ -96,6 +75,7 @@ body.fullpage.bridge
         .instructions__text
             p When a duck swims under a bridge, 
             p its quacks echo across the landscape, 
+// END: modified code
             p sky, waterways and stars. 
             p The space of its greeting exists in all of the environment.
         .instructions__button
