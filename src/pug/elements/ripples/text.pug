@@ -20,7 +20,7 @@ head
       transition:filter 1s ease;
     }
     body{
-      background-image: url(./reflection1.jpeg);
+      background-image: url(./reflection_edge.png);
       background-size: cover;
       //- background-repeat: repeat;
       //- touch-action:none;
@@ -76,34 +76,34 @@ body.fullpage#ripples__body
       circle#waterCircle(cx='50', cy='50', r='40', stroke='green', stroke-width='4', fill='yellow' style='opacity:0.4;')
       //- circle#echoCircle(cx='50', cy='50', r='40', stroke='none', stroke-width='4', fill='darkblue' style='opacity:0.4;')
       //- circle#echoCircle2(cx='50', cy='50', r='40', stroke='none', stroke-width='4', fill='darkblue' style='opacity:0.4;')
-    object#painting.ripples.svg-import(type="image/svg+xml" data="interact_painting.svg")
+    
   // INSTRUCTIONS ON PAGE LOAD
   section.instructions.flex.scrollable
-      .instructions__text
-          h1.instructions - 4 - 
-          h1.instructions Ripples
-          p A moving undulation in the surface of the strip of the water of the canal. 
-          p To ripple is to move like the undulating surface of a body of water; to undulate. 
-          p Ripples propagate like a moving wave. 
-          p In sound, it is a small oscillation of an otherwise steady signal.
-          button.button.startElement.allowDefault#nav__start Start 
-      .instructions__interactions 
-        //- include ../interactions/single_click
-        //- include ../interactions/explore
-        //- include ../interactions/drag_circle
+    .instructions__text
+      h1.instructions - 2 - 
+      h1.instructions Water's Edge
+      p Where is the water's edge? 
+      p Is it at the piling (the canal's watertight wall)? 
+      p At the skyline? 
+      p Splashed along the oar? During the mooring of a boat? 
+      p Does it exist in the reflection on the skin of the water?
+      button.button.startElement.allowDefault#nav__start Start 
+    .instructions__interactions 
+      ul
+        li
+          include ../interactions/single_click
+        li
+          include ../interactions/explore
+          include ../interactions/drag_words
         //- include ../interactions/touch_hold
-        //- include ../interactions/multitouch
-        //- include ../interactions/sound
-        //- include ../interactions/colour
-        //- include ../interactions/movement
+        li
+          include ../interactions/multitouch
+      ul
+        li
+          include ../interactions/sound
+        li
+          include ../interactions/colour
+        li            
+          include ../interactions/movement
         //- include ../interactions/brightness
-          
-        
-      include ../footer__back
-  
-  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js')
-  //- script(src='../js/script.js' type='module' defer)
-  //- script(src='./interact.js' defer)
-  //- script(src='./touch.js' defer)
-  
-  
+    include ../footer__back
