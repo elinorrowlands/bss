@@ -23,6 +23,7 @@ textInput.forEach((entry,i)=>{
 let container = d3.select('main')
     .append("div")
     .classed("wordContainer", true)
+    
 
 let force = d3.layout.force()
     .nodes(items)
