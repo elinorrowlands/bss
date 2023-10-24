@@ -208,6 +208,7 @@ li {
   text-transform: uppercase;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
   max-width: 500px;
+  margin: 2em;
 }
 
 .button:hover {
@@ -391,6 +392,7 @@ section.instructions.grid {
 
 .instructions__header {
   text-align: center;
+  padding-top: 20em;
 }
 
 .instructions__number {
@@ -430,7 +432,22 @@ section.instructions.flex.nodisplay {
 
 .instructions__interactions {
   display: flex;
+  align-items: first baseline;
+}
+.instructions__interactions ul {
+  width: 100%;
+}
+.instructions__interactions li {
+  display: inline-flex;
+  margin: 0 1em;
+  list-style: none;
+  width: 400px;
+  max-width: 90vw;
+  text-align: left;
+  justify-content: flex-start;
   align-items: center;
+  vertical-align: middle;
+  font-size: 2rem;
 }
 
 /* ⚝ Loading */

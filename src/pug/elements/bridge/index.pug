@@ -3,8 +3,6 @@ head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title BSS: Bridge
-    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.js')
-    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js')
     link(rel='stylesheet', href='../../style.css')
     script(src='../../main.js' defer)
     script(src='./bridge_interact.js' type='module' defer)
@@ -67,7 +65,7 @@ body.fullpage.bridge
             h1.instructions - 1 - 
         .instructions__number
             h1.instructions Bridge
-        .instructions__text
+        .instructions__text.textBlock.infoText
             p When a duck swims under a bridge, 
             p its quacks echo across the landscape, 
             p sky, waterways and stars. 
@@ -75,15 +73,24 @@ body.fullpage.bridge
         .instructions__button
             button.button.startElement.allowDefault#nav__start Start
         .instructions__interactions 
-            //- include ../interactions/single_click
-            //- include ../interactions/explore
+            //- h2 Interactions to try:
+            ul
+                li 
+                    include ../interactions/single_click    
+                li 
+                    include ../interactions/explore
             //- include ../interactions/drag_circle
             //- include ../interactions/touch_hold
             //- include ../interactions/multitouch
-            //- include ../interactions/sound
-            //- include ../interactions/colour
+            //- h2 Interacting will affect: 
+            ul 
+                li
+                    include ../interactions/sound
+                li 
+                    include ../interactions/colour
+                li
+                    include ../interactions/brightness
             //- include ../interactions/movement
-            //- include ../interactions/brightness
             
         include ../footer__back
     
