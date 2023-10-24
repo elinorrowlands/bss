@@ -96,9 +96,11 @@ section.instructions.flex {
     margin:none;
     width:100vw;
     max-width:100%;
+    justify-content: left;
     
     ul {
         width:100%;
+        max-width:800px;
         margin-left:0;
         margin-right:0;
     }
