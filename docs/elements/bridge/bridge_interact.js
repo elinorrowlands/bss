@@ -99,7 +99,9 @@ window.addEventListener('load',()=>{
                 x.style.filter='sepia(100%) hue-rotate(220deg)'
                 x.style.opacity=0.9;
             })
-            
+            document.querySelectorAll('canvas').forEach(x=>{
+                x.style.opacity=1;
+            })
             
             
             document.querySelectorAll('.vectorised__container').forEach(container => {
@@ -142,6 +144,9 @@ window.addEventListener('load',()=>{
             document.querySelectorAll('.photo__container').forEach(container => {
                 container.style.opacity = 1;
             });
+            document.querySelectorAll('canvas').forEach(x=>{
+                x.style.opacity=0;
+            })
             // if(element.id == 'bridge__beyond') {
             //     document.querySelectorAll('.beyond__container').forEach(container => {
             //         container.style.opacity = 0.9;
@@ -175,6 +180,9 @@ window.addEventListener('load',()=>{
             document.querySelectorAll('.photo__container').forEach(container => {
                 container.style.opacity = sineY*2;
             });
+            document.querySelectorAll('canvas').forEach(x=>{
+                x.style.opacity=0.4;
+            })
         }
     });
     loader();
