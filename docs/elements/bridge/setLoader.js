@@ -3,9 +3,11 @@ let faders;
 window.playToggle = function playToggle(override = false, player = window.player){
     if(player.state == 'started' && !override){
         player.stop();
+        player2.stop()
     }        
     else {
         player.start();
+        player2.start();
     }
     playButton.innerHTML = player.state == 'started' ? 'STOP' : 'PLAY';
 }
@@ -112,16 +114,19 @@ const loader = ()=>{
     })
 
     window.player = new Tone.Player('./sounds/98823__deleted_user_1654820__grand-union-canal-kensal-green.mp3');
+    window.player2 = new Tone.Player('../../loops/bridge.m4a');
     // window.player = new Tone.Player('../ripples/nesting.mp3');
     window.lpf = new Tone.Filter(200, 'lowpass');
     window.hpf = new Tone.Filter(200, 'highpass');
     window.echo = new Tone.FeedbackDelay(0.5, 0.8);
     window.comb = new Tone.FeedbackCombFilter(0.5, 0.5);
-
+    player2.volume.value="-Infinity";
+    player2.loop = true;
     player.loop = true;
     // player.chain(comb, hpf, echo, lpf, Tone.Master);
     // this appears to work as a backup for iOS issues with latest version of Tone...
     player.chain(lpf, echo, Tone.Master)
+    player2.connect(lpf);
     // player.chain(lpf, Tone.Master);
     
 
@@ -130,9 +135,11 @@ const loader = ()=>{
         Tone.start();
         if(player.state == 'started'){
             player.stop();
+            player2.stop();
         }        
         else {
             player.start();
+            player2.start();
         }
         playButton.innerHTML = player.state == 'started' ? 'STOP' : 'PLAY';
     });

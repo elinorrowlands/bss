@@ -94,6 +94,7 @@ window.addEventListener('load',()=>{
             player.playbackRate = 0.75;
             // if(element.id=='bridge__under')interpolateStates(sineY);
             interpolateStates(sineY);
+            player2.volume.rampTo(-3,5);
             
             document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>{
                 x.style.filter='sepia(100%) hue-rotate(220deg)'
@@ -147,6 +148,7 @@ window.addEventListener('load',()=>{
             document.querySelectorAll('canvas').forEach(x=>{
                 x.style.opacity=0;
             })
+            player2.volume.rampTo(-60,10);
             // if(element.id == 'bridge__beyond') {
             //     document.querySelectorAll('.beyond__container').forEach(container => {
             //         container.style.opacity = 0.9;
@@ -155,6 +157,7 @@ window.addEventListener('load',()=>{
             // }
         } else if(type=='move'){
             if(element.id=='bridge__under')interpolateStates(sineY);
+            lpf.frequency.rampTo(10000-(10000*(y/window.innerWidth)),0.1);
             if(element.id == 'bridge__beyond') {
                 document.querySelectorAll('.beyond__container').forEach(container => {
                     container.style.opacity = 0.9;

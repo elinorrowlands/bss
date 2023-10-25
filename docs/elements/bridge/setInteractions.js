@@ -77,6 +77,7 @@ const setInteractions = function(){
                 // console.log('cover')
                 Tone.start()
                 player.start();
+                player2.start();
             }
         },
         path:(e)=>{

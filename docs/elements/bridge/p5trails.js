@@ -5,16 +5,20 @@ let trails = [];
 function setup(){
     window.canv = createCanvas(window.innerWidth, window.innerHeight);
     document.querySelector('main').appendChild(canv.elt);
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
         trails.push({ x: 0, y: 0});
       }
 }
 
-let gain, count=0;
+let gain = 0, count=0;
 
 function draw(){
     count++;
-    if(count%5==0)gain = Tone.dbToGain(meter.getValue())*80;
+    // console.log(meter.getValue(), Tone.dbToGain(meter.getValue()), Tone.dbToGain(meter.getValue())>0.1)
+    // if(count%10==0)gain = Tone.dbToGain(meter.getValue())*80;
+    if(gain > Tone.dbToGain(meter.getValue())*100) {gain -=0.01} else if(gain < Tone.dbToGain(meter.getValue())*100) {gain +=0.1}
+    
+    
     clear();
     if(mouseIsPressed){
         trails[trails.length - 1] = { x: mouseX, y: mouseY, size: (mouseY / height * gain) };
@@ -29,7 +33,8 @@ function draw(){
         let diameter = floor(map(i, 0, trails.length - 1, 0, 50) * trails[i].size);
         
         noStroke();
-        fill(colour, 0, 200, 200);
+        fill(colour, 0, max(190+(sin(gain)*30),255), max(20*gain,255));
+        // diameter=200;
         ellipse(trails[i].x, trails[i].y, diameter, diameter);
       }
       
