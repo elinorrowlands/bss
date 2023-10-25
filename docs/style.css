@@ -466,8 +466,12 @@ section.instructions.flex.nodisplay {
   justify-content: flex-start;
   align-items: center;
   vertical-align: middle;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
+.instructions__interactions li span {
+  max-width: 200px;
+}
+
 h2.instructions__heading {
   padding-left: 1em;
 }
