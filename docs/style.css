@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* ⚝ Biodivergent Sites and Sounds */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Roboto:wght@700&family=Rubik:wght@900&display=swap");
-/* ⚝ Colours 🎨 */ /* ⚝ Animations */
+/* ⚝ Colours 🎨 */
+/* ⚝ Animations */
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -391,6 +392,10 @@ section.instructions {
   text-align: center;
   z-index: 2000;
 }
+section.instructions .instructions__text {
+  width: 800px;
+  max-width: 90vw;
+}
 
 section.instructions.grid {
   display: grid;
@@ -471,20 +476,32 @@ section.instructions.flex.nodisplay {
   left: 0;
   right: 0;
   flex-basis: 100%;
+  padding-inline-start: 0;
 }
 .instructions__interactions li {
+  border-radius: 10px;
+  border: 0.5px solid white;
   display: inline-flex;
-  margin: 0 0em;
+  margin: auto;
+  left: 0;
+  right: 0;
   list-style: none;
-  width: 400px;
+  width: 300px;
   max-width: 90vw;
   text-align: left;
   justify-content: flex-start;
   align-items: center;
   vertical-align: middle;
   font-size: 1.1rem;
+  font-weight: bold;
+  font-family: Arial;
+  margin: 1em;
+}
+.instructions__interactions li .instructions__icon {
+  padding-left: 1em;
 }
 .instructions__interactions li span {
+  padding-left: 0.5em;
   max-width: 200px;
 }
 
@@ -495,7 +512,6 @@ section.instructions.flex.nodisplay {
   margin-right: auto;
   left: 0;
   right: 0;
-  border-bottom: 1px solid white;
   flex-basis: 100%;
 }
 
