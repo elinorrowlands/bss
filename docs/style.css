@@ -370,6 +370,11 @@ footer.instructions {
 }
 
 /* ⚝ Instructions */
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
 section.instructions {
   background-image: url("svg/wave1.svg");
   background-repeat: no-repeat;
@@ -465,6 +470,7 @@ section.instructions.flex.nodisplay {
   margin-right: auto;
   left: 0;
   right: 0;
+  flex-basis: 100%;
 }
 .instructions__interactions li {
   display: inline-flex;
@@ -490,6 +496,7 @@ section.instructions.flex.nodisplay {
   left: 0;
   right: 0;
   border-bottom: 1px solid white;
+  flex-basis: 100%;
 }
 
 .inline {

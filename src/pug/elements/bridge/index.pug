@@ -103,7 +103,9 @@ body.fullpage.bridge
         .instructions__button
             button.button.startElement.allowDefault#nav__start Start
         .instructions__interactions 
-            //- h2 Interactions to try:
+            
+            h2.instructions__heading Interactions
+            .break
             ul
                 li 
                     include ../interactions/single_click    
@@ -112,7 +114,10 @@ body.fullpage.bridge
             //- include ../interactions/drag_circle
             //- include ../interactions/touch_hold
             //- include ../interactions/multitouch
-            //- h2 Interacting will affect: 
+            
+            .break
+            h2.instructions__heading Changes
+            .break
             ul 
                 li
                     include ../interactions/sound
