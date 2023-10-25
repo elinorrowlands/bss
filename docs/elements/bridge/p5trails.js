@@ -10,6 +10,10 @@ function setup(){
       }
 }
 
+function windowResized(){
+    resizeCanvas(window.innerWidth, window.innerHeight);
+}
+
 let gain = 0, count=0;
 
 function draw(){
