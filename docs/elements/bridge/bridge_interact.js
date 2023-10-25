@@ -100,7 +100,7 @@ window.addEventListener('load',()=>{
                 x.style.opacity=0.9;
             })
             document.querySelectorAll('canvas').forEach(x=>{
-                x.style.opacity=1;
+                x.style.opacity=0.5;
             })
             
             
@@ -181,7 +181,7 @@ window.addEventListener('load',()=>{
                 container.style.opacity = sineY*2;
             });
             document.querySelectorAll('canvas').forEach(x=>{
-                x.style.opacity=0.4;
+                x.style.opacity=0.3;
             })
         }
     });

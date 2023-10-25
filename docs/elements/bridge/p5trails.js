@@ -1,3 +1,6 @@
+let meter = new Tone.Meter();
+Tone.Master.connect(meter);
+
 let trails = [];
 function setup(){
     window.canv = createCanvas(window.innerWidth, window.innerHeight);
@@ -7,12 +10,14 @@ function setup(){
       }
 }
 
-
+let gain, count=0;
 
 function draw(){
+    count++;
+    if(count%5==0)gain = Tone.dbToGain(meter.getValue())*80;
     clear();
     if(mouseIsPressed){
-        trails[trails.length - 1] = { x: mouseX, y: mouseY, size: (mouseY / height * 2) };
+        trails[trails.length - 1] = { x: mouseX, y: mouseY, size: (mouseY / height * gain) };
         for (let i = 0; i < trails.length - 1; i++) {
             trails[i] = trails[i + 1];
           }
@@ -24,7 +29,7 @@ function draw(){
         let diameter = floor(map(i, 0, trails.length - 1, 0, 50) * trails[i].size);
         
         noStroke();
-        fill(colour, 200);
+        fill(colour, 0, 200, 200);
         ellipse(trails[i].x, trails[i].y, diameter, diameter);
       }
       
