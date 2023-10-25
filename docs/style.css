@@ -410,6 +410,14 @@ section.instructions.grid {
   text-align: center;
 }
 
+.startElement {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .instructions__text {
   padding: 1em;
   max-width: 800px;
@@ -473,8 +481,10 @@ section.instructions.flex.nodisplay {
   max-width: 200px;
 }
 
-h2.instructions__heading {
+.instructions__heading {
   padding-left: 1em;
+  width: 100%;
+  border-bottom: 1px solid white;
 }
 
 .inline {
