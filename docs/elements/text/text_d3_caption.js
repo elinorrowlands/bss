@@ -5,7 +5,7 @@ export default function generateBlocks(text){
      */
 
     window.textInput = 
-        `where is the water's edge?\nin the wide expanses?\nor the half filled bathtub?\nin the river?\nor the boiling kettle?\nin the steam?\nor the snow?\nor the rainbow mist of a summer hose?`
+        `where is the water's edge?\nin the wide expanses\nor the half filled bathtub\nin the river\nor the boiling kettle\nin the steam\nor the snow\nor the rainbow mist of a summer hose`
             .split('\n');
     function removeDuplicates(textInput){
         let unique = {};
