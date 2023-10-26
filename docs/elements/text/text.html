@@ -9,9 +9,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <script src="../../main.js" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./text.js" defer="defer" type="module"></script>
+    <script src="../../main.js"></script>
+    <script src="../js/script.js" type="module" defer="defer"></script>
+    <script src="../ripples/interact.js" defer="defer"></script>
+    <script src="../ripples/touch.js" defer="defer"></script>
+    <script src="../ripples/samples.js" defer="defer"></script>
+    <script src="../text/text_d3_caption.js" defer="defer"></script>
+    <style>
+      .text.moving{
+          opacity:1;
+      }
+      canvas{
+          opacity:0.4;
+      }
+      main{
+          width:100vw;
+          height:100vh;
+          overflow:hidden;
+      }
+    </style>
   </head>
-  <body class="words">
+  <body class="words fullpage"></body>
+  <main class="ripples">
+    <div class="ripples" id="canvas"></div>
+    <div class="ripples" id="content">
+      <div id="water-ripples">
+        <div id="water-ripples-title">
+          <h1 class="ripples"></h1>
+        </div><img src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture"/>
+      </div>
+    </div>
     <!-- INSTRUCTIONS ON PAGE LOAD-->
     <section class="instructions flex scrollable">
       <h1 class="instructions__number">- 2 - </h1>
@@ -44,7 +76,9 @@
             <object class="instructions__icon" data="../../icons/multitouch.svg" type="image/svg+xml" aria-hidden="true"></object><span>multiple touches</span>
           </li>
         </ul>
-        <h2 class="instructions__heading">Reactions</h2>
+        <div class="break"></div>
+        <h2 class="instructions__heading">Changes</h2>
+        <div class="break"></div>
         <ul>
           <li>
             <object class="instructions__icon" data="../../icons/sound.svg" type="image/svg+xml" aria-hidden="true"></object><span>sound</span>
@@ -55,14 +89,11 @@
           <li>           
             <object class="instructions__icon" data="../../icons/movement.svg" type="image/svg+xml" aria-hidden="true"></object><span>movement</span>
           </li>
-          <li>           
-            <object class="instructions__icon" data="../../icons/ripples.svg" type="image/svg+xml" aria-hidden="true"></object><span>ripples</span>
-          </li>
         </ul>
       </div>
       <footer class="instructions">
         <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"/></a></p>
       </footer>
     </section>
-  </body>
+  </main>
 </html>

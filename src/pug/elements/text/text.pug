@@ -8,8 +8,38 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         script(src="../../main.js" defer)
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
+        script(src="https://www.curtainsjs.com/build/curtains.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
         script(src="./text.js" defer type="module")
-    body.words
+        script(src="../../main.js")
+        script(src="../js/script.js", type="module", defer)
+        script(src="../ripples/interact.js", defer)
+        script(src="../ripples/touch.js", defer)
+        script(src="../ripples/samples.js", defer)
+        script(src="../text/text_d3_caption.js", defer)
+        style.
+            .text.moving{
+                opacity:1;
+            }
+            canvas{
+                opacity:0.4;
+            }
+            main{
+                width:100vw;
+                height:100vh;
+                overflow:hidden;
+            }
+    body.words.fullpage
+    main.ripples
+        #canvas.ripples
+        #content.ripples
+            #water-ripples
+                #water-ripples-title
+                    h1.ripples
+                //- object.svg-import.ripples(style="display:none;" id="painting" type="image/svg+xml" data="interact_painting.svg")
+                img(src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture")
         // INSTRUCTIONS ON PAGE LOAD
         section.instructions.flex.scrollable
             h1.instructions__number - 2 - 
@@ -35,7 +65,9 @@ html(lang="en")
                         include ../interactions/touch_hold
                     li
                         include ../interactions/multitouch
-                h2.instructions__heading Reactions
+                .break
+                h2.instructions__heading Changes
+                .break
                 ul
                     li
                         include ../interactions/sound
@@ -43,8 +75,8 @@ html(lang="en")
                         include ../interactions/colour
                     li            
                         include ../interactions/movement
-                    li            
-                        include ../interactions/ripples
+                    //- li            
+                    //-     include ../interactions/ripples
                     //- include ../interactions/brightness
                                 
             include ../footer__back
