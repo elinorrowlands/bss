@@ -43,6 +43,9 @@ function addBackButton(){
     container.appendChild(blank);
     container.appendChild(infoButton);
     document.body.appendChild(container);
+    if(document.querySelector('.instructions__header').getBoundingClientRect().top<0) {
+        document.querySelector('.instructions').style.paddingTop = '800px';
+    }
 }
 
 export default addBackButton
