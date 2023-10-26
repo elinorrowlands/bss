@@ -53,12 +53,16 @@ export default function generateBlocks(text){
     document.querySelectorAll('.words.text.d3').forEach((element,i) => {
         element.id = `text_${i}`;
     })
-
+    window.gravity=0.01
     window.addEventListener('bump', (e) => {
     // was 0.5
     let {value} = e.detail; 
     force.alpha(value);
     force.charge(-1000*value);
+    window.gravity+=0.001;
+    if(window.gravity>0.1) window.gravity=0.01;
+    console.log('gravity', window.gravity)
+    force.gravity(window.gravity)
     if(window.rippleScene){
         rippleScene.ripples.mouse.velocity = {x:1, y:1};
     }
