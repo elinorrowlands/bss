@@ -211,7 +211,7 @@ body.fullpage{
 }
 
 .title__button{
-  background-color:$background2;
+  background-color:transparent;
   // max-width:300px;
   max-width:75vw;
   height:100px; 
@@ -224,7 +224,8 @@ body.fullpage{
 }
 
 .title__button:hover{
-  background-color: $background-text;
+  // background-color: $background-text;
+  background-color:$background2;
   border-color: transparent;
   color: $background;
   cursor: pointer;
