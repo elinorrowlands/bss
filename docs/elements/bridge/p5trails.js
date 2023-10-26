@@ -37,7 +37,7 @@ function draw(){
         let diameter = floor(map(i, 0, trails.length - 1, 0, 70) * trails[i].size);
         
         noStroke();
-        fill(colour* (1-(mouseY / height)), i, constrain(150+(sin(gain)*10),0,255), constrain(20*gain,0,255));
+        fill(colour* (1-(mouseY / height)), i, constrain(150+(sin(gain)*10),0,255), constrain(40*gain,0,255));
         // console.log(constrain(150+(sin(gain)*10),0,255), sin(gain)*10)
         // diameter=200;
         ellipse(trails[i].x, trails[i].y, diameter, diameter);

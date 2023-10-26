@@ -126,9 +126,6 @@ section.instructions.flex {
         left:0;
         right:0;
         flex-basis:100%;
-        // border-radius:10px;
-        // border: 0.5px solid $outline;
-        // padding: 1em;
         padding-inline-start:0;
     }
     
@@ -151,20 +148,19 @@ section.instructions.flex {
         font-family:Arial;
         // margin-bottom: 1em;
         margin:1em;
+        
         .instructions__icon{
             padding-left:1em;
         }
+        
         span {
             padding-left:0.5em;
             max-width:200px;
-            // width:230px;
-            // background-color:red;
         }
     }
 }
 
 .instructions__heading{
-    // padding-left: 1em;
     width: 100%;
     max-width:800px;
     margin-left:auto;
