@@ -170,6 +170,7 @@ window.addEventListener('load',()=>{
             });
 
             document.querySelector('.note_1').style.filter=`invert(${x%100}%) sepia(${x%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%) blur(${Math.abs(Math.sin(y/window.innerHeight/2))*20}px)`
+            document.querySelector('.note_1').style.opacity=0.5;
             // console.log('move',x,y, e.detail)
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.9;
