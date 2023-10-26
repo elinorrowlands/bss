@@ -11,14 +11,14 @@ const Pickup = (e, mix, captionObject) =>{
     
     let target = element;
     let text = captionObject[element.id.split('_')[1]];
-    
+    let container = document.querySelector('main') || document.body;
     if(type == 'start' || type == 'enter'){
         if(!window.playFlag){
             mix.backdrop.start();
             window.playFlag = true;
         }
         
-        document.body.style.filter = `hue-rotate(${element.style.left}deg)`;
+        container.style.filter = `hue-rotate(${element.style.left}deg)`;
         mix.filter.frequency.rampTo((y)+80, 0.5);
         mix.player.start(Tone.now(), text.startS, text.endS-text.startS);
         element.classList.add('active');
@@ -33,12 +33,12 @@ const Pickup = (e, mix, captionObject) =>{
         document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
         document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
         element.style.textShadow = `0px 0px 10px rgba(0,0,128,0.4)`;
-        document.body.style.filter = `hue-rotate(0deg)`;
+        container.filter = `hue-rotate(0deg)`;
         element.style.backgroundColor = `transparent`;
 
     } else if(type == 'move'){
 
-        document.body.style.filter = `hue-rotate(${element.x}deg)`;
+        container.filter = `hue-rotate(${element.x}deg)`;
         mix.filter.frequency.rampTo((y)+ 500, 0.5);
         element.style.left = `${x}px;`;
         element.style.top = `${y}px;`;

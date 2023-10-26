@@ -39,8 +39,8 @@ function addBackButton(){
         document.querySelector('#infoButton').style.opacity=0.5;
     });
     
-    container.appendChild(blank);
     container.appendChild(backButton);
+    container.appendChild(blank);
     container.appendChild(infoButton);
     document.body.appendChild(container);
 }
