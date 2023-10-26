@@ -50,7 +50,11 @@ function loaded(){
         });
 }
 
+window.started = false;
+
 window.start = function(){
+    if (window.started) return;
+    window.started = true;
     StatusVO.init();
     loaded();
     // placeCaptions(captionObject);

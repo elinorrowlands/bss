@@ -17,7 +17,7 @@ html(lang="en")
         script(src="../js/script_text.js", type="module", defer)
         script(src="../ripples/interact.js", defer)
         script(src="../ripples/touch.js", defer)
-        script(src="../ripples/samples.js", defer)
+        script(src="../ripples/samples_text.js", defer)
         //- script(src="../text/text_d3_caption.js", defer)
         style.
             .text.moving{
@@ -42,8 +42,10 @@ html(lang="en")
                 img(src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture")
         // INSTRUCTIONS ON PAGE LOAD
         section.instructions.flex.scrollable
-            h1.instructions__number - 2 - 
-            h1.instructions Water's Edge
+            .instructions__header
+                h1.instructions - 2 - 
+            .instructions__number
+                h1.instructions Water's Edge
             .instructions__text
                 p Where is the water's edge? 
                 p Is it at the piling -- the canal's watertight wall? 

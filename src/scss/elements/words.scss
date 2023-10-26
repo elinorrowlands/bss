@@ -50,6 +50,10 @@ body.words {
         }
         &.d3{
             transition:opacity 0.5s ease-in-out;
+            height:3em;
+        }
+        &#text_0{
+            font-size:4rem;
         }
     }
     &.moving{

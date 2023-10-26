@@ -832,6 +832,10 @@ body.words {
 }
 .words.text.d3 {
   transition: opacity 0.5s ease-in-out;
+  height: 3em;
+}
+.words.text#text_0 {
+  font-size: 4rem;
 }
 .words.moving {
   position: absolute;

@@ -37,13 +37,13 @@ const Pickup = (e, mix, captionObject) =>{
         element.style.backgroundColor = `transparent`;
 
     } else if(type == 'move'){
-
+        mix.echo.delayTime.rampTo( (y/window.innerHeight/2)+0.1, 0.9)
         container.filter = `hue-rotate(${element.x}deg)`;
         mix.filter.frequency.rampTo((y)+ 500, 0.5);
         // element.style.left = `${x}px;`;
         // element.style.top = `${y}px;`;
-        document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
-        document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
+        // document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
+        // document.querySelector(`#text_${(element.id.split('_')[1] + 2) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';
         element.style.textShadow = `0px 0px 10px rgba(0,0,0,${(y/100)})`;
     }
     

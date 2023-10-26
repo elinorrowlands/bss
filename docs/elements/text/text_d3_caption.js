@@ -4,16 +4,21 @@ export default function generateBlocks(text){
      * combine with text.js
      */
 
-    let textInput = 
-        `where is the water's edge? 
-        \nin the wide expanses? 
-        \nor the half filled bathtub? 
-        \nin the river? 
-        \nor the boiling kettle?
-        \nin the steam? 
-        \nor the snow?
-        \nor the rainbow mist of a summer hose?`.split('\n');
+    window.textInput = 
+        `where is the water's edge?\nin the wide expanses?\nor the half filled bathtub?\nin the river?\nor the boiling kettle?\nin the steam?\nor the snow?\nor the rainbow mist of a summer hose?`
+            .split('\n');
+    function removeDuplicates(textInput){
+        let unique = {};
+        textInput.forEach((entry,i)=>{
+            unique[entry] = i;
+        })
+        return Object.keys(unique);
+    }
+    
+    textInput = removeDuplicates(textInput);
 
+    console.log('textInput', textInput)
+            
     let items = [];
     textInput.forEach((entry,i)=>{
     items.push({
@@ -32,7 +37,7 @@ export default function generateBlocks(text){
 
     let force = d3.layout.force()
     .nodes(items)
-    .gravity(0.1)
+    .gravity(0.01)
     .charge(-1000)
     .size([window.innerWidth*0.75,window.innerHeight*0.75]); 
 
