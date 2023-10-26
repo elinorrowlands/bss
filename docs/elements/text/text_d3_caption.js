@@ -1,18 +1,18 @@
-const generateBlocks = (text) => {
+export default function generateBlocks(text){
         
     /**
      * combine with text.js
      */
 
-    let textInput= 
-    `where is the water's edge? 
-    \nin the wide expanses? 
-    \nor the half filled bathtub? 
-    \nin the river? 
-    \nor the boiling kettle?
-    \nin the steam? 
-    \nor the snow?
-    \nor the rainbow mist of a summer hose?`.split('\n');
+    let textInput = 
+        `where is the water's edge? 
+        \nin the wide expanses? 
+        \nor the half filled bathtub? 
+        \nin the river? 
+        \nor the boiling kettle?
+        \nin the steam? 
+        \nor the snow?
+        \nor the rainbow mist of a summer hose?`.split('\n');
 
     let items = [];
     textInput.forEach((entry,i)=>{
@@ -42,8 +42,12 @@ const generateBlocks = (text) => {
     .classed('words', true)
     .classed('text', true)
     .classed('moving', true)
+    .classed('d3', true)
     .call(force.drag); 
-        
+    
+    document.querySelectorAll('.words.text.d3').forEach((element,i) => {
+        element.id = `text_${i}`;
+    })
 
     window.addEventListener('bump', (e) => {
     // was 0.5
@@ -63,7 +67,8 @@ const generateBlocks = (text) => {
         let y = d.y;
         if(y>window.innerHeight-50) y = window.innerHeight-50;
         if(y<50) y = 50;
-        return `${parseInt(y)}px`})
+        return `${parseInt(y)}px`
+    })
         .style('left', d=>{
             let x = d.x;
             if(x>window.innerWidth-250) x = window.innerWidth-250;
@@ -80,7 +85,7 @@ const generateBlocks = (text) => {
     // .classed('text', true)
 
     force.start();
-};
+}
 
 
-export default generateBlocks;
+// export default generateBlocks;

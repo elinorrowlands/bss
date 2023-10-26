@@ -48,6 +48,9 @@ body.words {
             opacity:1;
             letter-spacing:0.2px;
         }
+        &.d3{
+            transition:opacity 0.5s ease-in-out;
+        }
     }
     &.moving{
         position:absolute;

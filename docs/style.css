@@ -829,6 +829,9 @@ body.words {
   opacity: 1;
   letter-spacing: 0.2px;
 }
+.words.text.d3 {
+  transition: opacity 0.5s ease-in-out;
+}
 .words.moving {
   position: absolute;
   display: block;

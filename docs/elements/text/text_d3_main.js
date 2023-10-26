@@ -1,6 +1,6 @@
-import placeCaptions from './text_placeCaptions.js';
-import Pickup from './text_pickup.js';
-import generateBlocks from './generateBlocks.js';
+import placeCaptions from './text_d3_placeCaptions.js';
+import Pickup from './text_pickup_d3.js';
+import generateBlocks from './text_d3_caption.js';
 
 let loadBlinkCount = 0;
 const loadBlink = () => {
@@ -53,7 +53,7 @@ function loaded(){
 window.start = function(){
     StatusVO.init();
     loaded();
-    placeCaptions(captionObject);
+    // placeCaptions(captionObject);
     generateBlocks();
     touch.setAction('.text');
     document.addEventListener('touch-pickup',(e)=>Pickup(e, mix, captionObject));
