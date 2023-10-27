@@ -1,0 +1,63 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title BSS: School
+		link(rel="stylesheet", href="../../style.css")
+		script(src="../../main.js", defer)
+		script(src="./replaceLayers.js", defer)
+		script(src="./school.js", defer)
+		script(src="../js/sampler/sampler.js", type="module", defer)
+	body.heart
+		main
+			object.heart.svg-import#heart(type="image/svg+xml", data="heart_unmasked.svg")
+		object.heart.svg-import.fullpage#heart_gradient(type="image/svg+xml", data="./gradient_border.svg")
+		section.instructions.instructions.flex.scrollable#instructions
+			div.instructions__header
+				h1 - 6 -
+			div.instructions__number
+				h1 School
+			div.instructions__text
+				p In biology, any group of fish that swim in the same direction in synchronicity are schooling.
+				p This was the experience of Harlesden Primary School pupils who created ecosystems of sound together.
+				button.button.startElement.allowDefault#nav__start Start
+			div.instructions__interactions#interactions__school
+				h2.instructions__heading Interactions
+				div.break
+				ul
+					li
+						object.instructions__icon(data="../../icons/single_click.svg", type="image/svg+xml")
+						span single touch or mouse
+					li
+						object.instructions__icon(data="../../icons/explore.svg", type="image/svg+xml")
+						span swipe around the page to explore
+					li
+						object.instructions__icon(data="../../icons/touch_hold.svg", type="image/svg+xml")
+						span hold down for longer sounds
+					li
+						object.instructions__icon(data="../../icons/multitouch.svg", type="image/svg+xml")
+						span multiple touches at once
+				div.break
+				h2.instructions__heading Changes
+				div.break
+				ul
+					li
+						object.instructions__icon(data="../../icons/sound.svg", type="image/svg+xml")
+						span sound
+					li
+						object.instructions__icon(data="../../icons/colour.svg", type="image/svg+xml")
+						span colour
+					li
+						object.instructions__icon(data="../../icons/brightness.svg", type="image/svg+xml")
+						span brightness
+			footer.instructions
+				p.footer__content(aria-label="project partners")
+					a(href="https://canalrivertrust.org.uk/")
+						img.logo-fit#logo__canal2(src="../../logos/canal-and-river-trust-logo-nostrap.svg", alt="Canal & River Trust")
+					a(href="https://www.artscouncil.org.uk/")
+						img.logo-fit#logo__ace2(src="../../logos/lottery_Logo_White.png", alt="Arts Council England Lottery Funded")
+					a(href="https://www.colesgallery.co.uk/")
+						img.logo-fit#logo__coles2(src="../../logos/coles.png", alt="Cole's Gallery")
+					a(href="https://www.creativehealthcamden.com/")
+						img.logo-fit#logo__chc2(src="../../logos/chc.png", alt="Creative Health Camden")
