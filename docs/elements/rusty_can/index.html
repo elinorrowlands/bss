@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BSS: Rusty Can</title>
+  <title>BSS: Circle</title>
 
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="./style.css">
@@ -37,140 +37,128 @@
       margin:0;
       display:block;
       transform-origin:center;
-      doctype html
-      html(lang="en")
-        head
-          meta(charset="UTF-8")
-          meta(name="viewport", content="width=device-width, initial-scale=1.0")
-          title Rusty Can
-          link(rel="stylesheet", href="../../style.css")
-          style.
-            #canvas{
-              position:fixed;
-              top:0;
-              left:0;
-              width:100vw;
-              height:100vh;
-              z-index:100;
-              @media (max-width: 600px) {
-                width:100%; 
-                height:100%;
-                top:0;
-                transform-origin:center;
-              }
-            }
-            
-            .canBG{
-              opacity:0.5;
-              width:60vh;
-              height:60vh;
-              top:0px;
-              left:0px;
-              bottom:0px;
-              right:0px;
-              margin:auto;
-              transition:all 1.5s ease;
-              @media(min-width:600px){
-                width:100vh;
-                height:100vh;
-              }
-            }
-            
-            #can__bg{
-              transition:all 1s ease;
-            }
-            #canvas{
-              filter:brightness(80%)
-            }
-            .water__meter{
-              opacity:0.4;
-            }
-        body
-          main
-            #canvas
-            #content
-              #water-ripples
-                #water-ripples-title
-                  h1#h1(style="user-select:none;pointer-events:none;")
-                svg#centeredCircle(width="100%", height="100%", viewBox="0 0 100 100")
-                  circle.water__meter#waterCircle(cx="50", cy="50", r="40", stroke="none", stroke-width="4", fill="darkblue")
-                  circle.water__meter#echoCircle(cx="50", cy="50", r="40", stroke="none", stroke-width="4", fill="darkblue")
-                  circle.water__meter#echoCircle2(cx="50", cy="50", r="40", stroke="none", stroke-width="4", fill="darkblue")
-                img#source__water(src="water_frame_0.png", alt="water", crossorigin="", data-sampler="planeTexture")
-          #can__bg.canBG.svg-import(data="can/can_bg_900.svg", alt="algae")
-          object.canBG.svg-import#can__0__guide(type="image/svg+xml", data="can__0__guide.svg")
-          object.canBG.svg-import#can__1__guide(type="image/svg+xml", data="can__1__guide.svg")
-          img#can__0__ghost.canBG.ghost(src="can/can_0.png", alt="can")
-          img#can__1__ghost.canBG.ghost(src="can/can_1.png", alt="can")
-          img#can__0.canBG(src="can/can_0.png", alt="can")
-          img#can__1.canBG(src="can/can_1.png", alt="can")
-          section#instructions.instructions.instructions.flex.scrollable
-            .instructions__number
-              h1 - 5 -
-            .instructions__header
-              h1 Rusty Can
-            .instructions__text
-              p We know what rust looks and feels like,
-              p but what does it sound like when trapped in the reeds along the canal?
-              p Hoary
-              br
-              p Chromatic,
-              br
-              p Corroded
-              br
-              p Creaky
-              br
-              p Rickety
-              br
-              p Rickety
-              br
-              p Ratty
-              br
-              p Junky
-              br
-              p Grungy
-              br
-              p Spiky...
-              button.button.startElement.allowDefault#nav__start Start
-            .instructions__interactions
-              h2.instructions__heading Interactions
-              .break
-              ul
-                li
-                  object.instructions__icon(data="../../icons/single_click.svg", type="image/svg+xml")
-                  span single touch or mouse
-                li
-                  object.instructions__icon(data="../../icons/explore.svg", type="image/svg+xml")
-                  span swipe around the page to explore
-                li
-                  object.instructions__icon(data="../../icons/multitouch.svg", type="image/svg+xml")
-                  span multiple touches at once
-              .break
-              h2.instructions__heading Changes
-              .break
-              ul
-                li
-                  object.instructions__icon(data="../../icons/sound.svg", type="image/svg+xml")
-                  span sound
-                li
-                  object.instructions__icon(data="../../icons/colour.svg", type="image/svg+xml")
-                  span colour
-                li
-                  object.instructions__icon(data="../../icons/movement.svg", type="image/svg+xml")
-                  span movement
-            footer.instructions
-              p.footer__content(aria-label="project partners")
-                a(href="https://canalrivertrust.org.uk/")
-                  img.logo-fit#logo__canal2(src="../../logos/canal-and-river-trust-logo-nostrap.svg", alt="Canal & River Trust")
-                a(href="https://www.artscouncil.org.uk/")
-                  img.logo-fit#logo__ace2(src="../../logos/lottery_Logo_White.png", alt="Arts Council England Lottery Funded")
-                a(href="https://www.colesgallery.co.uk/")
-                  img.logo-fit#logo__coles2(src="../../logos/coles.png", alt="Cole's Gallery")
-                a(href="https://www.creativehealthcamden.com/")
-                  img.logo-fit#logo__chc2(src="../../logos/chc.png", alt="Creative Health Camden")
-          script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
-          script(src="https://www.curtainsjs.com/build/curtains.min.js")
-          script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-          script(type="module", src="../js/init_circle.js", defer)
-          script(src="./touch.js", defer)
-          script(src="./can.js", defer)
+      z-index:100;
+      @media (max-width: 600px) {
+        width:100%; 
+        height:100%;
+        top:0;
+        transform-origin:center;
+      }
+    }
+    
+    .canBG{
+        opacity:0.5;
+        width:60vh;
+        height:60vh;
+        top:0px;
+        left:0px;
+        bottom:0px;
+        right:0px;
+        margin:auto;
+        transition:all 1.5s ease;
+        @media(min-width:600px){
+          width:100vh;
+          height:100vh;
+        }
+      }
+      
+      #can__bg{
+        transition:all 1s ease;
+      }
+      #canvas{
+        filter:brightness(80%)
+      }
+      .water__meter{
+        opacity:0.4;
+      }
+  </style>
+  <script src="../../main.js" defer></script>
+  <script src="./ensurePathId.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div id="canvas">
+      
+    </div>
+    <div id="content">
+      <div id="water-ripples">
+        <div id="water-ripples-title">
+          <h1 id="h1" style="user-select:none;pointer-events:none;"></h1>
+        </div>
+        
+        <svg id="centeredCircle" width="100%" height="100%" viewBox="0 0 100 100">
+          <circle id="waterCircle" class="water__meter" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" ></circle>
+          <circle id="echoCircle" class="water__meter" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" ></circle>
+          <circle id="echoCircle2" class="water__meter" cx="50" cy="50" r="40" stroke="none" stroke-width="4" fill="darkblue" ></circle>
+        </svg>
+        <img id="source__water" src="water_frame_0.png" alt="water" crossorigin="" data-sampler="planeTexture">
+      </div>
+    </div>
+  </main>
+  
+  <object class="canBG svg-import" id="can__bg" data="can/can_bg_900.svg" alt="algae"></object>
+  <object class="canBG svg-import" id="can__0__guide" type="image/svg+xml" data="can__0__guide.svg"></object>
+  <object class="canBG svg-import" id="can__1__guide" type="image/svg+xml" data="can__1__guide.svg"></object>
+  
+  <img id="can__0__ghost" src="can/can_0.png" class="canBG ghost" alt="can">
+  <img id="can__1__ghost" src="can/can_1.png" class="canBG ghost" alt="can">
+  <img id="can__0" src="can/can_0.png" class="canBG" alt="can">
+  <img id="can__1" src="can/can_1.png" class="canBG" alt="can">
+  
+  <section id="instructions" class="instructions instructions flex scrollable">
+    <div class="instructions__number">
+      <h1>- 5 -</h1>
+    </div>
+    <div class="instructions__header">
+      <h1>Rusty Can</h1>
+    </div>
+    <div class="instructions__text">
+    <p>We know what rust looks and feels like, </p>
+    <p>but what does it sound like when trapped in the reeds along the canal?</p> 
+    <p>Hoary<br>Chromatic,<br>Corroded<br>Creaky<br>Rickety<br>Rickety<br>Ratty<br>Junky<br>Grungy<br>Spiky...</p>
+		<button class="button startElement allowDefault" id="nav__start">Start</button>
+    </div>
+    <div class="instructions__interactions"> 
+      <h2 class="instructions__heading">Interactions</h2>
+      <div class="break"></div>
+      <ul>
+        <li>
+          <object class="instructions__icon" data="../../icons/single_click.svg" type="image/svg+xml"></object><span>single touch or mouse</span>
+        </li>
+        <li>
+          <object class="instructions__icon" data="../../icons/explore.svg" type="image/svg+xml"></object><span>swipe around the page to explore</span>
+        </li>
+        <li>
+          <object class="instructions__icon" data="../../icons/multitouch.svg" type="image/svg+xml"></object><span>multiple touches at once</span>
+        </li>
+      </ul> 
+        <div class="break"></div>
+      <h2 class="instructions__heading">Changes</h2>
+      <div class="break"></div>
+      <ul>
+        <li>
+          <object class="instructions__icon" data="../../icons/sound.svg" type="image/svg+xml"></object><span>sound</span>
+        </li>
+        <li>
+          <object class="instructions__icon" data="../../icons/colour.svg" type="image/svg+xml"></object><span>colour</span>
+        </li>
+        <li>           
+          <object class="instructions__icon" data="../../icons/movement.svg" type="image/svg+xml"></object><span>movement</span>
+        </li>
+      </ul>
+    </div>
+    <footer class="instructions">
+      <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"/></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"/></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"/></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"/></a></p>
+    </footer>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js"></script> -->
+  <script src="../js/init_circle.js" type="module" defer></script>
+  <script src="./touch.js" defer></script>
+  <script src="./can.js" defer></script>
+</body>
+</html>

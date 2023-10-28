@@ -18,6 +18,9 @@ let pugFiles = [
     'elements/bridge/index',
     // 'elements/bridge/effect',
     // 'elements/bridge/faders',
+    
+    'elements/rusty_can/rusty_can',
+    'elements/school/school',
 
     'elements/text/index',
     'elements/text/text',
