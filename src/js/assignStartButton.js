@@ -6,7 +6,8 @@ function startElement(){
     document.querySelectorAll('.awaitStart').forEach(element=>{
         element.classList.remove('transparent')
     });
-    $('main').fadeOut(0).show().fadeIn(1000);
+    // $('main').show().fadeOut(0).fadeIn(1000);
+    $('main').show()
     document.querySelector('#infoButton').style.opacity = 1;
     touch.listen();
     window.scrollTo(0,0);
