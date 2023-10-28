@@ -29,12 +29,13 @@ function addBackButton(){
     // infoButton.innerHTML = "?";
     infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" alt="Help" />`
     infoButton.addEventListener('click',()=>{
-        
-        document.querySelector('section.instructions').classList.remove('nodisplay');
+        $('section.instructions').fadeOut(0).show().fadeIn(1000);
+        // document.querySelector('section.instructions').classList.remove('nodisplay');
         document.querySelector('section.instructions').style.display = 'flex';
-        document.querySelectorAll('.awaitStart').forEach(element=>{
-            element.classList.add('transparent')
-        });
+        // document.querySelectorAll('.awaitStart').forEach(element=>{
+        //     element.classList.add('transparent')
+        // });
+        $('main').fadeOut(1000).delay(1000).hide();
         // document.querySelector('#infoButton').classList.add('transparent');
         document.querySelector('#infoButton').style.opacity=0.5;
     });
