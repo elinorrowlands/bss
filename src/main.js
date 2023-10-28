@@ -1,6 +1,7 @@
 import * as Tone from "tone";
 import SyncCC from "sync-cc";
 import MultitouchMapper from "@matthewscharles/multitouch-mapper";
+import $ from "jquery";
 
 import CM from "@matthewscharles/cm-toolbox";
 import { srtToSbv, generateQR } from "@matthewscharles/cm-toolbox";
@@ -16,6 +17,7 @@ import StatusVO from "status-vo";
 
 Object.assign(window,
   {
+    $,
     Tone,
     cm: CM,
     srtToSbv,

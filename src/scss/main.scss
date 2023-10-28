@@ -93,7 +93,7 @@ path {
 }
 
 canvas#overlay {
-    position:absolute;
+    position:fixed;
     top:0;
     left:0;
     width:100%;
@@ -136,15 +136,7 @@ canvas#overlay {
   .nav__back{
     cursor:pointer;
   }
-  
-  a{
-    color:$link;
-  }
-  
-  a:visited{
-        color:$link--visited;
-  }
-  
+    
   .textBlock{
     display:inline-block;
     padding:0.5em 1em;
@@ -187,11 +179,7 @@ body.fullpage{
   max-width:100vw;
 }
 
-.wordContainer{
-  max-width: 90vw;
-  max-height:90vh;
-  overflow:hidden;
-}
+
 
 .awaitStart{
   transition:opacity 10s ease;

@@ -15,10 +15,16 @@ body.words {
 }
 
 .wordContainer{
-    width:100vw;
-    height:100vh;
+    max-width: 90vw;
+    max-height:90vh;
     overflow:hidden;
-}
+  }
+
+// .wordContainer{
+//     width:100vw;
+//     height:100vh;
+//     overflow:hidden;
+// }
 
 .words {
    

@@ -1,4 +1,11 @@
 /* ⚝ Typography */
+a{
+  color:$link;
+}
+
+a:visited{
+      color:$link--visited;
+}
 
 .link{
   font-size:3rem;
