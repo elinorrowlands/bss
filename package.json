@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "webpack ./src/main.js -o ./docs && webpack ./src/map.js -o ./docs/map && node compile && sass src/scss/main.scss docs/style.css",
+    "build": "webpack ./src/main.js -o ./docs && node compile && sass src/scss/main.scss docs/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

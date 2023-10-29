@@ -1,12 +1,9 @@
 function startElement(){
     Tone.start();
-    // this should be classList.add('nodisplay')  but something in CSS is preventing that from working
-    // document.querySelector('section.instructions').classList.add('nodisplay');
-    document.querySelector('section.instructions').style.display = 'none';
+    $('section.instructions').hide()
     document.querySelectorAll('.awaitStart').forEach(element=>{
         element.classList.remove('transparent')
     });
-    // $('main').show().fadeOut(0).fadeIn(1000);
     $('main').show()
     document.querySelector('#infoButton').style.opacity = 1;
     touch.listen();
