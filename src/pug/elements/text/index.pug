@@ -3,10 +3,10 @@ html(lang="en")
         title BSS: where is the water's edge?
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
-        link(rel='stylesheet', href='../../style.css')
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&family=Nunito:wght@200&display=swap" rel="stylesheet")
+        link(rel='stylesheet', href='../../style.css')
         script(src="../../main.js" defer)
         script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
@@ -18,28 +18,15 @@ html(lang="en")
         script(src="../ripples/touch.js", defer)
         script(src="../ripples/samples_text.js", defer)
         //- script(src="../text/text_d3_caption.js", defer)
-        style.
-            .text.moving{
-                opacity:1;
-            }
-            canvas{
-                opacity:0.4;
-            }
-            main{
-                width:100vw;
-                height:100vh;
-                overflow:hidden;
-                transition: filter 1s ease;
-            }
-    body.words.fullpage
-        main.ripples
-            #canvas.ripples
-            #content.ripples
-                #water-ripples
-                    #water-ripples-title
-                        h1.ripples
-                    //- object.svg-import.ripples(style="display:none;" id="painting" type="image/svg+xml" data="interact_painting.svg")
-                    img(src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture")
+    body
+        main.fullpage.ripples
+            .words.fullpage
+                #canvas.ripples.text
+                #content.ripples
+                    #water-ripples
+                        #water-ripples-title
+                            h1.ripples
+                        img(src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture")
         // INSTRUCTIONS ON PAGE LOAD
         section.instructions.flex.scrollable
             .instructions__header

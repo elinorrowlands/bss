@@ -802,6 +802,9 @@ body.words {
   height: 100vh;
   width: 100vw;
   filter: hue-rotate(0deg);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .wordContainer {
@@ -852,6 +855,14 @@ body.words {
   transition: all 0s;
   color: white;
   z-index: 40000;
+}
+
+canvas.text {
+  opacity: 0.4;
+}
+
+.text.moving {
+  opacity: 1;
 }
 
 /* ⚝ QR codes */
@@ -1154,13 +1165,16 @@ button.nav__info {
   text-align: center;
 }
 
-body.fullpage {
+.fullpage {
   overflow: hidden;
   transition: all 1s ease;
   height: 100vh;
   width: 100vw;
   max-height: 100vh;
   max-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .awaitStart {

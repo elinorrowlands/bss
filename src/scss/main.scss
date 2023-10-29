@@ -168,7 +168,7 @@ canvas#overlay {
     text-align:center;
 }
 
-body.fullpage{
+.fullpage{
   // -webkit-pointer-events: none;
   // pointer-events:none;
   overflow:hidden;
@@ -177,6 +177,9 @@ body.fullpage{
   width:100vw;
   max-height:100vh;
   max-width:100vw;
+  position:fixed;
+  top:0;
+  left:0;
 }
 
 

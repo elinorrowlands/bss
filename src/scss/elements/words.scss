@@ -12,6 +12,9 @@ body.words {
     height:100vh;
     width:100vw;
     filter: hue-rotate(0deg);
+    position:fixed;
+    top:0;
+    left:0;
 }
 
 .wordContainer{
@@ -76,4 +79,12 @@ body.words {
         color:white;
         z-index:40000;
     }
+}
+
+canvas.text{
+    opacity:0.4;
+}
+
+.text.moving{
+    opacity:1;
 }

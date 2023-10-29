@@ -18,12 +18,6 @@
     <script src="../ripples/touch.js" defer="defer"></script>
     <script src="../ripples/samples_text.js" defer="defer"></script>
     <style>
-      .text.moving{
-          opacity:1;
-      }
-      canvas{
-          opacity:0.4;
-      }
       main{
           width:100vw;
           height:100vh;
@@ -32,14 +26,16 @@
       }
     </style>
   </head>
-  <body class="words fullpage">
-    <main class="ripples">
-      <div class="ripples" id="canvas"></div>
-      <div class="ripples" id="content">
-        <div id="water-ripples">
-          <div id="water-ripples-title">
-            <h1 class="ripples"></h1>
-          </div><img src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture"/>
+  <body>
+    <main class="fullpage ripples">
+      <div class="words fullpage">
+        <div class="ripples text" id="canvas"></div>
+        <div class="ripples" id="content">
+          <div id="water-ripples">
+            <div id="water-ripples-title">
+              <h1 class="ripples"></h1>
+            </div><img src="reflection_edge.png" style="filter:brightness(40%)" alt="water" crossorigin="" data-sampler="planeTexture"/>
+          </div>
         </div>
       </div>
     </main>
