@@ -8,8 +8,8 @@ import { srtToSbv, generateQR } from "@matthewscharles/cm-toolbox";
 
 import { replaceSvgAll } from "./js/replaceSvg.js";
 import { loadingIndicator } from "./js/loading.js";
+import { addButtons } from "./js/addButtons.js";
 import assignClasses from "./js/assignClasses.js";
-import addBackButton from "./js/backButton.js";
 import assignStartButton from "./js/assignStartButton.js";
 import StatusVO from "status-vo";
 
@@ -26,7 +26,7 @@ Object.assign(window,
     touch: new MultitouchMapper(),
     loadingIndicator,
     assignClasses,
-    addBackButton,
+    addButtons,
     StatusVO
   }
 )
@@ -34,6 +34,6 @@ Object.assign(window,
 window.addEventListener('load', ()=>{
   replaceSvgAll();
   loadingIndicator.init();
-  addBackButton();
+  addButtons();
   assignStartButton();
 });

@@ -1,4 +1,4 @@
-function addBackButton(){
+function addButtons(){
     let urlParams = new URLSearchParams(window.location.search);
     
     if(urlParams.has('standalone') || document.querySelector(".nav__back")) return;
@@ -22,20 +22,21 @@ function addBackButton(){
     backButton.addEventListener('click',()=>{
         window.location = `https://elinorrowlands.github.io/bss/${homePage}`
     });
-    
+
+
     let infoButton = document.createElement("button");
     infoButton.id="infoButton";
     infoButton.classList.add('nav__info', 'allowDefault');
     // infoButton.innerHTML = "?";
     infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" alt="Help" />`
     infoButton.addEventListener('click',()=>{
-        $('section.instructions').show();
+        $('section.instructions').show(1000);
         // document.querySelector('section.instructions').classList.remove('nodisplay');
         document.querySelector('section.instructions').style.display = 'flex';
         // document.querySelectorAll('.awaitStart').forEach(element=>{
         //     element.classList.add('transparent')
         // });
-        $('main').hide();
+        $('main').hide(1000);
         // document.querySelector('#infoButton').classList.add('transparent');
         document.querySelector('#infoButton').style.opacity=0.5;
     });
@@ -50,4 +51,4 @@ function addBackButton(){
     }
 }
 
-export default addBackButton
+export { addButtons }
