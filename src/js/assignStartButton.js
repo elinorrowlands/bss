@@ -1,9 +1,11 @@
 function startElement(){
     Tone.start();
     $('section.instructions').hide()
+    
     document.querySelectorAll('.awaitStart').forEach(element=>{
         element.classList.remove('transparent')
     });
+    
     $('main').show()
     document.querySelector('#infoButton').style.opacity = 1;
     touch.listen();

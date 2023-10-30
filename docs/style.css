@@ -555,6 +555,28 @@ section.instructions.flex.nodisplay {
   transition: all 5s;
 }
 
+.qr__container.elements {
+  margin: auto;
+  background-color: rgba(0, 64, 128, 0.8);
+}
+
+.index.elements {
+  width: 90% !important;
+  margin: none !important;
+}
+
+main.elements {
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+#main__title.elements {
+  display: inline-block;
+  position: static;
+  height: 20vh !important;
+}
+
 /* ⚝ Elements: Ripples */
 #painting.ripples {
   -webkit-user-select: none;
@@ -681,6 +703,26 @@ h1.ripples {
   -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
+}
+
+#waterCircle {
+  transform: scale(1);
+}
+
+#echoCircle {
+  transform: scale(0);
+}
+
+#echoCircle2 {
+  transform: scale(0);
+  transition: all 1s ease;
+}
+
+#centeredCircle {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
 }
 
 body.heart {

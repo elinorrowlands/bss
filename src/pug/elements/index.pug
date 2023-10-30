@@ -10,30 +10,9 @@ html(lang="en")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js")
         script(src="../main.js" defer)
         script(src="./qr.js" defer)
-        style.
-            .qr__container.elements{
-                margin:auto;
-                background-color:rgba(0,64,128,0.8);
-            }
-
-            .index.elements{
-                width:90%!important;
-                margin:none!important;
-            }
-
-            main.elements{
-                left:0px;
-                right:0px;
-                margin:auto;
-            }
-
-            #main__title{
-                display: inline-block;
-                position: static;
-                height:20vh!important;
-            }
+            
     body
-        object#main__title.nav__back(type="image/svg+xml" data="../svg/title.svg" role="header")
+        object#main__title.nav__back.elements(type="image/svg+xml" data="../svg/title.svg" role="header")
         main.splash.qr__container.elements
             ol.bar.qr__container.elements.index
         footer

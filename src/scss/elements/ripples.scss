@@ -137,3 +137,24 @@ html, body {
     user-select:none;
     pointer-events:none;
   }
+  
+  #waterCircle{
+    transform:scale(1);
+  }
+  
+  #echoCircle{
+    transform:scale(0);
+  }
+  
+  #echoCircle2{
+    transform:scale(0);
+    transition: all 1s ease;
+  }
+  
+  #centeredCircle{
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    //- z-index:10;
+  }

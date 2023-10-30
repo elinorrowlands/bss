@@ -11,32 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="../main.js" defer="defer"></script>
     <script src="./qr.js" defer="defer"></script>
-    <style>
-      .qr__container.elements{
-          margin:auto;
-          background-color:rgba(0,64,128,0.8);
-      }
-      
-      .index.elements{
-          width:90%!important;
-          margin:none!important;
-      }
-      
-      main.elements{
-          left:0px;
-          right:0px;
-          margin:auto;
-      }
-      
-      #main__title{
-          display: inline-block;
-          position: static;
-          height:20vh!important;
-      }
-    </style>
   </head>
   <body>
-    <object class="nav__back" id="main__title" type="image/svg+xml" data="../svg/title.svg" role="header"></object>
+    <object class="nav__back elements" id="main__title" type="image/svg+xml" data="../svg/title.svg" role="header"></object>
     <main class="splash qr__container elements">
       <ol class="bar qr__container elements index"></ol>
     </main>
