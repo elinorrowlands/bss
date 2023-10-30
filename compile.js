@@ -20,7 +20,7 @@ let pugFiles = [
     // 'elements/bridge/faders',
     
     'elements/rusty_can/rusty_can',
-    'elements/school/school',
+    'elements/school/index',
 
     'elements/text/index',
     'elements/text/text',
