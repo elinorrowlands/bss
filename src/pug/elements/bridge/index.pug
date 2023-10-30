@@ -9,78 +9,10 @@ head
     script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js')
     script(src='p5trails.js' defer)
     //- script(src='window.js' type='module' defer)
-    style.
-         main{
-            -webkit-touch-callout: none; /* iOS Safari */
-            touch-action:none!important;
-        }
-        svg{
-            -webkit-touch-callout: none; /* iOS Safari */
-            touch-action:none!important;
-            
-        }
-        .p5Canvas{
-            //- z-index:100;
-            position:absolute;
-            top:0;
-            left:0;
-            bottom:0;
-            right:0;
-            opacity:0;
-            transition: opacity 1s;
-            
-        }
-        #bridge{
-            transform-origin: 20% 75%;
-        }
-        svg.bridge{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100vw;
-            height:100vh;
-            z-index:1;
-        }
-       
-        .vectorised__container{
-            opacity:0.1;
-            transition: opacity 1s;
-            z-index:2;
-        }
-        
-        .photo__container{
-            opacity:1;
-            transition: opacity 2s;
-            z-index:1;
-        }
-        
-        .bridge__container{
-            opacity:0.1;
-            transition: filter 2s, opacity 2s;
-            container.style.filter='brightness(100%)';
-            z-index:1;
-        }
-        .beyond__container{
-            opacity:1;
-            transition: filter 2s, opacity 2s;
-            container.style.filter='brightness(100%) sepia(0%)';
-            z-index:1;
-        }
-        .beyond1remove,.beyond2remove{
-            //- opacity:0;
-            transition: filter 2s, opacity 2s;
-            container.style.filter='brightness(100%) sepia(0%)';
-            z-index:1;
-        }
-        .note_1{
-            //- opacity:0;
-            transition: filter 0.5s;
-        }
-    
-    
+
 body.fullpage.bridge
     #backdrop.bridge
-    main.container.awaitStart.transparent
+    main.bridge.container.awaitStart.transparent
         .photo__container
         .vectorised__container
         .bridge__container
@@ -109,10 +41,8 @@ body.fullpage.bridge
             h2.instructions__heading Interactions
             .break
             ul
-                li 
-                    include ../interactions/single_click    
-                li 
-                    include ../interactions/explore
+                include ../interactions/single_click    
+                include ../interactions/explore
             //- include ../interactions/drag_circle
             //- include ../interactions/touch_hold
             //- include ../interactions/multitouch
@@ -121,12 +51,9 @@ body.fullpage.bridge
             h2.instructions__heading Changes
             .break
             ul 
-                li
-                    include ../interactions/sound
-                li 
-                    include ../interactions/colour
-                li
-                    include ../interactions/brightness
+                include ../interactions/sound
+                include ../interactions/colour
+                include ../interactions/brightness
             //- include ../interactions/movement
             
         include ../footer__back

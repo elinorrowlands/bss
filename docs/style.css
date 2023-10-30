@@ -577,6 +577,126 @@ main.elements {
   height: 20vh !important;
 }
 
+#path {
+  transition: all 0.5s ease;
+}
+
+#backdrop.bridge {
+  opacity: 0.6;
+}
+
+#interactive.bridge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+#interactive__svg.bridge {
+  opacity: 0;
+}
+
+#toolbar {
+  position: absolute;
+  top: -1000;
+}
+
+.liminal {
+  transition: all 0.5s ease;
+}
+
+body.bridge {
+  transition: background-color 0.1s;
+  touch-action: none;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.bridge.interact {
+  fill: url(#gradient);
+  transition: opacity 0.1s;
+  opacity: 0.8;
+}
+
+.cover {
+  transition: opacity 2s, fill 3s;
+}
+
+.cover__mask {
+  transition: all 0.5s ease;
+}
+
+main.bridge {
+  -webkit-touch-callout: none; /* iOS Safari */
+  touch-action: none !important;
+}
+
+svg.bridge {
+  -webkit-touch-callout: none; /* iOS Safari */
+  touch-action: none !important;
+}
+
+.p5Canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#bridge {
+  transform-origin: 20% 75%;
+}
+
+svg.bridge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.vectorised__container {
+  opacity: 0.1;
+  transition: opacity 1s;
+  z-index: 2;
+}
+
+.photo__container {
+  opacity: 1;
+  transition: opacity 2s;
+  z-index: 1;
+}
+
+.bridge__container {
+  opacity: 0.1;
+  transition: filter 2s, opacity 2s;
+  z-index: 1;
+}
+
+.beyond__container {
+  opacity: 1;
+  transition: filter 2s, opacity 2s;
+  z-index: 1;
+}
+
+.beyond1remove, .beyond2remove {
+  transition: filter 2s, opacity 2s;
+  z-index: 1;
+}
+
+#note_1_display, vectorised.note_1 {
+  transition: filter 0.5s;
+}
+
 /* ⚝ Elements: Ripples */
 #painting.ripples {
   -webkit-user-select: none;

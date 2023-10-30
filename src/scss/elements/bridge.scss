@@ -54,3 +54,75 @@ body.bridge {
 .cover__mask{
     transition:all 0.5s ease;
 }
+
+main.bridge{
+    -webkit-touch-callout: none; /* iOS Safari */
+    touch-action:none!important;
+}
+
+svg.bridge{
+    -webkit-touch-callout: none; /* iOS Safari */
+    touch-action:none!important;
+}
+
+.p5Canvas{
+    //- z-index:100;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    opacity:0;
+    transition: opacity 1s;
+    
+}
+
+#bridge{
+    transform-origin: 20% 75%;
+}
+
+svg.bridge{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:1;
+}
+
+.vectorised__container{
+    opacity:0.1;
+    transition: opacity 1s;
+    z-index:2;
+}
+
+.photo__container{
+    opacity:1;
+    transition: opacity 2s;
+    z-index:1;
+}
+
+.bridge__container{
+    opacity:0.1;
+    transition: filter 2s, opacity 2s;
+    // container.style.filter='brightness(100%)';
+    z-index:1;
+}
+
+.beyond__container{
+    opacity:1;
+    transition: filter 2s, opacity 2s;
+    // container.style.filter='brightness(100%) sepia(0%)';
+    z-index:1;
+}
+
+.beyond1remove,.beyond2remove{
+    //- opacity:0;
+    transition: filter 2s, opacity 2s;
+    // container.style.filter='brightness(100%) sepia(0%)';
+    z-index:1;
+}
+
+#note_1_display,vectorised.note_1{
+    transition: filter 0.5s;
+}
