@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Rusty Can
+    title BSS: Rusty Can
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="../../style.css")
@@ -56,25 +56,19 @@ html(lang="en")
         .break
         ul
           li
-            object.instructions__icon(data="../../icons/single_click.svg", type="image/svg+xml")
-            span single touch or mouse
+            include ../interactions/single_click
           li
-            object.instructions__icon(data="../../icons/explore.svg", type="image/svg+xml")
-            span swipe around the page to explore
+            include ../interactions/explore
           li
-            object.instructions__icon(data="../../icons/multitouch.svg", type="image/svg+xml")
-            span multiple touches at once
+            include ../interactions/multitouch
         .break
         h2.instructions__heading Changes
         .break
         ul
           li
-            object.instructions__icon(data="../../icons/sound.svg", type="image/svg+xml")
-            span sound
+            include ../interactions/sound
           li
-            object.instructions__icon(data="../../icons/colour.svg", type="image/svg+xml")
-            span colour
+            include ../interactions/colour
           li
-            object.instructions__icon(data="../../icons/movement.svg", type="image/svg+xml")
-            span movement
+            include ../interactions/movement
       include ../footer__back
