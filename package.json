@@ -27,6 +27,7 @@
     "@matthewscharles/screen-instrument": "^1.1.1",
     "@tombatossals/chords-db": "^0.5.1",
     "jquery": "^3.7.1",
+    "jstransformer-markdown-it": "^3.0.0",
     "pug": "^3.0.2",
     "qrcode-svg": "^1.1.0",
     "sass": "^1.63.6",
