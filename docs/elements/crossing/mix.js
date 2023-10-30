@@ -8,7 +8,7 @@ let scrollWaves = false;
 
 let meterUpdate = function(){
     let ids = ['#left__wave', '#right__wave'];
-    let lines = ['#pos__left', '#pos__right']
+    let lines = ['#pos__left', '#pos__right'];
     
     mix.meters.forEach((meter,i) => {
         let level = Tone.dbToGain(meter.getValue());
@@ -16,7 +16,7 @@ let meterUpdate = function(){
         let multipliedLevel = (level * (i === 1 ? crossFaderValue : (1-crossFaderValue)) * 5000) + 5;
         document.querySelector(`#circle_${i}`).style.r = `${Math.floor(multipliedLevel)}px`;
 
-        document.querySelector(ids[i]).style.opacity = level*32;
+        document.querySelector(ids[i]).style.opacity = level * 32;
     })
     
     elapsedTime = Tone.now() - startTime;
@@ -33,12 +33,11 @@ let meterUpdate = function(){
         }
     })
 
-
 }
 
 function setMeters(state){
     if(state){
-        meterInterval = setInterval(meterUpdate, 100);
+        meterInterval = setInterval(meterUpdate, 200);
     } else {
         clearInterval(meterInterval);
     }
@@ -55,13 +54,14 @@ function loaded(){
 
 function start(){
     loaded();
+    
     sounds.forEach((sound,i) => {
         durations[i] = sound.buffer.duration;
-    })
+    });
 
     document.querySelectorAll('.waveform').forEach((element,i) => {
         heights[i] = element.clientHeight;
-    })
+    });
 }
 
 window.mix = {

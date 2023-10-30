@@ -16,8 +16,6 @@ let pugFiles = [
     // 'elements/mix/mix_ripple',
 
     'elements/bridge/index',
-    // 'elements/bridge/effect',
-    // 'elements/bridge/faders',
     
     'elements/rusty_can/rusty_can',
     'elements/school/index',

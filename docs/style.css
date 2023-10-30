@@ -813,12 +813,12 @@ input.mix {
 }
 
 circle.mix.display1 {
-  transition: r 0.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out, fill 1s;
+  transition: r 1.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out, fill 1s;
   opacity: 0.3;
 }
 
 circle.mix.display2 {
-  transition: r 0.1s ease-in-out, fill 1s;
+  transition: r 1.1s ease-in-out, fill 1s;
   opacity: 0.3;
 }
 
