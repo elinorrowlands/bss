@@ -13,18 +13,12 @@ The [main website](https://elinorrowlands.github.com/) is hosted on GitHub pages
 ## Elements
 **- [Index of elements](https://elinorrowlands.github.io/bss/elements) -**
 
-- [bridge](https://elinorrowlands.github.io/bss/bridge)
-- [ripples](https://elinorrowlands.github.io/bss/ripples)
-- [text](https://elinorrowlands.github.io/bss/text)
-- [mix](https://elinorrowlands.github.io/bss/mix/)
-- [heart](https://elinorrowlands.github.io/bss/painting)
-
-**- [Map](https://elinorrowlands.github.io/bss/map2.html) -**
 ## Options
 This list is for internal planning and does not represent current features:
 [ ] colour
 [ ] contrast
 [ ] motion
+
 ## Credits
 - Lead artist - Elinor Rowlands
 - Creative Technologist - Charles Matthews
