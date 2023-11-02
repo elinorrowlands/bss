@@ -46,9 +46,9 @@ function addButtons(){
     container.appendChild(infoButton);
     document.body.appendChild(container);
     if(!document.querySelector('.instructions__header')) return;
-    if(document.querySelector('.instructions__header').getBoundingClientRect().top<0) {
-        document.querySelector('.instructions').style.paddingTop = '800px';
-    }
+    // if(document.querySelector('.instructions__header').getBoundingClientRect().top<0) {
+    //     document.querySelector('.instructions').style.paddingTop = '800px';
+    // }
 }
 
 export { addButtons }

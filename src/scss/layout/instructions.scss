@@ -16,10 +16,10 @@ section.instructions{
     background-color:$background2;
     
     display:block;
-    min-height:100vh;
+    // min-height:100vh;
     width:100vw;
     margin:none;
-    padding-top: 500px;
+    // padding-top: 500px;
     top:0;
     left:0;
     bottom:0;
@@ -49,7 +49,7 @@ section.instructions.grid {
 
 .instructions__header{
     text-align:center!important;
-    padding-top: 20em;
+    // padding-top: 20em;
 }
 
 .instructions__number{
@@ -78,14 +78,13 @@ section.instructions.grid {
 }
 
 section.instructions.flex {
-    box-sizing: border-box;
-    min-height: 100%;
-    display: flex;
+    // min-height: 100%;
+    // display: flex;
     
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     
-    flex-direction: column;
+    // flex-direction: column;
     &.nodisplay{
         display:none;
     }

@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* ⚝ Biodivergent Sites and Sounds */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Roboto:wght@700&family=Rubik:wght@900&display=swap");
-/* ⚝ Colours 🎨 */ /* ⚝ Animations */
+/* ⚝ Colours 🎨 */
+/* ⚝ Animations */
 @keyframes opacity {
   0% {
     opacity: 0.4;
@@ -41,10 +42,6 @@ body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
   margin: 0;
   background-color: darkblue;
   font-family: Nunito;
@@ -278,7 +275,6 @@ footer {
   max-height: 250px;
   background-color: darkblue;
   margin: none !important;
-  overflow: hidden;
 }
 
 footer.instructions {
@@ -390,10 +386,8 @@ section.instructions {
   background-repeat: no-repeat;
   background-color: navy;
   display: block;
-  min-height: 100vh;
   width: 100vw;
   margin: none;
-  padding-top: 500px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -417,7 +411,6 @@ section.instructions.grid {
 
 .instructions__header {
   text-align: center !important;
-  padding-top: 20em;
 }
 
 .instructions__number {
@@ -442,14 +435,6 @@ section.instructions.grid {
   text-align: left;
 }
 
-section.instructions.flex {
-  box-sizing: border-box;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 section.instructions.flex.nodisplay {
   display: none;
 }
