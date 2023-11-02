@@ -285,14 +285,13 @@ footer.instructions {
   background-image: url("svg/wave1.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: auto;
-  bottom: auto;
-  left: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
   overflow: hidden;
   max-height: 250px;
   background-color: darkblue;
   margin: none !important;
-  box-sizing: border-box;
   min-height: none;
   display: flex;
   flex-direction: column;
