@@ -14,6 +14,48 @@
     margin: auto;
 }
 
+.buttons.front{
+    text-align:center;
+    max-width:90vw;
+    width:800px;
+    display:block;
+}
+
+.button.front{
+    width:80vw;
+    margin:10px;
+}
+
+#map.front{
+    max-width:90vw;
+    margin:10px;
+    width:800px;
+    margin:0 auto!important;
+}
+
+.subheading.front{
+    font-size:1.5em;
+    font-weight:100;
+    //- text-align:center;
+    //- margin:0;
+}
+
+main.front{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:800px;
+    max-width:90vw;
+    margin:auto;
+}
+
+h2.front{
+    width:100%;
+    text-align:center;
+}
+
+
 .front__water {
     opacity: 0.1;
     position: fixed;
