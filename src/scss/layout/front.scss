@@ -14,6 +14,15 @@
     margin: auto;
 }
 
+body.front{
+    // overflow:hidden;
+}
+
+main.front{
+    // overflow:hidden!important;
+}
+
+
 .buttons.front{
     text-align:center;
     max-width:90vw;
@@ -48,6 +57,8 @@ main.front{
     width:800px;
     max-width:90vw;
     margin:auto;
+    height:100%;
+    // overflow-y:hidden;
 }
 
 h2.front{

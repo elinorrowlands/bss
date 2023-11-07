@@ -29,6 +29,12 @@
 
 @import "qr", "map";
 
+/* ⚝ Uncomment to debug */
+* {
+  // outline:solid green;
+}
+
+
 
 main.splash {
     flex-grow: 1;

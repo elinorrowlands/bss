@@ -10,7 +10,7 @@ html,
 body {
     overscroll-behavior-y: none;
     scroll-behavior:smooth;
-    overflow-x:hidden;
+    // overflow-x:hidden;
     // display: flex;
     // flex-direction: column;
     // justify-content: space-between;
@@ -24,8 +24,12 @@ body {
     -webkit-touch-callout: none!important;
 }
 
+html{
+    // overflow:hidden;
+}
+
 body.full{
-    overflow:hidden;
+    // overflow-x:auto!important;
 }
 
 canvas{
