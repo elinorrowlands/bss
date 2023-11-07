@@ -13,7 +13,6 @@ let pugFiles = [
     'elements/index',
 
     'elements/crossing/index',
-    // 'elements/mix/mix_ripple',
 
     'elements/bridge/index',
     
@@ -25,8 +24,7 @@ let pugFiles = [
 
     'elements/ripples/index',
     'elements/ripples/text',
-    'elements/ripples/interactions_template',
-    // 'elements/ripples/jq',
+    // 'elements/ripples/interactions_template',
 ];
 
 let pugSourceFolder = './src/pug';

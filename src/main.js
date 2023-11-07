@@ -1,6 +1,6 @@
 import * as Tone from "tone";
 import SyncCC from "sync-cc";
-import MultitouchMapper from "@matthewscharles/multitouch-mapper";
+import { MultitouchMapper } from "@matthewscharles/multitouch-mapper";
 import $ from "jquery";
 
 import CM from "@matthewscharles/cm-toolbox";
