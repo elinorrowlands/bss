@@ -38,6 +38,10 @@ html,
 body {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0;
   background-color: darkblue;
   font-family: Nunito;
