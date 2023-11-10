@@ -34,19 +34,13 @@ section.instructions{
     
 }
 
-section.instructions.grid {
-    // min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
 .instructions__text, .instructions__header{
     flex-grow: 1;
 }
 
 .instructions__header{
     text-align:center!important;
-    // padding-top: 20em;
+    padding-top:2em;
 }
 
 .instructions__number{

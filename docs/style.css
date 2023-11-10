@@ -436,17 +436,13 @@ section.instructions .instructions__text {
   margin: auto;
 }
 
-section.instructions.grid {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 .instructions__text, .instructions__header {
   flex-grow: 1;
 }
 
 .instructions__header {
   text-align: center !important;
+  padding-top: 2em;
 }
 
 .instructions__number {
@@ -1414,9 +1410,9 @@ button.nav__info {
 }
 
 .title__info {
-  width: 100px;
+  width: 80px;
   max-width: 10vw;
-  height: 100px;
+  height: 80px;
 }
 
 .banner__title {
