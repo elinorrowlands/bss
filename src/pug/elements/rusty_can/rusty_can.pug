@@ -5,13 +5,80 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="../../style.css")
+    link(rel="stylesheet", href="./style.css")
+    link(rel="stylesheet", href="./style_circles.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
     script(src="https://www.curtainsjs.com/build/curtains.min.js")
     script(src="../../main.js", defer)
-    script(src="./ensurePathId.js", defer)
     script(type="module", src="../js/init_circle.js", defer)
     script(src="./touch.js", defer)
     script(src="./can.js", defer)
+    script(src="./ensurePathId.js", defer)
+    style.
+      body{
+          overflow:hidden;
+          transition:all 1s ease;
+          height:100vh;
+          width:100vw;
+      }
+      
+      main{
+        transition:all 1s ease;
+      }
+      
+      canvas{
+        -webkit-user-select: none; 
+        user-select:none;
+      }
+      
+      #water-ripples-title{
+        display:none;
+      }
+      
+      #painting,#centeredCircle,.canBG{
+        -webkit-user-select: none; 
+        user-select:none;
+        width:100%; 
+        position:absolute;
+        margin:0;
+        display:block;
+        transform-origin:center;
+        z-index:100;
+        @media (max-width: 600px) {
+          width:100%; 
+          height:100%;
+          top:0;
+          transform-origin:center;
+        }
+      }
+      
+      .canBG{
+          opacity:0.5;
+          width:60vh;
+          height:60vh;
+          top:0px;
+          left:0px;
+          bottom:0px;
+          right:0px;
+          margin:auto;
+          transition:all 1.5s ease;
+          @media(min-width:600px){
+            width:100vh;
+            height:100vh;
+          }
+        }
+        
+        #can__bg{
+          transition:all 1s ease;
+        }
+        
+        #canvas{
+          filter:brightness(80%)
+        }
+        
+        .water__meter{
+          opacity:0.4;
+        }
 
   body
     main

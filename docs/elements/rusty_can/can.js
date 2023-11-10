@@ -55,8 +55,6 @@ sounds.hpf.connect(sounds.echo);
 sounds.echo.connect(sounds.echoMeter);
 sounds.filter.connect(sounds.meter);
 
-
-
 function setBGAnimation(){
     let i = 0, count = 0;
     setInterval( () => {
