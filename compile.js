@@ -16,7 +16,7 @@ let pugFiles = [
 
     'elements/bridge/index',
     
-    'elements/rusty_can/rusty_can',
+    'elements/rusty_can/index',
     'elements/school/index',
 
     'elements/text/index',
@@ -24,7 +24,6 @@ let pugFiles = [
 
     'elements/ripples/index',
     'elements/ripples/text',
-    // 'elements/ripples/interactions_template',
 ];
 
 let pugSourceFolder = './src/pug';
