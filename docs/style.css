@@ -433,6 +433,7 @@ section.instructions {
 section.instructions .instructions__text {
   width: 800px;
   max-width: 90vw;
+  margin: auto;
 }
 
 section.instructions.grid {
