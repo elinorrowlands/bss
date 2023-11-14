@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 789" style="enable-background:new 0 0 1600 789;" xml:space="preserve">
+	 viewBox="700 0 1600 789" xml:space="preserve">
 <style type="text/css">
 	.st0{opacity:0.15;}
 	path{
@@ -9,7 +9,7 @@
 		<!-- stroke-width:2!important; -->
 	}
 	<!-- stroke-width:1.7 -->
-	.st1{fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+	<!-- .st1{fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st2{fill:#C9A800;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st3{fill:#C8A700;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st4{fill:#CBA900;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
@@ -150,7 +150,7 @@
 	.st139{fill:#917900;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st140{fill:#A18700;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 	.st141{fill:#00AAF1;fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
-	.st142{fill:#FFFFFF;fill-opacity:0.49;stroke:#000000;stroke-miterlimit:10;}
+	.st142{fill:#FFFFFF;fill-opacity:0.49;stroke:#000000;stroke-miterlimit:10;} -->
 	.element__number{
 		pointer-events:none;
 		<!-- paint-order: stroke; -->
@@ -182,11 +182,11 @@
 		<!-- stroke:#000000; -->
 		stroke-miterlimit:10;
 	}
-	.st145{fill:#FFFFFF;fill-opacity:0.59;stroke:#000000;stroke-miterlimit:10;}
+	<!-- .st145{fill:#FFFFFF;fill-opacity:0.59;stroke:#000000;stroke-miterlimit:10;}
 	.st146{fill:#FFFFFF;fill-opacity:0.58;stroke:#000000;stroke-miterlimit:10;}
 	.st147{fill:#FFFFFF;fill-opacity:0.63;stroke:#000000;stroke-miterlimit:10;}
 	.st148{fill:#FFFFFF;fill-opacity:0.61;stroke:#000000;stroke-miterlimit:10;}
-	.st149{display:none;}
+	.st149{display:none;} -->
 	.element__marker{
 		
 		fill:white;	
@@ -196,12 +196,15 @@
 		stroke-width: 15px;
 		cursor: pointer;
 		transition: all 1.3s ease;
-		animation:pulse 2s infinite;
+        animation: pulse 2s infinite;
+        transform-origin: center center;
 	}
-	<!-- .element__group{
-		pointer-events:bounding-box;
-	} -->
-	@keyframes pulse {
+    
+    .element__marker#element__4{
+        animation: pulse 2.1s infinite;
+    }
+    
+    @keyframes pulse {
         0% {
             
             stroke-width: 20px;
@@ -218,12 +221,17 @@
             
         }
     }
-	.element__marker:hover{
+    
+	<!-- .element__group{
+		pointer-events:bounding-box;
+	} -->
+	.element__marker:hover, #element__4:hover{
 		fill:yellow;	
 		stroke:lime;
 		stroke-width:20px;
 		cursor: pointer;
 		r: 60px;
+        animation: none;
 	}
 	.element__qr{
 		display:none;
@@ -245,7 +253,7 @@
 		</linearGradient>
 		
 		<mask id="mask_horizontal">
-			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_horizontal)"/>
+			<rect x="630" y="0" width="1000" height="789" fill="url(#fade_horizontal)"/>
 		</mask>
 		<mask id="mask_vertical">
 			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_vertical)"/>
@@ -265,10 +273,10 @@
 		</linearGradient>
 		
 		<mask id="mask_horizontal_colour">
-			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_horizontal)"/>
+			<rect x="630" y="0" width="1000" height="789" fill="url(#fade_horizontal_colour)"/>
 		</mask>
 		<mask id="mask_vertical_colour">
-			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_vertical)"/>
+			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_vertical_colour)"/>
 		</mask>
 	
 <filter id="grayscale">
@@ -289,18 +297,18 @@
 <g class="mask__edges horizontal_colour" mask="url(#mask_horizontal)">
 		<g class="mask__edges vertical_colour" mask="url(#mask_vertical)">
 	<rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.3"></rect>
-<!-- <image style="overflow:visible;opacity:0.5;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
+<!-- <image style="overflow:hidden;opacity:0.5;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
 </g>
 </g>
 <g class="mask__edges horizontal" mask="url(#mask_horizontal)">
 		<g class="mask__edges vertical" mask="url(#mask_vertical)">
 	<!-- <rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.4"></rect> -->
-<!-- <image style="overflow:visible;opacity:0.4;" filter="url(#grayscale50percent)" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
-<image style="overflow:visible;opacity:0.3;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
-<image style="overflow:visible;opacity:0.8;" width="2451" height="1210" xlink:href="map_B_colour_mod.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<!-- <image style="overflow:hidden;opacity:0.4;" filter="url(#grayscale50percent)" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
+<image style="overflow:hidden;opacity:0.3;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<image style="overflow:hidden;opacity:0.8;" width="2451" height="1210" xlink:href="map_B_colour_mod.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
 </g>
 </g>
-<!-- <image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)"> -->
+<!-- <image style="overflow:hidden;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)"> -->
 <!-- </image> -->
 <g id="layer0" class="st0">
 	<path class="st1" d="M472,760l1-2h-2L472,760z"/>
@@ -7142,52 +7150,52 @@
 	</g>
 </g>
 
-<g class="element__group">
+<!-- <g class="element__group">
 	<circle id="element__1" class="element__marker" cx="187.1" cy="389.7" r="32.7"/>
-</g>
-<text class="element__number element__1" transform="matrix(1 0 0 1 176.39 405.2912)" >1</text>
+</g> -->
+<!-- <text class="element__number element__1" transform="matrix(1 0 0 1 176.39 405.2912)" >1</text>
 <circle id="element__2" class="element__marker " cx="316.5" cy="417" r="32.7"/>
 <text class="element__number element__2" transform="matrix(1 0 0 1 303.634 434.7022)" >2</text>
 <circle id="element__3" class="element__marker " cx="761.5" cy="347.4" r="32.7"/>
-<text class="element__number element__3" transform="matrix(1 0 0 1 749 363)" >3</text>
+<text class="element__number element__3" transform="matrix(1 0 0 1 749 363)" >3</text> -->
 <circle id="element__4" class="element__marker " cx="844.5" cy="464" r="32.7"/>
 <text class="element__number element__4" transform="matrix(1 0 0 1 829.4996 485.0004)">4</text>
-<circle id="element__5" class="element__marker " cx="1040.5" cy="592.5" r="32.7"/>
-<text class="element__number element__5" transform="matrix(1 0 0 1 1030.1 611.5078)">5</text>
+<!-- <circle id="element__5" class="element__marker " cx="1040.5" cy="592.5" r="32.7"/>
+<text class="element__number element__5" transform="matrix(1 0 0 1 1030.1 611.5078)">5</text> -->
 <circle id="element__6"  class="element__marker " cx="1462" cy="655.5" r="32.7"/>
 <text class="element__number element__6" transform="matrix(1 0 0 1 1445.577 673.2319)">6</text>
 
 
-
+<!-- 
 <g id="QpzRSK_1_">
 	
-		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="QpzRSK" xlink:href="C601CAA704BC2681.jpg"  transform="matrix(0.3593 0 0 0.3593 143.7473 445.3835)">
+		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="QpzRSK" xlink:href="C601CAA704BC2681.jpg"  transform="matrix(0.3593 0 0 0.3593 143.7473 445.3835)">
 	</image>
 </g>
 <g id="lOSt6j_1_">
 	
-		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="lOSt6j" xlink:href="C601CAA704BC2687.jpg"  transform="matrix(0.3592 0 0 0.3592 270.5287 476.0287)">
+		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="lOSt6j" xlink:href="C601CAA704BC2687.jpg"  transform="matrix(0.3592 0 0 0.3592 270.5287 476.0287)">
 	</image>
 </g>
 <g id="xMtsbV_1_">
 	
-		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="xMtsbV" xlink:href="C601CAA704BC2680.jpg"  transform="matrix(0.351 0 0 0.351 713.566 403.8687)">
+		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="xMtsbV" xlink:href="C601CAA704BC2680.jpg"  transform="matrix(0.351 0 0 0.351 713.566 403.8687)">
 	</image>
 </g>
 <g id="DSLZSL_1_">
 	
-		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="DSLZSL" xlink:href="C601CAA704BC2683.jpg"  transform="matrix(0.351 0 0 0.351 798.066 521.5882)">
+		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="DSLZSL" xlink:href="C601CAA704BC2683.jpg"  transform="matrix(0.351 0 0 0.351 798.066 521.5882)">
 	</image>
 </g>
 <g id="ykOHhn_1_">
 	
-		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="ykOHhn" xlink:href="C601CAA704BC268F.jpg"  transform="matrix(0.351 0 0 0.351 995.566 651.066)">
+		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="ykOHhn" xlink:href="C601CAA704BC268F.jpg"  transform="matrix(0.351 0 0 0.351 995.566 651.066)">
 	</image>
 </g>
 <g id="J3sr0Q_1_">
 	
-		<image class="element__qr" style="overflow:visible;" width="256" height="256" id="J3sr0Q" xlink:href="C601CAA704BC2682.jpg"  transform="matrix(0.351 0 0 0.351 1416.066 693.4301)">
+		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="J3sr0Q" xlink:href="C601CAA704BC2682.jpg"  transform="matrix(0.351 0 0 0.351 1416.066 693.4301)">
 	</image>
-</g>
+</g> -->
 
 </svg>
