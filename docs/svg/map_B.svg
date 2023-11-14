@@ -196,7 +196,26 @@
 		stroke-width: 15px;
 		cursor: pointer;
 		transition: all 1.3s ease;
-		animation:pulse 2s infinite;
+		animation:pulse 6s infinite;
+	}
+	
+	#element__1{
+		animation-delay:0s;
+	}
+	#element__2{
+		animation-delay:1s;
+	}
+	#element__3{
+		animation-delay:2s;
+	}
+	#element__4{
+		animation-delay:3s;
+	}
+	#element__5{
+		animation-delay:4s;
+	}
+	#element__6{
+		animation-delay:5s;
 	}
 	<!-- .element__group{
 		pointer-events:bounding-box;
@@ -204,17 +223,17 @@
 	@keyframes pulse {
         0% {
             
-            stroke-width: 20px;
-            
-        }
-        
-        70% {
             stroke-width: 15px;
             
         }
         
-        100% {
+        70% {
             stroke-width: 20px;
+            
+        }
+        
+        100% {
+            stroke-width: 15px;
             
         }
     }
@@ -224,6 +243,7 @@
 		stroke-width:20px;
 		cursor: pointer;
 		r: 60px;
+		animation:none;
 	}
 	.element__qr{
 		display:none;
@@ -7143,18 +7163,18 @@
 </g>
 
 <g class="element__group">
-	<circle id="element__1" class="element__marker" cx="187.1" cy="389.7" r="32.7"/>
+	<circle id="element__1" class="element__marker" cx="187.1" cy="389.7" r="32"/>
 </g>
 <text class="element__number element__1" transform="matrix(1 0 0 1 176.39 405.2912)" >1</text>
-<circle id="element__2" class="element__marker " cx="316.5" cy="417" r="32.7"/>
+<circle id="element__2" class="element__marker " cx="316.5" cy="417" r="32"/>
 <text class="element__number element__2" transform="matrix(1 0 0 1 303.634 434.7022)" >2</text>
-<circle id="element__3" class="element__marker " cx="761.5" cy="347.4" r="32.7"/>
+<circle id="element__3" class="element__marker " cx="761.5" cy="347.4" r="32"/>
 <text class="element__number element__3" transform="matrix(1 0 0 1 749 363)" >3</text>
-<circle id="element__4" class="element__marker " cx="844.5" cy="464" r="32.7"/>
+<circle id="element__4" class="element__marker " cx="844.5" cy="464" r="32"/>
 <text class="element__number element__4" transform="matrix(1 0 0 1 829.4996 485.0004)">4</text>
-<circle id="element__5" class="element__marker " cx="1040.5" cy="592.5" r="32.7"/>
+<circle id="element__5" class="element__marker " cx="1040.5" cy="592.5" r="32"/>
 <text class="element__number element__5" transform="matrix(1 0 0 1 1030.1 611.5078)">5</text>
-<circle id="element__6"  class="element__marker " cx="1462" cy="655.5" r="32.7"/>
+<circle id="element__6"  class="element__marker " cx="1462" cy="655.5" r="32"/>
 <text class="element__number element__6" transform="matrix(1 0 0 1 1445.577 673.2319)">6</text>
 
 
