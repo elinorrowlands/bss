@@ -6,6 +6,7 @@
 	.st0{opacity:0.15;}
 	path{
 		opacity:0.9;
+		<!-- stroke-width:2!important; -->
 	}
 	<!-- stroke-width:1.7 -->
 	.st1{fill-opacity:0;stroke:#000000;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
@@ -176,7 +177,7 @@
 	}
 	.water__line{
 		fill:cyan;
-		fill-opacity:0.49;
+		fill-opacity:0.89;
 		stroke:blue;
 		<!-- stroke:#000000; -->
 		stroke-miterlimit:10;
@@ -211,17 +212,76 @@
 	}
 </style>
 <defs>
+
+		<linearGradient id="fade_horizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0.01" stop-color="black"></stop>
+			<stop offset="0.15" stop-color="white"></stop>
+			<stop offset="0.85" stop-color="white"></stop>
+			<stop offset="0.99" stop-color="black"></stop>
+		</linearGradient>
+		<linearGradient id="fade_vertical" x1="0%" y1="0%" x2="0%" y2="100%">
+			<stop offset="0.05" stop-color="black"></stop>
+			<stop offset="0.3" stop-color="white"></stop>
+			<stop offset="0.7" stop-color="white"></stop>
+			<stop offset="0.95" stop-color="black"></stop>
+		</linearGradient>
+		
+		<mask id="mask_horizontal">
+			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_horizontal)"/>
+		</mask>
+		<mask id="mask_vertical">
+			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_vertical)"/>
+		</mask>
+		
+		<linearGradient id="fade_horizontal_colour" x1="-20%" y1="0%" x2="130%" y2="0%">
+			<stop offset="0.05" stop-color="black"/>
+			<stop offset="0.3" stop-color="white"/>
+			<stop offset="0.7" stop-color="white"/>
+			<stop offset="0.95" stop-color="black"/>
+		</linearGradient>
+		<linearGradient id="fade_vertical_colour" x1="0%" y1="-20%" x2="0%" y2="130%">
+			<stop offset="0.05" stop-color="black"/>
+			<stop offset="0.3" stop-color="white"/>
+			<stop offset="0.7" stop-color="white"/>
+			<stop offset="0.95" stop-color="black"/>
+		</linearGradient>
+		
+		<mask id="mask_horizontal_colour">
+			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_horizontal)"/>
+		</mask>
+		<mask id="mask_vertical_colour">
+			<rect x="0" y="0" width="1600" height="789" fill="url(#fade_vertical)"/>
+		</mask>
+	
 <filter id="grayscale">
 	<feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0
 										0.33 0.33 0.33 0 0
 										0.33 0.33 0.33 0 0
 										0    0    0    1 0"/>
 </filter>
+<filter id="grayscale50percent">
+
+	<feColorMatrix type="matrix" values="0.5 0.5 0.5 0 0
+																			0.5 0.5 0.5 0 0
+																			0.5 0.5 0.5 0 0
+																			0   0   0   1 0"/>
+
+</filter>
 </defs>
-<g>
-	<rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.2"></rect>
+<g class="mask__edges horizontal_colour" mask="url(#mask_horizontal)">
+		<g class="mask__edges vertical_colour" mask="url(#mask_vertical)">
+	<rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.3"></rect>
+<!-- <image style="overflow:visible;opacity:0.5;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
 </g>
-<image style="overflow:visible;opacity:0.4;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+</g>
+<g class="mask__edges horizontal" mask="url(#mask_horizontal)">
+		<g class="mask__edges vertical" mask="url(#mask_vertical)">
+	<!-- <rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.4"></rect> -->
+<!-- <image style="overflow:visible;opacity:0.4;" filter="url(#grayscale50percent)" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
+<image style="overflow:visible;opacity:0.3;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<image style="overflow:visible;opacity:0.8;" width="2451" height="1210" xlink:href="map_B_colour_mod.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+</g>
+</g>
 <!-- <image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)"> -->
 <!-- </image> -->
 <g id="layer0" class="st0">
