@@ -218,8 +218,12 @@
 										0    0    0    1 0"/>
 </filter>
 </defs>
-<image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)">
-</image>
+<g>
+	<rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.2"></rect>
+</g>
+<image style="overflow:visible;opacity:0.4;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<!-- <image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)"> -->
+<!-- </image> -->
 <g id="layer0" class="st0">
 	<path class="st1" d="M472,760l1-2h-2L472,760z"/>
 	<path class="st1" d="M470,758h1l-1-1V758z"/>

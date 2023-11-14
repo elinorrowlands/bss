@@ -14,7 +14,8 @@ html(lang="en")
             
     body.about
         object#main__title.about.nav__back(onclick="console.log('hello')" type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
-        main.textBlock.map__block
+        main.map__block.textBlock
+            //- #backdrop__map
             object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
         footer
             include footer  

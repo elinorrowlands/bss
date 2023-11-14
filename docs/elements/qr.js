@@ -3,7 +3,7 @@ let baseURL = 'https://elinorrowlands.github.io/bss/';
 
 let elements = {
     'bridge': {
-        folder: 'elements/bridge',
+        folder: 'map.html',
         qr:null
     },
     'text': {
@@ -79,12 +79,13 @@ window.addEventListener('load',()=>{
 
             if (number < 0) {
                 number = 0;
-            } else if (number >200){
-                number = 200;
+            } else if (number >160){
+                number = 160;
             }
 
-            x.style.fill=`rgba(${number},255,255,1)`;
+            x.style.fill=`rgba(0,0,${number},1)`;
             x.style.stroke = 'black';
+            // x.style.strokeWidth = '2px';
         })
 
         qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
@@ -94,4 +95,26 @@ window.addEventListener('load',()=>{
         })
     })
 
+    // document.querySelectorAll('.qr__svg').forEach((qr, i)=>{
+    //     qr.querySelectorAll('rect:not(.anchor)').forEach((x,i)=>{
+
+    //         let number = Math.sin(i)*255;
+
+    //         if (number < 0) {
+    //             number = 0;
+    //         } else if (number >200){
+    //             number = 200;
+    //         }
+
+    //         x.style.fill=`rgba(${number},255,255,1)`;
+    //         x.style.stroke = 'black';
+    //     })
+
+    //     qr.querySelectorAll('rect.anchor').forEach((x,i)=>{
+    //         x.style.strokeWidth = '3px';
+    //         x.style.stroke='black';
+    //         x.style.display='none';
+    //     })
+    // })
+    
 })
