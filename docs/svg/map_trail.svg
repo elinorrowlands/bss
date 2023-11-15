@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="700 0 1600 789" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 viewBox="700 0 1600 789" xml:space="preserve" clip-path="url(#clip)">
 <style type="text/css">
 	.st0{opacity:0.15;}
 	path{
@@ -42,7 +42,7 @@
 	
 	.element__marker{
 		
-		fill:white;	
+		fill:rgba(255,255,255,0.3);	
 		<!-- stroke:beige; -->
 		stroke: rgba(186, 186, 110,0.5);
 		<!-- stroke-width:0.5px; -->
@@ -78,20 +78,58 @@
 	<!-- .element__group{
 		pointer-events:bounding-box;
 	} -->
-	.element__marker:hover, #element__4:hover{
+	<!-- .element__marker:hover{
 		fill:yellow;	
 		stroke:lime;
 		stroke-width:20px;
 		cursor: pointer;
 		r: 60px;
         animation: none;
-	}
+	} -->
 	.element__qr{
 		display:none;
 	}
+	.transform{
+		transform:translate(400px,0px) scale(1);
+	}
+	.guide{
+		
+	}
+	.guide path{
+		stroke:cyan;
+		fill:none;
+		opacity:0;
+	}
+	.guide circle{
+		stroke-width:0px;
+		fill:cyan;
+		opacity:0.3;
+		transition:all 1s;
+	}
+	.guide circle.on{
+		fill:purple;
+		<!-- stroke:purple; -->
+		stroke-width:15px;
+		<!-- r:10px; -->
+	}
+	
+	#cursor,#cursor_back{
+		fill:rgba(255,255,255,0.8);	
+		<!-- stroke:beige; -->
+		stroke: rgba(255, 255, 255,0.5);
+		<!-- stroke-width:0.5px; -->
+		stroke-width: 15px;
+		cursor: pointer;
+		transition: all 0.1s ease;
+        animation: none;
+        transform-origin: center center;
+	}
 </style>
 <defs>
-
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1600" height="789" fill="white"/>
+      
+    </clipPath>
 		<linearGradient id="fade_horizontal" x1="0%" y1="0%" x2="100%" y2="0%">
 			<stop offset="0.01" stop-color="black"></stop>
 			<stop offset="0.15" stop-color="white"></stop>
@@ -147,6 +185,7 @@
 
 </filter>
 </defs>
+<g class="transform">
 <g class="mask__edges horizontal_colour" mask="url(#mask_horizontal)">
 		<g class="mask__edges vertical_colour" mask="url(#mask_vertical)">
 	<rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.3"></rect>
@@ -361,44 +400,19 @@
 <text class="element__number element__2" transform="matrix(1 0 0 1 303.634 434.7022)" >2</text>
 <circle id="element__3" class="element__marker " cx="761.5" cy="347.4" r="32.7"/>
 <text class="element__number element__3" transform="matrix(1 0 0 1 749 363)" >3</text> -->
-<circle id="element__4" class="element__marker " cx="844.5" cy="464" r="32.7"/>
-<text class="element__number element__4" transform="matrix(1 0 0 1 829.4996 485.0004)">4</text>
+<circle id="element__4" class="element__marker " cx="854.5" cy="460" r="32.7"/>
+<!-- <text class="element__number element__4" transform="matrix(1 0 0 1 829.4996 485.0004)">4</text> -->
 <!-- <circle id="element__5" class="element__marker " cx="1040.5" cy="592.5" r="32.7"/>
 <text class="element__number element__5" transform="matrix(1 0 0 1 1030.1 611.5078)">5</text> -->
-<circle id="element__6"  class="element__marker " cx="1462" cy="655.5" r="32.7"/>
-<text class="element__number element__6" transform="matrix(1 0 0 1 1445.577 673.2319)">6</text>
+<circle id="element__6"  class="element__marker " cx="1465" cy="645.5" r="32.7"/>
+<circle id="cursor_back"  class="element__marker " cx="0" cy="0" r="2"/>
 
+<!-- <text class="element__number element__6" transform="matrix(1 0 0 1 1445.577 673.2319)">6</text> -->
+<g class="guide">
+	<path class="guide__path" d="M1.64,173.5l18.8,6.71,17,12.09,12.08,16.12L61.63,229,78.2,253.19,97.9,280.5l17.9,27.76,11.64,18.35,13.88,21,15.22,19.25,13,14.78,13.88,13.43,22.83,20.59,22.83,7.61L264,425.55l39.85-.44,29.1.89L375,428.24l47.46,8.51L457,448.83l28.21,9.85L510.68,460l15.22-7.17,16.56-8.5,18.81-12.54,23.28-15.22,19.81-13.44,23-17.31,25.84-16.42L680.73,361l26.32-.89h31.77L761,363.71l18.37,11.13,18.13,18,13.88,20.28L825,432.46l14.57,18.67,12.9,18.4,17.31,25.11L887.83,519l18.23,23.16L930,573.93l19.9,23,19.7,16L994,616.56l37.69-8.71,30.17-2.06,28.4-4,30.81-6.46,32.3-5.43,32.12-4.22,42.88-5.09,31.52.28,31.17,6.55,33.17,8.21,31.24,12L1382.27,619l37.79,16.6,30.22,12.74,25.17,10.17,31.32,17.44L1539,687.15l33.19,14.1,27,10.44" transform="translate(-0.43 -0.44)"/>
+</g>
 
-<!-- 
-<g id="QpzRSK_1_">
-	
-		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="QpzRSK" xlink:href="C601CAA704BC2681.jpg"  transform="matrix(0.3593 0 0 0.3593 143.7473 445.3835)">
-	</image>
-</g>
-<g id="lOSt6j_1_">
-	
-		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="lOSt6j" xlink:href="C601CAA704BC2687.jpg"  transform="matrix(0.3592 0 0 0.3592 270.5287 476.0287)">
-	</image>
-</g>
-<g id="xMtsbV_1_">
-	
-		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="xMtsbV" xlink:href="C601CAA704BC2680.jpg"  transform="matrix(0.351 0 0 0.351 713.566 403.8687)">
-	</image>
-</g>
-<g id="DSLZSL_1_">
-	
-		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="DSLZSL" xlink:href="C601CAA704BC2683.jpg"  transform="matrix(0.351 0 0 0.351 798.066 521.5882)">
-	</image>
-</g>
-<g id="ykOHhn_1_">
-	
-		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="ykOHhn" xlink:href="C601CAA704BC268F.jpg"  transform="matrix(0.351 0 0 0.351 995.566 651.066)">
-	</image>
-</g>
-<g id="J3sr0Q_1_">
-	
-		<image class="element__qr" style="overflow:hidden;" width="256" height="256" id="J3sr0Q" xlink:href="C601CAA704BC2682.jpg"  transform="matrix(0.351 0 0 0.351 1416.066 693.4301)">
-	</image>
-</g> -->
+<circle id="cursor"  class="element__marker " cx="0" cy="0" r="7"/>
 
+</g>
 </svg>

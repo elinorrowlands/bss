@@ -27,7 +27,9 @@ main.front{
     text-align:center;
     max-width:90vw;
     width:800px;
+    height:600px;
     display:block;
+    // overflow:scroll;
 }
 
 .button.front{
@@ -110,4 +112,9 @@ h2.front{
     color:navy;
     text-wrap:balance;
     text-align:left;
+}
+
+.content.front{
+    min-height:100vh;
+    padding-top:200px;
 }
