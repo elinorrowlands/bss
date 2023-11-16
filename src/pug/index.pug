@@ -75,14 +75,21 @@ html(lang="en")
             //-         button ENTER                                                                  	ENTER
             //-     p Interactive Map of the Canal                                	Walking Trail of the Canal 
             //-         button ENTER  
+            ol.bar.qr__container.elements.index
+                a(href="map.html")
+                    include qr_map.html
+                a(href="trail.html")
+                    include qr_trail.html
+            
+            
             .buttons
-                a.allowDefault(href="elements")
-                    button.button Interactive Experience
-                a.allowDefault(href="trail.html")
-                    button.button Soundscape 
-                //- a.allowDefault(href="#map")
-                a.allowDefault(href="map.html")
-                    button.button Map
+                //- a.allowDefault(href="elements")
+                //-     button.button Interactive Experience
+                //- a.allowDefault(href="trail.html")
+                //-     button.button Soundscape 
+                //- //- a.allowDefault(href="#map")
+                //- a.allowDefault(href="map.html")
+                //-     button.button Map
                 a.allowDefault(href="about.html")
                     button.button About the project
             //- object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')

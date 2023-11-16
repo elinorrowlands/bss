@@ -1067,6 +1067,24 @@ canvas.text {
   -webkit-text-stroke: 0.5px black;
   text-shadow: 1px 1px 0px #000;
 }
+.qr__text.front {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2em;
+  padding-bottom: 1em;
+}
+.qr__text.bottom {
+  padding-bottom: 0em;
+  padding-top: 1em;
+}
+
+#qr__map {
+  filter: brightness(100%) hue-rotate(35deg) invert(0%);
+}
+
+#qr__trail {
+  filter: brightness(100%) hue-rotate(35deg) invert(10%);
+}
 
 .qr__container {
   background-image: url("bg1.svg");
