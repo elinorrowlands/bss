@@ -32,23 +32,23 @@ window.addEventListener('load',()=>{
      window.touch.setAction('.element__marker');
      window.touch.listen();
      
-        let guide = document.querySelector('.guide path');
-        let lengthOfPath = guide.getTotalLength();
-        console.log(lengthOfPath)
-        let count = 0;
-        for(let i = 0; i < lengthOfPath; i++){
-            if(i%10==0){
-                let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                circle.setAttribute("cx", guide.getPointAtLength(i).x);
-                circle.setAttribute("cy", guide.getPointAtLength(i).y-5);
-                circle.setAttribute("r", 5);
-                circle.setAttribute("fill", "red");
-                document.querySelector('.guide').appendChild(circle);
-                console.log(count, guide.getPointAtLength(i).x, guide.getPointAtLength(i).y);
-                count++;
-            }
-            
+    let guide = document.querySelector('.guide path');
+    let lengthOfPath = guide.getTotalLength();
+    console.log(lengthOfPath)
+    let count = 0;
+    for(let i = 0; i < lengthOfPath; i++){
+        if(i%10==0){
+            let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            circle.setAttribute("cx", guide.getPointAtLength(i).x);
+            circle.setAttribute("cy", guide.getPointAtLength(i).y-5);
+            circle.setAttribute("r", 5);
+            circle.setAttribute("fill", "red");
+            document.querySelector('.guide').appendChild(circle);
+            console.log(count, guide.getPointAtLength(i).x, guide.getPointAtLength(i).y);
+            count++;
         }
+        
+    }
     
      
 })

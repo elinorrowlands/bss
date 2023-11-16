@@ -17,14 +17,14 @@
 		transform-origin:center center;
 		-webkit-user-select:none;
 		user-select-none;
-		font-family:'Roboto';
-		font-size:75px;
+		font-family:'Crimson Text', serif;
+		font-size:60px;
 		font-weight: regular;
-		fill:beige;
+		fill:navy;
 		text-anchor:middle;
 		alignment-baseline:middle;
 		cursor: pointer;
-		display:none;
+		<!-- display:none; -->
 	}
 	.water__halo{
 		fill:cyan;
