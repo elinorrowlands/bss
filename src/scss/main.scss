@@ -36,6 +36,7 @@
 
 main{
   padding-bottom:250px;
+  color:#CCCCFF;
 }
 
 main.splash {
@@ -136,7 +137,7 @@ canvas#overlay {
     display:inline-block;
     padding:0.5em 1em;
     margin:1em;
-    background-color:$background-text;
+    // background-color:$background-text;
     font-size:1.5rem;
     border-radius:0.4rem;
   }

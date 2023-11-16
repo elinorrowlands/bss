@@ -363,8 +363,6 @@ footer.instructions {
   width: 800px;
   max-width: 90vw;
   margin: 0 auto !important;
-  background-color: white !important;
-  color: navy;
   text-wrap: balance;
   text-align: left;
 }
@@ -1245,6 +1243,7 @@ main.qr__container {
 /* ⚝ Uncomment to debug */
 main {
   padding-bottom: 250px;
+  color: #CCCCFF;
 }
 
 main.splash {
@@ -1339,7 +1338,6 @@ button.nav__info {
   display: inline-block;
   padding: 0.5em 1em;
   margin: 1em;
-  background-color: hsl(233.26, 50.28%, 65.29%);
   font-size: 1.5rem;
   border-radius: 0.4rem;
 }
