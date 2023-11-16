@@ -175,19 +175,19 @@
 <g class="mask__edges horizontal_colour" mask="url(#mask_horizontal)">
 		<g class="mask__edges vertical_colour" mask="url(#mask_vertical)">
 	<rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.1"></rect>
-<!-- <image style="overflow:visible;opacity:0.5;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
+<!-- <image style="overflow:visible;opacity:0.5;" width="2451" height="1210" xlink:href="map_B_colour.png"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
 </g>
 </g>
 <g class="mask__edges horizontal" mask="url(#mask_horizontal)">
 		<g class="mask__edges vertical" mask="url(#mask_vertical)">
 	<!-- <rect x="0" y="0" width="1600" height="789" fill="purple" opacity="0.4"></rect> -->
-<!-- <image style="overflow:visible;opacity:0.4;" filter="url(#grayscale50percent)" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
-<image style="overflow:visible;opacity:0.35;" width="2451" height="1210" xlink:href="map_B_colour.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
-<image style="overflow:visible;opacity:0.1;" width="2451" height="1210" xlink:href="map_B_colour_mod.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
-<image style="overflow:visible;opacity:0.4;" width="2451" height="1210" xlink:href="map_B_transparent_lines_rendered.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<!-- <image style="overflow:visible;opacity:0.4;" filter="url(#grayscale50percent)" width="2451" height="1210" xlink:href="map_B_colour.png"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image> -->
+<image style="overflow:visible;opacity:0.35;" width="2451" height="1210" xlink:href="map_B_colour.png"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<image style="overflow:visible;opacity:0.1;" width="2451" height="1210" xlink:href="map_B_colour_mod.png"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
+<image style="overflow:visible;opacity:0.4;" width="2451" height="1210" xlink:href="map_B_transparent_lines_rendered.png"  transform="matrix(0.6536 0 0 0.6536 -1.85 -15.9)"></image>
 </g>
 </g>
-<!-- <image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.PNG"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)"> -->
+<!-- <image style="overflow:visible;opacity:0.027;" filter="url(#grayscale)" width="2451" height="1210" xlink:href="map_B_bg.png"  transform="matrix(0.6536 0 0 0.6536 -1.85 -1.6)"> -->
 <!-- </image> -->
 <g id="layer0" class="st0">
 	<!--  -->
