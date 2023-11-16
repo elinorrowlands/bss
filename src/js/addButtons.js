@@ -10,7 +10,7 @@ function addButtons(){
     blank.classList.add('blank');
     
     // let homePage = urlParams.get('from') == 'map' ? 'map2.html' : 'index.html';
-    let homePage = urlParams.get('from') == 'map' ? 'map.html' : 'elements/';
+    let homePage = urlParams.get('from') == 'map' ? 'map.html' : 'map.html';
     
     let backButton = document.createElement("button");
     
