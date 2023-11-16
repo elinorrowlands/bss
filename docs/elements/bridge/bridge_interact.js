@@ -195,5 +195,18 @@ window.addEventListener('load',()=>{
     })
     interpolateStates(0.1);
     window.echo.wet.value = 0;
+    
+    const bridgeImageremove = document.querySelector('#bridge_Imageremove');
+    const bridgeImageremoveWidth = bridgeImageremove.getBoundingClientRect().width;
+    const bridgeImageremoveHeight = bridgeImageremove.getBoundingClientRect().height;
+    // const bridgeImageremoveX = bridgeImageremove.getBoundingClientRect().x;
+    // const bridgeImageremoveY = bridgeImageremove.getBoundingClientRect().y;
+    // console.log(bridgeImageremove.getBoundingClientRect())
+    // console.log(bridgeImageremoveWidth, bridgeImageremoveHeight);
+    document.querySelector('#bridge__sky').setAttribute('width', bridgeImageremoveWidth);
+    document.querySelector('#bridge__sky').setAttribute('height', bridgeImageremoveHeight);
+    // document.querySelector('#bridge__sky').setAttribute('left', bridgeImageremoveX);
+    // document.querySelector('#bridge__sky').setAttribute('top', bridgeImageremoveY);
+    
 })
 

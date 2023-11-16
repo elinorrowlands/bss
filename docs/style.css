@@ -685,6 +685,16 @@ svg.bridge {
   z-index: 1;
 }
 
+.svg.bridge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
 .vectorised__container {
   opacity: 0.1;
   transition: opacity 1s;
@@ -1059,6 +1069,7 @@ canvas.text {
   line-height: 50px;
   opacity: 1;
   align-self: center;
+  color: #9EC1CF;
 }
 
 .qr__number.high-contrast {
