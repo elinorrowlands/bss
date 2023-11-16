@@ -154,7 +154,7 @@ window.addEventListener('load',()=>{
             document.querySelectorAll('canvas').forEach(x=>{
                 x.style.opacity=0;
             })
-            player2.volume.rampTo(-60,10);
+            player2.volume.rampTo(-50,10);
             // if(element.id == 'bridge__beyond') {
             //     document.querySelectorAll('.beyond__container').forEach(container => {
             //         container.style.opacity = 0.9;
@@ -164,7 +164,7 @@ window.addEventListener('load',()=>{
         } else if(type=='move'){
             document.querySelectorAll('.bridge__sky').forEach((sky,i)=>{
                 if(Math.random()>0.8){
-                    sky.style.opacity=Math.abs(e.detail.iterations%(i+1)/(i+1));    
+                    sky.style.opacity=Math.abs(e.detail.iterations%(i+2)/(i+2));    
                 }
                 
             })
