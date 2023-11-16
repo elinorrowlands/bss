@@ -76,6 +76,10 @@ svg {
   user-select: none;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /* ⚝ Typography */
 a {
   color: #ccc;

@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
         }
         
     }
-    window.interval = 500;
+    window.interval = 1000;
     let iframeElement   = document.querySelector('iframe');
     // var iframeElementID = iframeElement.id;
     window.widget       = SC.Widget(iframeElement);
@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
                 percent = position * 100 / duration;
             //   console.log(position, percent);
             
-                document.querySelector('#cursor_back').setAttribute('transform',`translate(${guide.getPointAtLength(positions.start+(percent/100*length)).x} ${guide.getPointAtLength(positions.start+(percent/100*length)).y})`)
+                // document.querySelector('#cursor_back').setAttribute('transform',`translate(${guide.getPointAtLength(positions.start+(percent/100*length)).x} ${guide.getPointAtLength(positions.start+(percent/100*length)).y})`)
                 document.querySelector('#cursor').setAttribute('transform',`translate(${guide.getPointAtLength(positions.start+(percent/100*length)).x} ${guide.getPointAtLength(positions.start+(percent/100*length)).y})`)
                 document.querySelectorAll('.guide circle').forEach((x,i)=>{
                     if(percent/100*count>=i){

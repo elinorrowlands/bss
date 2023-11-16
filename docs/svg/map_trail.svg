@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	 viewBox="700 300 1600 789" xml:space="preserve">
+	 viewBox="700 300 1600 789" height="489" xml:space="preserve" clip-path="url(#clip)">
 <style type="text/css">
 	.st0{opacity:0.15;}
 	path{
@@ -90,7 +90,7 @@
 		display:none;
 	}
 	.transform{
-		transform:translate(10px,-100px) scale(1.4);
+		transform:translate(-400px,-700px) scale(1.7);
 	}
 	.guide{
 		
@@ -127,7 +127,7 @@
 </style>
 <defs>
 	<clipPath id="clip">
-		<rect x="0" y="0" width="1600" height="789" fill="white"/>
+		<rect x="0" y="0" width="1600" height="489" fill="white"/>
       
     </clipPath>
 		<linearGradient id="fade_horizontal" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -405,7 +405,7 @@
 <!-- <circle id="element__5" class="element__marker " cx="1040.5" cy="592.5" r="32.7"/>
 <text class="element__number element__5" transform="matrix(1 0 0 1 1030.1 611.5078)">5</text> -->
 <circle id="element__6"  class="element__marker " cx="1465" cy="645.5" r="32.7"/>
-<circle id="cursor_back"  class="element__marker " cx="0" cy="0" r="2"/>
+<!-- <circle id="cursor_back"  class="element__marker " cx="0" cy="0" r="2"/> -->
 
 <!-- <text class="element__number element__6" transform="matrix(1 0 0 1 1445.577 673.2319)">6</text> -->
 <g class="guide">

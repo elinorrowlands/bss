@@ -13,13 +13,13 @@ html(lang="en")
 
     body.about
         object#main__title.about.nav__back(type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
-        
         main.map__block.textBlock
-            //- include elements_list.html
             //- #backdrop__map
-            //- div(height="80vh")
+            
             object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
             //- ol.bar.qr__container.elements.index
+            nav.hidden
+                include elements_list.html
             
         footer
             include footer  
