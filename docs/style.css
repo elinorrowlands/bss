@@ -262,7 +262,7 @@ li {
 }
 
 footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -331,47 +331,6 @@ footer.instructions {
   margin: auto;
 }
 
-.buttons.front {
-  text-align: center;
-  max-width: 90vw;
-  width: 800px;
-  height: 600px;
-  display: block;
-}
-
-.button.front {
-  width: 80vw;
-  margin: 10px;
-}
-
-#map.front {
-  max-width: 90vw;
-  margin: 10px;
-  width: 800px;
-  margin: 0 auto !important;
-}
-
-.subheading.front {
-  font-size: 1.5em;
-  font-weight: 100;
-}
-
-main.front {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 800px;
-  max-width: 90vw;
-  margin: auto;
-  height: 100%;
-}
-
-h2.front {
-  width: 100%;
-  text-align: center;
-}
-
 .front__water {
   opacity: 0.1;
   position: fixed;
@@ -408,11 +367,6 @@ h2.front {
   color: navy;
   text-wrap: balance;
   text-align: left;
-}
-
-.content.front {
-  min-height: 100vh;
-  padding-top: 200px;
 }
 
 /* ⚝ Instructions */
@@ -1289,6 +1243,10 @@ main.qr__container {
 }
 
 /* ⚝ Uncomment to debug */
+main {
+  padding-bottom: 250px;
+}
+
 main.splash {
   flex-grow: 1;
   overflow: hidden;
