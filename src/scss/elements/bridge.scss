@@ -90,7 +90,7 @@ svg.bridge{
     z-index:1;
 }
 
-.svg.bridge{
+.bridge__sky{
     position:absolute;
     top:0;
     left:0;
@@ -100,6 +100,8 @@ svg.bridge{
     // width:100vw;
     // height:100vh;
     z-index:1;
+    opacity:0;
+    transition:all 5s ease;
 }
 
 .vectorised__container{
