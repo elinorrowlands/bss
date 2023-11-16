@@ -102,7 +102,22 @@ svg.bridge{
     z-index:1;
     opacity:0;
     transition:all 5s ease;
+    mix-blend-mode: hard-light;
 }
+
+#bridge__sky1{
+    transition: all 5s ease;
+}
+#bridge__sky2{
+    transition: all 15s ease;
+}
+#bridge__sky3{
+    transition: all 15s ease;
+}
+#bridge__sky4{
+    transition: all 20s ease;
+}
+
 
 .vectorised__container{
     opacity:0.1;

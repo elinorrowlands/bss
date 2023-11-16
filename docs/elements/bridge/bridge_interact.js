@@ -135,7 +135,7 @@ window.addEventListener('load',()=>{
             echo.wet.rampTo(0, 0.1);
             
             document.querySelectorAll('.bridge__sky').forEach(sky=>{
-                console.log('sky',sky)
+                // console.log('sky',sky)
                 sky.style.opacity=0;
             });
             
@@ -162,9 +162,11 @@ window.addEventListener('load',()=>{
             //     });
             // }
         } else if(type=='move'){
-            document.querySelectorAll('.bridge__sky').forEach(sky=>{
-                console.log('sky',sky)
-                sky.style.opacity=0.9;
+            document.querySelectorAll('.bridge__sky').forEach((sky,i)=>{
+                if(Math.random()>0.8){
+                    sky.style.opacity=Math.abs(e.detail.iterations%(i+1)/(i+1));    
+                }
+                
             })
             if(element.id=='bridge__under')interpolateStates(sineY);
             lpf.frequency.rampTo(10000-(10000*(y/window.innerWidth)),0.1);
@@ -205,19 +207,24 @@ window.addEventListener('load',()=>{
     })
     interpolateStates(0.1);
     window.echo.wet.value = 0;
-    const bridgeImageremove = document.querySelector('#bridge_Imageremove');
-    const bridgeImageremoveWidth = bridgeImageremove.getBoundingClientRect().width;
-    const bridgeImageremoveHeight = bridgeImageremove.getBoundingClientRect().height;
-    // const bridgeImageremoveX = bridgeImageremove.getBoundingClientRect().x;
-    // const bridgeImageremoveY = bridgeImageremove.getBoundingClientRect().y;
-    // console.log(bridgeImageremove.getBoundingClientRect())
-    // console.log(bridgeImageremoveWidth, bridgeImageremoveHeight);
-    document.querySelectorAll('.bridge__sky').forEach(sky=>{
-        sky.setAttribute('width', bridgeImageremoveWidth);
-        sky.setAttribute('height', bridgeImageremoveHeight);
-        // document.querySelector('#bridge__sky').setAttribute('left', bridgeImageremoveX);
-        // document.querySelector('#bridge__sky').setAttribute('top', bridgeImageremoveY);
-    })
+    
+    window.onresize = ()=>{
+        const bridgeImageremove = document.querySelector('#bridge_Imageremove');
+        const bridgeImageremoveWidth = bridgeImageremove.getBoundingClientRect().width;
+        const bridgeImageremoveHeight = bridgeImageremove.getBoundingClientRect().height;
+        // const bridgeImageremoveX = bridgeImageremove.getBoundingClientRect().x;
+        // const bridgeImageremoveY = bridgeImageremove.getBoundingClientRect().y;
+        // console.log(bridgeImageremove.getBoundingClientRect())
+        // console.log(bridgeImageremoveWidth, bridgeImageremoveHeight);
+        document.querySelectorAll('.bridge__sky').forEach(sky=>{
+            sky.setAttribute('width', bridgeImageremoveWidth);
+            sky.setAttribute('height', bridgeImageremoveHeight);
+            // document.querySelector('#bridge__sky').setAttribute('left', bridgeImageremoveX);
+            // document.querySelector('#bridge__sky').setAttribute('top', bridgeImageremoveY);
+        })
+    }
+    window.onresize();
+    
     
     
    
