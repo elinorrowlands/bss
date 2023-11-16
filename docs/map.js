@@ -21,11 +21,12 @@ function positionNumbers(){
             .map(x=>parseInt(x))
         number.setAttribute('transform',`translate(${pos[0]} ${pos[1]+5})`)
         let box = x.getBoundingClientRect();
+        let svgBox = document.querySelector('#map').getBoundingClientRect();
         qrElement.style.left = `${box.x + window.innerWidth/20}px`;
-        if(elementName=='school' || elementName=='rusty_can' || elementName=='crossing') qrElement.style.left = `${box.x - window.innerWidth/10}px`;
+        if(elementName=='school' || elementName=='rusty_can' || elementName=='crossing') qrElement.style.left = `${box.x - window.innerWidth/4}px`;
         // if(qrElement.style.left.split('px')[0]>window.innerWidth-200) qrElement.style.left = `${box.x - 200}px`;
         // if(qrElement.style.right.split('px')[0]<200) qrElement.style.left = `${box.x + 100}px`;
-        qrElement.style.bottom = `${box.y - window.innerWidth/10}px`;
+        qrElement.style.top = `${svgBox.top}px`;
         qrElement.style.position='absolute';
     })
 }
