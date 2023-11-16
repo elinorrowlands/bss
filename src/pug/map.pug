@@ -10,6 +10,7 @@ html(lang="en")
         script(src="./main.js" defer)
         script(src="./nav.js" defer)
         script(src="./map.js" defer)
+        style.
 
     body.about
         object#main__title.about.nav__back(type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
@@ -18,14 +19,21 @@ html(lang="en")
             
             object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
             //- ol.bar.qr__container.elements.index
-            nav.noDisplay
+            nav
                 //- include elements_list.html
-                include element1.html
-                include element2.html
-                include element3.html
-                include element4.html
-                include element5.html
-                include element6.html
+                a(href='elements/bridge/?from=map')
+                    include element1.html
+                a(href='elements/text/?from=map')
+                    include element2.html
+                a(href='elements/crossing/?from=map')
+                    include element3.html
+                a(href='elements/ripples/?from=map')
+                    include element4.html
+                a(href='elements/rusty_can/?from=map')
+                    include element5.html
+                a(href='elements/school/?from=map')
+                    include element6.html
+                    
             #qr__absolute
             
         footer
