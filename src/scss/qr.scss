@@ -64,14 +64,15 @@
 }
 
 #qr__trail{
-    filter:brightness(100%) hue-rotate(35deg) invert(10%);
+    filter:brightness(100%) hue-rotate(15deg) invert(0%);
 }
 
 .qr__container{
-    background-image:url("bg1.svg");
+    background-image:url("bg2.svg");
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
+    border-radius:10px;
 }
 
 .qr__container.elements{

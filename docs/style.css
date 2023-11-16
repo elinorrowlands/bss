@@ -262,7 +262,7 @@ li {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -530,7 +530,7 @@ section.instructions.flex.nodisplay {
 
 .qr__container.elements {
   margin: auto;
-  background-color: rgba(0, 64, 128, 0.8);
+  background-color: rgba(0, 64, 128, 0.2);
 }
 
 .index.elements {
@@ -1083,14 +1083,15 @@ canvas.text {
 }
 
 #qr__trail {
-  filter: brightness(100%) hue-rotate(35deg) invert(10%);
+  filter: brightness(100%) hue-rotate(15deg) invert(0%);
 }
 
 .qr__container {
-  background-image: url("bg1.svg");
+  background-image: url("bg2.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 10px;
 }
 
 .qr__card {
@@ -1207,6 +1208,20 @@ main.qr__container {
   background-size: cover;
 }
 
+.map__trail {
+  border-radius: 0.4rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-image: url("svg/element_painting_map2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 #backdrop {
   -webkit-user-select: none;
   user-select: none;
@@ -1260,7 +1275,6 @@ main.qr__container {
 
 /* ⚝ Uncomment to debug */
 main {
-  padding-bottom: 250px;
   color: #CCCCFF;
 }
 

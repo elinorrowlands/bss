@@ -60,6 +60,7 @@ window.addEventListener('load', () => {
         // console.log(query)
         if(id == 'element__4'){
             widget.play();
+            widget.seekTo(1);
         } else if(id=='element__6'){
             widget.pause();
         }else if(query == '.guide__circle'){
