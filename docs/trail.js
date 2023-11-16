@@ -33,6 +33,7 @@ window.addEventListener('load', () => {
         widget.getPosition(function(position) {
             
             widget.getDuration(function(duration) {
+                // console.log(duration)
                 window.soundDuration = duration;
                 percent = position * 100 / duration;
             //   console.log(position, percent);
