@@ -135,7 +135,6 @@ window.addEventListener('load',()=>{
             echo.wet.rampTo(0, 0.1);
             
             document.querySelectorAll('.bridge__sky').forEach(sky=>{
-                // console.log('sky',sky)
                 sky.style.opacity=0;
             });
             
