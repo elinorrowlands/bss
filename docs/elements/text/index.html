@@ -18,7 +18,7 @@
     <script src="../ripples/touch.js" defer="defer"></script>
     <script src="../ripples/samples_text.js" defer="defer"></script>
   </head>
-  <body><img src="reflection_edge.png" style="display:block;position:absolute;top:0; left:0;width:0px;height:0px;opacity:0;" aria-role="presentation"/>
+  <body><img src="reflection_edge.png" style="z-index:9999;display:block;position:absolute;top:0; left:0;width:0px;height:0px;opacity:0;" aria-role="presentation"/>
     <main class="fullpage ripples">
       <div class="words fullpage">
         <div class="ripples text" id="canvas"></div>
@@ -40,9 +40,10 @@
       </div>
       <div class="instructions__text">
         <p>Where is the water's edge? </p>
-        <p>Is it at the piling -- the canal's watertight wall? </p>
+        <p>Is it at the piling, the canal's watertight wall? </p>
         <p>At the skyline? </p>
-        <p>Splashed along the oar? During the mooring of a boat? </p>
+        <p>Splashed along the oar? </p>
+        <p>During the mooring of a boat? </p>
         <p>Does it exist in the reflection on the skin of the water?</p>
         <button class="button startElement allowDefault" id="nav__start">Start </button>
       </div>

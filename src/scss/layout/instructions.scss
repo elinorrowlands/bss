@@ -30,9 +30,21 @@ section.instructions{
         width:800px;
         max-width:90vw;
         margin:auto;
+        text-align: center;
+        
+        p.continue{
+            padding-top:none;
+            padding-bottom:none;
+            margin-top:none!important;
+            margin-bottom:none!important;
+            margin-block-start: none!important;
+        }
+        
     }
     
 }
+
+
 
 .instructions__text, .instructions__header{
     flex-grow: 1;
@@ -125,7 +137,8 @@ section.instructions.flex {
     
     li {
         border-radius:10px;
-        border: 0.5px solid $outline;
+        border: 0.5px solid $outline-semi;
+        
         display:inline-flex;
         margin: auto;
         left:0;
@@ -138,8 +151,8 @@ section.instructions.flex {
         align-items: center;
         vertical-align:middle;
         font-size:1.1rem;
-        font-weight:bold;
-        font-family:Arial;
+        // font-weight:bold;
+        font-family:Roboto;
         // margin-bottom: 1em;
         margin:0.5em;
         

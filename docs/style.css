@@ -397,6 +397,14 @@ section.instructions .instructions__text {
   width: 800px;
   max-width: 90vw;
   margin: auto;
+  text-align: center;
+}
+section.instructions .instructions__text p.continue {
+  padding-top: none;
+  padding-bottom: none;
+  margin-top: none !important;
+  margin-bottom: none !important;
+  margin-block-start: none !important;
 }
 
 .instructions__text, .instructions__header {
@@ -473,7 +481,7 @@ section.instructions.flex.nodisplay {
 }
 .instructions__interactions li {
   border-radius: 10px;
-  border: 0.5px solid white;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
   display: inline-flex;
   margin: auto;
   left: 0;
@@ -486,8 +494,7 @@ section.instructions.flex.nodisplay {
   align-items: center;
   vertical-align: middle;
   font-size: 1.1rem;
-  font-weight: bold;
-  font-family: Arial;
+  font-family: Roboto;
   margin: 0.5em;
 }
 .instructions__interactions li .instructions__icon {
