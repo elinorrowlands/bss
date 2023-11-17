@@ -22,12 +22,13 @@ function positionNumbers(){
         number.setAttribute('transform',`translate(${pos[0]} ${pos[1]+5})`)
         let box = x.getBoundingClientRect();
         let svgBox = document.querySelector('#map').getBoundingClientRect();
-        qrElement.style.left = `${box.x + window.innerWidth/20}px`;
-        if(elementName=='school' || elementName=='rusty_can' || elementName=='crossing') qrElement.style.left = `${box.x - window.innerWidth/4}px`;
-        // if(qrElement.style.left.split('px')[0]>window.innerWidth-200) qrElement.style.left = `${box.x - 200}px`;
-        // if(qrElement.style.right.split('px')[0]<200) qrElement.style.left = `${box.x + 100}px`;
-        qrElement.style.top = `${svgBox.top}px`;
-        qrElement.style.position='absolute';
+        
+        // qrElement.style.left = `${box.x + window.innerWidth/20}px`;
+        // if(elementName=='school' || elementName=='rusty_can' || elementName=='crossing') qrElement.style.left = `${box.x - window.innerWidth/4}px`;
+        // // if(qrElement.style.left.split('px')[0]>window.innerWidth-200) qrElement.style.left = `${box.x - 200}px`;
+        // // if(qrElement.style.right.split('px')[0]<200) qrElement.style.left = `${box.x + 100}px`;
+        // qrElement.style.top = `${svgBox.top}px`;
+        // qrElement.style.position='absolute';
     })
 }
 
@@ -38,17 +39,17 @@ const handleMarker = (e)=>{
     let elementName = elements[id.split('__')[1]].folder;
     let qrElement = document.querySelector(`li.elements__${elementName}`);
     console.log(qrElement)
-    // if(type=="end") window.location.href=`elements/${elements[element.dataset.number].folder}/index.html?from=map`;
-    if(type=="end") {
-        positionNumbers();  
-        $(`li.qr__card:not(.elements__${elementName})`).hide()
-        $(`li.qr__card.elements__${elementName}`).toggle(100);
-    }
+    if(type=="end") window.location.href=`elements/${elements[element.dataset.number].folder}/index.html?from=map`;
+    // if(type=="end") {
+    //     positionNumbers();  
+    //     $(`li.qr__card:not(.elements__${elementName})`).hide()
+    //     $(`li.qr__card.elements__${elementName}`).toggle(100);
+    // }
 }
 
 
 window.addEventListener('load',()=>{
-    $('li.qr__card').hide();
+    // $('li.qr__card').hide();
     window.onresize = positionNumbers;
     positionNumbers();
     setTimeout(positionNumbers, 1000);

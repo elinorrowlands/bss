@@ -141,6 +141,36 @@ canvas#overlay {
     // background-color:$background-text;
     font-size:1.5rem;
     border-radius:0.4rem;
+    
+  }
+  
+  @media screen and (max-width: 600px) {
+    .textBlock{
+      // background:red;
+      margin-left:none!important;
+      margin-right:none!important;
+      padding-left: none!important;
+      padding-right:none!important;  
+    }
+    .bar {
+      // display: flex;
+      // flex-basis: 20%;
+      // flex-direction: row;
+      // justify-content: space-around;
+      padding: none!important;
+      margin: none!important;
+      // flex-wrap: wrap;
+    } 
+    .qr__container.elements {
+      width:100%!important;
+      // display: flex;
+      // flex-basis: 20%;
+      // flex-direction: row;
+      // justify-content: space-around;
+      padding: none!important;
+      margin: none!important;
+      // flex-wrap: wrap;
+    } 
   }
   
 .map__block.map__block{

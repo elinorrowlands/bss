@@ -1054,9 +1054,9 @@ canvas.text {
 }
 
 .qr__text {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 100;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   margin: 0;
   padding: 0;
   opacity: 1;
@@ -1202,11 +1202,10 @@ main.qr__container {
   border-radius: 0.4rem;
   position: relative;
   width: 100%;
-  height: 100%;
   display: block;
   top: 0;
   left: 0;
-  background-image: url("svg/element_painting_map.svg");
+  background-image: url("svg/map__bg_main-01.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1373,6 +1372,23 @@ button.nav__info {
   border-radius: 0.4rem;
 }
 
+@media screen and (max-width: 600px) {
+  .textBlock {
+    margin-left: none !important;
+    margin-right: none !important;
+    padding-left: none !important;
+    padding-right: none !important;
+  }
+  .bar {
+    padding: none !important;
+    margin: none !important;
+  }
+  .qr__container.elements {
+    width: 100% !important;
+    padding: none !important;
+    margin: none !important;
+  }
+}
 .map__block.map__block {
   padding: none !important;
   margin: none !important;

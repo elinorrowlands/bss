@@ -10,17 +10,19 @@ html(lang="en")
         script(src="./main.js" defer)
         script(src="./nav.js" defer)
         script(src="./map.js" defer)
-        style.
 
     body.about
         object#main__title.about.nav__back(type="image/svg+xml" data="svg/bss_title_small.svg" role="banner")
-        main.map__block.textBlock
+        main.map__november
             //- #backdrop__map
             
             object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
             //- ol.bar.qr__container.elements.index
-            nav
-                //- include elements_list.html
+                    
+            #qr__absolute
+        nav
+            //- include elements_list.html
+            ol.bar.qr__container.elements.index
                 a(href='elements/bridge/?from=map')
                     include element1.html
                 a(href='elements/text/?from=map')
@@ -33,8 +35,6 @@ html(lang="en")
                     include element5.html
                 a(href='elements/school/?from=map')
                     include element6.html
-                    
-            #qr__absolute
             
         footer
             include footer  

@@ -4,7 +4,6 @@ html(lang="en")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.3.1/balancetext.min.js")
         script(src="./main.js" defer)
         script(src="./front.js" defer)
-        //- script(src="./map.js" defer)
         title Biodivergent Sites and Sounds
         style.
           
@@ -51,6 +50,10 @@ html(lang="en")
             p {
                 user-select:auto;
             }
+            //- .qr__container{
+            //-     display:none;
+            //- }
+            
             
             
             
@@ -63,7 +66,6 @@ html(lang="en")
             img.front__water.alt2(src="bg0_lo.png" aria-hidden="true")
             
             .infoText.textBlock        
-                p Thursday 16th November: we are currently in the process of updating this website before the launch on Friday. Some pages may not appear properly while this takes place. 
                 p <b>Biodivergent Sites & Sounds</b> is an autoethnographic investigation of place, of waterways, and of autism as a cultural identity. 
                 p An autistic-led immersive and accessible experience for audiences to experience nature and to engage in the preservation of Harlesden Canal.
 
@@ -93,7 +95,11 @@ html(lang="en")
                 //-     button.button Map
                 a.allowDefault(href="about.html")
                     button.button About the project
+                //- button.button(onlick="$('.qr__container').toggle(1000)") ELEMENTS
             //- object#map.map.map__main.svg-import(data='svg/map_B.svg' type='image/svg+xml')
+            
+            
+            //- include elements_list.html
             
             //- .nav__icon
             //-     a(href="about.html")
