@@ -17,6 +17,7 @@
     opacity:1;
     align-self:center;
     color:$number;
+    text-decoration: none;
     // text-shadow: 1px 1px 0px #aaa;
     
 }
@@ -97,6 +98,7 @@
     padding:1em;
     // margin:none;
     transition: all 0.1s ease-in-out;
+    text-decoration: none;
 }
 
 .qr__card:hover{

@@ -1045,6 +1045,7 @@ canvas.text {
   opacity: 1;
   align-self: center;
   color: #9EC1CF;
+  text-decoration: none;
 }
 
 .qr__number.high-contrast {
@@ -1114,6 +1115,7 @@ canvas.text {
   border: 2px solid darkblue;
   padding: 1em;
   transition: all 0.1s ease-in-out;
+  text-decoration: none;
 }
 
 .qr__card:hover {
