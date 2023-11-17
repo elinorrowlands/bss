@@ -36,6 +36,7 @@ const assignStartButton = function(){
             console.log('🟢 assignStart from mainjs -- after tone.loaded')
             button.classList.remove('waiting');
             button.innerHTML = 'Start';
+            button.removeEventListener('click', loadingMessage);
             button.addEventListener('click', startElement);
         })
     });
