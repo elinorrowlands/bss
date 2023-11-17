@@ -223,6 +223,11 @@ li {
   font-family: "Crimson Text", serif;
   border: 0.5px dashed white;
 }
+.button#nav__start.waiting:hover {
+  opacity: 0.3;
+  border: 1px dashed white;
+  background-color: red;
+}
 
 .button:hover {
   background-color: white;
