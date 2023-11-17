@@ -20,14 +20,16 @@
         "layout/instructions",
         "layout/loading";
 
-@import "elements/index.scss",
-        "elements/bridge.scss",
-        "elements/ripples.scss",
-        "elements/heart.scss",
-        "elements/mix.scss",
-        "elements/words.scss";
+@import "elements/index",
+        "elements/bridge",
+        "elements/ripples",
+        "elements/heart",
+        "elements/mix",
+        "elements/words";
 
 @import "qr", "map";
+
+@import "mobile";
 
 /* ⚝ Uncomment to debug */
 * {
@@ -68,7 +70,6 @@ path {
 h1 {
     font-size: 4rem;
     font-family: Crimson Text;
-    // background-color: $background2;
     
     &.padded{
       padding: 1em;
@@ -76,9 +77,9 @@ h1 {
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-family: Crimson Text;
-  // background-color: $background2;
+  
   
   &.padded{
     padding: 1em;
@@ -87,8 +88,6 @@ h2 {
 
 p {
     font-size: 20px;
-    // font-family: Crimson Text;
-    // background-color: $background2;
     // padding: 1em;
 }
 
@@ -148,46 +147,14 @@ canvas#overlay {
     display:inline-block;
     padding:0.5em 1em;
     margin:1em;
-    // background-color:$background-text;
     font-size:1.5rem;
     border-radius:0.4rem;
     color:#CCCCFF;
+    // background-color:$background-text;
     
   }
   
-  @media only screen and (max-width: 600px) {
-    .textBlock{
-      // background:red;
-      padding:none!important;
-      margin-left:none!important;
-      margin-right:none!important;
-      padding-left: none!important;
-      padding-right:none!important;  
-      p{
-        font-size: 18px;
-      }
-      
-    }
-    .bar {
-      // display: flex;
-      // flex-basis: 20%;
-      // flex-direction: row;
-      // justify-content: space-around;
-      padding: none!important;
-      margin: none!important;
-      // flex-wrap: wrap;
-    } 
-    .qr__container.elements {
-      width:100%!important;
-      // display: flex;
-      // flex-basis: 20%;
-      // flex-direction: row;
-      // justify-content: space-around;
-      padding: none!important;
-      margin: none!important;
-      // flex-wrap: wrap;
-    } 
-  }
+  
   
 .map__block.map__block{
     padding:none!important;

@@ -22,7 +22,7 @@ This list is for internal planning and does not represent current features:
 ## Credits
 - Lead artist - Elinor Rowlands
 - Creative Technologist - Charles Matthews
-- Musicians - Jo-anne Cox, Dee Fry, and Rdyer
+- Musicians - Jo‑anne Cox, Dee Fry, and Rdyer
 - Art Publication printed and published by - Gemma Abbott (Unfamiliars)
 - Interim Project Manager - Lucie Bickerdike (Feb - June 2023)
 - Project Manager - Nick Lawford (July 2023 - January 2024)

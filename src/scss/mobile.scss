@@ -1,0 +1,37 @@
+/* ⚝ Mobile 📱 */
+  
+@media only screen and (max-width: 600px) {
+  .textBlock{
+    // background:red;
+    padding:none!important;
+    margin-left:none!important;
+    margin-right:none!important;
+    padding-left: none!important;
+    padding-right:none!important;  
+    
+    p{
+      font-size: 18px;
+    }
+    
+  }
+  
+  .bar {
+    // display: flex;
+    // flex-basis: 20%;
+    // flex-direction: row;
+    // justify-content: space-around;
+    padding: none!important;
+    margin: none!important;
+    // flex-wrap: wrap;
+  } 
+  .qr__container.elements {
+    width:100%!important;
+    // display: flex;
+    // flex-basis: 20%;
+    // flex-direction: row;
+    // justify-content: space-around;
+    padding: none!important;
+    margin: none!important;
+    // flex-wrap: wrap;
+  } 
+}

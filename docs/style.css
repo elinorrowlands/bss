@@ -369,7 +369,6 @@ footer.instructions {
   width: 800px;
   max-width: 90vw;
   margin: 0 auto !important;
-  text-wrap: balance;
   text-align: left;
 }
 
@@ -1275,6 +1274,28 @@ main.qr__container {
   opacity: 0.3;
 }
 
+/* ⚝ Mobile 📱 */
+@media only screen and (max-width: 600px) {
+  .textBlock {
+    padding: none !important;
+    margin-left: none !important;
+    margin-right: none !important;
+    padding-left: none !important;
+    padding-right: none !important;
+  }
+  .textBlock p {
+    font-size: 18px;
+  }
+  .bar {
+    padding: none !important;
+    margin: none !important;
+  }
+  .qr__container.elements {
+    width: 100% !important;
+    padding: none !important;
+    margin: none !important;
+  }
+}
 /* ⚝ Uncomment to debug */
 main {
   color: #CCCCFF;
@@ -1313,7 +1334,7 @@ h1.padded {
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-family: Crimson Text;
 }
 h2.padded {
@@ -1385,27 +1406,6 @@ button.nav__info {
   color: #CCCCFF;
 }
 
-@media only screen and (max-width: 600px) {
-  .textBlock {
-    padding: none !important;
-    margin-left: none !important;
-    margin-right: none !important;
-    padding-left: none !important;
-    padding-right: none !important;
-  }
-  .textBlock p {
-    font-size: 18px;
-  }
-  .bar {
-    padding: none !important;
-    margin: none !important;
-  }
-  .qr__container.elements {
-    width: 100% !important;
-    padding: none !important;
-    margin: none !important;
-  }
-}
 .map__block.map__block {
   padding: none !important;
   margin: none !important;

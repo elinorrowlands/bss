@@ -27,42 +27,46 @@ body.fullpage.bridge
         img#bridge__sky4.svg.bridge.bridge__sky(src='svg/bridge__sky4.png')
     include toolbar
             
-    
-    section.instructions.flex.scrollable
-        .instructions__header
-            h1.instructions - 1 - 
-        .instructions__number
-            h1.instructions Bridge
-        .instructions__text
-            :markdown-it
-                When a duck swims under a bridge, 
+    #instruction__layer
+        section.instructions.flex.scrollable
+            .instructions__header
+                h1.instructions - 1 - 
+            .instructions__number
+                h1.instructions Bridge
+            .instructions__text
+                :markdown-it
+                    When a duck swims under a bridge, 
+                    
+                    its quacks echo 
+                    
+                    across the landscape, 
+                    
+                    sky, waterways and stars. 
+                    
+                    The space of its greeting exists 
+                    
+                    in all of the environment.
+            .instructions__button
+                button.button.startElement.allowDefault#nav__start Start
+            .instructions__interactions 
                 
-                its quacks echo across the landscape, 
+                h2.instructions__heading Interactions
+                .break
+                ul
+                    include ../interactions/single_click    
+                    include ../interactions/explore
+                //- include ../interactions/drag_circle
+                //- include ../interactions/touch_hold
+                //- include ../interactions/multitouch
                 
-                sky, waterways and stars. 
+                .break
+                h2.instructions__heading Changes
+                .break
+                ul 
+                    include ../interactions/sound
+                    include ../interactions/colour
+                    include ../interactions/brightness
+                //- include ../interactions/movement
                 
-                The space of its greeting exists in all of the environment.
-        .instructions__button
-            button.button.startElement.allowDefault#nav__start Start
-        .instructions__interactions 
-            
-            h2.instructions__heading Interactions
-            .break
-            ul
-                include ../interactions/single_click    
-                include ../interactions/explore
-            //- include ../interactions/drag_circle
-            //- include ../interactions/touch_hold
-            //- include ../interactions/multitouch
-            
-            .break
-            h2.instructions__heading Changes
-            .break
-            ul 
-                include ../interactions/sound
-                include ../interactions/colour
-                include ../interactions/brightness
-            //- include ../interactions/movement
-            
-        include ../footer__back
+            include ../footer__back
           

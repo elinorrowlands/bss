@@ -32,7 +32,7 @@ function addButtons(){
     infoButton.addEventListener('click',()=>{
         $('section.instructions').show(1000);
         // document.querySelector('section.instructions').classList.remove('nodisplay');
-        document.querySelector('section.instructions').style.display = 'flex';
+        // document.querySelector('section.instructions').style.display = 'flex';
         // document.querySelectorAll('.awaitStart').forEach(element=>{
         //     element.classList.add('transparent')
         // });
