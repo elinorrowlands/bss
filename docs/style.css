@@ -210,13 +210,18 @@ li {
   text-decoration: none;
   text-rendering: optimizeLegibility;
   text-transform: uppercase;
-  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
+  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, opacity 1s border 2s;
   max-width: 500px;
   margin: 2em;
 }
 .button#nav__start {
   font-size: 2rem;
   font-family: "Crimson Text", serif;
+}
+.button#nav__start.waiting {
+  opacity: 0.4;
+  font-family: "Crimson Text", serif;
+  border: 0.5px dashed white;
 }
 
 .button:hover {

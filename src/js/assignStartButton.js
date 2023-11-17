@@ -29,10 +29,12 @@ const assignStartButton = function(){
     touch.unlisten();
     document.querySelectorAll('button.startElement').forEach(button=>{
         button.innerHTML = 'Loading ...';
+        button.classList.add('waiting');
         console.log('🟢 assignStart from mainjs -- before tone.loaded')
         button.addEventListener('click', loadingMessage)
         Tone.loaded().then(()=>{
             console.log('🟢 assignStart from mainjs -- after tone.loaded')
+            button.classList.remove('waiting');
             button.innerHTML = 'Start';
             button.addEventListener('click', startElement);
         })
