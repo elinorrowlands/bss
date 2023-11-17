@@ -2,7 +2,7 @@
 // note: imports should be changed to @use where possible
 
 // @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Rubik:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Roboto:wght@700&family=Rubik:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Gothic+A1&family=Kanit:wght@100;200&family=Nunito:wght@200&family=Roboto:wght@300;700&family=Rubik:wght@900&display=swap');
 
 @import "abstracts/colours";
 
@@ -75,6 +75,16 @@ h1 {
     }
 }
 
+h2 {
+  font-size: 3.2rem;
+  font-family: Crimson Text;
+  // background-color: $background2;
+  
+  &.padded{
+    padding: 1em;
+  }
+}
+
 p {
     font-size: 20px;
     // font-family: Crimson Text;
@@ -141,16 +151,22 @@ canvas#overlay {
     // background-color:$background-text;
     font-size:1.5rem;
     border-radius:0.4rem;
+    color:#CCCCFF;
     
   }
   
-  @media screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     .textBlock{
       // background:red;
+      padding:none!important;
       margin-left:none!important;
       margin-right:none!important;
       padding-left: none!important;
       padding-right:none!important;  
+      p{
+        font-size: 18px;
+      }
+      
     }
     .bar {
       // display: flex;
