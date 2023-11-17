@@ -9,6 +9,8 @@ function startElement(){
     $('main').show()
     $('#infoButton').show();
     document.querySelector('#infoButton').style.opacity = 1;
+    document.querySelector('.banner__background').style.opacity = 0;
+    console.log('startbutton')
     touch.listen();
     window.scrollTo(0,0);
     Tone.loaded().then(window.start);

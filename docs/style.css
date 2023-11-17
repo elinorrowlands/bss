@@ -216,6 +216,7 @@ li {
 }
 .button#nav__start {
   font-size: 2rem;
+  font-family: "Crimson Text", serif;
 }
 
 .button:hover {
@@ -404,7 +405,7 @@ section.instructions .instructions__text {
 
 .instructions__header {
   text-align: center !important;
-  padding-top: 3em;
+  padding-top: 5em;
 }
 
 .instructions__number {
@@ -1505,12 +1506,27 @@ button.nav__info {
 }
 
 .banner__title {
+  transition: all 1s ease;
+  background-repeat: no-repeat;
   display: flex;
   width: 100vw;
   justify-content: space-between;
   position: absolute;
   top: 0;
   margin: none;
+}
+
+.banner__background {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  padding: none;
+  margin: none;
+  z-index: 2999;
+  transition: all 3s ease;
 }
 
 main.front {

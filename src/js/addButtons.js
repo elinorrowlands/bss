@@ -1,10 +1,14 @@
 function addButtons(){
     let urlParams = new URLSearchParams(window.location.search);
     
-    if(urlParams.has('standalone') || document.querySelector(".nav__back")) return;
+    if (urlParams.has('standalone') || document.querySelector(".nav__back")) return;
     
     let container = document.createElement("banner");
     container.classList.add('banner__title');
+    let bgSVG = document.createElement("img");
+    bgSVG.src = "../../svg/wave4.svg";
+    bgSVG.classList.add('banner__background');
+    container.appendChild(bgSVG);
     
     let blank = document.createElement("div");
     blank.classList.add('blank');
@@ -15,13 +19,13 @@ function addButtons(){
     let backButton = document.createElement("button");
     
     // backButton.innerHTML = "Biodivergent Sites and Sounds";
-    backButton.innerHTML = `<img class="title__back" src="../../svg/bss_title_small.svg" alt="Biodivergent Sites and Sounds" />` 
+    backButton.innerHTML = `<a href="https://elinorrowlands.github.io/bss/${homePage}"><img class="title__back" src="../../svg/bss_title_small.svg" alt="Biodivergent Sites and Sounds" /></a>` 
     backButton.id = "backButton";
     backButton.classList.add('title__button','nav__back', 'allowDefault')
     
-    backButton.addEventListener('click',()=>{
-        window.location = `https://elinorrowlands.github.io/bss/${homePage}`
-    });
+    // backButton.addEventListener('click',()=>{
+    //     window.location = `https://elinorrowlands.github.io/bss/${homePage}`
+    // });
 
 
     let infoButton = document.createElement("button");
@@ -31,6 +35,7 @@ function addButtons(){
     infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" style="opacity:0.5;" alt="Help" />`
     infoButton.addEventListener('click',()=>{
         $('section.instructions').show(1000);
+        document.querySelector('.banner__background').style.opacity = 1;
         // document.querySelector('section.instructions').classList.remove('nodisplay');
         // document.querySelector('section.instructions').style.display = 'flex';
         // document.querySelectorAll('.awaitStart').forEach(element=>{
