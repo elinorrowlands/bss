@@ -404,7 +404,7 @@ section.instructions .instructions__text {
 
 .instructions__header {
   text-align: center !important;
-  padding-top: 2em;
+  padding-top: 3em;
 }
 
 .instructions__number {
@@ -413,6 +413,10 @@ section.instructions .instructions__text {
 
 .instructions__button {
   text-align: center;
+}
+
+#infoButton {
+  margin-right: 5px;
 }
 
 .startElement {
@@ -483,10 +487,10 @@ section.instructions.flex.nodisplay {
   font-size: 1.1rem;
   font-weight: bold;
   font-family: Arial;
-  margin: 1em;
+  margin: 0.5em;
 }
 .instructions__interactions li .instructions__icon {
-  padding-left: 1em;
+  padding-left: 0em;
 }
 .instructions__interactions li span {
   padding-left: 0.5em;
@@ -496,6 +500,8 @@ section.instructions.flex.nodisplay {
 .instructions__heading {
   width: 100%;
   max-width: 800px;
+  margin-top: 1em;
+  margin-bottom: 0.1em;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -1284,7 +1290,7 @@ main.qr__container {
     padding-right: none !important;
   }
   .textBlock p {
-    font-size: 18px;
+    font-size: 16px;
   }
   .bar {
     padding: none !important;
@@ -1342,7 +1348,7 @@ h2.padded {
 }
 
 p {
-  font-size: 20px;
+  font-size: 19px;
 }
 
 path {

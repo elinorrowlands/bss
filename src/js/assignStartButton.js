@@ -7,6 +7,7 @@ function startElement(){
     });
     
     $('main').show()
+    $('#infoButton').show();
     document.querySelector('#infoButton').style.opacity = 1;
     touch.listen();
     window.scrollTo(0,0);

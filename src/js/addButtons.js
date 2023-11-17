@@ -28,7 +28,7 @@ function addButtons(){
     infoButton.id="infoButton";
     infoButton.classList.add('nav__info', 'allowDefault');
     // infoButton.innerHTML = "?";
-    infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" alt="Help" />`
+    infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" style="opacity:0.5;" alt="Help" />`
     infoButton.addEventListener('click',()=>{
         $('section.instructions').show(1000);
         // document.querySelector('section.instructions').classList.remove('nodisplay');
@@ -38,12 +38,14 @@ function addButtons(){
         // });
         $('main').hide(1000);
         // document.querySelector('#infoButton').classList.add('transparent');
-        document.querySelector('#infoButton').style.opacity=0.5;
+        // document.querySelector('#infoButton').style.opacity=0.5;
+        $('#infoButton').hide();
     });
     
     container.appendChild(backButton);
     container.appendChild(blank);
     container.appendChild(infoButton);
+    $('#infoButton').hide();
     document.body.appendChild(container);
     if(!document.querySelector('.instructions__header')) return;
     // if(document.querySelector('.instructions__header').getBoundingClientRect().top<0) {

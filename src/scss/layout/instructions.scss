@@ -40,7 +40,7 @@ section.instructions{
 
 .instructions__header{
     text-align:center!important;
-    padding-top:2em;
+    padding-top:3em;
 }
 
 .instructions__number{
@@ -49,6 +49,10 @@ section.instructions{
 
 .instructions__button{
     text-align:center;
+}
+
+#infoButton{
+    margin-right:5px;
 }
 
 .startElement{
@@ -137,10 +141,10 @@ section.instructions.flex {
         font-weight:bold;
         font-family:Arial;
         // margin-bottom: 1em;
-        margin:1em;
+        margin:0.5em;
         
         .instructions__icon{
-            padding-left:1em;
+            padding-left:0em;
         }
         
         span {
@@ -153,6 +157,8 @@ section.instructions.flex {
 .instructions__heading{
     width: 100%;
     max-width:800px;
+    margin-top:1em;
+    margin-bottom:0.1em;
     margin-left:auto;
     margin-right:auto;
     left:0;
