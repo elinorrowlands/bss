@@ -24,6 +24,8 @@ html(lang="en")
                 p For those of you who are able, we invite you to journey along the canal towpath and listen to this soundscape, created by Elinor Rowlands in collaboration with Biodivergent Sites & Sounds artists, partners and participants.
 
                 p This soundscape is designed to be listened to as you walk or roll between the Grand Union Community Hub (the venue for our launch event in November 2023) and Acton Lane Bridge (Harlesden).
+                
+                p The soundscape lasts 53 minutes. Press play on the SoundCloud player below to begin listening.
                 //- iframe(width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1638593142&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true")
                 //- div(style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;")
                 //-     a(href="https://soundcloud.com/elinor-clare-rowlands" title="Elinor Clare Rowlands" target="_blank" style="color: #cccccc; text-decoration: none;") Elinor Clare Rowlands
@@ -36,7 +38,7 @@ html(lang="en")
         footer
             include footer  
         script.
-            if(window.touch) touch.unlisten();
+            //- if(window.touch) touch.unlisten();
             
             document.querySelectorAll('.nav__back').forEach((el)=>{
                 el.addEventListener('click', ()=>{
