@@ -1535,6 +1535,9 @@ button.nav__info {
   z-index: 2999;
   transition: all 3s ease;
 }
+.banner__background.muted {
+  display: none;
+}
 
 main.front {
   padding-bottom: 200px;

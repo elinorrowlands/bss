@@ -35,6 +35,7 @@ function addButtons(){
     infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" style="opacity:0.5;" alt="Help" />`
     infoButton.addEventListener('click',()=>{
         $('section.instructions').show(1000);
+        document.querySelector('.banner__background').classList.remove('muted');
         document.querySelector('.banner__background').style.opacity = 1;
         // document.querySelector('section.instructions').classList.remove('nodisplay');
         // document.querySelector('section.instructions').style.display = 'flex';

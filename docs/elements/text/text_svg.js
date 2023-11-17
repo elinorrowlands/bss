@@ -5,7 +5,7 @@ const backdrop = new Tone.Player('./backdrop.mp3').connect(filter).toDestination
 backdrop.loop = true;
 backdrop.volume.value = '-12';
 player.connect(echo);
-
+console.log('text_svg.js')
 /**
  * Loading screen to break out
  */

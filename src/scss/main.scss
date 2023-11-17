@@ -286,6 +286,9 @@ canvas#overlay {
   margin:none;
   z-index:2999;
   transition:all 3s ease;
+  &.muted{
+    display:none;
+  }
 }
 
 main.front{

@@ -64,7 +64,7 @@ export default function generateBlocks(text){
         force.charge(-1000*value);
         window.gravity+=0.001;
         if(window.gravity>0.1) window.gravity=0.01;
-        console.log('gravity', window.gravity)
+        // console.log('gravity', window.gravity)
         force.gravity(window.gravity)
         if(window.rippleScene){
             rippleScene.ripples.mouse.velocity = {x:1, y:1};
