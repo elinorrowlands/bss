@@ -14,7 +14,7 @@ const Pickup = (e, mix, captionObject) =>{
     let container = document.querySelector('main') || document.body;
     if(type == 'start' || type == 'enter'){
         if(!window.playFlag){
-            mix.backdrop.start();
+            Tone.start().then(()=>mix.backdrop.start());
             window.playFlag = true;
         }
         
