@@ -1554,4 +1554,32 @@ main.front {
   padding-top: 200px;
 }
 
+.consent {
+  font-family: Crimson Text;
+  background-color: navy;
+  border: 2px solid #666666;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  padding: 2em;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 80vw;
+  font-size: 1.1rem;
+  font-family: Roboto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.consent button {
+  font-size: 1.1rem;
+  font-family: Roboto;
+  background-color: rgba(0, 0, 128, 0.5);
+  border: 1px solid #666666;
+  border-radius: 10px;
+  padding: 0.5em;
+  cursor: pointer;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

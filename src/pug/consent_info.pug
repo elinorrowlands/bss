@@ -1,5 +1,26 @@
+.consent(style="display:none;")
+    p This website uses cookies to improve your experience and to help us report to our funders. 
+    button.allowDefault ACCEPT
+    button.allowDefault DECLINE
+    hr
+    details
+        summary MORE INFORMATION
+        p The website uses a minimal build of Google Analytics, a service which transmits website traffic data to Google servers in the United States and allows us to notice trends to improve the user experience on our website. 
+        p This processes personal data such as: the unique User ID set by Google Analytics, the date and time, the title of the page being viewed, the URL of the page being viewed, the URL of the page that was viewed prior to the current page, the screen resolution, the time in local timezone, the files that were clicked on and downloaded, the links clicked on to an outside domain, the type of device, and the country, region, and city.
 
-h1 Statistics
-p The website uses a minimal build of Google Analytics, a service which transmits website traffic data to Google servers in the United States and allows us to notice trends to improve the user experience on our website. This minimal build processes personal data such as: the unique User ID set by Google Analytics, the date and time, the title of the page being viewed, the URL of the page being viewed, the URL of the page that was viewed prior to the current page, the screen resolution, the time in local timezone, the files that were clicked on and downloaded, the links clicked on to an outside domain, the type of device, and the country, region, and city.
-
-p You may opt out of this tracking at any time by activating the “Do Not Track” setting in your browser.
+        p You may opt out of this tracking at any time by activating the “Do Not Track” setting in your browser.
+        
+    script.
+        document.querySelectorAll('.consent button').forEach(x=>{
+            x.addEventListener('click', function(e){
+            if(e.target.textContent === 'ACCEPT'){
+                showConsentUI(true);
+            } else {
+                showConsentUI(false);
+                
+            }
+            document.querySelectorAll('.consent').forEach((el)=>{
+                el.style.display = 'none';
+            })
+        })
+        });

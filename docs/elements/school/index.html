@@ -6,11 +6,54 @@
     <title>BSS: School</title><!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEV5M9N4V0"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        
+        function gtag(){dataLayer.push(arguments);}
+        
+        
+        var consent = localStorage && localStorage.getItem('consent');
+        console.log(localStorage && localStorage.getItem('consent'));
+        if (consent === 'granted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+            });
+        } else {
+            gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+            });
+            gtag('set', 'allow_google_signals', false);
+            gtag('js', new Date());
+            window.addEventListener('load', function() {
+                document.querySelectorAll('.consent').forEach((el)=>{
+                    el.style.display = 'block';
+                })
+            });
+        }
       
       gtag('config', 'G-VEV5M9N4V0');
+      
+        function showConsentUI(consentGiven) {
+            console.log(consentGiven);
+            //- var consentGiven = confirm("We use cookies to improve your experience. Do you accept?");
+            if (consentGiven) {
+            // User accepted, update consent settings
+            localStorage && localStorage.setItem('consent', 'granted');
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            } else {
+            // User declined, update consent settings
+            localStorage && localStorage.setItem('consent', 'denied');
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+            document.querySelectorAll('.consent').forEach((el)=>{
+                el.style.display = 'none';
+            })
+        }
     </script>
     <link rel="stylesheet" href="../../style.css">
     <script src="../../main.js" defer></script>
