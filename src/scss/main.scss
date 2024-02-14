@@ -296,13 +296,19 @@ main.front{
   padding-top:200px;
 }
 
+.greyed{
+  // opacity:0.3;
+  filter:brightness(20%) grayscale(100%);
+  transition: filter 1s;
+}
+
 .consent{
   font-family: Crimson Text;
   background-color:$background2;
   border: 2px solid $outline-grey;
   border-radius: 10px;
   display:none;
-  position:absolute;
+  position:fixed;
   top: 100px;
   padding: 2em;
   margin: auto;
@@ -313,6 +319,7 @@ main.front{
   font-family: Roboto;
   // box-shadow: inset 0 0 5px 5px white, 0 0 5px 5px black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Subtle dark box shadow
+  z-index: 99999999;
   
   
   // height:100px;

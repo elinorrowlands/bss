@@ -1554,13 +1554,18 @@ main.front {
   padding-top: 200px;
 }
 
+.greyed {
+  filter: brightness(20%) grayscale(100%);
+  transition: filter 1s;
+}
+
 .consent {
   font-family: Crimson Text;
   background-color: navy;
   border: 2px solid #666666;
   border-radius: 10px;
   display: none;
-  position: absolute;
+  position: fixed;
   top: 100px;
   padding: 2em;
   margin: auto;
@@ -1570,6 +1575,7 @@ main.front {
   font-size: 1.1rem;
   font-family: Roboto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 99999999;
 }
 .consent button {
   font-size: 1.1rem;

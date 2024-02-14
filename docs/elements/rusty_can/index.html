@@ -10,6 +10,7 @@
         
         
         var consent = localStorage && localStorage.getItem('consent');
+        var consentHasBeenSet = localStorage && localStorage.getItem('consentHasBeenSet');
         console.log(localStorage && localStorage.getItem('consent'));
         if (consent === 'granted') {
             gtag('consent', 'update', {
@@ -17,17 +18,21 @@
                 'analytics_storage': 'granted'
             });
         } else {
-            gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied'
-            });
-            gtag('set', 'allow_google_signals', false);
-            gtag('js', new Date());
-            window.addEventListener('load', function() {
-                document.querySelectorAll('.consent').forEach((el)=>{
-                    el.style.display = 'block';
-                })
-            });
+            if(!localStorage.getItem('consentHasBeenSet')){
+                gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+                });
+                gtag('set', 'allow_google_signals', false);
+                gtag('js', new Date());
+                window.addEventListener('load', function() {
+                    document.querySelectorAll('.consent').forEach((el)=>{
+                        el.style.display = 'block';
+                    })
+                if(document.querySelectorAll('.consent').length > 0) document.querySelectorAll('main,#instruction__layer').forEach(x=>x.classList.add('greyed'));    
+                });
+            }
+            
         }
       
       gtag('config', 'G-VEV5M9N4V0');
@@ -35,6 +40,7 @@
         function showConsentUI(consentGiven) {
             //- console.log(consentGiven);
             //- var consentGiven = confirm("We use cookies to improve your experience. Do you accept?");
+            localStorage.setItem('consentHasBeenSet', true);
             if (consentGiven) {
             // User accepted, update consent settings
             localStorage && localStorage.setItem('consent', 'granted');
@@ -51,6 +57,7 @@
             document.querySelectorAll('.consent').forEach((el)=>{
                 el.style.display = 'none';
             })
+            document.querySelectorAll('main,#instruction__layer').forEach(x=>x.classList.remove('greyed'));
         }
     </script>
     <meta charset="UTF-8">

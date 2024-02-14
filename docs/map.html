@@ -9,6 +9,7 @@
         
         
         var consent = localStorage && localStorage.getItem('consent');
+        var consentHasBeenSet = localStorage && localStorage.getItem('consentHasBeenSet');
         console.log(localStorage && localStorage.getItem('consent'));
         if (consent === 'granted') {
             gtag('consent', 'update', {
@@ -16,17 +17,21 @@
                 'analytics_storage': 'granted'
             });
         } else {
-            gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied'
-            });
-            gtag('set', 'allow_google_signals', false);
-            gtag('js', new Date());
-            window.addEventListener('load', function() {
-                document.querySelectorAll('.consent').forEach((el)=>{
-                    el.style.display = 'block';
-                })
-            });
+            if(!localStorage.getItem('consentHasBeenSet')){
+                gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+                });
+                gtag('set', 'allow_google_signals', false);
+                gtag('js', new Date());
+                window.addEventListener('load', function() {
+                    document.querySelectorAll('.consent').forEach((el)=>{
+                        el.style.display = 'block';
+                    })
+                if(document.querySelectorAll('.consent').length > 0) document.querySelectorAll('main,#instruction__layer').forEach(x=>x.classList.add('greyed'));    
+                });
+            }
+            
         }
       
       gtag('config', 'G-VEV5M9N4V0');
@@ -34,6 +39,7 @@
         function showConsentUI(consentGiven) {
             //- console.log(consentGiven);
             //- var consentGiven = confirm("We use cookies to improve your experience. Do you accept?");
+            localStorage.setItem('consentHasBeenSet', true);
             if (consentGiven) {
             // User accepted, update consent settings
             localStorage && localStorage.setItem('consent', 'granted');
@@ -50,6 +56,7 @@
             document.querySelectorAll('.consent').forEach((el)=>{
                 el.style.display = 'none';
             })
+            document.querySelectorAll('main,#instruction__layer').forEach(x=>x.classList.remove('greyed'));
         }
     </script>
     <meta charset="UTF-8"/>
@@ -4258,6 +4265,34 @@
               window.location.href="index.html";
           })
       })
+      
     </script>
   </body>
+  <div class="consent" style="display:none;">
+    <p>This website uses cookies to improve your experience and to help us report to our funders. </p>
+    <button class="allowDefault">ACCEPT</button>
+    <button class="allowDefault">DECLINE</button>
+    <hr/>
+    <details>
+      <summary>MORE INFORMATION</summary>
+      <p>The website uses a minimal build of Google Analytics, a service which transmits website traffic data to Google servers in the United States and allows us to notice trends to improve the user experience on our website. </p>
+      <p>This processes personal data such as: the unique User ID set by Google Analytics, the date and time, the title of the page being viewed, the URL of the page being viewed, the URL of the page that was viewed prior to the current page, the screen resolution, the time in local timezone, the files that were clicked on and downloaded, the links clicked on to an outside domain, the type of device, and the country, region, and city.</p>
+      <p>You may opt out of this tracking at any time by activating the “Do Not Track” setting in your browser.</p>
+    </details>
+    <script>
+      document.querySelectorAll('.consent button').forEach(x=>{
+          x.addEventListener('click', function(e){
+          if(e.target.textContent === 'ACCEPT'){
+              showConsentUI(true);
+          } else {
+              showConsentUI(false);
+              
+          }
+          document.querySelectorAll('.consent').forEach((el)=>{
+              el.style.display = 'none';
+          })
+      })
+      });
+    </script>
+  </div>
 </html>
