@@ -298,7 +298,7 @@ main.front{
 
 .greyed{
   // opacity:0.3;
-  filter:brightness(20%) grayscale(100%);
+  filter:brightness(20%) saturate(50%)!important;
   transition: filter 1s;
 }
 

@@ -13,10 +13,10 @@ html(lang="en")
             
     body
         object#main__title.nav__back.elements(type="image/svg+xml" data="../svg/title.svg" role="header")
+        include ../consent_info
         main.splash.qr__container.elements
             ol.bar.qr__container.elements.index
         footer
             include footer  
         script.
             if(window.touch) touch.unlisten();
-        include ../consent_info

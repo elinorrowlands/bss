@@ -7,7 +7,7 @@
         window.dataLayer = window.dataLayer || [];
         
         function gtag(){dataLayer.push(arguments);}
-        
+        const greyedElementsQuery = 'main,#instruction__layer,.instructions,.banner__title';
         
         var consent = localStorage && localStorage.getItem('consent');
         var consentHasBeenSet = localStorage && localStorage.getItem('consentHasBeenSet');
@@ -29,7 +29,7 @@
                     document.querySelectorAll('.consent').forEach((el)=>{
                         el.style.display = 'block';
                     })
-                if(document.querySelectorAll('.consent').length > 0) document.querySelectorAll('main,#instruction__layer').forEach(x=>x.classList.add('greyed'));    
+                if(document.querySelectorAll('.consent').length > 0) document.querySelectorAll(greyedElementsQuery).forEach(x=>x.classList.add('greyed'));    
                 });
             }
             
@@ -57,7 +57,7 @@
             document.querySelectorAll('.consent').forEach((el)=>{
                 el.style.display = 'none';
             })
-            document.querySelectorAll('main,#instruction__layer').forEach(x=>x.classList.remove('greyed'));
+            document.querySelectorAll(greyedElementsQuery).forEach(x=>x.classList.remove('greyed'));
         }
     </script>
     <meta charset="UTF-8">
@@ -214,5 +214,32 @@
         <p class="footer__content" aria-label="project partners"><a href="https://canalrivertrust.org.uk/"><img class="logo-fit" id="logo__canal2" src="../../logos/canal-and-river-trust-logo-nostrap.svg" alt="Canal &amp; River Trust"></a><a href="https://www.artscouncil.org.uk/"><img class="logo-fit" id="logo__ace2" src="../../logos/lottery_Logo_White.png" alt="Arts Council England Lottery Funded"></a><a href="https://www.colesgallery.co.uk/"><img class="logo-fit" id="logo__coles2" src="../../logos/coles.png" alt="Cole's Gallery"></a><a href="https://www.creativehealthcamden.com/"><img class="logo-fit" id="logo__chc2" src="../../logos/chc.png" alt="Creative Health Camden"></a></p>
       </footer>
     </section>
+    <div class="consent" style="display:none;">
+      <p>This website uses cookies to improve your experience and to help us report to our funders. </p>
+      <button class="allowDefault">ACCEPT</button>
+      <button class="allowDefault">DECLINE</button>
+      <hr>
+      <details>
+        <summary>MORE INFORMATION</summary>
+        <p>The website uses a minimal build of Google Analytics, a service which transmits website traffic data to Google servers in the United States and allows us to notice trends to improve the user experience on our website. </p>
+        <p>This processes personal data such as: the unique User ID set by Google Analytics, the date and time, the title of the page being viewed, the URL of the page being viewed, the URL of the page that was viewed prior to the current page, the screen resolution, the time in local timezone, the files that were clicked on and downloaded, the links clicked on to an outside domain, the type of device, and the country, region, and city.</p>
+        <p>You may opt out of this tracking at any time by activating the “Do Not Track” setting in your browser.</p>
+      </details>
+      <script>
+        document.querySelectorAll('.consent button').forEach(x=>{
+            x.addEventListener('click', function(e){
+            if(e.target.textContent === 'ACCEPT'){
+                showConsentUI(true);
+            } else {
+                showConsentUI(false);
+                
+            }
+            document.querySelectorAll('.consent').forEach((el)=>{
+                el.style.display = 'none';
+            })
+        })
+        });
+      </script>
+    </div>
   </body>
 </html>
