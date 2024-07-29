@@ -43,11 +43,11 @@ const assignStartButton = function(){
     document.querySelectorAll('button.startElement').forEach(button=>{
         button.innerHTML = 'Loading ...';
         button.classList.add('waiting');
-        console.log('🟢 assignStart from mainjs -- before tone.loaded')
+        // console.log('🟢 assignStart from mainjs -- before tone.loaded')
         button.addEventListener('click', loadingMessage)
         Tone.loaded().then(()=>{
-            console.log(window.player)
-            console.log('🟢 assignStart from mainjs -- after tone.loaded')
+           
+            // console.log('🟢 assignStart from mainjs -- after tone.loaded')
             button.classList.remove('waiting');
             button.innerHTML = 'Start';
             button.removeEventListener('click', loadingMessage);
