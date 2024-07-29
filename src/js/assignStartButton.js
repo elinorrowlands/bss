@@ -25,7 +25,16 @@ window.loadingMessage = function(){
 
 }
 
-const assignStartButton = function(){
+/**
+ * Set the action for start button only after Tone and required files are loaded
+ * (there is currently an issue with some sounds not loading in time)
+ * @param {Array} buffers - Array of sound files to load before enabling the start button
+ */
+
+const assignStartButton = function(buffers = []){
+    for(let i = 0; i < buffers.length; i++){
+        buffers[i] = new Tone.Buffer(buffers[i]);
+    }
     touch.unlisten();
     document.querySelectorAll('button.startElement').forEach(button=>{
         button.innerHTML = 'Loading ...';
@@ -33,6 +42,7 @@ const assignStartButton = function(){
         console.log('🟢 assignStart from mainjs -- before tone.loaded')
         button.addEventListener('click', loadingMessage)
         Tone.loaded().then(()=>{
+            console.log(window.player)
             console.log('🟢 assignStart from mainjs -- after tone.loaded')
             button.classList.remove('waiting');
             button.innerHTML = 'Start';
