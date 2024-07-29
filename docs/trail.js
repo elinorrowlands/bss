@@ -19,30 +19,28 @@ window.addEventListener('load', () => {
             circle.setAttribute("stroke", `rgba(${count%255}, 0, 255, 0.4)`);
             circle.classList.add('guide__circle');
             document.querySelector('.guide').appendChild(circle);
-            // console.log(count, guide.getPointAtLength(i).x, guide.getPointAtLength(i).y);
             count++;
         }
         
     }
     window.interval = 1000;
     let iframeElement   = document.querySelector('iframe');
-    // var iframeElementID = iframeElement.id;
+    
     window.widget       = SC.Widget(iframeElement);
     
     setInterval(function(){ 
         widget.getPosition(function(position) {
             
             widget.getDuration(function(duration) {
-                // console.log(duration)
+    
                 window.soundDuration = duration;
                 percent = position * 100 / duration;
-            //   console.log(position, percent);
+    
             
-                // document.querySelector('#cursor_back').setAttribute('transform',`translate(${guide.getPointAtLength(positions.start+(percent/100*length)).x} ${guide.getPointAtLength(positions.start+(percent/100*length)).y})`)
+    
                 document.querySelector('#cursor').setAttribute('transform',`translate(${guide.getPointAtLength(positions.start+(percent/100*length)).x} ${guide.getPointAtLength(positions.start+(percent/100*length)).y})`)
                 document.querySelectorAll('.guide circle').forEach((x,i)=>{
                     if(percent/100*count>=i){
-                            // console.log(x)
                             x.classList.add('on')
                     } else {
                             x.classList.remove('on')
@@ -58,7 +56,7 @@ window.addEventListener('load', () => {
         
     window.addEventListener('touch-pickup', e=>{
         let { query, id } = e.detail;
-        // console.log(query)
+
         if(id == 'element__4'){
             widget.play();
             widget.seekTo(1);

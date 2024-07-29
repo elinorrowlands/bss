@@ -14,9 +14,7 @@ function getContainerSvg(containerElement){
 window.addEventListener('load',()=>{
     assignClasses(document.querySelector('svg'));
     document.querySelectorAll('image').forEach((x,i)=>{
-        // if(i%2===0) return;
         let container = getContainerSvg(x);
-        // console.log(container.classList)
         if(!container.classList.contains('note_1')) return;
         container.style.filter=`invert(${i*2}%) sepia(${i*2%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%)`
     })
@@ -130,7 +128,7 @@ window.addEventListener('load',()=>{
         } else if (type == 'end' || type == 'leave') {
             player.playbackRate = 1;
             document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(0%) hue-rotate(220deg)')
-            console.log('end',x,y, e.detail)
+            // console.log('end',x,y, e.detail)
             interpolateStates(0.1);
             echo.wet.rampTo(0, 0.1);
             
@@ -182,7 +180,7 @@ window.addEventListener('load',()=>{
 
             document.querySelector('.note_1').style.filter=`invert(${x%100}%) sepia(${x%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%) blur(${Math.abs(Math.sin(y/window.innerHeight/2))*20}px)`
             document.querySelector('.note_1').style.opacity=0.5;
-            // console.log('move',x,y, e.detail)
+            
             document.querySelectorAll('.vectorised__container').forEach(container => {
                 container.style.opacity = 0.9;
             });
