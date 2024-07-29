@@ -10,10 +10,10 @@ let elements = {
 function positionNumbers(){
     let qrCodes = document.querySelectorAll('.qr__code');
     document.querySelectorAll('.element__marker').forEach(x=>{
-        console.log(x.id);
+        // console.log(x.id);
         let elementName = elements[x.id.split('__')[1]].folder;
         
-        // console.log(document.querySelector(`.elements__${elementName}`));
+        
         let qrElement = document.querySelector(`li.elements__${elementName}`);
         let number = document.querySelector(`.${x.id}`);
         x.dataset.number = number.innerHTML;
@@ -35,7 +35,7 @@ function positionNumbers(){
 
 const handleMarker = (e)=>{
     let {element, type, id} = e.detail;
-    // console.log(elements[element.dataset.number])
+    
     let elementName = elements[id.split('__')[1]].folder;
     let qrElement = document.querySelector(`li.elements__${elementName}`);
     console.log(qrElement)

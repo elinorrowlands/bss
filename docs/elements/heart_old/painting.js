@@ -94,7 +94,6 @@ function fixFolder(){
           move: function(element, e, obj){
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
-              // console.log(window.layersToSvg, newElement);
               newElement.style.transition = 'all 4s ease';
               newElement.style.opacity = 0;
               synth._voices.forEach((voice,i)=>{
@@ -103,7 +102,6 @@ function fixFolder(){
               
               document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
               newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
-              // console.log(newElement.style.transform, newElement)
           }
       })
   
