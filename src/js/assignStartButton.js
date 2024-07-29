@@ -12,7 +12,7 @@ function startElement(){
     document.querySelector('.banner__background').style.opacity = 0;
     document.querySelector('.banner__background').classList.add('muted');
     document.querySelector('.startElement').innerHTML = 'RETURN<br>TO<br>ELEMENT';
-    console.log('startbutton')
+    // console.log('startbutton')
     touch.listen();
     window.scrollTo(0,0);
     Tone.loaded().then(window.start);

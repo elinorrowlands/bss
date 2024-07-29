@@ -17,7 +17,7 @@ export default function generateBlocks(text){
     
     textInput = removeDuplicates(textInput);
 
-    console.log('textInput', textInput)
+    // console.log('textInput', textInput)
             
     let items = [];
     textInput.forEach((entry,i)=>{
