@@ -31,10 +31,14 @@ window.loadingMessage = function(){
  * @param {Array} buffers - Array of sound files to load before enabling the start button
  */
 
-const assignStartButton = function(buffers = []){
-    for(let i = 0; i < buffers.length; i++){
-        buffers[i] = new Tone.Buffer(buffers[i]);
+const assignStartButton = function(){
+    if(window.filesToLoad) {
+        let buffers = window.filesToLoad;
+        for(let i = 0; i < buffers.length; i++){
+            buffers[i] = new Tone.Buffer(buffers[i]);
+        }    
     }
+    
     touch.unlisten();
     document.querySelectorAll('button.startElement').forEach(button=>{
         button.innerHTML = 'Loading ...';
