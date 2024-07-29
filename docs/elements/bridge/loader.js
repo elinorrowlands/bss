@@ -113,7 +113,6 @@ const loader = ()=>{
         interpolateStates(e.target.value);
     })
 
-    
     saveButton1.addEventListener('click', (e)=>{
         saveState(1);
     })
@@ -131,7 +130,6 @@ const loader = ()=>{
     player.loop = true;
     player.chain(comb, hpf, echo, lpf, Tone.Master);
     player.chain(lpf, Tone.Master);
-
 
     playButton.addEventListener('click', () => {
         Tone.start();

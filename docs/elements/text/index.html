@@ -66,7 +66,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="../../style.css"/>
-    <script src="../../main.js" defer="defer"></script>
+    <script>
+      // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
+      window.filesToLoad = ['./waters_excerpt.mp3', './backdrop.mp3'];
+      
+    </script>
+    <script src="../../main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
     <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
@@ -96,13 +101,13 @@
       <div class="instructions__number">
         <h1 class="instructions">Water's Edge</h1>
       </div>
-      <div class="instructions__text">
-        <p>Where is the water's edge? </p>
-        <p>Is it at the piling, the canal's watertight wall? </p>
-        <p>At the skyline? </p>
-        <p>Splashed along the oar? </p>
-        <p>During the mooring of a boat? </p>
-        <p>Does it exist in the reflection on the skin of the water?</p>
+      <div class="instructions__text"><p>Where is the water's edge?</p>
+<p>Is it at the piling, the canal's watertight wall?</p>
+<p>At the skyline?</p>
+<p>Splashed along the oar?</p>
+<p>During the mooring of a boat?</p>
+<p>Does it exist in the reflection on the skin of the water?</p>
+
         <button class="button startElement allowDefault waiting" id="nav__start">Loading </button>
       </div>
       <div class="instructions__interactions">
