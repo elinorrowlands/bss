@@ -1,7 +1,7 @@
 html(lang="en")
     head
         include ../../analytics
-        title BSS: mix
+        title BSS: Crossing
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="preconnect" href="https://fonts.googleapis.com")
@@ -10,7 +10,12 @@ html(lang="en")
         link(rel='stylesheet' href='../../style.css')
         link(href="./style_mix.css" rel="stylesheet")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
-        script(src="../../main.js" defer)
+        
+        script.
+            // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
+            window.filesToLoad = ['./channels_L.mp3', './channels_R.mp3'];
+            
+        script(src="../../main.js")
         script(type="module" src="./mix.js" defer)
         script(src="mix2.js" defer)
     body

@@ -10,6 +10,10 @@ html(lang="en")
     link(rel="stylesheet", href="./style_circles.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js")
     script(src="https://www.curtainsjs.com/build/curtains.min.js")
+    script.
+      // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
+      window.filesToLoad = ['../../loops/rusty_can_0.mp3', '../../loops/rusty_can_1.mp3', '../../loops/rusty_can_2.mp3', './can.mp3'];
+        
     script(src="../../main.js", defer)
     script(type="module", src="../js/init_circle.js", defer)
     script(src="./touch.js", defer)

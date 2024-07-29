@@ -22,7 +22,7 @@ const initSampler = function(samplePath, numberOfPlayers = 6, distribute = calcu
             allocation: -1,
             playNumber:0
         });
-        // for some reason, setting the volume to zero on load doesn't work
+        // for some reason, setting the volume to "zero" (-Infinity) on load doesn't work
         // players[i].volume.rampTo(-Infinity, 0.1)
         players[i].player.connect(echo);
     }

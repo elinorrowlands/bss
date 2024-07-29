@@ -6,7 +6,10 @@ html(lang="en")
 		title BSS: School
 		include ../../analytics
 		link(rel="stylesheet", href="../../style.css")
-		script(src="../../main.js", defer)
+		script.
+            // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
+            window.filesToLoad = ['./harlesden1.mp3'];
+		script(src="../../main.js")
 		script(src="./replaceLayers.js", defer)
 		script(src="./school.js", defer)
 		script(src="../js/sampler/sampler.js", type="module", defer)
