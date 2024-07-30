@@ -2,7 +2,6 @@ window.addEventListener('load', () => {
     
     let guide = document.querySelector('.guide path');
     let lengthOfPath = guide.getTotalLength();
-    // console.log(lengthOfPath)
     
     let count = 0;
     let positions = {start:1045, end:1750}

@@ -7,6 +7,10 @@ let elements = {
     "6": {name:"school", folder:"school"}
 }
 
+/**
+ * Place numbers on the map
+ */
+
 function positionNumbers(){
     let qrCodes = document.querySelectorAll('.qr__code');
     document.querySelectorAll('.element__marker').forEach(x=>{
@@ -32,7 +36,7 @@ const handleMarker = (e)=>{
     
     let elementName = elements[id.split('__')[1]].folder;
     let qrElement = document.querySelector(`li.elements__${elementName}`);
-    console.log(qrElement)
+    // console.log(qrElement)
     if(type=="end") window.location.href=`elements/${elements[element.dataset.number].folder}/index.html?from=map`;
     // if(type=="end") {
     //     positionNumbers();  
@@ -54,7 +58,7 @@ window.addEventListener('load',()=>{
      
     let guide = document.querySelector('.guide path');
     let lengthOfPath = guide.getTotalLength();
-    // console.log(lengthOfPath)
+    
     let count = 0;
     for(let i = 0; i < lengthOfPath; i++){
         if(i%10==0){
@@ -64,7 +68,7 @@ window.addEventListener('load',()=>{
             circle.setAttribute("r", 5);
             circle.setAttribute("fill", "red");
             document.querySelector('.guide').appendChild(circle);
-            // console.log(count, guide.getPointAtLength(i).x, guide.getPointAtLength(i).y);
+            \
             count++;
         }
         

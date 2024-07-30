@@ -75,18 +75,13 @@ window.addEventListener('load',()=>{
             return Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
         }
         
-        // console.log(x, y, window.innerWidth, window.innerHeight, distance(x,y,window.innerWidth/2,window.innerHeight/2))
+        
         let distanceFromCentre = distance(x,y,window.innerWidth/2,window.innerHeight/2);
-        // console.log('dist:',distanceFromCentre/window.innerWidth);
-        // interpolateStates(distanceFromCentre/window.innerWidth);
-        // const sineY = Math.sin((1 - (relative.y / relative.range.y) - 0.5) * Math.PI) * 0.5 + 0.5;
+        
         const sineY = 0.1-( Math.abs(Math.sin(relative.y / (relative.range.y*0.8) * Math.PI))* 0.1);
-        // let sineY = 0.2 + (0.8 - distanceFromCentre/window.innerWidth/2);
-        // console.log(sineY);
+        
         echo.delayTime.rampTo( (distanceFromCentre/window.innerWidth/2)+0.1, 0.9)
         // interpolateStates(relative.y / relative.range.y)
-        // console.log('sineY',sineY, element.id)
-        
         
         if (type == 'start' || type == 'enter') {
             player.playbackRate = 0.75;
@@ -128,7 +123,6 @@ window.addEventListener('load',()=>{
         } else if (type == 'end' || type == 'leave') {
             player.playbackRate = 1;
             document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(0%) hue-rotate(220deg)')
-            // console.log('end',x,y, e.detail)
             interpolateStates(0.1);
             echo.wet.rampTo(0, 0.1);
             
@@ -209,15 +203,11 @@ window.addEventListener('load',()=>{
         const bridgeImageremove = document.querySelector('#bridge_Imageremove');
         const bridgeImageremoveWidth = bridgeImageremove.getBoundingClientRect().width;
         const bridgeImageremoveHeight = bridgeImageremove.getBoundingClientRect().height;
-        // const bridgeImageremoveX = bridgeImageremove.getBoundingClientRect().x;
-        // const bridgeImageremoveY = bridgeImageremove.getBoundingClientRect().y;
-        // console.log(bridgeImageremove.getBoundingClientRect())
-        // console.log(bridgeImageremoveWidth, bridgeImageremoveHeight);
+        
         document.querySelectorAll('.bridge__sky').forEach(sky=>{
             sky.setAttribute('width', bridgeImageremoveWidth);
             sky.setAttribute('height', bridgeImageremoveHeight);
-            // document.querySelector('#bridge__sky').setAttribute('left', bridgeImageremoveX);
-            // document.querySelector('#bridge__sky').setAttribute('top', bridgeImageremoveY);
+           
         })
     }
     window.onresize();

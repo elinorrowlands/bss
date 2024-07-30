@@ -6,11 +6,11 @@ const setInteractions = function(){
             
             const {type, relative, rect, element} = e.detail;
             const {x, y} = relative;
-            // const {x, y} = e.detail;
+            
             
             var value = 1 - Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
-            // var value = 1 -Math.sin(cm.constrain((x/window.InnerWidth), 0, 1)*3.14);
-            console.log('value',value)
+            
+            // console.log('value',value)
             let photo = document.querySelector('#photo');
             switch(type){
                 case 'start':
