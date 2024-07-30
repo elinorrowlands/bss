@@ -15,36 +15,35 @@ const setInteractions = function(){
             var value = 1 - Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
             
             let photo = document.querySelector('#photo');
+            let backdrop = document.querySelector('#backdrop');
             switch(type){
                 case 'start':
-                    
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
                     element.style.strokeWidth = 10;
                     photo.style.opacity = (0.1 + (value * 0.7));
-                    document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
+                    backdrop.style.opacity = (0.1 + (value * 0.9));
                     break;
+                    
                 case 'enter':
-            
-                    document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
+                    backdrop.style.opacity = (0.1 + (value * 0.9));
                     interpolateStates(value);
                     element.style.strokeWidth = 10;
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
-                case 'move':
-                    document.querySelector('#backdrop').style.filter=`hue-rotate(${8250 + Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360))}deg)`;
-                    document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
-                    console.log(Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360)))
                     
+                case 'move':
+                    backdrop.style.filter=`hue-rotate(${8250 + Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360))}deg)`;
+                    backdrop.style.opacity = (0.1 + (value * 0.9));
                     interpolateStates(value);
                     element.style.strokeWidth = 10;
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
 
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
+                    
                 case 'leave':
-            
                     interpolateStates(1);
                     element.style.opacity = 0;
                     element.style.strokeWidth = 0;
@@ -52,8 +51,8 @@ const setInteractions = function(){
                     document.querySelectorAll('#backdrop').forEach(x=>x.style.opacity=1);
                     photo.style.opacity=1;
                     break;
+                    
                 case 'end':
-            
                     element.style.strokeWidth=0;
                     interpolateStates(1);
                     element.style.opacity = 0;

@@ -40,25 +40,26 @@
       gtag('config', 'G-VEV5M9N4V0');
       
         function showConsentUI(consentGiven) {
-            //- console.log(consentGiven);
-            //- var consentGiven = confirm("We use cookies to improve your experience. Do you accept?");
+            
             localStorage.setItem('consentHasBeenSet', true);
             if (consentGiven) {
-            // User accepted, update consent settings
-            localStorage && localStorage.setItem('consent', 'granted');
+            
+                localStorage && localStorage.setItem('consent', 'granted');
                 gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                 });
             } else {
-            // User declined, update consent settings
+            
             localStorage && localStorage.setItem('consent', 'denied');
                 gtag('consent', 'update', {
                     'analytics_storage': 'denied'
                 });
             }
+            
             document.querySelectorAll('.consent').forEach((el)=>{
                 el.style.display = 'none';
             })
+            
             document.querySelectorAll(greyedElementsQuery).forEach(x=>x.classList.remove('greyed'));
         }
     </script>
@@ -66,6 +67,7 @@
     <script>
       // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
       window.filesToLoad = ['./harlesden1.mp3'];
+      
     </script>
     <script src="../../main.js"></script>
     <script src="./replaceLayers.js" defer></script>
