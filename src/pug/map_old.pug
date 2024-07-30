@@ -34,24 +34,24 @@ html(lang="en")
         window.addEventListener('load',()=>{
             touch.setAction('.visual',{
                 start:function(element,e,obj){
-                    //- console.log('start')
+                    
                     element.style.opacity=0.1;
                 },
                 enter:function(element,e,obj){
-                    //- console.log('enter')
+                    
                     element.style.opacity=0.1;
                 },
                 move:function(element,e,obj){
                     let {x,y} = obj.relative;
                     let {max_x, max_y} = obj.relative.range;
-                    //- console.log('move', x, y)
+                    
                 },
                 end:function(element,e,obj){
-                    //- console.log('end')
+                    
                     element.style.opacity=1;
                 },
                 leave:function(element,e,obj){
-                    //- console.log('leave')
+                    
                     element.style.opacity=1;
                 }
             })
@@ -70,7 +70,7 @@ html(lang="en")
                     let halo = document.querySelector(`.circle_halo[data-id="${id}"]`);
                     let {x,y} = obj.relative;
                     let {max_x, max_y} = obj.relative.range;
-                    console.log('move', x, y)
+                    
                 },
                 end:function(element,e,obj){
                     let {id} = element;

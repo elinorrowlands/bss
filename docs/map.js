@@ -10,7 +10,7 @@ let elements = {
 function positionNumbers(){
     let qrCodes = document.querySelectorAll('.qr__code');
     document.querySelectorAll('.element__marker').forEach(x=>{
-        // console.log(x.id);
+        
         let elementName = elements[x.id.split('__')[1]].folder;
         
         
@@ -23,12 +23,6 @@ function positionNumbers(){
         let box = x.getBoundingClientRect();
         let svgBox = document.querySelector('#map').getBoundingClientRect();
         
-        // qrElement.style.left = `${box.x + window.innerWidth/20}px`;
-        // if(elementName=='school' || elementName=='rusty_can' || elementName=='crossing') qrElement.style.left = `${box.x - window.innerWidth/4}px`;
-        // // if(qrElement.style.left.split('px')[0]>window.innerWidth-200) qrElement.style.left = `${box.x - 200}px`;
-        // // if(qrElement.style.right.split('px')[0]<200) qrElement.style.left = `${box.x + 100}px`;
-        // qrElement.style.top = `${svgBox.top}px`;
-        // qrElement.style.position='absolute';
     })
 }
 

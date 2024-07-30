@@ -1,6 +1,5 @@
 window.addEventListener('load', ()=>{
-    // console.log('loaded');
-    // console.log(document.querySelector('svg'));
+    
     document.querySelectorAll('svg image').forEach((e,i)=>{
         if(i>0){
           e.id =`note_${i-1}`;
