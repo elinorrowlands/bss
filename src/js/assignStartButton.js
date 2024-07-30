@@ -12,7 +12,6 @@ function startElement(){
     document.querySelector('.banner__background').style.opacity = 0;
     document.querySelector('.banner__background').classList.add('muted');
     document.querySelector('.startElement').innerHTML = 'RETURN<br>TO<br>ELEMENT';
-    // console.log('startbutton')
     touch.listen();
     window.scrollTo(0,0);
     Tone.loaded().then(window.start);
@@ -27,7 +26,6 @@ window.loadingMessage = function(){
 
 /**
  * Set the action for start button only after Tone and required files are loaded
- * (there is currently an issue with some sounds not loading in time)
  * @param {Array} buffers - Array of sound files to load before enabling the start button
  */
 
@@ -43,11 +41,9 @@ const assignStartButton = function(){
     document.querySelectorAll('button.startElement').forEach(button=>{
         button.innerHTML = 'Loading ...';
         button.classList.add('waiting');
-        // console.log('🟢 assignStart from mainjs -- before tone.loaded')
+        
         button.addEventListener('click', loadingMessage)
         Tone.loaded().then(()=>{
-           
-            // console.log('🟢 assignStart from mainjs -- after tone.loaded')
             button.classList.remove('waiting');
             button.innerHTML = 'Start';
             button.removeEventListener('click', loadingMessage);
