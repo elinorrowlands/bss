@@ -2,6 +2,7 @@ let meter = new Tone.Meter();
 Tone.Master.connect(meter);
 
 let trails = [];
+
 function setup(){
     window.canv = createCanvas(window.innerWidth, window.innerHeight);
     document.querySelector('main').appendChild(canv.elt);
@@ -18,8 +19,7 @@ let gain = 0, count=0;
 
 function draw(){
     count++;
-    // console.log(meter.getValue(), Tone.dbToGain(meter.getValue()), Tone.dbToGain(meter.getValue())>0.1)
-    // if(count%10==0)gain = Tone.dbToGain(meter.getValue())*80;
+    
     if(gain > Tone.dbToGain(meter.getValue())*100) {gain -=0.01} else if(gain < Tone.dbToGain(meter.getValue())*100) {gain +=0.1}
     
     
@@ -38,12 +38,8 @@ function draw(){
         
         noStroke();
         fill(colour* (1-(mouseY / height)), i, constrain(150+(sin(gain)*10),0,255), constrain(40*gain,0,255));
-        // console.log(constrain(150+(sin(gain)*10),0,255), sin(gain)*10)
-        // diameter=200;
+
         ellipse(trails[i].x, trails[i].y, diameter, diameter);
       }
       
-      
-      
-    // background(0,1);
 }

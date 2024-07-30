@@ -12,11 +12,11 @@ window.addEventListener('load',()=>{
   }
   
   let divisions = document.querySelectorAll('image').length;
-  console.log('divisions:', divisions)
+  // console.log('divisions:', divisions)
   window.addEventListener('touch-pickup', (e)=>{
     let {x,y, element, type} = e.detail;
     let id = parseInt(element.id.split('_')[1]);
-    console.log('id:', id)
+    // console.log('id:', id)
     if(isNaN(id)){
       console.log('id is NaN');
       return;
@@ -29,7 +29,7 @@ window.addEventListener('load',()=>{
       console.log(id, divisions, lengthInSeconds, 'id/dvisions*length',(id/divisions)*lengthInSeconds);
     } else if (type == 'end' || type == 'leave'){
       let playerToStop = playerAllocations.indexOf(id);
-      // playerAllocations[playerAllocations.indexOf(id)];
+      
       players[playerToStop].stop();
       playerAllocations[playerToStop] = -1;
     }
@@ -92,7 +92,7 @@ function fixFolder(){
       multitouchMapper.setAction('.visual',{
           start: function(element, e, obj){
               Tone.start();
-              // console.log(element.id.split('_')[1]);
+              
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
               newElement.style.transition = 'all 0.1s ease';
@@ -133,7 +133,7 @@ function fixFolder(){
           move: function(element, e, obj){
               let newElement = document.querySelector(`#${element.id.split('_hc')[0]}`);
               if(window.layersToSvg) newElement = getContainerSvg(newElement);
-              // console.log(window.layersToSvg, newElement);
+              
               newElement.style.transition = 'all 4s ease';
               newElement.style.opacity = 0;
               synth._voices.forEach((voice,i)=>{
@@ -142,7 +142,7 @@ function fixFolder(){
               
               document.body.style.filter = `hue-rotate(${obj.distance.y + obj.distance.x}deg)`;
               newElement.style.transform = `rotate(${parseInt(level * obj.distance.y * 100)}deg)`;
-              // console.log(newElement.style.transform, newElement)
+              
           }
       })
   

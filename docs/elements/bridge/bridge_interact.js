@@ -19,7 +19,6 @@ window.addEventListener('load',()=>{
         container.style.filter=`invert(${i*2}%) sepia(${i*2%100}%) saturate(4212%) hue-rotate(164deg) brightness(98%) contrast(103%)`
     })
     
-    // document.querySelector('.split.trees').style.filter = `invert(${0}%) sepia(${55}%) saturate(4212%) hue-rotate(104deg) brightness(98%) contrast(103%)`
     
     // note: this could be triggered from a custom event to ensure correct order
     
@@ -33,11 +32,6 @@ window.addEventListener('load',()=>{
         document.querySelector('.vectorised__container').appendChild(container);
     })
     
-    // document.querySelectorAll('.beyond.photo').forEach(vectorImage=>{
-    //     let container = getContainerSvg(vectorImage);
-    //     container.classList.add('beyond__parent');
-    //     document.querySelector('.beyond__container').appendChild(container);
-    // })
     
     document.querySelectorAll('.vectorised.bridge__foreground').forEach(vectorImage=>{
         let container = getContainerSvg(vectorImage);
@@ -81,11 +75,11 @@ window.addEventListener('load',()=>{
         const sineY = 0.1-( Math.abs(Math.sin(relative.y / (relative.range.y*0.8) * Math.PI))* 0.1);
         
         echo.delayTime.rampTo( (distanceFromCentre/window.innerWidth/2)+0.1, 0.9)
-        // interpolateStates(relative.y / relative.range.y)
+       
         
         if (type == 'start' || type == 'enter') {
             player.playbackRate = 0.75;
-            // if(element.id=='bridge__under')interpolateStates(sineY);
+       
             interpolateStates(sineY);
             player2.volume.rampTo(-3,5);
             
@@ -114,12 +108,7 @@ window.addEventListener('load',()=>{
                 container.style.opacity = 0.2;
                 container.style.filter='blur(1px)';
             });
-            // if(element.id == 'bridge__beyond') {
-            //     document.querySelectorAll('.beyond__container').forEach(container => {
-            //         container.style.opacity = 0.9;
-            //         container.style.filter = 'sepia(100%)';
-            //     });
-            // }
+            
         } else if (type == 'end' || type == 'leave') {
             player.playbackRate = 1;
             document.querySelectorAll('.beyond1remove,.beyond2remove').forEach(x=>x.style.filter='sepia(0%) hue-rotate(220deg)')
@@ -146,12 +135,7 @@ window.addEventListener('load',()=>{
                 x.style.opacity=0;
             })
             player2.volume.rampTo(-50,10);
-            // if(element.id == 'bridge__beyond') {
-            //     document.querySelectorAll('.beyond__container').forEach(container => {
-            //         container.style.opacity = 0.9;
-            //         container.style.filter = 'sepia(0%)';
-            //     });
-            // }
+            
         } else if(type=='move'){
             document.querySelectorAll('.bridge__sky').forEach((sky,i)=>{
                 if(Math.random()>0.8){
@@ -164,7 +148,7 @@ window.addEventListener('load',()=>{
             if(element.id == 'bridge__beyond') {
                 document.querySelectorAll('.beyond__container').forEach(container => {
                     container.style.opacity = 0.9;
-                    // container.style.filter = 'sepia(100%)';
+                   
                 });
             }
             document.querySelectorAll('.bridge__container').forEach(container => {
@@ -192,10 +176,12 @@ window.addEventListener('load',()=>{
             })
         }
     });
+    
     loader();
     document.querySelectorAll('#toolbar').forEach(toolbar=>{
         toolbar.style.display='none';
     })
+    
     interpolateStates(0.1);
     window.echo.wet.value = 0;
     
