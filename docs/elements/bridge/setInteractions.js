@@ -1,3 +1,7 @@
+/**
+ * Set interactions for the bridge, cover, and path elements
+ */
+
 const setInteractions = function(){
     touch.setAction('.interact')
 
@@ -10,12 +14,9 @@ const setInteractions = function(){
             
             var value = 1 - Math.sin(cm.constrain((x/rect.original.width), 0, 1)*3.14);
             
-            // console.log('value',value)
             let photo = document.querySelector('#photo');
             switch(type){
                 case 'start':
-                    // document.body.classList.add('liminal');
-                    // document.querySelector('.interact').classList.add('liminal');
                     
                     interpolateStates(value);
                     element.style.opacity = 1 - (0.1 + (value * 0.7));
@@ -24,8 +25,7 @@ const setInteractions = function(){
                     document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
                     break;
                 case 'enter':
-                    // document.body.classList.add('liminal');
-                    // document.querySelector('.interact').classList.add('liminal');
+            
                     document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
                     interpolateStates(value);
                     element.style.strokeWidth = 10;
@@ -33,8 +33,6 @@ const setInteractions = function(){
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'move':
-                    // document.body.classList.remove('liminal');
-                    // document.querySelector('.interact').classList.remove('liminal');
                     document.querySelector('#backdrop').style.filter=`hue-rotate(${8250 + Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360))}deg)`;
                     document.querySelector('#backdrop').style.opacity = (0.1 + (value * 0.9));
                     console.log(Math.floor(cm.constrain((x/rect.original.width)*100, 0, 360)))
@@ -46,10 +44,7 @@ const setInteractions = function(){
                     photo.style.opacity = (0.1 + (value * 0.7));
                     break;
                 case 'leave':
-                    // document.body.classList.add('liminal');
-                    // document.querySelector('.interact').classList.add('liminal');
-                    
-                    // interpolateStates(0.92);
+            
                     interpolateStates(1);
                     element.style.opacity = 0;
                     element.style.strokeWidth = 0;
@@ -58,9 +53,7 @@ const setInteractions = function(){
                     photo.style.opacity=1;
                     break;
                 case 'end':
-                    // document.body.classList.add('liminal');
-                    // document.querySelector('.interact').classList.add('liminal');
-                    // interpolateStates(0.92);
+            
                     element.style.strokeWidth=0;
                     interpolateStates(1);
                     element.style.opacity = 0;
@@ -74,7 +67,7 @@ const setInteractions = function(){
             e.detail.element.style.opacity = 0;
             
             if(player.state != 'started'){
-                // console.log('cover')
+            
                 Tone.start()
                 player.start();
                 player2.start();
