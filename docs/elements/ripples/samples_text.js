@@ -31,7 +31,7 @@ function setBGAnimation(){
         let hue = Math.floor(count/2) % 360;
           
           document.querySelector('main').style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(110%)`;
-        //   console.log(hue)
+        
       } else {
         document.querySelector('main').style.filter = `hue-rotate(0deg)`;
       }
@@ -58,7 +58,7 @@ let started = false;
 
 window.addEventListener('mousedown', (e) => {
     window.count = parseInt(e.clientX/window.innerWidth*360);
-    console.log(window.count)
+    
     Tone.start();
     sounds.loop.loop = true;
 
@@ -79,4 +79,3 @@ window.addEventListener('mouseup',(e) => {
 Tone.start();
 let loadScript = loadingIndicator.init();
 var paintingFlag = true;
-// checkLoaded('addBackButton');

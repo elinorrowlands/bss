@@ -36,7 +36,6 @@ const handleMarker = (e)=>{
     
     let elementName = elements[id.split('__')[1]].folder;
     let qrElement = document.querySelector(`li.elements__${elementName}`);
-    // console.log(qrElement)
     if(type=="end") window.location.href=`elements/${elements[element.dataset.number].folder}/index.html?from=map`;
     // if(type=="end") {
     //     positionNumbers();  

@@ -19,7 +19,7 @@ const mix = {
     backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
 }
 
-console.log('🟢 text_d3_main.js')
+// console.log('🟢 text_d3_main.js')
 
 mix.backdrop.connect(mix.filter);
 mix.backdrop.loop = true;

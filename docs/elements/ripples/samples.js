@@ -31,7 +31,7 @@ function setBGAnimation(){
         let hue = Math.floor(count/2) % 360;
           
           document.querySelector('main').style.filter = `hue-rotate(${Math.floor(hue)}deg) brightness(110%)`;
-        //   console.log(hue)
+        
       } else {
         document.querySelector('main').style.filter = `hue-rotate(0deg)`;
       }
