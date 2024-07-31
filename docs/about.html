@@ -10,7 +10,7 @@
         
         var consent = localStorage && localStorage.getItem('consent');
         var consentHasBeenSet = localStorage && localStorage.getItem('consentHasBeenSet');
-        console.log(localStorage && localStorage.getItem('consent'));
+        //- console.log(localStorage && localStorage.getItem('consent'));
         if (consent === 'granted') {
             gtag('consent', 'update', {
                 'ad_storage': 'granted',
@@ -68,12 +68,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Nunito:wght@200&amp;display=swap" rel="stylesheet"/>
     <script src="./nav.js" defer="defer"></script>
-    <style>
-      .link{
-          margin:auto;
-          margin-bottom: 1em;
-      }
-    </style>
   </head>
   <body class="about">
     <object class="about nav__back" id="main__title" type="image/svg+xml" data="svg/bss_title_small.svg" role="banner"></object><a class="link" href="https://www.elinorrowlands.com/biodivergent-sites-and-sounds"> 

@@ -92,6 +92,8 @@ a:visited {
 .link {
   font-size: 3rem;
   text-underline-offset: 0.4em;
+  margin: auto;
+  margin-bottom: 1em;
 }
 
 li {

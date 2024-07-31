@@ -45,7 +45,6 @@ section.instructions{
 }
 
 
-
 .instructions__text, .instructions__header{
     flex-grow: 1;
 }
@@ -76,12 +75,10 @@ section.instructions{
 }
 
 .instructions__text{
-    // background-color: $background;
     padding: 1em;
     max-width: 800px;
     // text-align: left;
     text-align:left;
-    // line-height: 1em;
 }
 
 section.instructions.flex {
@@ -99,11 +96,7 @@ section.instructions.flex {
 
 .scrollable{
     overflow-y:auto;
-    // overflow-y:scroll;
     overflow-x:hidden;
-    // -webkit-overflow-scrolling: touch;
-    // flex-grow: 1;
-    // padding: 1em;
 }
 
 .nodisplay{
@@ -151,9 +144,7 @@ section.instructions.flex {
         align-items: center;
         vertical-align:middle;
         font-size:1.1rem;
-        // font-weight:bold;
         font-family:Roboto;
-        // margin-bottom: 1em;
         margin:0.5em;
         
         .instructions__icon{
