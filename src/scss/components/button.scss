@@ -23,13 +23,13 @@
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
     transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, opacity 1s border 2s;
-    // width: 10em;
     max-width:500px;
     margin: 2em;
     
     &#nav__start{
         font-size:2rem;
         font-family: 'Crimson Text', serif;
+        
         &.waiting{
             opacity:0.4;
             font-family: 'Crimson Text', serif;

@@ -66,7 +66,7 @@ html, body {
   #content.ripples {
     position: relative;
     z-index: 2;
-    touch-action: none; /* disable pull to refresh on mobile */
+    touch-action: none; 
   }
   
   #water-ripples {
