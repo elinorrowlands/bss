@@ -169,7 +169,6 @@ li {
 }
 @media screen and (orientation: landscape) {
   .nav__icon {
-    /* max-height:10vw; */
     margin: 5vh;
   }
 }
@@ -788,7 +787,7 @@ main.ripples {
 #content.ripples {
   position: relative;
   z-index: 2;
-  touch-action: none; /* disable pull to refresh on mobile */
+  touch-action: none;
 }
 
 #water-ripples {
@@ -981,6 +980,12 @@ circle.mix.display2 {
   transform-origin: center center;
   transform: scale(10);
   display: inline-block;
+}
+
+.mute {
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem;
 }
 
 body.words {
@@ -1322,7 +1327,10 @@ main.qr__container {
     margin: none !important;
   }
 }
-/* ⚝ Uncomment to debug */
+* {
+  /* ⚝ Uncomment to debug */
+}
+
 main {
   color: #CCCCFF;
 }
@@ -1390,6 +1398,7 @@ path {
   padding: 1em;
   row-gap: 1em;
   flex-wrap: wrap;
+  border-radius: 0.4rem;
 }
 
 canvas#overlay {
@@ -1445,6 +1454,13 @@ button.nav__info {
   max-width: 90%;
   margin: auto;
   border-radius: 0.4rem;
+}
+.textColumn ul {
+  background-color: navy;
+}
+.textColumn li {
+  list-style: none;
+  font-size: 19px;
 }
 
 .highlight {

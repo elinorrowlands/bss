@@ -31,23 +31,34 @@
 
 @import "mobile";
 
-/* ⚝ Uncomment to debug */
+
 * {
+  /* ⚝ Uncomment to debug */
   // outline:solid green;
 }
 
+/*
+ Main div
+*/
+
 main{
-  
   // padding-bottom:250px;
   color:#CCCCFF;
 }
+
+/**
+* Splash screen
+*/
 
 main.splash {
     flex-grow: 1;
     overflow: hidden;
     display: grid;
-    // height:100%;
 }
+
+/**
+* Wash
+*/
 
 .wash {
     display: block;
@@ -63,9 +74,18 @@ main.splash {
     margin: none;
 }
 
+/**
+* SVG paths
+*/
+
 path {
+  // transition: opacity 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
+
+/**
+* Title
+*/
 
 h1 {
     font-size: 4rem;
@@ -75,6 +95,10 @@ h1 {
       padding: 1em;
     }
 }
+
+/**
+* Subtitle
+*/
 
 h2 {
   font-size: 2rem;
@@ -86,21 +110,16 @@ h2 {
   }
 }
 
+/**
+* Paragraph
+*/
+
 p {
     font-size: 19px;
     // padding: 1em;
 }
 
-path {
-    transition: opacity 1s ease-in-out;
-}
 
-#holder {
-    max-height: 10vh;
-    top: 0;
-    margin: 0px !important;
-    font-size: 2rem;
-}
 
 .bar {
     display: flex;
@@ -110,6 +129,7 @@ path {
     padding: 1em;
     row-gap: 1em;
     flex-wrap: wrap;
+    border-radius: 0.4rem;
 }
 
 canvas#overlay {
@@ -169,6 +189,14 @@ canvas#overlay {
     max-width:90%;
     margin:auto;
     border-radius:0.4rem;
+    ul{
+      background-color: $background2;
+    }
+    li{
+      list-style: none; 
+      // padding:0.5em;
+      font-size: 19px;
+    }
 }
 
 .highlight{

@@ -2,7 +2,7 @@
 - Creative Technologist - Charles Matthews
 - Musicians - Jo-anne Cox, Dee Fry, R.Dyer and Ben Hajioff
 - Additional photographs - Paul Anders
-- Art Publication of Elinor’s art and texts printed and published by - Gemma Abbott 
+- Art Publication of Elinor’s art and texts printed and published by Gemma Abbott 
 - Interim Project Manager - Lucie Bickerdike (February - July 2023)
 - Project Manager - Nick Lawford (August 2023 - January 2024)
 - Illustrator & Marketing access support - Brigette Wellbelove
