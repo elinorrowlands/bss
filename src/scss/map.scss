@@ -1,5 +1,7 @@
 /* ⚝ Map */
 
+/// map layer
+
 .map__layer{
     -webkit-user-select: none;
     user-select: none;
@@ -14,6 +16,8 @@
     margin:auto;
 }
 
+/// map main
+
 .map__main{
     border-radius:0.4rem;
     position:relative;
@@ -27,6 +31,8 @@
     background-size:cover;
 }
 
+/// map trail
+
 .map__trail{
     border-radius:0.4rem;
     
@@ -37,6 +43,8 @@
     left:0;
    
 }
+
+/// map backdrop
 
 #backdrop {
     -webkit-user-select: none;
@@ -55,6 +63,7 @@
     background-size:cover;
 }
 
+/// map backdrop 2
 
 #backdrop__map {
     -webkit-user-select: none;
@@ -75,17 +84,25 @@
     background-size:cover;
 }
 
+/// backdrop with interaction
+
 #backdrop.interacting {
     filter:brightness(80%) grayscale(100%) hue-rotate(0deg);
 }
+
+/// map 2
 
 #map2{
     opacity:0.9;
 }
 
+/// water halo
+
 .water__halo.halo{
     opacity:0.3;
 }
+
+/// water halo
 
 .halo{
     opacity:0.3;

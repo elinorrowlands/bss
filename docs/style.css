@@ -1379,17 +1379,6 @@ p {
   font-size: 19px;
 }
 
-path {
-  transition: opacity 1s ease-in-out;
-}
-
-#holder {
-  max-height: 10vh;
-  top: 0;
-  margin: 0px !important;
-  font-size: 2rem;
-}
-
 .bar {
   display: flex;
   flex-basis: 20%;
@@ -1507,7 +1496,6 @@ button.nav__info {
   border-radius: 10px;
   cursor: pointer;
 }
-
 .title__button:hover {
   background-color: rgba(0, 0, 128, 0.5);
   border-color: transparent;
@@ -1529,7 +1517,6 @@ button.nav__info {
   max-height: 100px;
   background-color: transparent;
 }
-
 .nav__info:hover {
   cursor: pointer;
 }
