@@ -37,16 +37,14 @@
   // outline:solid green;
 }
 
-/* Main div */
+/// main div
 
 main{
   // padding-bottom:250px;
   color:#CCCCFF;
 }
 
-/**
-* Splash screen
-*/
+/// splash screen
 
 main.splash {
     flex-grow: 1;
@@ -54,9 +52,7 @@ main.splash {
     display: grid;
 }
 
-/**
-* Wash
-*/
+/// wash
 
 .wash {
     display: block;
@@ -72,18 +68,14 @@ main.splash {
     margin: none;
 }
 
-/**
-* SVG paths
-*/
+/// SVG paths
 
 path {
   // transition: opacity 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
 
-/**
-* Title
-*/
+/// title
 
 h1 {
     font-size: 4rem;
@@ -94,9 +86,7 @@ h1 {
     }
 }
 
-/**
-* Subtitle
-*/
+/// subtitle
 
 h2 {
   font-size: 2rem;
@@ -108,16 +98,14 @@ h2 {
   }
 }
 
-/**
-* Paragraph
-*/
+/// paragraph
 
 p {
     font-size: 19px;
     // padding: 1em;
 }
 
-
+/// bar
 
 .bar {
     display: flex;
@@ -129,6 +117,8 @@ p {
     flex-wrap: wrap;
     border-radius: 0.4rem;
 }
+
+/// canvas overlay
 
 canvas#overlay {
     position:fixed;
@@ -172,17 +162,19 @@ canvas#overlay {
     
   }
   
-  
+/// map__block
   
 .map__block.map__block{
     padding:none!important;
     margin:none!important;
 }
 
+/// map__main
 .map__main{
   margin:none;
 }
   
+/// textColumn
 .textColumn{
     max-width:90%;
     margin:auto;
@@ -197,11 +189,15 @@ canvas#overlay {
     }
 }
 
+/// highlight
+
 .highlight{
     background-color:$background;
     padding:1em;
     text-align:center;
 }
+
+/// fullpage
 
 .fullpage{
   // -webkit-pointer-events: none;
@@ -217,22 +213,28 @@ canvas#overlay {
   left:0;
 }
 
+/// item awaiting start
+
 .awaitStart{
   transition:opacity 10s ease;
 }
+
+/// transparent
 
 .transparent{
   opacity:0;
 }
 
+/// title__back
+
 .title__back{
-  // max-width:300px;
   height:100px;
   max-width:75vw;
-  // height:100%;
   padding:none;
   cursor: pointer;
 }
+
+/// title button
 
 .title__button{
   background-color:transparent;
@@ -244,20 +246,23 @@ canvas#overlay {
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
   border-radius:10px;
   cursor: pointer;
+  &:hover{
+    background-color:$background2-semi;
+    border-color: transparent;
+    color: $background;
+    cursor: pointer;
+  } 
 }
 
-.title__button:hover{
-  background-color:$background2-semi;
-  border-color: transparent;
-  color: $background;
-  cursor: pointer;
-} 
+/// blank
 
 .blank{
   width:100px;
   max-width: 15vw;
   padding:10px;
 }
+
+/// nav__info
 
 .nav__info{
   cursor:pointer;
@@ -268,12 +273,14 @@ canvas#overlay {
   
   max-height:100px;
   background-color:transparent;
+  
+  &:hover{
+  
+    cursor: pointer;
+  }
 }
 
-.nav__info:hover{
-  
-  cursor: pointer;
-}
+/// title__info
 
 .title__info{
   width:80px;
@@ -281,6 +288,8 @@ canvas#overlay {
   height:80px;
   
 }
+
+/// banner title
 
 .banner__title{
   // background-image: url('svg/wave1.svg');
@@ -294,6 +303,8 @@ canvas#overlay {
   top:0;
   margin:none;
 }
+
+/// banner background
 
 .banner__background{
   display:block;
@@ -311,16 +322,22 @@ canvas#overlay {
   }
 }
 
+/// main on front page
+
 main.front{
   padding-bottom:200px;
   padding-top:200px;
 }
+
+/// greyed
 
 .greyed{
   // opacity:0.3;
   filter:brightness(20%) saturate(50%)!important;
   transition: filter 1s;
 }
+
+/// consent modal
 
 .consent{
   font-family: Crimson Text;

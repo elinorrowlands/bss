@@ -132,21 +132,17 @@ svg.bridge{
 .bridge__container{
     opacity:0.1;
     transition: filter 2s, opacity 2s;
-    // container.style.filter='brightness(100%)';
     z-index:1;
 }
 
 .beyond__container{
     opacity:1;
     transition: filter 2s, opacity 2s;
-    // container.style.filter='brightness(100%) sepia(0%)';
     z-index:1;
 }
 
 .beyond1remove,.beyond2remove{
-    //- opacity:0;
     transition: filter 2s, opacity 2s;
-    // container.style.filter='brightness(100%) sepia(0%)';
     z-index:1;
 }
 
