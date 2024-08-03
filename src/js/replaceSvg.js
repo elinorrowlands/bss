@@ -8,14 +8,7 @@
 const replaceSvgObject = function(objectElement, attributes=['role','aria-label','aria-hidden', 'alt']) {
     let newSvgElement = objectElement.contentDocument.querySelector('svg');
     if (!newSvgElement) {
-        // since this is now in the window onload, 
-        // the contentDocument should always be present as long as the object is valid.
-        // taking out the timeout for now...
         console.log('object import failed', objectElement.id)
-        // setTimeout(() => {
-        //     if(window.verbose) console.log(`svg not loaded (${objectElement.id}), waiting.to try again..`)
-        //     replaceSvgObject(objectElement);
-        // }, 100);
         return;
     }
     

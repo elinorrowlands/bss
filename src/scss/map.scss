@@ -16,7 +16,6 @@
 
 .map__main{
     border-radius:0.4rem;
-    // max-width:90vw!important;
     position:relative;
     width:100%;
     display:block;
@@ -30,16 +29,13 @@
 
 .map__trail{
     border-radius:0.4rem;
-    // max-width:90vw!important;
+    
     position:relative;
     width:100%;
     display:block;
     top:0;
     left:0;
-    // background-image:url("svg/element_painting_map2.svg");
-    // background-repeat:no-repeat;
-    // background-position:center;
-    // background-size:cover;
+   
 }
 
 #backdrop {
@@ -84,7 +80,6 @@
 }
 
 #map2{
-    // opacity:0.1;
     opacity:0.9;
 }
 

@@ -1,3 +1,8 @@
+/**
+ * Start the interactive element after Tone and required files are loaded
+ */
+
+
 function startElement(){
     Tone.start();
     $('section.instructions').hide()

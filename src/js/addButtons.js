@@ -13,25 +13,18 @@ function addButtons(){
     let blank = document.createElement("div");
     blank.classList.add('blank');
     
-    // let homePage = urlParams.get('from') == 'map' ? 'map2.html' : 'index.html';
     let homePage = urlParams.get('from') == 'map' ? 'map.html' : 'map.html';
-    
     let backButton = document.createElement("button");
     
-    // backButton.innerHTML = "Biodivergent Sites and Sounds";
     backButton.innerHTML = `<a href="https://elinorrowlands.github.io/bss/${homePage}"><img class="title__back" src="../../svg/bss_title_small.svg" alt="Biodivergent Sites and Sounds" /></a>` 
     backButton.id = "backButton";
     backButton.classList.add('title__button','nav__back', 'allowDefault')
     
-    // backButton.addEventListener('click',()=>{
-    //     window.location = `https://elinorrowlands.github.io/bss/${homePage}`
-    // });
 
 
     let infoButton = document.createElement("button");
     infoButton.id="infoButton";
     infoButton.classList.add('nav__info', 'allowDefault');
-    // infoButton.innerHTML = "?";
     infoButton.innerHTML = `<img class="title__info" src="../../icons/noun-help-2216482-FFFFFF.svg" style="opacity:0.5;" alt="Help" />`
     infoButton.addEventListener('click',()=>{
         $('section.instructions').show(1000);
@@ -53,10 +46,9 @@ function addButtons(){
     container.appendChild(infoButton);
     $('#infoButton').hide();
     document.body.appendChild(container);
+    
     if(!document.querySelector('.instructions__header')) return;
-    // if(document.querySelector('.instructions__header').getBoundingClientRect().top<0) {
-    //     document.querySelector('.instructions').style.paddingTop = '800px';
-    // }
+    
 }
 
 export { addButtons }
