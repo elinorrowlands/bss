@@ -13,12 +13,6 @@ The [main website](https://elinorrowlands.github.com/) is hosted on GitHub pages
 ## Elements
 **- [Index of elements](https://elinorrowlands.github.io/bss/elements) -**
 
-## Options
-This list is for internal planning and does not represent current features:
-[ ] colour
-[ ] contrast
-[ ] motion
-
 ## Credits
 - Lead artist - Elinor Rowlands
 - Creative Technologist - Charles Matthews
