@@ -87,17 +87,15 @@ export default function generateBlocks(text){
         // element.style.top = `${i/items.length*window.innerHeight/2}px`;
         // element.style.left = `10px`
     })
-    window.gravity=0.001
+    window.gravity=0.01
     window.addEventListener('bump', (e) => {
         // was 0.5
         let {value} = e.detail; 
         // place the elements on y axis according to their order in the poem
-        
-        
-        
+
         force.alpha(value);
         force.charge(-1000*value);
-        window.gravity+=0.0001;
+        window.gravity+=0.001;
         if(window.gravity>0.002) window.gravity=0.01;
         // console.log('gravity', window.gravity)
         force.gravity(window.gravity)
@@ -107,13 +105,42 @@ export default function generateBlocks(text){
         
     });
     
+    // let tickCount = 0;
+    
     force.on('tick', function(e){ 
-
-      
+        items.forEach((a, i) => {
+            items.slice(i + 1).forEach(b => {
+                let dx = a.x - b.x;
+                let dy = a.y - b.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let minDistance = (a.size / 2) + (b.size / 2) + 5; // Add padding
+    
+                if (distance < minDistance) {
+                    let angle = Math.atan2(dy, dx);
+                    let moveDistance = (minDistance - distance) / 2;
+                    let moveX = Math.cos(angle) * moveDistance;
+                    let moveY = Math.sin(angle) * moveDistance;
+    
+                    a.x += moveX;
+                    a.y += moveY;
+                    b.x -= moveX;
+                    b.y -= moveY;
+                }
+            });
+        });
+    
+        // if(tickCount<99)tickCount++;
+        // console.log('tick', tickCount, 1-(tickCount / 100))
+    //   if(tickCount<1000){
+    //       tickCount++;
+    //       console.log('tick', tickCount)
+    //       return;
+          
+    //   }
         item.style('top', (d, i) => {
             let targetY = (i / items.length) * window.innerHeight;
             let currentY = parseFloat(d.y) || 0;
-            let newY = currentY + (targetY - currentY) * 0.1; // Adjust the 0.1 factor to control the speed of movement
+            let newY = currentY + (targetY - currentY) * 0.1; // would need more consideration to implement
     
             if (newY > window.innerHeight - 50) newY = window.innerHeight - 50;
             if (newY < 50) newY = 50;
@@ -130,10 +157,9 @@ export default function generateBlocks(text){
 
     item.append('span')
         .text(d=>d.name)
-        // .style('top', '0px')
-    // .classed('words', true)
-    // .classed('text', true)
 
+        
+    
     force.start();
 }
 

@@ -18,14 +18,17 @@ const mix = {
     // player: new Tone.Player('./waters_excerpt.mp3').toDestination(),
     // player: new Tone.Player('./ttsmaker-file-2024-8-8-11-35-11.mp3').toDestination(),
     player: new Tone.Player('./waters_edge.mp3').toDestination(),
+    channel: new Tone.Channel().toDestination(),
     backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
 }
 
 mix.backdrop.connect(mix.filter);
 mix.backdrop.loop = true;
 mix.backdrop.volume.value = '-12';
-mix.echo.connect(mix.filter);
+mix.echo.connect(mix.channel);
+// mix.echo.connect(mix.filter);
 mix.player.connect(mix.echo);
+mix.channel.connect(mix.filter);
 
 const newCaption = [
     "00:00:00.150,00:00:03.249\nI reach out towards the water's edge.", 

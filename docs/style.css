@@ -1022,7 +1022,7 @@ body.words {
   cursor: pointer;
   border-radius: 10px;
   font-weight: bold;
-  font-size: 3vw;
+  font-size: 2vw;
   text-align: center;
   text-anchor: middle;
   opacity: 0.9;
@@ -1044,7 +1044,7 @@ body.words {
   opacity: 1 !important;
 }
 .words.text#text_0 {
-  font-size: 6vw !important;
+  font-size: 3vw !important;
 }
 .words.moving {
   position: absolute;
