@@ -4,9 +4,30 @@ export default function generateBlocks(text){
      * combine with text.js
      */
 
-    window.textInput = 
-        `where is the water's edge?\nin the wide expanses\nor the half filled bathtub\nin the river\nor the boiling kettle\nin the steam\nor the snow\nor the rainbow mist of a summer hose`
-            .split('\n');
+    // I reach out towards the water’s edge. 
+// The water here is so clear and open and honest
+// On the skin of the water, 
+// a mirror of the city’s skyline. 
+// Under the bridge, 
+// a reflection of an otherworld. 
+// I reach out for the water’s edge 
+// In the steam of my warming tea
+// In the mist of deep winters 
+// Falling snow, 
+// streaming rivers, 
+// flooding banks
+// I stand and look out to the water’s edge
+// Repressed memories, 
+// hidden dreams
+// Beyond there are the waves of crashing ocean 
+// polluted sea. 
+    
+    // window.textInput = 
+    //     `where is the water's edge?\nin the wide expanses\nor the half filled bathtub\nin the river\nor the boiling kettle\nin the steam\nor the snow\nor the rainbow mist of a summer hose`
+    //         .split('\n');
+    
+    window.textInput = `I reach out towards the water’s edge.\nThe water here is so clear and open and honest\nOn the skin of the water,\na mirror of the city’s skyline.\nUnder the bridge,\na reflection of an otherworld.\nI reach out for the water’s edge\nIn the steam of my warming tea\nIn the mist of deep winters\nFalling snow,\nstreaming rivers,\nflooding banks\nI stand and look out to the water’s edge\nRepressed memories,\nhidden dreams\nBeyond there are the waves of crashing ocean\npolluted sea.`.split('\n');
+    
     function removeDuplicates(textInput){
         let unique = {};
         textInput.forEach((entry,i)=>{

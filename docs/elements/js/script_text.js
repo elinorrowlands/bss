@@ -70,7 +70,6 @@ Tone.start();
 window.sounds = {
     loop: new Tone.Player("ripple1.mp3"),
     filter: new Tone.Filter(200, "lowpass"),
-    // hpf: new Tone.Filter(400, "highpass"),
     echo: new Tone.FeedbackDelay("2n", 0.5).toMaster(),
     meter: new Tone.Meter(),
     echoMeter: new Tone.Meter()
@@ -79,9 +78,7 @@ window.sounds = {
 sounds.echo.wet.value = 1;
 sounds.loop.connect(sounds.filter);
 sounds.loop.volume.value=-Infinity;
-// sounds.filter.connect(sounds.hpf);
 sounds.filter.toMaster();
-// sounds.hpf.connect(sounds.echo);
 sounds.filter.connect(sounds.meter);
 sounds.echo.connect(sounds.echoMeter);
 
