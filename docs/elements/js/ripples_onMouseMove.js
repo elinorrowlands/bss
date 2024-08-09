@@ -5,7 +5,7 @@ export default function onMouseMove(e) {
     let updateVelocity = true;
 
     if(!e.buttons){
-        console.log('no buttons')
+        // console.log('no buttons')
         this.mouse.last.x = this.mouse.current.x;
         this.mouse.last.y = this.mouse.current.y;
     }
@@ -31,9 +31,9 @@ export default function onMouseMove(e) {
             )
         ) {
             updateVelocity = false;
-            console.log('velocity (initial or greater than 5)',this.mouse.current.x - this.mouse.last.x, this.mouse.current.y - this.mouse.last.y)
+            // console.log('velocity (initial or greater than 5)',this.mouse.current.x - this.mouse.last.x, this.mouse.current.y - this.mouse.last.y)
         } else {
-            console.log('velocity',this.mouse.current.x - this.mouse.last.x, this.mouse.current.y - this.mouse.last.y)
+            // console.log('velocity',this.mouse.current.x - this.mouse.last.x, this.mouse.current.y - this.mouse.last.y)
         }
 
         this.mouse.current.x = e.targetTouches ? e.targetTouches[0].clientX : e.clientX;

@@ -12,13 +12,13 @@ const Pickup = (e, mix, captionObject) =>{
     let target = element;
     let text = captionObject[element.id.split('_')[1]];
     let container = document.querySelector('main') || document.body;
-    if(type == 'start' || type == 'enter'){
+    if(type == 'start'){
         if(!window.playFlag){
             Tone.start().then(()=>mix.backdrop.start());
             window.playFlag = true;
         }
         
-        container.style.filter = `hue-rotate(${element.style.left}deg)`;
+        container.style.filter = `hue-rotate(${element.style.left % 180}deg)`;
         mix.filter.frequency.rampTo((y)+80, 0.5);
         
         element.classList.add('active');

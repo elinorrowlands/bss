@@ -56,7 +56,7 @@ const Pickup = (e) =>{
     let id = getNoteFromId(element.id);
     if(type == 'start'){
         // synth.triggerAttack(id);
-        console.log('touch start')
+        // console.log('touch start')
         rippleScene.ripples.update({x, y});
         viscosity.value = 2;
     } else if(type == 'enter') {
@@ -66,7 +66,7 @@ const Pickup = (e) =>{
     } else if(type == 'move'){
         document.querySelector('main').style.filter = `hue-rotate(${x}deg)`;
         viscosity.value = Math.max(7, (iterations/100)+1);
-        console.log('touch move')
+        // console.log('touch move')
     }
     
     target.style.opacity = preset.opacity[type];

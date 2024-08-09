@@ -17,7 +17,7 @@ const Pickup = (e, mix, captionObject) =>{
             mix.backdrop.start();
             window.playFlag = true;
         }
-        
+        mix.echo.feedback.value.rampTo(200, 0.9)
         container.style.filter = `hue-rotate(${element.style.left}deg)`;
         mix.filter.frequency.rampTo((y)+80, 0.5);
         mix.player.start(Tone.now(), text.startS, text.endS-text.startS);
@@ -29,6 +29,7 @@ const Pickup = (e, mix, captionObject) =>{
              
     } else if (type == 'end' || type == 'leave'){
         mix.filter.frequency.rampTo(200, 1);
+        mix.echo.feedback.value.rampTo(200, 0.5)
         element.classList.remove('active');
         document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.left = (5+Math.random()*70)+'%';
         document.querySelector(`#text_${(element.id.split('_')[1] + 1) % (Object.keys(captionObject).length - 1)}`).style.top = (5+Math.random()*70)+'%';

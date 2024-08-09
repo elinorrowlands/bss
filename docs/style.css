@@ -1028,22 +1028,19 @@ body.words {
   opacity: 0.9;
   letter-spacing: 0.1px;
   transition: all 1s, left 18.5s ease-in-out, top 16.5s ease-in-out, opacity 0.5s ease-in-out;
-  text-shadow: 0px 0px 10px rgb(0, 0, 128);
+  text-shadow: 0px 0px 1px rgb(0, 0, 128);
   white-space: nowrap;
   padding: 1.5rem;
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
-  mask-image: radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
 }
 .words.text.active {
   opacity: 1;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 .words.text.enabled {
   font-size: 5vw !important;
 }
 .words.text.d3 {
   transition: opacity 0.5s ease-in-out, filter 1s, text-shadow 1s, background-color 0.5s !important;
-  height: 3em;
   opacity: 1 !important;
 }
 .words.text#text_0 {
