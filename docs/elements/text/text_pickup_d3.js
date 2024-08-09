@@ -28,7 +28,9 @@ const Pickup = (e, mix, captionObject) =>{
         element.style.textShadow = `0px 5px 3px rgba(0,0,0,1)`;
         element.style.backgroundColor = `rgba(0,0,128,0.5)`;
         mix.channel.pan.rampTo((x/window.innerWidth*2)-1, 0.5);
-        if(mix.player.state!=started){
+        // console.log(typeof text)
+        if(typeof text == 'undefined') return;
+        if(mix.player.state!=started && typeof text.startS != 'undefined'){
             mix.player.start(Tone.now(), text.startS, text.endS-text.startS);
         }       
              
