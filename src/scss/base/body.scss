@@ -18,8 +18,9 @@ body {
     // min-height: 100vh;
     margin: 0;
     background-color: $background;
-    font-family: Roboto;
+    font-family: $font-text;
     font-weight: 100;
+    font-size: 1.5rem;
     color: $text;
     transition: filter 1s;
     -webkit-touch-callout: none!important;

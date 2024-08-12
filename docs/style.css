@@ -43,8 +43,9 @@ body {
   justify-content: space-between;
   margin: 0;
   background-color: darkblue;
-  font-family: Roboto;
+  font-family: "Lato", sans-serif;
   font-weight: 100;
+  font-size: 1.5rem;
   color: lightgray;
   transition: filter 1s;
   -webkit-touch-callout: none !important;
@@ -448,6 +449,7 @@ section.instructions .instructions__text p.continue {
 }
 
 .instructions__text {
+  font-size: 1.4rem;
   padding: 1em;
   max-width: 800px;
   text-align: left;
@@ -492,7 +494,7 @@ section.instructions.flex.nodisplay {
 }
 .instructions__interactions li {
   border-radius: 10px;
-  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
   display: inline-flex;
   margin: auto;
   left: 0;
@@ -504,8 +506,8 @@ section.instructions.flex.nodisplay {
   justify-content: flex-start;
   align-items: center;
   vertical-align: middle;
-  font-size: 1.1rem;
-  font-family: Roboto;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
   margin: 0.5em;
 }
 .instructions__interactions li .instructions__icon {
@@ -1002,6 +1004,7 @@ body.words {
   height: 100vh;
   width: 100vw;
   filter: hue-rotate(0deg);
+  transition: filter 1s;
   position: fixed;
   top: 0;
   left: 0;
@@ -1017,23 +1020,27 @@ body.words {
   opacity: 0;
 }
 .words.text {
+  font-family: Crimson-Text, serif;
   -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 100%;
   font-size: 2vw;
   text-align: center;
   text-anchor: middle;
-  opacity: 0.9;
+  opacity: 0.7;
   letter-spacing: 0.1px;
   transition: all 1s, left 18.5s ease-in-out, top 16.5s ease-in-out, opacity 0.5s ease-in-out;
   text-shadow: 0px 0px 1px rgb(0, 0, 128);
   white-space: nowrap;
-  padding: 1.5rem;
+  padding: 0.6em;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 120%);
+  mask-image: radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 120%);
+  max-width: 30vw;
+  text-wrap: balance;
 }
 .words.text.active {
-  opacity: 1;
+  opacity: 1 !important;
   letter-spacing: 0.3px;
 }
 .words.text.enabled {
@@ -1041,7 +1048,7 @@ body.words {
 }
 .words.text.d3 {
   transition: opacity 0.5s ease-in-out, filter 1s, text-shadow 1s, background-color 0.5s !important;
-  opacity: 1 !important;
+  opacity: 0.9;
 }
 .words.text#text_0 {
   font-size: 3vw !important;
@@ -1373,7 +1380,7 @@ h2.padded {
 }
 
 p {
-  font-size: 19px;
+  font-size: 19pt;
 }
 
 .bar {
@@ -1575,13 +1582,13 @@ main.front {
   right: 0;
   width: 80vw;
   font-size: 1.1rem;
-  font-family: Roboto;
+  font-family: "Lato", sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 99999999;
 }
 .consent button {
   font-size: 1.1rem;
-  font-family: Roboto;
+  font-family: "Lato", sans-serif;
   background-color: rgba(0, 0, 128, 0.5);
   border: 1px solid #666666;
   border-radius: 10px;

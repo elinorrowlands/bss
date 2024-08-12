@@ -75,6 +75,7 @@ section.instructions{
 }
 
 .instructions__text{
+    font-size: 1.4rem;
     padding: 1em;
     max-width: 800px;
     text-align:left;
@@ -130,7 +131,6 @@ section.instructions.flex {
     li {
         border-radius:10px;
         border: 0.5px solid $outline-semi;
-        
         display:inline-flex;
         margin: auto;
         left:0;
@@ -142,8 +142,8 @@ section.instructions.flex {
         justify-content: flex-start;
         align-items: center;
         vertical-align:middle;
-        font-size:1.1rem;
-        font-family:Roboto;
+        font-size:1rem;
+        font-family:$font-text;
         margin:0.5em;
         
         .instructions__icon{

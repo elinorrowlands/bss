@@ -15,10 +15,8 @@ setInterval(loadBlink, 5000);
 const mix = {
     filter: new Tone.Filter(200, 'lowpass').toDestination(),
     echo: new Tone.FeedbackDelay(1, 0.9),
-    // player: new Tone.Player('./waters_excerpt.mp3').toDestination(),
-    // player: new Tone.Player('./ttsmaker-file-2024-8-8-11-35-11.mp3').toDestination(),
     player: new Tone.Player('./waters_edge.mp3').toDestination(),
-    channel: new Tone.Channel().toDestination(),
+    channel: new Tone.Channel(),
     backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
 }
 

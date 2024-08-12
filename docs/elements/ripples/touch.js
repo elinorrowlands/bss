@@ -64,6 +64,7 @@ const Pickup = (e) =>{
         // synth.triggerRelease(id);
         document.querySelector('main').style.filter = `hue-rotate(0deg)`;
     } else if(type == 'move'){
+        document.querySelector('main').style.transition = 'filter 1s';
         document.querySelector('main').style.filter = `hue-rotate(${x}deg)`;
         viscosity.value = Math.max(7, (iterations/100)+1);
         // console.log('touch move')

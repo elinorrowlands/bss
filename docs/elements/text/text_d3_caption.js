@@ -102,6 +102,11 @@ export default function generateBlocks(text){
         if(window.rippleScene){
             rippleScene.ripples.mouse.velocity = {x:1, y:1};
         }
+        // set all elements color to a random shade of light blue (random, random, 128, 0.5)
+        // document.querySelectorAll('.words.text.d3').forEach((element,i) => {
+        //     let redGreen = Math.floor(55+Math.random()*200);
+        //     element.style.color = `rgba(${redGreen},${redGreen},255,0.5)`;
+        // })
         
     });
     
