@@ -1,12 +1,6 @@
 export default function generateBlocks(text){
         
-    /**
-     * combine with text.js
-     */
-
-    
     window.textInput = "I reach out towards the water's edge.\nThe water here is so clear and open and honest\nOn the skin of the water,\na mirror of the city’s skyline.\nUnder the bridge, a reflection of an otherworld.\nI reach out for the water’s edge\nIn the steam of my warming tea\nIn the mist of deep winters\nFalling snow, streaming rivers, flooding banks\nI stand and look out to the water’s edge\nRepressed memories, hidden dreams\nBeyond there are the waves of crashing ocean polluted sea.".split('\n');
-    
     
     function removeDuplicates(textInput){
         let unique = {};
@@ -30,10 +24,6 @@ export default function generateBlocks(text){
                       .append("div")
                       .classed("wordContainer", true)
 
-    document.querySelectorAll('.wordContainer').forEach((element,i) => {
-    // window.captionObject[]
-    })
-
     let force = d3.layout.force()
                          .nodes(items)
                          .gravity(0.01)
@@ -52,7 +42,6 @@ export default function generateBlocks(text){
             return `${targetY}px`;
         })
         .style('left', '0px')
-        // .style('top', '0px')
         .call(force.drag); 
     
         item.each(function (d, i) {
@@ -69,28 +58,19 @@ export default function generateBlocks(text){
     })
     window.gravity=0.01
     window.addEventListener('bump', (e) => {
-        // was 0.5
         let {value} = e.detail; 
-        // place the elements on y axis according to their order in the poem
-
         force.alpha(value);
         force.charge(-1000*value);
         window.gravity+=0.001;
+        
         if(window.gravity>0.002) window.gravity=0.01;
-        // console.log('gravity', window.gravity)
+        
         force.gravity(window.gravity)
         if(window.rippleScene){
             rippleScene.ripples.mouse.velocity = {x:1, y:1};
         }
-        // set all elements color to a random shade of light blue (random, random, 128, 0.5)
-        // document.querySelectorAll('.words.text.d3').forEach((element,i) => {
-        //     let redGreen = Math.floor(55+Math.random()*200);
-        //     element.style.color = `rgba(${redGreen},${redGreen},255,0.5)`;
-        // })
         
     });
-    
-    // let tickCount = 0;
     
     force.on('tick', function(e){ 
         items.forEach((a, i) => {
@@ -130,15 +110,9 @@ export default function generateBlocks(text){
             return `${parseInt(x)}px`;
         });
     });
-
-
+    
     item.append('span')
-        .text(d=>d.name)
-
-        
+        .text(d=>d.name) 
     
     force.start();
 }
-
-
-// export default generateBlocks;
