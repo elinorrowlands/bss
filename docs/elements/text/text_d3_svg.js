@@ -16,7 +16,6 @@ textInput.forEach((entry,i)=>{
 let svgElement = d3.select('body')
     .append("div")
     .classed("svg-container", true)
-    
 
 let force = d3.layout.force()
     .nodes(items)
@@ -50,7 +49,7 @@ item.append('svg')
     .classed('transparent', true)
     .classed('words', true)
           
-   // setInterval(function(){force.alpha(Math.random());},1250);
+// setInterval(function(){force.alpha(Math.random());},1250);
 setInterval(()=>{force.alpha(0.01)},250);
 
       

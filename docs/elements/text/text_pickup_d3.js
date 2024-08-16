@@ -47,9 +47,9 @@ const Pickup = (e, mix, captionObject) =>{
         mix.filter.Q.rampTo(0, 0.2);
     } else if(type == 'move'){
         mix.echo.delayTime.rampTo( (y/window.innerHeight/8)+0.75, 0.1)
-        // container.filter = `hue-rotate(${Math.floor(element.x/ window.innerWidth * 10)}deg)`;
+        
         mix.filter.frequency.rampTo((y)+ 200, 0.1);
-        // console.log(y);
+        
         mix.channel.pan.rampTo((x/window.innerWidth*2)-1, 0.5);
         
         element.style.textShadow = `0px 0px 10px rgba(0,0,0,${(y/100)})`;
