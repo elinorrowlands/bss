@@ -51,14 +51,14 @@ window.captionObject = syncCC.splitCaptions(newCaption);
 window.playFlag = false;
 
 function loaded(){
-        StatusVO.update('loaded');
-        clearInterval(loadBlink);
-        document.querySelectorAll('.loading').forEach(element => {
-            element.style.opacity = 0;
-            setTimeout(() => {
-                element.style.display = 'none';
-            }, 1000);
-        });
+    StatusVO.update('loaded');
+    clearInterval(loadBlink);
+    document.querySelectorAll('.loading').forEach(element => {
+        element.style.opacity = 0;
+        setTimeout(() => {
+            element.style.display = 'none';
+        }, 1000);
+    });
 }
 
 window.start = function(){

@@ -7,6 +7,7 @@ export default function generateBlocks(text){
         textInput.forEach((entry,i)=>{
             unique[entry] = i;
         })
+        
         return Object.keys(unique);
     }
     
@@ -14,10 +15,10 @@ export default function generateBlocks(text){
             
     let items = [];
     textInput.forEach((entry,i)=>{
-    items.push({
-        name: entry,
-        size: 5 + entry.length*3
-    })
+        items.push({
+            name: entry,
+            size: 5 + entry.length*3
+        })
     })
 
     let container = d3.select('main')
@@ -31,18 +32,18 @@ export default function generateBlocks(text){
                          .size([window.innerWidth*0.75,window.innerHeight*0.75]); 
 
     let item = container.selectAll('wordContainer') 
-        .data(items).enter() 
-        .append('div')
-        .classed('words', true)
-        .classed('text', true)
-        .classed('moving', true)
-        .classed('d3', true)
-        .style('top', (d, i) => {
-            let targetY = (i / items.length) * window.innerHeight;
-            return `${targetY}px`;
-        })
-        .style('left', '0px')
-        .call(force.drag); 
+                        .data(items).enter() 
+                        .append('div')
+                        .classed('words', true)
+                        .classed('text', true)
+                        .classed('moving', true)
+                        .classed('d3', true)
+                        .style('top', (d, i) => {
+                            let targetY = (i / items.length) * window.innerHeight;
+                            return `${targetY}px`;
+                        })
+                        .style('left', '0px')
+                        .call(force.drag); 
     
         item.each(function (d, i) {
             let targetY = (i / items.length) * window.innerHeight;
@@ -53,9 +54,8 @@ export default function generateBlocks(text){
         
     document.querySelectorAll('.words.text.d3').forEach((element,i) => {
         element.id = `text_${i}`;
-        // element.style.top = `${i/items.length*window.innerHeight/2}px`;
-        // element.style.left = `10px`
     })
+    
     window.gravity=0.01
     window.addEventListener('bump', (e) => {
         let {value} = e.detail; 

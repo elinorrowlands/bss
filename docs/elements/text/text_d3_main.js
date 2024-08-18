@@ -4,19 +4,19 @@ import {elinorCaption} from './elinorCaption.js';
 
 let loadBlinkCount = 0;
 const loadBlink = () => {
-    document.querySelectorAll('.loadMsg')[0].style.opacity=loadBlinkCount%2 ? 0.8:1;
-    document.querySelectorAll('.loading')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
-    document.querySelectorAll('.loadMsg')[0].style.backgroundColor=loadBlinkCount%2 ? 'navy':'#0081ff';
+    document.querySelectorAll('.loadMsg')[0].style.opacity = loadBlinkCount % 2 ? 0.8 : 1;
+    document.querySelectorAll('.loading')[0].style.backgroundColor = loadBlinkCount % 2 ? 'navy' : '#0081ff';
+    document.querySelectorAll('.loadMsg')[0].style.backgroundColor = loadBlinkCount % 2 ? 'navy' : '#0081ff';
     loadBlinkCount++;
 }
 
 setInterval(loadBlink, 5000);
 
 const mix = {
-    filter: new Tone.Filter(200, 'lowpass').toDestination(),
-    echo: new Tone.FeedbackDelay(1, 0.9),
-    player: new Tone.Player('./waters_edge3.mp3').toDestination (),
     channel: new Tone.Channel(),
+    echo: new Tone.FeedbackDelay(1, 0.9),
+    filter: new Tone.Filter(200, 'lowpass').toDestination(),
+    player: new Tone.Player('./waters_edge3.mp3').toDestination (),
     backdrop: new Tone.Player('./backdrop.mp3').toDestination(),
 }
 
@@ -33,14 +33,14 @@ window.captionObject = syncCC.splitCaptions(newCaption);
 window.playFlag = false;
 
 function loaded(){
-        StatusVO.update('loaded');
-        clearInterval(loadBlink);
-        document.querySelectorAll('.loading').forEach(element => {
-            element.style.opacity = 0;
-            setTimeout(() => {
-                element.style.display = 'none';
-            }, 1000);
-        });
+    StatusVO.update('loaded');
+    clearInterval(loadBlink);
+    document.querySelectorAll('.loading').forEach(element => {
+        element.style.opacity = 0;
+        setTimeout(() => {
+            element.style.display = 'none';
+        }, 1000);
+    });
 }
 
 window.started = false;
