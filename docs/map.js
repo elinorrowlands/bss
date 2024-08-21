@@ -1,6 +1,6 @@
 let elements = {
     "1": {name:"bridge", folder:"bridge"},
-    "2": {name:"water's edge", folder:"text"},
+    "2": {name:"edge", folder:"text"},
     "3": {name:"crossing", folder:"crossing"},
     "4": {name:"ripples", folder:"ripples"},
     "5": {name:"rusty can", folder:"rusty_can"},
@@ -16,7 +16,6 @@ function positionNumbers(){
     document.querySelectorAll('.element__marker').forEach(x=>{
         
         let elementName = elements[x.id.split('__')[1]].folder;
-        
         
         let qrElement = document.querySelector(`li.elements__${elementName}`);
         let number = document.querySelector(`.${x.id}`);
@@ -67,7 +66,6 @@ window.addEventListener('load',()=>{
             circle.setAttribute("r", 5);
             circle.setAttribute("fill", "red");
             document.querySelector('.guide').appendChild(circle);
-            \
             count++;
         }
         
