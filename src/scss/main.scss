@@ -31,9 +31,6 @@ $font-text: "Lato", sans-serif;
 
 @import "mobile";
 
-
-
-
 * {
   /* ⚝ Uncomment to debug */
   // outline:solid green;
@@ -80,12 +77,12 @@ path {
 /// title
 
 h1 {
-    font-size: 4rem;
-    font-family: Crimson Text;
-    
-    &.padded{
-      padding: 1em;
-    }
+  font-size: 4rem;
+  font-family: Crimson Text;
+  
+  &.padded{
+    padding: 1em;
+  }
 }
 
 /// subtitle
@@ -160,7 +157,6 @@ canvas#overlay {
     border-radius:0.4rem;
     color:#CCCCFF;
     // background-color:$background-text;
-    
   }
   
 /// map__block
@@ -177,17 +173,17 @@ canvas#overlay {
   
 /// textColumn
 .textColumn{
-    max-width:90%;
-    margin:auto;
-    border-radius:0.4rem;
-    ul{
-      background-color: $background2;
-    }
-    li{
-      list-style: none; 
-      // padding:0.5em;
-      font-size: 19px;
-    }
+  max-width:90%;
+  margin:auto;
+  border-radius:0.4rem;
+  ul{
+    background-color: $background2;
+  }
+  li{
+    list-style: none; 
+    // padding:0.5em;
+    font-size: 19px;
+  }
 }
 
 /// highlight
@@ -271,8 +267,8 @@ canvas#overlay {
   width:100px;
   
   max-width: 15vw;
-  
   max-height:100px;
+  
   background-color:transparent;
   
   &:hover{
@@ -287,7 +283,6 @@ canvas#overlay {
   width:80px;
   max-width:10vw;
   height:80px;
-  
 }
 
 /// banner title
@@ -318,6 +313,7 @@ canvas#overlay {
   margin:none;
   z-index:2999;
   transition:all 3s ease;
+  
   &.muted{
     display:none;
   }

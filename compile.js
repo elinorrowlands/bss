@@ -3,7 +3,7 @@ import fs from 'fs';
 
 let pugFiles = [
     'index', 
-    'index_temp',
+    
     'qr',
     'map',
     'map2',

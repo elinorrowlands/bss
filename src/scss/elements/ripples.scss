@@ -1,5 +1,7 @@
 /* ⚝ Elements: Ripples */
 
+/// painting
+
 #painting.ripples{
     -webkit-user-select:none;
     user-select:none;
@@ -29,132 +31,133 @@ html, body {
     min-height: 100%;
   }
   
-  #note_1{
-    transition:all 1s!important;
-  }
+#note_1{
+  transition:all 1s!important;
+}
 
   
-  /*** layout ***/
-  
-  #page-wrap {
-  
-  }
-  
-  /*** canvas ***/
-  
-  #canvas.ripples {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 1;
-    width:100vw;
-    overflow:none;
-    transition:filter 0.5s;
-  }
-  
-  main.ripples{
-    transition: filter 0.6s;
-  }
-  /*** content ***/
-  
-  .dg.ac {
-    z-index: 3 !important;
-  }
-  
-  #content.ripples {
-    position: relative;
-    z-index: 2;
-    touch-action: none; 
-  }
-  
-  #water-ripples {
-    width: 100%;
-    height: 100vh;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #water-ripples-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #water-ripples-title h1 {
-    color: white;
-    font-size: 8.5vw;
-    margin: 0;
-    opacity: 0;
-  }
-  
-  #water-ripples img {
-    display: none;
-  }
-  
-  #curtainsjs-ad {
-    position: absolute;
-    top: 1em;
-    left: 1em;
-    font-size: 0.75em;
-    color: white;
-    z-index: 3;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  #curtainsjs-ad a {
-    color: inherit;
-  }
-  
-  /*** handling errors ***/
-  
-  .no-curtains #water-ripples {
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .no-curtains #water-ripples img {
-    display: block;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-  }
-  
-  .no-curtains #water-ripples-title h1 {
-    opacity: 1;
-  }
-  
-  h1.ripples{
-    -webkit-user-select:none;
-    user-select:none;
-    pointer-events:none;
-  }
-  
-  #waterCircle{
-    transform:scale(1);
-  }
-  
-  #echoCircle{
-    transform:scale(0);
-  }
-  
-  #echoCircle2{
-    transform:scale(0);
-    transition: all 1s ease;
-  }
-  
-  #centeredCircle{
-    position:absolute;
-    display:block;
-    top:0;
-    left:0;
-    //- z-index:10;
-  }
+/*** layout ***/
+
+#page-wrap {
+
+}
+
+/*** canvas ***/
+
+#canvas.ripples {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+  width:100vw;
+  overflow:none;
+  transition:filter 0.5s;
+}
+
+main.ripples{
+  transition: filter 0.6s;
+}
+
+/*** content ***/
+
+.dg.ac {
+  z-index: 3 !important;
+}
+
+#content.ripples {
+  position: relative;
+  z-index: 2;
+  touch-action: none; 
+}
+
+#water-ripples {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#water-ripples-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#water-ripples-title h1 {
+  color: white;
+  font-size: 8.5vw;
+  margin: 0;
+  opacity: 0;
+}
+
+#water-ripples img {
+  display: none;
+}
+
+#curtainsjs-ad {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-size: 0.75em;
+  color: white;
+  z-index: 3;
+  font-family: 'Arial', sans-serif;
+}
+
+#curtainsjs-ad a {
+  color: inherit;
+}
+
+/*** handling errors ***/
+
+.no-curtains #water-ripples {
+  display: flex;
+  overflow: hidden;
+}
+
+.no-curtains #water-ripples img {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.no-curtains #water-ripples-title h1 {
+  opacity: 1;
+}
+
+h1.ripples{
+  -webkit-user-select:none;
+  user-select:none;
+  pointer-events:none;
+}
+
+#waterCircle{
+  transform:scale(1);
+}
+
+#echoCircle{
+  transform:scale(0);
+}
+
+#echoCircle2{
+  transform:scale(0);
+  transition: all 1s ease;
+}
+
+#centeredCircle{
+  position:absolute;
+  display:block;
+  top:0;
+  left:0;
+  //- z-index:10;
+}

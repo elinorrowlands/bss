@@ -1,26 +1,28 @@
-.body__background.mix,main.mix{
+.body__background.mix,main.mix {
     border:none;
 }
 
-.main__qr.mix{
+/// main qr mix
+
+.main__qr.mix {
     background:none;
 }
 
-.main__qr.mix,.bar.mix{
+.main__qr.mix,.bar.mix {
     border:none!important; 
 }
 
-image.mix{
+image.mix {
     transition: all 0.3s ease-in-out;
     opacity:0.7;
 }
 
-#start.mix{
+#start.mix {
     position:absolute;
     bottom:20px;
 }
 
-#start.mix.square{
+#start.mix.square {
     position:absolute;
     bottom:20px;
     height:100px;
@@ -33,26 +35,26 @@ image.mix{
     }
 }
 
-.bar.mix.xf{
+.bar.mix.xf {
     width:100%; 
     display:none;
 }
 
-input.mix{
+input.mix {
     opacity:0;
 }
 
-circle.mix.display1{
+circle.mix.display1 {
     transition:r 1.1s ease-in-out, x 0.1s ease-in-out, y 0.1s ease-in-out, fill 1s;
     opacity:0.3;
 }
 
-circle.mix.display2{
+circle.mix.display2 {
     transition:r 1.1s ease-in-out, fill 1s;
     opacity:0.3;
 }
 
-.start__icon{
+.start__icon {
     width:100%;
     height:100%;
     transform-origin:center center;
@@ -60,7 +62,7 @@ circle.mix.display2{
     display:inline-block;
 }
 
-.mute{
+.mute {
     width:2rem;
     height:2rem;
     margin:2rem;

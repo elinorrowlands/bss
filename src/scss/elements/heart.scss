@@ -11,6 +11,8 @@ body.heart {
     width:100vw;
 }
 
+/// svg heart
+
 svg.heart {
     transform-origin:center center;
     position:absolute;
@@ -25,19 +27,23 @@ svg.heart {
     cursor:pointer;
     transform:scale(3) translate(0,800);
     opacity:1;
-    
 }
+
+/// svg heart on
 
 svg.heart.on{
     transition: opacity 0s;
     opacity:0.5;
-    
 }
+
+/// group in svg heart
 
 svg.heart g {
     transform-origin:center center;
     transition:all 1s;
 }
+
+/// heart painting
 
 #painting.heart {
     transform-origin:center center;

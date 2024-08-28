@@ -1,3 +1,5 @@
+/// qr container elements
+
 .qr__container.elements{
     margin:auto;
     background-color:rgba(0,64,128,0.2);
@@ -18,4 +20,8 @@ main.elements{
     display: inline-block;
     position: static;
     height:20vh!important;
+}
+
+#duration{
+    display:none;
 }

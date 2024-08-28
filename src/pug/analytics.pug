@@ -1,5 +1,3 @@
-
-
 <!-- Google tag (gtag.js) -->
 script(async src="https://www.googletagmanager.com/gtag/js?id=G-VEV5M9N4V0")
 script.
@@ -10,7 +8,7 @@ script.
     
     var consent = localStorage && localStorage.getItem('consent');
     var consentHasBeenSet = localStorage && localStorage.getItem('consentHasBeenSet');
-    //- console.log(localStorage && localStorage.getItem('consent'));
+    
     if (consent === 'granted') {
         gtag('consent', 'update', {
             'ad_storage': 'granted',

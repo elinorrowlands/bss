@@ -1,3 +1,5 @@
+/// canvas rusty can
+
 #canvas.rusty_can{
   position:fixed;
   top:0;
@@ -14,6 +16,7 @@
   }
 }
 
+/// can background
 .canBG{
   opacity:0.5;
   width:60vh;
@@ -30,9 +33,13 @@
   }
 }
 
+/// can background
+
 #can__bg{
   transition:all 1s ease;
 }
+
+/// sound reactive element
 
 .water__meter{
   opacity:0.4;

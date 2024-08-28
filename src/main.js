@@ -13,8 +13,6 @@ import assignClasses from "./js/assignClasses.js";
 import assignStartButton from "./js/assignStartButton.js";
 import StatusVO from "status-vo";
 
-// using global scope while I work through webpack issues
-
 Object.assign(window,
   {
     $,

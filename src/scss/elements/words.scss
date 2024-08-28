@@ -27,10 +27,11 @@ body.words {
 
 .words {
    
-    &.transparent{
+    &.transparent {
         opacity:0;
     }
-    &.text{
+    
+    &.text {
         font-family: Crimson-Text, serif;
         -webkit-user-select:none;
         user-select:none;
