@@ -60,8 +60,6 @@ export default class Ripples {
         this.init();
     }
 
-
-
 /**
  * 
  * @returns {object} - {width, height}

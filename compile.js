@@ -11,17 +11,11 @@ let pugFiles = [
     'trail',
 
     'elements/index',
-
     'elements/crossing/index',
-
     'elements/bridge/index',
-    
     'elements/rusty_can/index',
-    
     'elements/school/index',
-
     'elements/text/index',
-
     'elements/ripples/index',
     
 ];

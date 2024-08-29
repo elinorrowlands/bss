@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
             lightIntensity: 5,
             shadowIntensity: 2.5,
         });  
+        
         rippleScene.gui.hide();    
     }
 });

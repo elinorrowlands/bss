@@ -22,18 +22,18 @@ window.addEventListener("load", () => {
     }
 });
 
-window.addEventListener("keydown", (e) => {
-    if (e.key == "g") {
-        rippleScene.gui.show();
-    } else if (e.key == "h"){
-        rippleScene.gui.hide();
-    }
-    if(e.key == "a"){
-        // rippleScene.ripples.ripples.uniforms.viscosity.value = rippleScene.ripples.ripples.uniforms.viscosity.value == 5 ? 1 : 5;
-        // window.verbose = !window.verbose;
+// window.addEventListener("keydown", (e) => {
+//     if (e.key == "g") {
+//         rippleScene.gui.show();
+//     } else if (e.key == "h"){
+//         rippleScene.gui.hide();
+//     }
+//     if(e.key == "a"){
+//         // rippleScene.ripples.ripples.uniforms.viscosity.value = rippleScene.ripples.ripples.uniforms.viscosity.value == 5 ? 1 : 5;
+//         // window.verbose = !window.verbose;
         
-    }
-});
+//     }
+// });
 
 function setBGAnimation(){
     bgAnimation = setInterval( () => {
