@@ -9,12 +9,12 @@ head
   script.
       // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
       window.filesToLoad = ['../../loops/heart_heart_trees_louder.m4a'];
-    
-  
+      
   script(src='../../main.js' defer)
   script(src='../js/ripples_jq/jquery.ripples.js' defer)
   script(src='./ripples_jq.js' defer)
   script(src='./samples.js' defer)
+  
   style.
     main{
       overflow:hidden;
@@ -25,18 +25,22 @@ head
       height:100vh;
       transition:filter 1s ease;
     }
+    
     body{
       background-image: url(./reflection1.jpeg);
       background-size: cover;
       //- background-repeat: repeat;
       //- touch-action:none;
     }
+    
     svg{
       touch-action:none;
     }
+    
     canvas{
       touch-action: none;
     }
+    
     circle{
       transition:all 0.5s ease;
       transform-origin: center center;
@@ -47,6 +51,7 @@ head
       transition: all 30s;
       opacity:1;
     }
+    
     .ripple__interact__display.on{
       transition: all 1s ease;
       opacity:0;
@@ -56,6 +61,7 @@ head
     .ripple__interact{
       opacity:0;
     }
+    
 body.fullpage#ripples__body
   //- main.awaitStart.transparent.ripples
   main.ripples
@@ -99,9 +105,3 @@ body.fullpage#ripples__body
         
       include ../footer__back
   include ../../consent_info
-  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.4.9/Tone.min.js')
-  //- script(src='../js/script.js' type='module' defer)
-  //- script(src='./interact.js' defer)
-  //- script(src='./touch.js' defer)
-  
-  

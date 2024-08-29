@@ -1,6 +1,6 @@
 /* ⚝ Elements: Ripples */
 
-/// painting
+/// painting overlay
 
 #painting.ripples{
     -webkit-user-select:none;
@@ -56,6 +56,8 @@ html, body {
   overflow:none;
   transition:filter 0.5s;
 }
+
+/// main element with ripples
 
 main.ripples{
   transition: filter 0.6s;

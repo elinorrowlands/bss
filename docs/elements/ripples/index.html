@@ -67,7 +67,6 @@
     // temporary script to ensure files are loaded in the correct order -- see assignStartButton.js
     window.filesToLoad = ['../../loops/heart_heart_trees_louder.m4a'];
     
-    
   </script>
   <script src="../../main.js" defer></script>
   <script src="../js/ripples_jq/jquery.ripples.js" defer></script>
@@ -83,18 +82,22 @@
       height:100vh;
       transition:filter 1s ease;
     }
+    
     body{
       background-image: url(./reflection1.jpeg);
       background-size: cover;
       //- background-repeat: repeat;
       //- touch-action:none;
     }
+    
     svg{
       touch-action:none;
     }
+    
     canvas{
       touch-action: none;
     }
+    
     circle{
       transition:all 0.5s ease;
       transform-origin: center center;
@@ -105,6 +108,7 @@
       transition: all 30s;
       opacity:1;
     }
+    
     .ripple__interact__display.on{
       transition: all 1s ease;
       opacity:0;
@@ -114,6 +118,7 @@
     .ripple__interact{
       opacity:0;
     }
+    
   </style>
 </head>
 <body class="fullpage" id="ripples__body">

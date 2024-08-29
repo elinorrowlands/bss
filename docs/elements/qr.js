@@ -46,7 +46,7 @@ window.addEventListener('load',()=>{
         elements[key].text = document.createElement('div');
         elements[key].text.classList.add('qr__text');
         elements[key].text.innerHTML = key.replace('_',' ')
-            .replace('text', "edge")
+            .replace('text', "water's edge")
             .replace('heart', 'school')
             .replace('mix', 'crossing')
 
