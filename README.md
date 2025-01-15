@@ -3,7 +3,7 @@
 Project led by artist Elinor Rowlands in partnership with Canal and River Trust London South East, funded by Arts 
 Council England. Other partners include Camden Creative Health and Cole's Gallery Leeds. 
 
-The [main website](https://elinorrowlands.github.com/) is hosted on GitHub pages from this repository. We are using this to upload experiments and document the development process.
+The [main website](https://elinorrowlands.github.io/bss) is hosted on GitHub pages from this repository. We are using this to upload experiments and document the development process.
 
 ## Project links
 - [Interactive pages](https://elinorrowlands.github.io/bss/)
